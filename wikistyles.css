@@ -1,0 +1,624 @@
+/* =========== Start Misc Styles ========== */
+body {
+    max-width: 1200px;
+	font-family: 'Roboto', sans-serif;
+}
+
+#content {
+line-height: 140%;
+}
+
+h1 {
+    font-size: 1.2rem;
+} 
+
+h2 {
+    font-size: 1.1rem;
+} 
+
+h3 {
+    font-size: 1.0rem;
+} 
+
+div, li, ol, p, span {
+    font-size: .85rem;
+}
+
+li {
+	margin: 5px 0;
+}
+
+#keywords {
+	display:none;
+}
+
+.highlightCodeGray {
+  display: inline;
+  padding: 1px 3px;
+  background: #e3e6e8;
+  color: #000000;
+  border-radius: 3px;
+  font-size: .84rem;
+}
+
+/* =========== End Misc Styles ========== */
+
+/* =========== Start Creates bold  li markers Styles ========== */
+
+ol > li::marker {
+  font-weight: bold;
+}
+
+/* =========== End Creates bold  li markers Styles ========== */
+
+/* =========== Start Restyling Built-in Nav Styles ========== */
+
+#navigation {
+    width: 160px;
+    margin: 142px 0 0;
+}
+
+#navigation ul li a {
+    font-weight: 600;
+    width: 100%;
+     font-size: 12px; 
+}
+
+.noselect {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+/* =========== End Restyling Built-in Nav Styles ========== */
+
+/* =========== Start Featured Issues Styles ========== */
+.legendWrap {
+	height:15px;
+	padding:0;
+	margin:0 0 20px 0;
+}
+
+.legendHeading{
+	float:left;
+	margin-right:50px;
+	font-size: 19px;
+	font-weight:bold;
+}
+
+.legendIndicator {
+	height:15px;
+	width:15px;
+	padding:0;
+	margin:5px;
+	border: 1px solid #eee;
+	float:left;
+}
+
+.legendIndicatorGreen {
+	background-color:#C4E8B7;
+	margin: 3px 0 0 0;
+}
+
+.legendIndicatorYellow {
+	background-color:#FFFF5E;
+	margin:3px 0 0 40px;
+}
+
+.legendIndicatorRed {
+	background-color:#FF6464;
+	margin:3px 0 0 20px;
+}
+
+.legendText{
+	height:15px;
+	padding:1px 0 0 0;
+	margin:3px 0 0 5px;
+	float:left;
+}
+
+.featuretext {
+	padding: 0px;
+	margin: 5px 5px 0 0;
+	color: #222222;
+}
+
+.featuredate {
+	font-weight:bold;
+	padding:0;
+	margin:0;
+	position:absolute;
+	top:6px;
+	right:10px;
+}
+
+.featuretitle {
+	font-weight:bold;
+	padding:0;
+	margin:0;
+	position:absolute;
+	top:6px;
+	left:30px;
+}
+
+.br {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* =========== End Featured Issues Styles ========== */
+
+/* =========== Start TOC Styles ========== */
+
+.tableofcontents {
+    display: inline-block;
+	border: 1px solid;
+    background-color: #fbfbfb; 
+    padding: 0 15px 15px 15px;
+}
+
+.toc{
+    line-height:90%; 
+}
+
+.toc a {
+    font-weight:bold;
+	line-height: 1.8em;
+}
+
+.toc p {
+    font-size: .9rem;
+}
+
+/* =========== End TOC Styles ========== */
+
+/* =========== Start List with Screenshot Styles ========== */
+ol.OLwithSS > li {
+margin: 0;
+padding: 0 0 24px 0;
+}
+
+ol.OLwithSS > li > img {
+border: 1px solid #ccc;
+}
+
+ol.OLwithSS > li.NoSS  {
+margin: 0;
+padding: 0 0 1px 0;
+}
+/* =========== End List with Screenshot Styles ========== */
+
+/* =========== Start Collapsible Element Styles ========== */
+  
+  summary {
+    cursor: pointer;
+	min-height:15px;
+	user-select: none;
+  }
+  
+/* =========== End Collapsible Element Styles ========== */
+ 
+/* =========== Start Notification and Codebox Styles ========== */
+
+.toast{
+	text-align: left;
+	padding: 6px 6px 8px 0;
+	top: 0px;
+	position: relative;
+	box-shadow: 1px 7px 10px -7px rgba(0,0,0,0.1);
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ccc;
+	border-radius: 4px;
+	margin-bottom: 15px;
+}
+
+.toastCode{
+	text-align: left;
+	padding: 6px 6px 8px 0;
+	top: 0px;
+	position: relative;
+	box-shadow: 1px 7px 10px -7px rgba(0,0,0,0.1);
+	border-radius: 4px;
+	margin-bottom: 15px;
+	background-image: repeating-linear-gradient(60deg, #cccccc, #cccccc 0px, transparent 2px, transparent 2px, #cccccc 6px), repeating-linear-gradient(150deg, #cccccc, #cccccc 0px, transparent 2px, transparent 2px, #cccccc 6px), repeating-linear-gradient(240deg, #cccccc, #cccccc 0px, transparent 2px, transparent 2px, #cccccc 6px), repeating-linear-gradient(330deg, #cccccc, #cccccc 0px, transparent 2px, transparent 2px, #cccccc 6px);
+background-size: 1px calc(100% + 12px), calc(100% + 12px) 1px, 1px calc(100% + 12px) , calc(100% + 12px) 1px;
+background-position: 0 0, 0 0, 100% 0, 0 100%;
+background-repeat: no-repeat;
+animation: borderAnimation 2s infinite linear;
+}
+@keyframes borderAnimation {
+from { background-position: 0 0, -12px 0, 100% -12px, 0 100%; }
+to { background-position: 0 -12px, 0 0, 100% 0, -12px 100%; }
+}
+
+.toast:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+	border-top-left-radius:4px;
+	border-bottom-left-radius: 4px;
+}
+
+.toastCode:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+	border-top-left-radius:4px;
+	border-bottom-left-radius: 4px;
+}
+
+.toast__type {
+	color: #3e3e3e;
+	font-weight: 700;
+	font-size: 14px;
+	margin-top: 0;
+	margin-bottom: 4px;
+}
+
+.toast__message {
+    font-size: 13px;
+    margin-top: 0;
+	margin-bottom: 0;
+    color: #222222;
+}
+
+.toast__content{
+  padding-left:15px;
+  padding-right:0;
+}
+
+.toast__content-Code{
+  padding-left:15px;
+  padding-right:0;
+  display: flex;
+  align-items: center;
+}
+
+.toastNote{
+	display: inline-block;
+}
+
+.toastNote--success{
+	background-color: #f0fff0;
+}
+
+.toastNote--success:before, .toast--success:before{
+  background-color:#C4E8B7;
+}
+
+
+.toastNote--note{
+	background-color: #F0F9FF;
+}
+	
+.toastNote--note:before, .toast--note:before{
+  background-color:#9FB5FF;
+}
+
+
+.toastNote--tip{
+	background-color: #fffff0;
+}
+
+.toastNote--tip:before, .toast--tip:before{
+	background-color: #FFFF5E;
+}
+
+
+.toastNote--alert{
+	background-color: #fff0f0;
+}
+
+.toastNote--alert:before, .toast--alert:before{
+  background-color:#FF6464;
+}
+
+.toast.toastNote.toastNote--alert.alertPulse{
+  background-color: #fff0f0;
+  animation-name: alertPulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes alertPulse {
+  0% {
+    background-color: #fff0f0;
+  }
+  50% {
+    background-color: #ffd0d0;
+  }
+  100 {
+    background-color: #fff0f0;
+  }
+}
+
+.toastNote--code{
+	background-color: #f1f1f1;
+}
+
+.toastNote--code:before, .toast--code:before{
+	background-color: #999;
+}
+
+.toastNote--generic:before, .toast--generic:before{
+  background-color:#ffffff;
+}
+
+.toastNote-margin-top{
+  margin-top:10px;
+}
+
+.toastNote-margin-bottom{
+  margin-bottom:10px;
+}
+
+.toastNote-margin-both{
+  margin:10px 0;
+}
+
+/* =========== End Notification and Codebox Styles ========== */
+
+
+/* =========== Start Codebox specific Styles ========== */
+.code {
+	color: #222222;
+}
+
+/*This removes line break height in code box*/
+.code br{
+	content: ""; margin: 0;
+}
+
+/*This fixes the rogue P tag that the wiki code generates after the close [code] tag.
+#pFix + p{
+    margin: 0;
+}*/
+
+pre {
+	margin:0;
+	padding:0;
+	white-space:pre-wrap;
+	font-family: monospace;
+}
+
+/* =========== End Codebox specific Styles ========== */
+
+/* =========== Start BIOS and BootKey Table Styles ========== */
+
+.biostable tr:nth-child(even) td {background-color:#e5e5e5;}
+.biostable tr:nth-child(odd) td {background-color: #f1f1f1;}
+
+/* =========== End BIOS and BootKey Table Styles ========== */
+
+/* =========== Start Data Table Styles ========== */
+
+table.dataTable {
+  width: 50%;
+  border:1px solid #ccc;
+  border-spacing: 0;
+}
+
+table.dataTable60 {
+  width: 60%;
+}
+
+table.dataTable70 {
+  width: 70%;
+}
+
+table.dataTable80 {
+  width: 80%;
+}
+
+table.dataTable thead th {
+    background: #e7e7e7;
+    border: 1px solid #ddd;
+    letter-spacing: .0625rem;
+    padding: 5px;
+    font-size: 15px;
+}
+
+table.dataTable tbody th {
+    background: #f7f7f7;
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: .0625rem;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+table.dataTable tbody th.plain {
+    background: #fff;
+    font-size: 14px;
+	font-weight:400;
+}
+
+table.dataTable tbody td {
+    padding: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    text-align:center;
+}
+
+/* =========== End Data Table Styles ========== */
+
+/* =========== Start LightBox Styles ========== */
+
+.lb-album{
+	width: 900px;
+	margin: 0 auto;
+	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+}
+.lb-album span{
+	float: left;
+	margin: 5px;
+	position: relative;
+}
+
+.lb-album span > a{
+	width: auto;
+	height: auto;
+	position: relative;
+	-webkit-box-shadow: 1px 1px 2px #fff, 1px 1px 2px rgba(158,111,86,0.3) inset;
+	-moz-box-shadow: 1px 1px 2px #fff, 1px 1px 2px rgba(158,111,86,0.3) inset;
+	box-shadow: 1px 1px 2px #fff, 1px 1px 2px rgba(158,111,86,0.3) inset;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px 4px 4px 4px;
+}
+.lb-album span > a span{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 10px;
+	left: 10px;
+	text-align: center;
+	line-height: 150px;
+	color: rgba(27,54,81,0.8);
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+	font-size: 24px;
+	opacity: 0;
+	filter: alpha(opacity=0); /* internet explorer */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8*/
+	background: rgb(241,210,194);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%, rgba(241,210,194,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.56)), color-stop(100%,rgba(241,210,194,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,rgba(241,210,194,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,rgba(241,210,194,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,rgba(241,210,194,1) 100%);
+	background: radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,rgba(241,210,194,1) 100%);
+	-webkit-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	-o-transition: opacity 0.3s linear;
+	-ms-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+}
+.lb-album span > a:hover span{
+	opacity: 1;
+	filter: alpha(opacity=99); /* internet explorer */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=99)"; /*IE8*/
+}
+.lb-overlay{
+	width: 0px;
+	height: 0px;
+	position: fixed;
+	overflow: hidden;
+	left: 0px;
+	top: 0px;
+	padding: 0px;
+	z-index: 99;
+	text-align: center;
+	background: rgb(0,0,0);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%, rgba(241,210,194,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.56)), color-stop(100%,rgba(0,0,0,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,rgba(0,0,0,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,rgba(241,210,194,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,rgba(241,210,194,1) 100%);
+	background: radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,rgba(241,210,194,1) 100%);
+}
+.lb-overlay > div{
+	position: relative;
+	color: rgba(27,54,81,0.8);
+	opacity: 0;
+	filter: alpha(opacity=0); /* internet explorer */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8*/
+	width: 550px;
+	margin: 10px auto 0px auto;
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+	-webkit-transition: opacity 0.3s linear 1.3s;
+	-moz-transition: opacity 0.3s linear 1.3s;
+	-o-transition: opacity 0.3s linear 1.3s;
+	-ms-transition: opacity 0.3s linear 1.3s;
+	transition: opacity 0.3s linear 1.3s;
+}
+
+.lb-overlay a.lb-close{
+	background: rgba(27,54,81,0.8);
+	z-index: 1001;
+	color: #fff;
+/*	position: absolute; */
+	top: 43px;
+	left: 50%;
+	font-size: 15px;
+	line-height: 26px;
+	text-align: center;
+	width: 50px;
+	height: 23px;
+	overflow: hidden;
+	margin-left: -25px;
+	opacity: 0;
+	filter: alpha(opacity=0); /* internet explorer */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8*/
+	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+	-webkit-transition: opacity 0.3s linear 1.2s;
+	-moz-transition: opacity 0.3s linear 1.2s;
+	-o-transition: opacity 0.3s linear 1.2s;
+	-ms-transition: opacity 0.3s linear 1.2s;
+	transition: opacity 0.3s linear 1.2s;
+}
+.lb-overlay img{
+	/* height: 100%; For Opera max-height does not seem to work */
+	max-height: 100%;
+	position: relative;
+	-webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+	-moz-box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+	box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
+}
+.lb-overlay:target {
+	width: auto;
+	height: auto;
+	bottom: 0px;
+	right: 0px;
+	padding: 80px 100px 120px 100px;
+}
+.lb-overlay:target a {
+	-webkit-animation: fadeInScale 0.7s ease-in-out;
+	-moz-animation: fadeInScale 0.7s ease-in-out;
+	-o-animation: fadeInScale 0.7s ease-in-out;
+	-ms-animation: fadeInScale 0.7s ease-in-out;
+	animation: fadeInScale 0.7s ease-in-out;
+}
+.lb-overlay:target a.lb-close,
+.lb-overlay:target > div{
+	opacity: 1;
+	filter: alpha(opacity=99); /* internet explorer */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=99)"; /*IE8*/
+}
+@-webkit-keyframes fadeInScale {
+  0% { -webkit-transform: scale(0.6); opacity: 0; }
+  100% { -webkit-transform: scale(1); opacity: 1; }
+}
+@-moz-keyframes fadeInScale {
+  0% { -moz-transform: scale(0.6); opacity: 0; }
+  100% { -moz-transform: scale(1); opacity: 1; }
+}
+@-o-keyframes fadeInScale {
+  0% { -o-transform: scale(0.6); opacity: 0; }
+  100% { -o-transform: scale(1); opacity: 1; }
+}
+@-ms-keyframes fadeInScale {
+  0% { -ms-transform: scale(0.6); opacity: 0; }
+  100% { -ms-transform: scale(1); opacity: 1; }
+}
+@keyframes fadeInScale {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* 
+	100% Height for Opera as the max-height seems to be ignored, not optimal for large screens 
+	http://bricss.net/post/11230266445/css-hack-to-target-opera 
+*/
+x:-o-prefocus, .lb-overlay img {
+    height: 100%;
+}
+/* =========== End LightBox Styles ========== */
