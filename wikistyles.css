@@ -10,8 +10,11 @@ line-height: 140%;
 
 h1 {
     font-size: 1.2rem;
-    padding-top: 10px;
-} 
+}
+
+.wiki h1{
+padding-top: 15px;
+}
 
 h2 {
     font-size: 1.1rem;
