@@ -12,6 +12,8 @@ Big update this time! This is mostly related to GUI and usability stuff, but a l
 
 * The QA script now randomizes the location of the Yes and No buttons just to keep everyone on their toes.
 
+ * Due to some confusion around the DDRx drive creation utility, I now have it clearly labled that this is only for creating a Ventoy-based flash drive. Standard DDRX PE flash drives (without any additional utilities and the need for Secure Boot workarounds) need to be created via Rufus.
+
 
 ## 01/09/2025
 Sophos Scan and Clean has been replaced by Trellix Stinger. 
