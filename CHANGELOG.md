@@ -1,6 +1,16 @@
 # Persistent Changelog
 ## ??/??/202?
-The startup cleaning utility now includes links to open the Task Scheduler and Services windows. Thanks to Mike at, uh, everywhere, for the suggestion!
+Big update this time! This is mostly related to GUI and usability stuff, but a lot went on under the hood to make it happen.
+
+* The startup cleaning utility has had its entire GUI refreshed to make it more user friendly. It no longer cloess immediately when items are removed. There are also now buttons for both Task Scheduler and the Services window - thanks to Mike at, uh, everywhere, for the suggestion!
+
+* The message box pop-up window has been redesigned for a more consistent look across the scripts.
+
+* The step 1 script has been updated to alert the technician to whether a resore point has been created successfully.
+
+* Step 11 now shows the progress of the disk optimization that you can actually see it happening instead of just hoping it is!
+
+* The QA script now randomizes the location of the Yes and No buttons just to keep everyone on their toes.
 
 
 ## 01/09/2025
