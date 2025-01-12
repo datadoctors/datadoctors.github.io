@@ -2,7 +2,7 @@
 ## ??/??/2025
 
 ## 01/12/2025
-Big update this time! This is mostly related to GUI and usability stuff, but a lot went on under the hood to make it happen. While the logic didn't change much (and I spent a big chunk of my weekend bug-testing), there may be issues - please report them ASAP! (Typos do in fact count as a bug, so go ahead and repor those, too!)
+Big update this time! This is mostly related to GUI and usability stuff, but a lot went on under the hood to make it happen. While the logic didn't change much (and I spent a big chunk of my weekend bug-testing), there may be issues - please report them ASAP! (Typos do in fact count as a bug, so go ahead and report those, too!)
 
 * The startup cleaning utility has had its entire GUI refreshed to make it more user friendly. It no longer closes immediately when items are removed. There are also now buttons for both Task Scheduler and the Services window - thanks to Mike at, uh, everywhere, for the suggestion!
 
