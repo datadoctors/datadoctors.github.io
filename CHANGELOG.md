@@ -2,20 +2,19 @@
 ## ??/??/2025
 
 ## 01/12/2025
-Big update this time! This is mostly related to GUI and usability stuff, but a lot went on under the hood to make it happen. While the logic didn't change much (and I spent a big chunk of my weekend bug-testing), there may be issues - please report them ASAP!
+Big update this time! This is mostly related to GUI and usability stuff, but a lot went on under the hood to make it happen. While the logic didn't change much (and I spent a big chunk of my weekend bug-testing), there may be issues - please report them ASAP! (Typos do in fact count as a bug, so go ahead and repor those, too!)
 
-* The startup cleaning utility has had its entire GUI refreshed to make it more user friendly. It no longer cloess immediately when items are removed. There are also now buttons for both Task Scheduler and the Services window - thanks to Mike at, uh, everywhere, for the suggestion!
+* The startup cleaning utility has had its entire GUI refreshed to make it more user friendly. It no longer closes immediately when items are removed. There are also now buttons for both Task Scheduler and the Services window - thanks to Mike at, uh, everywhere, for the suggestion!
 
 * The message box pop-up window has been redesigned for a more consistent look across the scripts.
 
 * The step 1 script has been updated to alert the technician to whether a resore point has been created successfully.
 
-* Step 11 now shows the progress of the disk optimization that you can actually see it happening instead of just hoping it is!
+* Step 11 now shows the progress of the disk optimization so that you can actually see it happening instead of just hoping it is!
 
 * The QA script now randomizes the location of the Yes and No buttons just to keep everyone on their toes.
 
 * Due to some confusion around the DDRx drive creation utility, I now have it clearly labled that this is only for creating a Ventoy-based flash drive. Standard DDRX PE flash drives (without any additional utilities and the need for Secure Boot workarounds) need to be created via Rufus.
-
 
 ## 01/09/2025
 * Sophos Scan and Clean has been replaced by Trellix Stinger. 
