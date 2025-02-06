@@ -1,6 +1,15 @@
 # Persistent Changelog
 ## ??/??/2025
 
+## 02/05/2025
+Big thanks to 24H2 for breaking tiny things in huge ways! This is mostly an under-the-hood update but there's plenty more to come.
+
+* As Microsoft has deprecated the WMIC command for Windows 11 24H2, lots of small things needed to be changed throughout a lot of the data collection portions of the scripts. If you notice something isn't reporting correctly, please let Steve know!
+
+* After investigating several reports of the Step 0 script to fail to run, it is starting to become apparent that Microsoft may be rolling out updates to break the old Command Host process that used to be the back end for both Command Prompt and Powershell in favor of Windows Terminal. All scripts now check for the existence of Windows Terminal, and if it exists, use that to launch commands. This will hopefully nip this issue in the bud before it becomes a much biger problem for us. 
+
+Please report bugs ASAP!!!
+
 ## 01/12/2025
 Big update this time! This is mostly related to GUI and usability stuff, but a lot went on under the hood to make it happen. While the logic didn't change much (and I spent a big chunk of my weekend bug-testing), there may be issues - please report them ASAP! (Typos do in fact count as a bug, so go ahead and report those, too!)
 
