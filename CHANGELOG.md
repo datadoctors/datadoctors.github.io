@@ -2,6 +2,8 @@
 ## ??/??/2025
 
 ## 02/06/2025
+<img src="/images/gifs/cutie.gif" style="width: 100px;">
+
 Big thanks to 24H2 for breaking tiny things in huge ways! This is mostly an under-the-hood update but there's plenty more to come.
 
 * Before we get to the Microsoft messes -- there's a new script in the _extras folder, which will help you with resetting network settings! Thanks to Blake at 102 for the suggestion!
@@ -28,6 +30,8 @@ Big update this time! This is mostly related to GUI and usability stuff, but a l
 * Due to some confusion around the DDRx drive creation utility, I now have it clearly labled that this is only for creating a Ventoy-based flash drive. Standard DDRX PE flash drives (without any additional utilities and the need for Secure Boot workarounds) need to be created via Rufus.
 
 ## 01/09/2025
+<img src="/images/gifs/yoshi.gif" style="width: 100px;">
+
 * Sophos Scan and Clean has been replaced by Trellix Stinger. 
 
 * Question 17 in the QA script will now detect whether you are currently running a remote service and asks whether you've deleted the ZIP file and extracted folder instead of asking about physical media if so. Thanks to Nathan H at 240 for the suggestion.
@@ -35,6 +39,7 @@ Big update this time! This is mostly related to GUI and usability stuff, but a l
 * The battery health check during step 1 in the service scripts no longer holds up the progress of the rest of the script. 
 
 ## 12/20/2024
+
 * The _extras folder now lives in the root of your flash drives for easier access. It will still copy into the service directory when performing regular service.
 
 * The battery health checking script will now run automatically on any laptops during a regular service. Thanks to Nathan H for the suggestion. 
@@ -44,6 +49,8 @@ Big update this time! This is mostly related to GUI and usability stuff, but a l
 * There is now zero VBScript left in the service scripts, meaning that when Microsoft eventually does kill it off, we should not experience any problems with it. 
 
 ## 12/03/2024
+<img src="/images/gifs/tina-santa.gif" style="width: 100px;">
+
 Small-ish update this time.
 
 *  tools now write to the HKLM, rather than HKCU registry keys.
@@ -67,6 +74,8 @@ This was a mostly behind the scenes change, but is pretty huge - PLEASE report a
 * The updater tool now has the option to skip updating ISOs when updating PE-only drives.
 
 ## 10/14/2024
+<img src="/images/gifs/skele-skeleton.gif" style="width: 100px;">
+
 Big changes for this release: we now have a working multi-boot version of DDRx8! We now have Secure Boot support - all you have to do is enroll a key (follow the on-screen directions when booting) and proceed as usual. If you have any questions, please reach out to Mike or Steve.
 
 Please remember that disabling Secure Boot should not be part of regular service except for in outlier cases when it is necessary. 
@@ -75,6 +84,8 @@ Please remember that disabling Secure Boot should not be part of regular service
 
 
 ## 09/20/2024
+<img src="/images/gifs/raichu.gif" style="width: 100px;">
+
 Howdy! Our scripts have been updated.
 
 New features:
