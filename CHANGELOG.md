@@ -1,8 +1,10 @@
 # Persistent Changelog
 ## ??/??/2025
 
-## 02/05/2025
+## 02/06/2025
 Big thanks to 24H2 for breaking tiny things in huge ways! This is mostly an under-the-hood update but there's plenty more to come.
+
+* Before we get to the Microsoft messes -- there's a new script in the _extras folder, which will help you with resetting network settings! Thanks to Blake at 102 for the suggestion!
 
 * As Microsoft has deprecated the WMIC command for Windows 11 24H2, lots of small things needed to be changed throughout a lot of the data collection portions of the scripts. If you notice something isn't reporting correctly, please let Steve know!
 
