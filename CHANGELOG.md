@@ -1,6 +1,11 @@
 # Persistent Changelog
 ## ??/??/2025
 
+## 02/12/2025
+New evaluation script! Hot off the presses and out of my bloody fingertips comes a new version of the evaluation script! Try it out! Remember to click the 'Save and Submit' button! (It will still yell at you if you don't, though!)
+
+Report bugs ASAP, and if it doesn't work for you, use the old evaluation script. It will be sticking around until most of the kinks are worked out of the new one.
+
 ## 02/06/2025
 <img src="/images/gifs/cutie.gif" style="width: 100px;">
 
