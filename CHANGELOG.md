@@ -2,7 +2,7 @@
 ## ??/??/2025
 
 ## 03/24/2025
-<img src="/images/gifs/frogbox.gif" style="width: 100px;">
+<img src="/images/gifs/frogbox.gif" style="width: 250px;">
 Our shiny new PC Evaluation script is officially out of beta! See a mostly complete list of changes and improvements below. (Below, below.)
 
 BUT FIRST! There were a few changes to the service scripts, as well!
