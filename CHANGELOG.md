@@ -1,6 +1,38 @@
 # Persistent Changelog
 ## ??/??/2025
 
+## 03/24/2025
+<img src="/images/gifs/frogbox.gif" style="width: 100px;">
+Our shiny new PC Evaluation script is officially out of beta! See a mostly complete list of changes and improvements below. (Below, below.)
+
+BUT FIRST! There were a few changes to the service scripts, as well!
+
+* Brendin and Blake (RIP) at 102 found a bug wherein the QA script fails to run if the user has an apostrophe in the name of their user folder. Annoying, but addressable! Instead of the QA script copying to the temporary folder of the user, it will now copy to the system-wide temporary location, where we can be confident there will be no spaces. 
+
+* RogueKiller is no more. Well, it IS some more, but now it's called Adlice Protect. The scripts have been updated to reflect that.
+
+Changes to the evaluation script:
+
+* It's prettier. We have dark mode support, manufacturer-specific icons, custom fonts, and resizable windows. Wow-ee.
+
+* In that vein, there are no more dropdown menus with clunky information dumps. There's a 3-column (or 2-column for low-resolutions) layout with everything visible at a glance. 
+
+* The battery monitor has been lifted directly from the standalone script and just plonked right on this one. The HTML battery report can be viewed directly if the results displayed seem suspicious. 
+
+* We are no longer using a third-party utility to detect extensions in web browsers - we have a home-cooked function that pulls extensions from browsers as well as websites with allowed notifications (in Chromium-based browsers.)
+
+* Drive data is more visually apparent, with charts for disk space usage per drive letter.
+
+* A pane for critical system errors from within the last 30 days has been added, hopefully giving more insight into other problems the machines may be having beyond what the customer has reported.
+
+* There is now easy access to logs for both the SFC and malware scans, so you can further investigate results. If the malware results looked wonky, you can also now re-run the script (using the GUI interface) to double-check the results. 
+
+* We are now checking for activation status for Microsoft Windows during the evaluation script, and if Windows is not activated, you'll see a warning for it in the 'Warnings' section. 
+
+* Finally - the evaluation script will no longer prompt for store or work order numbers prior to completion of the scripts. The only roadblocks to starting the script wil be a warning for RATs and a warning for not having internet access. 
+
+All data will now need to be entered into the 'Ticket Info' section at the bottom-right of the results window. All fields must be completed before they can be submitted, and the script will warn you if you try to close out without submitting. 
+
 ## 02/12/2025
 Hot off the presses and out of my bloody fingertips comes a new version of the evaluation script! Try it out! Remember to click the 'Save and Submit' button! (It will still yell at you if you don't, though!)
 
