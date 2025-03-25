@@ -59,15 +59,21 @@
     <div id="step1" class="step active">
         <h2>Getting Started</h2>
         <p>To begin, you'll need to navigate to the correct support page. Ask your client if they have a "Data Doctors RemoteMD" icon on their desktop -- it should have a blue "Rx" for an icon! If so, have them open up that shortcut, then continue on.</p>
+        <p>
+            <img src="zoho-guide-00.png">
+        </p>
         <div class="option-buttons">
-            <button onclick="nextStep(2)">They do!</button>
-            <button class="secondary" onclick="nextStep(3)">They don't!</button>
+            <button onclick="nextStep(2)">They have the icon.</button>
+            <button class="secondary" onclick="nextStep(3)">They don't have it!</button>
         </div>
     </div>
 
     <div id="step2" class="step">
         <h2>Make sure we're at the correct website.</h2>
         <p>Verify that they are in the right place -- they should be at a Data Doctors (not Google, not Bing, not DuckDuckgo) webpage that says "Connect with us." in the center. If they appear to be at a search page, you can either have them try entering the URL again, and failing that, you may have to navigate them to the correct page manually. </p>
+        <p>
+            <img src="zoho-guide-01.png">
+        </p>
         <div class="option-buttons">
             <button onclick="nextStep(4)">They're at the right place.</button>
             <button class="secondary" onclick="nextStep(1)">Let's start over...</button>
@@ -89,7 +95,7 @@
             <li>Now that the client is at the correct webpage, we can go to our portal for <a href="https://assistlab.zoho.com/portal/datadoctors/app/home" target="_new">Zoho Assist</a> and generate a session ID by clicking "Start" next to the pre-scheduled appointment listing.</li>
             <li>Have the client click in the empty box directly below where it says "Enter Session ID" and then guide them through entering the 9-digit number Zoho generated, then click on the blue "Connect" button.</li>
         </ul>
-        <img src="the-screenshot-of-the-first-page">
+        <img src="zoho-guide-02.png">
         <div class="option-buttons">
             <button onclick="nextStep(5)">Let's keep going!</button>
             <button class="secondary" onclick="nextStep(2)">Go back!</button>
@@ -99,7 +105,7 @@
     <div id="step5" class="step">
         <h2>Naming Names</h2>
         <p>On the next page, there is a box for the client to enter their name. Go ahead and have them enter it, then click on the blue "Join Session" button.</p>
-        <img src="the-screenshot-of-the-second-page">
+        <img src="zoho-guide03.png">
         <div class="option-buttons">
             <button onclick="nextStep(6)">Almost there...</button>
             <button class="secondary" onclick="nextStep(4)">Go back!</button>
@@ -110,6 +116,9 @@
         <h2>Download the File</h2>
         <p>At this point, the client should click on the blue "Agree and Download" button, which will download a file called "ZA_Connect.exe" -- if they are a bit click-happy, or have just had a remote session before, there may be a number trailing the file name, but it should not matter.</p>
         <p><mark>This is often the trickiest part of the connection process - <b>be patient.</b></mark></p>
+        <p>
+            <img src="zoho-guide04.png">
+        </p>
         <ol>
             <li>At first, simply ask the client to open the file.</li>
             <ul>
@@ -117,7 +126,7 @@
             </ul>
             <li> Let them know that there will be a permissions dialog asking a Yes/No question about whether to let us make changes to their computer - they should click "Yes." If you get this far, click Next Step to continue on.
                 <p>
-                    <img src="zoho-uac-screenshot">
+                    <img src="zoho-guide-05.png">
                 </p>
             </li>
             <li>If the client reports any pop-ups stating that Zoho Assit is already running, just have them click "Okay" or close the message box.</li>
@@ -132,7 +141,7 @@
         <h2>One Last Step!</h2>
         <p>Your client should now see a Zoho window with a blue "Join" button in the bottom-right corner. Once they click on that, we should be connected!</p>
         <p>
-            <img src="zoho-join-screenshot">
+            <img src="zoho-guide-06.png">
         </p>
         <div class="option-buttons">
             <button onclick="nextStep(1)">Restart Guide</button>
