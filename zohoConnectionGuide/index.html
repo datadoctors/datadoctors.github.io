@@ -78,7 +78,7 @@
         <h2>Getting There Manually</h2>
         <p>Ask the client to open up their preferred web browser of choice. Once it's loaded, have them click into the address bar at the top of their window and enter the following URL: <a href="https://www.datadoctors.com/support" target="_blank">datadoctors.com/support</a> and press Enter.</p>
         <div class="option-buttons">
-            <button onclick="nextStep(3)">Let's verify they're at the right place.</button>
+            <button onclick="nextStep(2)">Let's verify they're at the right place.</button>
             <button class="secondary" onclick="nextStep(1)">Let's start over...</button>
         </div>
     </div>
@@ -157,20 +157,6 @@
             
             // Scroll to top of step
             document.getElementById(`step${stepNumber}`).scrollIntoView({behavior: 'smooth'});
-        }
-        
-        // Function to simulate download
-        function simulateDownload() {
-            const status = document.getElementById('downloadStatus');
-            const postDownload = document.getElementById('postDownload');
-            
-            status.textContent = "Downloading... (this is a simulation)";
-            
-            // Simulate download delay
-            setTimeout(() => {
-                status.textContent = "Download complete! File saved as 'SoftwareInstaller.exe'";
-                postDownload.style.display = 'block';
-            }, 2000);
         };
     </script>
 </body>
