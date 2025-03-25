@@ -36,6 +36,14 @@
         button.secondary:hover {
             background-color: #ddd;
         }
+        button.restart {
+            background-color: #ffaeae;
+            color: #000000;
+            float: right;
+        }
+        button.restart:hover {
+            background-color: #ffe4e4;
+        }
         .option-buttons {
             margin-top: 20px;
         }
@@ -50,7 +58,16 @@
     <h1>Zoho Remote Connection Guide</h1>
     <p>Follow this interactive guide to get a client connected via Zoho Assist.</p>
 
-    <div id="step1" class="step active">
+    <div id="step0" class="step active">
+        <h2>Before We Begin..</h2>
+        <p>Windows or macOS?</p>
+        <div class="option-buttons">
+            <button onclick="nextStep(1)">Windows</button>
+            <button class="secondary" onclick="nextStep(101)">macOS</button>
+        </div>
+    </div>
+    <!-- Windows Section - starts at step1-->
+    <div id="step1" class="step">
         <h2>Getting Started</h2>
         <p>To begin, you'll need to navigate to the correct support page. This process should start with making sure they have closed or minimized all open windows! Ask your client if they have a "Data Doctors RemoteMD" icon on their desktop -- it should have a blue "Rx" for an icon! If so, have them open up that shortcut, then continue on.</p>
         <p>
@@ -67,8 +84,9 @@
         <div class="option-buttons">
             <button onclick="nextStep(2)">They have the icon.</button>
             <button class="secondary" onclick="nextStep(3)">They don't have it!</button>
+            <button class="secondary" onclick="nextStep(101)">Oops, they use a Mac!</button>
+            <button class="restart" onclick="nextStep(0)">Let's start over...</button>
         </div>
-
     </div>
 
     <div id="step2" class="step">
@@ -87,7 +105,8 @@
         </div>
         <div class="option-buttons">
             <button onclick="nextStep(4)">They're at the right place.</button>
-            <button class="secondary" onclick="nextStep(1)">Let's start over...</button>
+            <button class="secondary" onclick="nextStep(1)">Go back.</button>
+            <button class="restart" onclick="nextStep(0)">Let's start over...</button>
         </div>
     </div>
 
@@ -104,7 +123,8 @@
         </div>
         <div class="option-buttons">
             <button onclick="nextStep(2)">Let's verify they're at the right place.</button>
-            <button class="secondary" onclick="nextStep(1)">Let's start over...</button>
+            <button class="secondary" onclick="nextStep(1)">Go back.</button>
+            <button class="restart" onclick="nextStep(0)">Let's start over...</button>
         </div>
     </div>
 
@@ -125,7 +145,8 @@
         </div>
         <div class="option-buttons">
             <button onclick="nextStep(5)">Let's keep going!</button>
-            <button class="secondary" onclick="nextStep(2)">Go back!</button>
+            <button class="secondary" onclick="nextStep(2)">Go back.</button>
+            <button class="restart" onclick="nextStep(0)">Let's start over...</button>
         </div>
     </div>
 
@@ -145,7 +166,8 @@
         </div>
         <div class="option-buttons">
             <button onclick="nextStep(6)">Almost there...</button>
-            <button class="secondary" onclick="nextStep(4)">Go back!</button>
+            <button class="secondary" onclick="nextStep(4)">Go back.</button>
+            <button class="restart" onclick="nextStep(0)">Let's start over...</button>
         </div>
     </div>
 
@@ -178,7 +200,8 @@
         </div>
         <div class="option-buttons">
             <button onclick="nextStep(7)">Next Step</button>
-            <button class="secondary" onclick="nextStep(5)">Go back!</button>
+            <button class="secondary" onclick="nextStep(5)">Go back.</button>
+            <button class="restart" onclick="nextStep(0)">Let's start over...</button>
         </div>
     </div>
 
@@ -192,19 +215,40 @@
             <div class="toast__content">
                 <p class="toast__type">Example:</p>
                 <p class="toast__message">
-                    "Almost there. If you've already clicked 'Yes' just sit tight - some times it looks like nothing is happening right now, but in a few moments another window will come up with a blue 'Join' button in the bottom-right corner. Once you click on that, I'll be in."
+                    "Almost there. If you've already clicked 'Yes' just sit tight - it might look like nothing is happening right now, but in a few moments another window will come up with a blue 'Join' button in the bottom-right corner. Once you click on that, I'll be in."
                 </p>
             </div>
         </div>
         <div class="option-buttons">
-            <button onclick="nextStep(1)">Restart Guide</button>
+            <button onclick="nextStep(0)">Restart Guide</button>
+        </div>
+    </div>
+
+    <!-- macOS Section - starts at 101 -->
+    <div id="step101" class="step">
+        <h2>Getting Started - macOS</h2>
+        <p>Your client should now see a Zoho window with a blue "Join" button in the bottom-right corner. Once they click on that, we should be connected!</p>
+        <p>
+        </p>
+        <div class="toast toastNote toastNote--success">
+            <div class="toast__content">
+                <p class="toast__type">Example:</p>
+                <p class="toast__message">
+                    ""
+                </p>
+            </div>
+        </div>
+        <div class="option-buttons">
+            <button onclick="nextStep(102)">They have the icon.</button>
+            <button class="secondary" onclick="nextStep(103)">They don't have the icon.</button>
+            <button class="secondary" onclick="nextStep(1)">Err, this is a Windows computer!</button>
         </div>
     </div>
 
 
     <script>
         // Track current step
-        let currentStep = 1;
+        let currentStep = 0;
         
         // Function to move to next step
         function nextStep(stepNumber) {
