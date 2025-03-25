@@ -5,15 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zoho Connection Guide - Windows</title>
     <style>
-        /* Basic styling in case CSS isn't loaded */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
         .step {
+            max-width: 800px;
             display: none;
             padding: 20px;
             border: 1px solid #ddd;
@@ -51,6 +44,7 @@
             font-weight: bold;
         }
     </style>
+    <link rel="stylesheet" href="https://datadoctors.github.io/wikistyles.css">
 </head>
 <body>
     <h1>Zoho Remote Connection Guide</h1>
@@ -58,22 +52,39 @@
 
     <div id="step1" class="step active">
         <h2>Getting Started</h2>
-        <p>To begin, you'll need to navigate to the correct support page. Ask your client if they have a "Data Doctors RemoteMD" icon on their desktop -- it should have a blue "Rx" for an icon! If so, have them open up that shortcut, then continue on.</p>
+        <p>To begin, you'll need to navigate to the correct support page. This process should start with making sure they have closed or minimized all open windows! Ask your client if they have a "Data Doctors RemoteMD" icon on their desktop -- it should have a blue "Rx" for an icon! If so, have them open up that shortcut, then continue on.</p>
         <p>
             <img src="zoho-guide-00.png">
         </p>
+        <div class="toast toastNote toastNote--success">
+            <div class="toast__content">
+                <p class="toast__type">Example:</p>
+                <p class="toast__message">
+                    "Let's get started by closing or minimizing any open windows that you have up and let's get to your desktop. There you should see a Data Doctors Remote MD icon -- normally it will look like a blue 'R', do you see that? Great, go ahead and double-click on that for me."
+                </p>
+            </div>
+        </div>
         <div class="option-buttons">
             <button onclick="nextStep(2)">They have the icon.</button>
             <button class="secondary" onclick="nextStep(3)">They don't have it!</button>
         </div>
+
     </div>
 
     <div id="step2" class="step">
         <h2>Make sure we're at the correct website.</h2>
-        <p>Verify that they are in the right place -- they should be at a Data Doctors (not Google, not Bing, not DuckDuckgo) webpage that says "Connect with us." in the center. If they appear to be at a search page, you can either have them try entering the URL again, and failing that, you may have to navigate them to the correct page manually. </p>
+        <p>Verify that they are in the right place -- they should be at a Data Doctors (not Google, not Bing, not DuckDuckGo) webpage that says "Connect with us." in the center. If they appear to be at a search page, you can either have them try entering the URL again, and failing that, you may have to navigate them to the correct page manually. </p>
         <p>
             <img src="zoho-guide-01.png" width="750">
         </p>
+        <div class="toast toastNote toastNote--success">
+            <div class="toast__content">
+                <p class="toast__type">Example:</p>
+                <p class="toast__message">
+                    "Now you should be at a Data Doctors webpage - could you confirm that? It should say 'Remote MD Support Portal' at the top, and if you scroll a little farther you'll see 'Connect with us' in the center of the page."
+                </p>
+            </div>
+        </div>
         <div class="option-buttons">
             <button onclick="nextStep(4)">They're at the right place.</button>
             <button class="secondary" onclick="nextStep(1)">Let's start over...</button>
@@ -83,6 +94,14 @@
     <div id="step3" class="step">
         <h2>Getting There Manually</h2>
         <p>Ask the client to open up their preferred web browser of choice. Once it's loaded, have them click into the address bar at the top of their window and enter the following URL: <a href="https://www.datadoctors.com/support" target="_blank">datadoctors.com/support</a> and press Enter.</p>
+        <div class="toast toastNote toastNote--success">
+            <div class="toast__content">
+                <p class="toast__type">Example:</p>
+                <p class="toast__message">
+                    "It looks like we'll have to try to get there another way. Please open up whatever your usual web browser is. Now, at the very top of that window you should have your address bar - go ahead and click in there and I'll give you a website address to type in. Great, now, all spelled out, it will be data-doctors-dot-com."
+                </p>
+            </div>
+        </div>
         <div class="option-buttons">
             <button onclick="nextStep(2)">Let's verify they're at the right place.</button>
             <button class="secondary" onclick="nextStep(1)">Let's start over...</button>
@@ -96,6 +115,14 @@
             <li>Have the client click in the empty box directly below where it says "Enter Session ID" and then guide them through entering the 9-digit number Zoho generated, then click on the blue "Connect" button.</li>
         </ul>
         <img src="zoho-guide-02.png">
+        <div class="toast toastNote toastNote--success">
+            <div class="toast__content">
+                <p class="toast__type">Example:</p>
+                <p class="toast__message">
+                    "Keep scrolling until you see 'Enter Session ID' - go ahead and click in the blank box directly below that and I'll read you a 9-digit number to enter in there, just let me know when you're ready. Once we're done, go ahead and click on the blue 'Connect' button."
+                </p>
+            </div>
+        </div>
         <div class="option-buttons">
             <button onclick="nextStep(5)">Let's keep going!</button>
             <button class="secondary" onclick="nextStep(2)">Go back!</button>
@@ -105,7 +132,17 @@
     <div id="step5" class="step">
         <h2>Naming Names</h2>
         <p>On the next page, there is a box for the client to enter their name. Go ahead and have them enter it, then click on the blue "Join Session" button.</p>
-        <img src="zoho-guide-03.png">
+        <p>
+            <img src="zoho-guide-03.png">
+        </p>
+        <div class="toast toastNote toastNote--success">
+            <div class="toast__content">
+                <p class="toast__type">Example:</p>
+                <p class="toast__message">
+                    "On the next page you should see a box for your name - go ahead and put your first name in there and then click on the blue 'Join Session' button."
+                </p>
+            </div>
+        </div>
         <div class="option-buttons">
             <button onclick="nextStep(6)">Almost there...</button>
             <button class="secondary" onclick="nextStep(4)">Go back!</button>
@@ -131,6 +168,14 @@
             </li>
             <li>If the client reports any pop-ups stating that Zoho Assit is already running, just have them click "Okay" or close the message box.</li>
         </ol>
+        <div class="toast toastNote toastNote--success">
+            <div class="toast__content">
+                <p class="toast__type">Example:</p>
+                <p class="toast__message">
+                    "Go ahead and click on 'Agree and Download' - now you should see a file downloading called 'ZA_Connect', please run that when it's finished. Okay, if it disappeared on you, let's try something out really quick - I'm going to ask you to press a couple keys on your keyboard, so you might need two hands. Go ahead and hold down the Control key, and then just tap the 'J' key. Great, go ahead and run the ZA_Connect.exe file you see there."
+                </p>
+            </div>
+        </div>
         <div class="option-buttons">
             <button onclick="nextStep(7)">Next Step</button>
             <button class="secondary" onclick="nextStep(5)">Go back!</button>
@@ -143,6 +188,14 @@
         <p>
             <img src="zoho-guide-06.png">
         </p>
+        <div class="toast toastNote toastNote--success">
+            <div class="toast__content">
+                <p class="toast__type">Example:</p>
+                <p class="toast__message">
+                    "Almost there. You may see a window now that says 'Initializing Session' - in just a few moments that window will disappear and then another one will come up with a blue 'Join' button in the bottom-right corner. Once you click on that, I'll be in."
+                </p>
+            </div>
+        </div>
         <div class="option-buttons">
             <button onclick="nextStep(1)">Restart Guide</button>
         </div>
