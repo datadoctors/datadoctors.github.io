@@ -12,9 +12,19 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             margin-bottom: 20px;
+            opacity: 0;
+            transition: visibility 0s 2s, opacity 2s linear;
         }
         .step.active {
             display: block;
+            opacity: 1;
+            transition: opacity 2s linear;
+        }
+        
+        .guidepics {
+            border: 5px solid #555;
+            max-width:100%;
+            max-height:auto;
         }
         button {
             background-color: #4CAF50;
@@ -71,7 +81,7 @@
         <h2>Getting Started</h2>
         <p>To begin, you'll need to navigate to the correct support page. This process should start with making sure they have closed or minimized all open windows! Ask your client if they have a "Data Doctors RemoteMD" icon on their desktop -- it should have a blue "Rx" for an icon! If so, have them open up that shortcut, then continue on.</p>
         <p>
-            <img src="zoho-guide-00.png">
+            <img class="guidepics" class="guidepics" src="zoho-guide-00.png">
         </p>
         <div class="toast toastNote toastNote--success">
             <div class="toast__content">
@@ -93,7 +103,7 @@
         <h2>Make sure we're at the correct website.</h2>
         <p>Verify that they are in the right place -- they should be at a Data Doctors (not Google, not Bing, not DuckDuckGo) webpage that says "Connect with us." in the center. If they appear to be at a search page, you can either have them try entering the URL again, and failing that, you may have to navigate them to the correct page manually. </p>
         <p>
-            <img src="zoho-guide-01.png" width="750">
+            <img class="guidepics" class="guidepics" src="zoho-guide-01.png">
         </p>
         <div class="toast toastNote toastNote--success">
             <div class="toast__content">
@@ -134,7 +144,7 @@
             <li>Now that the client is at the correct webpage, we can go to our portal for <a href="https://assistlab.zoho.com/portal/datadoctors/app/home" target="_new">Zoho Assist</a> and generate a session ID by clicking "Start" next to the pre-scheduled appointment listing.</li>
             <li>Have the client click in the empty box directly below where it says "Enter Session ID" and then guide them through entering the 9-digit number Zoho generated, then click on the blue "Connect" button.</li>
         </ul>
-        <img src="zoho-guide-02.png">
+        <img class="guidepics" src="zoho-guide-02.png">
         <div class="toast toastNote toastNote--success">
             <div class="toast__content">
                 <p class="toast__type">Example:</p>
@@ -154,7 +164,7 @@
         <h2>Naming Names</h2>
         <p>On the next page, there is a box for the client to enter their name. Go ahead and have them enter it, then click on the blue "Join Session" button.</p>
         <p>
-            <img src="zoho-guide-03.png">
+            <img class="guidepics" src="zoho-guide-03.png">
         </p>
         <div class="toast toastNote toastNote--success">
             <div class="toast__content">
@@ -176,7 +186,7 @@
         <p>At this point, the client should click on the blue "Agree and Download" button, which will download a file called "ZA_Connect.exe" -- if they are a bit click-happy, or have just had a remote session before, there may be a number trailing the file name, but it should not matter.</p>
         <p><mark>This is often the trickiest part of the connection process - <b>be patient.</b></mark></p>
         <p>
-            <img src="zoho-guide-04.png">
+            <img class="guidepics" src="zoho-guide-04.png">
         </p>
         <ol>
             <li>At first, simply ask the client to open the file.</li>
@@ -185,7 +195,7 @@
             </ul>
             <li> Let them know that there will be a permissions dialog asking a Yes/No question about whether to let us make changes to their computer - they should click "Yes." If you get this far, click Next Step to continue on.
                 <p>
-                    <img src="zoho-guide-05.png">
+                    <img class="guidepics" src="zoho-guide-05.png">
                 </p>
             </li>
             <li>If the client reports any pop-ups stating that Zoho Assist is already running, just have them click "Okay" or close the message box.</li>
@@ -209,7 +219,7 @@
         <h2>One Last Step!</h2>
         <p>Your client should now see a Zoho window with a blue "Join" button in the bottom-right corner. Once they click on that, we should be connected!</p>
         <p>
-            <img src="zoho-guide-06.png">
+            <img class="guidepics" src="zoho-guide-06.png">
         </p>
         <div class="toast toastNote toastNote--success">
             <div class="toast__content">
