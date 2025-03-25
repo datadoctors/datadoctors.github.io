@@ -135,7 +135,7 @@
             <img src="zoho-join-screenshot">
         </p>
         <div class="option-buttons">
-            <button onclick="nextStep(0)">Restart Guide</button>
+            <button onclick="nextStep(1)">Restart Guide</button>
         </div>
     </div>
 
@@ -171,18 +171,7 @@
                 status.textContent = "Download complete! File saved as 'SoftwareInstaller.exe'";
                 postDownload.style.display = 'block';
             }, 2000);
-        }
-        
-        // Optional: Add keyboard navigation
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'ArrowRight') {
-                // Right arrow goes to next logical step
-                nextStep(Math.min(currentStep + 1, 10));
-            } else if (event.key === 'ArrowLeft') {
-                // Left arrow goes back
-                nextStep(Math.max(currentStep - 1, 1));
-            }
-        });
+        };
     </script>
 </body>
 </html>
