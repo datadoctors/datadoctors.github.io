@@ -53,149 +53,92 @@
     </style>
 </head>
 <body>
-    <h1>Software Installation Guide</h1>
-    <p>Follow this interactive guide to download and install the software.</p>
+    <h1>Zoho Remote Connection Guide</h1>
+    <p>Follow this interactive guide to get a client connected via Zoho Assist.</p>
 
     <div id="step1" class="step active">
-        <h2>Step 1: Download the Software</h2>
-        <p>To begin, you'll need to download the installation file.</p>
+        <h2>Getting Started</h2>
+        <p>To begin, you'll need to navigate to the correct support page. Ask your client if they have a "Data Doctors RemoteMD" icon on their desktop -- it should have a blue "Rx" for an icon! If so, have them open up that shortcut, then continue on.</p>
         <div class="option-buttons">
-            <button onclick="nextStep(2)">I'm ready to download</button>
-            <button class="secondary" onclick="nextStep(10)">I need more information first</button>
+            <button onclick="nextStep(2)">They do!</button>
+            <button class="secondary" onclick="nextStep(3)">They don't!</button>
         </div>
     </div>
 
     <div id="step2" class="step">
-        <h2>Step 2: Choose Your Download Method</h2>
-        <p>How would you like to download the file?</p>
+        <h2>Make sure we're at the correct website.</h2>
+        <p>Verify that they are in the right place -- they should be at a Data Doctors (not Google, not Bing, not DuckDuckgo) webpage that says "Connect with us." in the center. If they appear to be at a search page, you can either have them try entering the URL again, and failing that, you may have to navigate them to the correct page manually. </p>
         <div class="option-buttons">
-            <button onclick="nextStep(3)">Direct download</button>
-            <button class="secondary" onclick="nextStep(4)">I need help finding the download link</button>
+            <button onclick="nextStep(4)">They're at the right place.</button>
+            <button class="secondary" onclick="nextStep(1)">Let's start over...</button>
         </div>
     </div>
 
     <div id="step3" class="step">
-        <h2>Step 3: Download the File</h2>
-        <p>Click the button below to download the installation file:</p>
-        <button onclick="simulateDownload()">Download Now</button>
-        <p id="downloadStatus"></p>
-        <div class="option-buttons" id="postDownload" style="display:none;">
-            <button onclick="nextStep(5)">I've downloaded the file</button>
-            <button class="secondary" onclick="nextStep(6)">I'm having trouble downloading</button>
+        <h2>Getting There Manually</h2>
+        <p>Ask the client to open up their preferred web browser of choice. Once it's loaded, have them click into the address bar at the top of their window and enter the following URL: <a href="https://www.datadoctors.com/support" target="_blank">datadoctors.com/support</a> and press Enter.</p>
+        <div class="option-buttons">
+            <button onclick="nextStep(3)">Let's verify they're at the right place.</button>
+            <button class="secondary" onclick="nextStep(1)">Let's start over...</button>
         </div>
     </div>
 
     <div id="step4" class="step">
-        <h2>Finding the Download Link</h2>
-        <p>On our website, the download link is typically:</p>
+        <h2>Entering the Session ID</h2>
         <ul>
-            <li>In the main navigation under "Downloads"</li>
-            <li>On the homepage as a prominent button</li>
-            <li>In the footer section labeled "Get the Software"</li>
+            <li>Now that the client is at the correct webpage, we can go to our portal for <a href="https://assistlab.zoho.com/portal/datadoctors/app/home" target="_new">Zoho Assist</a> and generate a session ID by clicking "Start" next to the pre-scheduled appointment listing.</li>
+            <li>Have the client click in the empty box directly below where it says "Enter Session ID" and then guide them through entering the 9-digit number Zoho generated, then click on the blue "Connect" button.</li>
         </ul>
-        <p>If you still can't find it, you can use the direct download from the previous step.</p>
+        <img src="the-screenshot-of-the-first-page">
         <div class="option-buttons">
-            <button onclick="nextStep(3)">Use direct download</button>
-            <button class="secondary" onclick="nextStep(2)">Go back</button>
+            <button onclick="nextStep(5)">Let's keep going!</button>
+            <button class="secondary" onclick="nextStep(2)">Go back!</button>
         </div>
     </div>
 
     <div id="step5" class="step">
-        <h2>Step 4: Run the Installer</h2>
-        <p>Now that you've downloaded the file, you'll need to run it.</p>
-        <p>Typically, you can:</p>
-        <ol>
-            <li>Open your Downloads folder</li>
-            <li>Double-click the file named "SoftwareInstaller.exe"</li>
-            <li>Follow the on-screen instructions</li>
-        </ol>
-        <p class="warning">Note: Your browser or antivirus might warn you about running executables. This is normal for downloaded software.</p>
+        <h2>Naming Names</h2>
+        <p>On the next page, there is a box for the client to enter their name. Go ahead and have them enter it, then click on the blue "Join Session" button.</p>
+        <img src="the-screenshot-of-the-second-page">
         <div class="option-buttons">
-            <button onclick="nextStep(7)">I've run the installer</button>
-            <button class="secondary" onclick="nextStep(8)">I need help finding/running the file</button>
-            <button class="secondary" onclick="nextStep(9)">I'm getting a warning/error</button>
+            <button onclick="nextStep(6)">Almost there...</button>
+            <button class="secondary" onclick="nextStep(4)">Go back!</button>
         </div>
     </div>
 
     <div id="step6" class="step">
-        <h2>Download Troubleshooting</h2>
-        <p>If you're having trouble downloading, try these solutions:</p>
-        <ul>
-            <li>Make sure you have a stable internet connection</li>
-            <li>Try a different browser</li>
-            <li>Check if your antivirus is blocking the download</li>
-            <li>Ensure you have enough disk space</li>
-        </ul>
+        <h2>Download the File</h2>
+        <p>At this point, the client should click on the blue "Agree and Download" button, which will download a file called "ZA_Connect.exe" -- if they are a bit click-happy, or have just had a remote session before, there may be a number trailing the file name, but it should not matter.</p>
+        <p><mark>This is often the trickiest part of the connection process - <b>be patient.</b></mark></p>
+        <ol>
+            <li>At first, simply ask the client to open the file.</li>
+            <ul>
+                <li>Failing that, have the client, while still in their web browser, press a key combination - ask them to please hold down the Ctrl key and then to tap the "J" key one time - this should open up the downloads view for <i>all</i> Windows-based web browsers. From there, have them open the top-most "ZA_Connect.exe" file.</li>
+            </ul>
+            <li> Let them know that there will be a permissions dialog asking a Yes/No question about whether to let us make changes to their computer - they should click "Yes." If you get this far, click Next Step to continue on.
+                <p>
+                    <img src="zoho-uac-screenshot">
+                </p>
+            </li>
+            <li>If the client reports any pop-ups stating that Zoho Assit is already running, just have them click "Okay" or close the message box.</li>
+        </ol>
         <div class="option-buttons">
-            <button onclick="nextStep(3)">Try downloading again</button>
-            <button class="secondary" onclick="nextStep(2)">Go back to download options</button>
+            <button onclick="nextStep(7)">Next Step</button>
+            <button class="secondary" onclick="nextStep(5)">Go back!</button>
         </div>
     </div>
 
     <div id="step7" class="step">
-        <h2>Installation Complete</h2>
-        <p>Congratulations! You've successfully installed the software.</p>
-        <p>The software should now be available in your Start Menu (Windows) or Applications folder (Mac).</p>
+        <h2>One Last Step!</h2>
+        <p>Your client should now see a Zoho window with a blue "Join" button in the bottom-right corner. Once they click on that, we should be connected!</p>
+        <p>
+            <img src="zoho-join-screenshot">
+        </p>
         <div class="option-buttons">
             <button onclick="nextStep(0)">Restart Guide</button>
         </div>
     </div>
 
-    <div id="step8" class="step">
-        <h2>Finding the Downloaded File</h2>
-        <p>Here's how to find your downloaded file:</p>
-        <h3>Windows:</h3>
-        <ol>
-            <li>Open File Explorer</li>
-            <li>Look for "Downloads" in the left sidebar</li>
-            <li>Find "SoftwareInstaller.exe" in the list</li>
-        </ol>
-        <h3>Mac:</h3>
-        <ol>
-            <li>Open Finder</li>
-            <li>Select "Downloads" from the sidebar</li>
-            <li>Find "SoftwareInstaller.dmg" in the list</li>
-        </ol>
-        <div class="option-buttons">
-            <button onclick="nextStep(5)">I found it, continue</button>
-            <button class="secondary" onclick="nextStep(6)">I still can't find it</button>
-        </div>
-    </div>
-
-    <div id="step9" class="step">
-        <h2>Handling Warnings and Errors</h2>
-        <p>It's common to see warnings when installing software:</p>
-        <ul>
-            <li><strong>Browser warning:</strong> Click "Keep" or "Allow" to proceed with the download</li>
-            <li><strong>Antivirus warning:</strong> You may need to temporarily disable your antivirus or add an exception</li>
-            <li><strong>Windows SmartScreen:</strong> Click "More info" then "Run anyway"</li>
-        </ul>
-        <p class="warning">Only bypass these warnings if you're certain you're installing legitimate software from a trusted source.</p>
-        <div class="option-buttons">
-            <button onclick="nextStep(5)">I understand, continue</button>
-            <button class="secondary" onclick="nextStep(10)">I'm still not comfortable</button>
-        </div>
-    </div>
-
-    <div id="step10" class="step">
-        <h2>More Information</h2>
-        <p>This software is developed by [Your Company Name] and is completely safe to install.</p>
-        <p>Key features:</p>
-        <ul>
-            <li>Feature 1</li>
-            <li>Feature 2</li>
-            <li>Feature 3</li>
-        </ul>
-        <p>System requirements:</p>
-        <ul>
-            <li>Windows 10/11 or macOS 10.15+</li>
-            <li>4GB RAM minimum</li>
-            <li>500MB disk space</li>
-        </ul>
-        <div class="option-buttons">
-            <button onclick="nextStep(1)">I'm ready to proceed</button>
-        </div>
-    </div>
 
     <script>
         // Track current step
