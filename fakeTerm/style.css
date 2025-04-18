@@ -1,0 +1,169 @@
+/* macOS Terminal */
+.mac-terminal {
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    min-width: 500px;
+    max-width: 900px;
+    min-height: 350px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version */
+     
+}
+
+.terminal-header {
+    height: 32px;
+    background: #3a3a3a;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.close-btn { background: #ff5f56; }
+.minimize-btn { background: #ffbd2e; }
+.maximize-btn { background: #27c93f; }
+
+.terminal-title {
+    color: #b3b3b3;
+    font-size: 12px;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 60px;
+}
+
+.terminal-body {
+    flex-grow: 1;
+    padding: 12px;
+    color: #f0f0f0;
+    font-size: 14px;
+    line-height: 1.4;
+    overflow-y: auto;
+}
+
+.prompt {
+    color: #5ff967;
+}
+
+.output {
+    color: #e0e0e0;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+.tab-key {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 12px;
+    margin-left: 8px;
+    color: #ccc;
+}
+
+.tab-key::before {
+    content: "→";
+    margin-right: 4px;
+    color: #5ff967;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.tab-press {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.options-line {
+    margin-top: 8px;
+    color: #e0e0e0;
+    font-family: 'Menlo', monospace;
+    white-space: pre;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.tab-key {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 12px;
+    margin-left: 8px;
+    color: #ccc;
+    transform: translateX(0);
+    opacity: 1;
+    transition: none;
+    position: absolute; /* New - floats above content */
+    transform-origin: left center; /* Better animation pivot */
+    z-index: 10; /* Ensures it stays above other elements */
+}
+
+.tab-key::before {
+    content: "→";
+    margin-right: 4px;
+    color: #5ff967;
+}
+
+.option {
+    display: inline-block;
+    margin-right: 32px; /* Tab-width spacing */
+    color: #e0e0e0;
+    font-family: 'Menlo', monospace;
+}
+
+.replay-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    padding: 6px 12px;
+    color: #f0f0f0;
+    font-family: 'Menlo', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.replay-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mac-terminal {
+    position: relative; /* Needed for absolute positioning of replay button */
+}
