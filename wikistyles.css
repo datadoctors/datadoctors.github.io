@@ -368,7 +368,9 @@ to { background-position: 0 -12px, 0 0, 100% 0, -12px 100%; }
 
 /* =========== Start Codebox specific Styles ========== */
 .code {
-	color: #222222;
+    background-color: lightgray;
+    color: black;
+    font-weight: 700;
 }
 
 /*This removes line break height in code box*/
@@ -633,7 +635,8 @@ x:-o-prefocus, .lb-overlay img {
   overflow-y: auto;          /* Already set correctly */
   word-wrap: normal;         /* Explicitly disable word wrapping */
   word-break: keep-all;      /* Prevent breaking between letters */
-  max-width: 900px;          /* Constrain width */
+  max-width: 70vw;
+  min-width: 500px;
   max-height: 450px;         /* Constrain height */
   background-color: #1e1e1e;
   color: #f0f0f0;
@@ -645,5 +648,32 @@ x:-o-prefocus, .lb-overlay img {
   tab-size: 4;
   -moz-tab-size: 4;
   -o-tab-size: 4;
+}
+.console-copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #444;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  font-family: sans-serif;
+  font-size: 12px;
+  transition: opacity 0.2s;
+}
+
+.console-copy-btn:hover {
+opacity: 1;
+}
+
+.console-copy-btn.copied {
+background: #2e7d32; /* Green for success */
+}
+
+.console-copy-btn.failed {
+background: #c62828; /* Red for error */
 }
 /* ======== End Console Box Styles ======== */
