@@ -628,7 +628,8 @@ x:-o-prefocus, .lb-overlay img {
 }
 
 .console-output {
-  max-width: 600px;
+  white-space: nowrap;
+  max-width: 900px;
   max-height: 450px;
   overflow-y: auto;
   overflow-x: auto;
