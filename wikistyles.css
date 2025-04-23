@@ -645,5 +645,9 @@ x:-o-prefocus, .lb-overlay img {
   tab-size: 4;
   -moz-tab-size: 4;
   -o-tab-size: 4;
+  word-break: break-word;       /* Break at word boundaries */
+  overflow-wrap: break-word;    /* Alternative for older browsers */
+  word-wrap: break-word;        /* Legacy support */
+  hyphens: none;                /* Disable hyphenation */
 }
 /* ======== End Console Box Styles ======== */
