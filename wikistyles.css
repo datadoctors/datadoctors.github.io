@@ -622,3 +622,28 @@ x:-o-prefocus, .lb-overlay img {
     height: 100%;
 }
 /* =========== End LightBox Styles ========== */
+/* =========== Start Console Box Styles ===== */
+.console-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.console-output {
+  max-width: 90%;
+  max-height: 450px;
+  overflow-y: auto;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  font-family: 'Courier New', monospace;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+  tab-size: 4;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+}
+/* ======== End Console Box Styles ======== */
