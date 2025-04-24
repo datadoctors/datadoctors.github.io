@@ -655,6 +655,13 @@ x:-o-prefocus, .lb-overlay img {
   -moz-tab-size: 4;
   -o-tab-size: 4;
 }
+
+.code-comment {
+    color: lightgreen;
+    font-size: inherit; /* This ensures it matches the parent */
+    font-family: inherit; /* Optional: ensures font family matches too */
+}
+
 .console-copy-btn {
   position: absolute;
   top: 5px;
