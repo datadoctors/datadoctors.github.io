@@ -373,6 +373,12 @@ to { background-position: 0 -12px, 0 0, 100% 0, -12px 100%; }
     font-weight: 700;
 }
 
+code {
+    background-color: lightgray;
+    color: black;
+    font-weight: 700;
+}
+
 /*This removes line break height in code box*/
 .code br{
 	content: ""; margin: 0;
