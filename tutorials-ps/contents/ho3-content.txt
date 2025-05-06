@@ -262,7 +262,7 @@ function Show-Information {
 }
 
 # Main program
-$computerCollection = Get-UpdatedSysInfo    # Update information on first program run - this need sto be outside of the main loop
+$computerCollection = Get-UpdatedSysInfo    # Update information on first program run - this needs to be outside of the main loop, or else it would run on every update
 
 do {                                        
     <#
