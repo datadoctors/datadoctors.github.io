@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-on 3: Intro to Scripting</title>
+    <link rel="stylesheet" href="tutorial.css">
+    <link rel="stylesheet" href="prism.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+</head>
+    
+<body data-prismjs-copy-timeout="500">
+    <div class="page-container">
+        <header class="site-header">
+            <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            <a href="./index.html" class="home-link">
+                <svg version="1.0" width="5.5em" height="5.5em" class="logoHome" viewBox="0 0 192.000000 192.000000" preserveAspectRatio="xMidYMid meet" id="svg-logo" sodipodi:docname="favicon.svg" inkscape:version="1.4 (e7c3feb100, 2024-10-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                    <g transform="translate(0.000000,192.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none" id="g3">
+                        <path id="path1" d="M373 1679 c-66 -19 -76 -45 -167 -445 -47 -203 -112 -488 -145 -633 -34 -145 -61 -275 -61 -288 0 -37 16 -60 51 -72 35 -12 1429 -16 1488 -5 46 9 78 45 95 105 13 48 173 744 257 1119 21 94 30 156 25 173 -14 58 -6 57 -793 56 -409 0 -732 -5 -750 -10z m1452 -101 c-3 -13 -68 -297 -145 -632 -81 -356 -144 -612 -152 -617 -7 -5 -334 -9 -726 -9 l-712 0 5 23 c29 123 275 1203 275 1209 0 4 9 17 20 28 20 20 33 20 730 20 l710 0 -5 -22z" />
+                        <path id="path2" d="M613 1530 c-40 -24 -53 -48 -53 -99 0 -39 8 -49 148 -198 175 -186 226 -243 221 -247 -2 -1 -131 -94 -286 -205 -156 -111 -290 -212 -298 -224 -8 -12 -15 -39 -15 -60 0 -31 7 -46 34 -73 44 -44 85 -45 147 -5 123 79 675 485 686 504 16 28 16 72 1 100 -13 25 -422 461 -469 501 -36 31 -73 33 -116 6z" />
+                        <path id="path3" d="M879 591 c-40 -40 -41 -102 -2 -143 l27 -28 216 0 c237 0 246 2 270 60 10 24 10 39 1 70 -19 65 -38 70 -276 70 l-207 0 -29 -29z" />
+                    </g>
+                    <path id="logoColor"d="m 12.279038,212.53969 c 0.192869,-0.82105 1.550775,-6.73627 5.532002,-24.09815 8.653348,-37.73671 27.309431,-119.82393 30.011968,-132.053398 0.864524,-3.912121 1.730489,-7.483304 1.924369,-7.935963 0.193879,-0.452658 1.048339,-1.535801 1.8988,-2.406984 1.785981,-1.829496 2.379972,-2.077567 5.837142,-2.437793 6.001286,-0.625314 12.105373,-0.672566 98.557081,-0.762935 l 87.79735,-0.09177 -0.14517,0.684097 c -0.30534,1.438742 -23.31599,101.735816 -25.27385,110.161626 -6.45871,27.79576 -12.08407,50.48105 -14.00509,56.47809 -0.57173,1.78482 -0.65925,1.92963 -1.23597,2.04498 -1.05728,0.21145 -13.06457,0.54221 -27.82807,0.76655 -7.76755,0.11804 -47.67837,0.2681 -88.690729,0.33347 l -74.567916,0.11886 z m 49.88193,-9.25065 c 3.248412,-1.19812 5.648069,-2.64578 14.122807,-8.52002 21.192016,-14.68918 71.701445,-51.86025 81.044665,-59.64267 2.27219,-1.89261 2.66385,-2.40998 3.30814,-4.36979 0.49076,-1.49284 0.55742,-2.02123 0.56466,-4.47599 0.009,-2.99557 -0.28887,-4.57158 -1.20455,-6.37662 C 158.95013,117.8409 147.3083,104.99269 125.14663,81.442564 108.65682,63.919649 97.682866,52.782173 95.515547,51.369936 92.839362,49.62612 89.763064,49.021369 86.857244,49.667852 c -2.779475,0.618375 -6.52004,2.761617 -8.837349,5.06356 -2.48541,2.46893 -3.343409,5.022953 -3.361655,10.00671 -0.01341,3.660756 0.204521,4.399148 2.150699,7.287173 2.037142,3.023011 4.658009,5.949555 19.782814,22.090124 18.824587,20.088831 25.731607,27.715021 26.856497,29.652831 l 0.36335,0.62592 -20.77442,14.90013 c -11.425923,8.19507 -22.769124,16.33734 -25.207112,18.09393 -16.670376,12.01116 -30.666851,22.65618 -31.817905,24.19913 -1.204575,1.61469 -2.027495,5.03298 -2.02233,8.40047 0.006,3.92528 0.726784,5.59832 3.78627,8.78873 1.970066,2.05437 3.502995,3.28519 5.107108,4.10058 1.863238,0.94712 2.767172,1.12418 5.360482,1.05002 1.971177,-0.0564 2.631724,-0.16397 3.917275,-0.63812 z m 111.023822,-3.59958 c 5.38808,-0.52862 8.13806,-1.43548 9.79109,-3.22881 1.58579,-1.72038 3.50702,-6.57336 3.50702,-8.85864 0,-1.9647 -1.16567,-6.35101 -2.27076,-8.54466 -1.09662,-2.17685 -3.17243,-3.65248 -6.1823,-4.39481 -4.52752,-1.11662 -6.98073,-1.21437 -32.98758,-1.31435 l -24.01908,-0.0923 -2.80179,2.85089 c -2.44799,2.49089 -2.90984,3.07217 -3.65751,4.60335 -1.12379,2.30145 -1.47834,3.78482 -1.47834,6.18517 0,2.37895 0.35513,3.88611 1.43617,6.09513 0.64663,1.32134 1.33214,2.22389 3.34123,4.39909 l 2.52769,2.73667 25.16004,-0.097 c 17.05834,-0.0657 25.95671,-0.17514 27.63412,-0.3397 z" transform="scale(0.75)" />
+                </svg>
+            </a>
+            <div class="header-text">
+              <h1 class="header-title"></h1>
+              <p class="header-subtitle">3: Intro to Scripting</p>
+            </div>
+          </header>            
+        <div class="linkBox">
+            <a href="#launchingScripts">Launching Scripts</a>
+            <a href="#functions">Functions</a>
+            <a href="#parameters">Parameters</a>
+            <a href="#userInterface">User Interface</a>
+            <a href="#doLoop">The <code>do</code> loop</a>
+            <a href="#conclusion">Conclusion</a>
+            <a href="#finalScripts">Final Scripts</a>
+        </div>
+        <p>
+            In this tutorial, we'll be creating a fully-functional terminal application that can let us check some useful system information 
+            in one place. We'll be pulling from previous lessons and adding some new functionality as we go.
+        </p>
+        <p>
+            Full code can be found near the bottom of this page for the <a href="#systemInfops1">PowerShell script</a>. I have commented the 
+            complete code as thoroughly as felt necessary to let it be a stand-alone document, but we'll still go through everything step by
+            step as we move along.
+        </p>
+        <h2 id="launchingScripts">Launching Scripts</h2>
+        <p>
+            Very frustratingly, Microsoft has decided to make PowerShell scripts pretty difficult to run! This is a security feature to keep 
+            less adept computer users from accidentally running malicious scripts that have been slipped to them, but unfortunately it has a
+            pretty giant flaw -- we can simply use batch scripts (from the old MS-DOS days) to manually bypass all of that security.
+        </p>
+        <p>
+            This does require having TWO files, though. We can have a batch that that we can just click on and that will allow us to get over
+            this little hurdle without too much issue.            
+        </p>
+        <p>
+            However, this is <strong>NOT</strong> a batch scripting tutorial, so I am simply going to paste the code that works here, and you can find the 
+            full <code><a href="#launcherBat">launcher.bat</a></code> at the bottom of the page. Paste the following into a new <code>*.bat</code>
+            file, being sure to modify the <code>$scriptPath</code> variable to reflect the correct script name to run all future practice 
+            applications without needing to modify system-wide permissions.
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-batch" data-prismjs-copy="Copy"><code id="ho301"></code></pre>
+        </div>
+
+        <h2 id="functions">Getting Funky with Functions</h2>
+        <p>
+            Functions are basically used to store code that we know we'll be running repeatedly. We can create them very easily and call on them later
+            do a long or complex task without repeating the code again. In this tutorial, we'll pass one through a new type of <code><em>loop</em></code>
+            that we have not yet seen, the <code>do</code> loop.
+        </p>
+        <p>
+            Without further ado, let's get started. Fire up your editor of choice and save a new file as <code>systemInfo.ps1</code>. After that, enter the 
+            following code to begin our first function:
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho302"></code></pre>
+        </div>
+        <div class="tutorial-hint">
+            <h4><code>return</code>-ing Data</h4>
+            <p>
+                When a function is called as a variable assignment (in this script,we'll be running <code>$computerCollection = Get-UpdatedSysInfo</code> at the beginning), you need to `return` data to it - in this case, we are returning the new collection we generated by running this function.
+            </p>
+            <p>
+                In this case, since we aren't setting it as a variable, <code>return</code> simply gives us the output in the terminal window.
+            </p>
+        </div>
+        <p>
+            When you run that script, you should get some output that looks familiar from the last lesson.
+        </p>
+        <pre class="console-output" id="ho303"></pre>
+        <h2 id="parameters">Parameters</h2>
+        <p>
+            Now that we have a function that collects all that data, we want something that allows us to pick which pieces of data we want to see.
+        </p>
+        <p>
+            Let's begin by removing the <code>$computerCollection</code> debugging line, since we can see that our code does in fact work, and let's add another new function to our script. Add this directly below the existing script:
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho304"></code></pre>
+        </div>
+        <div class="tutorial-hint">
+            <h4><code>param</code>-eter Blocks</h4>
+            <p>
+                The <code>param</code> code block you see at the beginning of the function tells the script that in order to use the function, the user must supply additional information. Unlike functions themselves, these are contained within parentheses ("(" and ")"). Different parameters that can be supplied are separated by commas (",").
+            </p>
+            <p>
+                In our script, we are looking for two parameters: <code>$infoType</code>, which we assign the same names as the data properties in our new collection, and <code>$dataSource</code>, which is the collection we want to pull from. We probably don't NEED to have a parameter for <code>$dataSource</code>, but if we set it as a parameter now, we can easily add other data sources down the road if we decide to expand the scope of this application.
+            </p>
+        </div>
+        <p>
+            At the end of running the script now, you should get output in your terminal that looks like this:
+        </p>
+        <pre class="console-output"><span style="color: yellow;">=== WindowsVersion ===</span>
+Data updated at 5/5/2025 10:18:57 AM
+            
+Windows Version: Microsoft Windows 11 Pro
+            
+Press any key to return to main screen</pre>
+
+        <p>Once again, let's remove the last line that calls the <code>Show-Information</code> function, and then move on to the next step.</p>
+        <h2 id="userInterface">User Interface</h2>
+        <p>
+            Now that we know how to collect the data, let's move on to actually creating an interface to deal with it. For now, we'll keep it simple. Add the following code to the end of script, directly after defining the <code>Show-Information</code> function:
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho305"></code></pre>
+        </div>
+        <p>
+            And now when we run our script, we'll get an interface asking us which piece of information we want. For now, we just have a basic <code>if</code> statement that exits the application, no matter what we do (we'll <code>do</code> that next). You'll see output like this:
+        </p>
+        <pre class="console-output"><span style="color: green;">================ System Information Viewer ================</span>
+<span style="color: black;background-color: white;">Data collected on 5/5/2025 10:42:20 AM</span>
+
+<span style="color: yellow;">Please select an option:</span>
+
+0. Update system information
+1. Windows Version
+2. Current User
+3. Computer Name
+4. CPU Information
+5. Time Zone
+<span style="color: red;">q. Exit</span>
+
+Enter your choice (0-5 or q): q
+<span style="color: red;">Quitting application</span></pre>
+
+        <div class="tutorial-hint">
+            <h4>Formatting terminal text</h4>
+            <p>
+                We could have simply had a single "Write-Host" command to type out all of that information, but you need to be careful with formatting. Since text in a "Write-Host" command is considered pre-formatted, going to a new line in one command will require everything to be laid out differently.
+            </p>
+            <p>
+                Code that looks like this:
+            </p>
+                <pre>>    Write-Host "Testing
+>    Testing Testing 1-2"</pre>
+            <p>
+                Will generate:
+            </p>
+                <pre>Testing
+        Testing Testing 1-2</pre>
+            <p>
+                Because of the tab gap on the second line. I usually find it's best to simply state new lines when you know there will be one.
+            </p>
+        </div>
+
+        <h2 id="doLoop">Do the <code>do</code> (loop)</h2>        
+        <p>
+            Remove everything after the <code>Show-SystemInformation</code> function. We'll be replacing that logic with entirely new logic with the following code:
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho306"></code></pre>
+        </div>
+        <div class="tutorial-hint">
+            <h4>What <code>do</code>?</h4>
+            <p>
+                We saw a ForEach-Object loop in earlier lessons - here's another kind. Instead of going through every property of a supplied collection, a "do" loop simply repeats until it is broken.
+            </p>
+            <p>
+                So here we begin our <code>do</code> loop - it will continue to run <code>while</code> "q" is not selected to exit the program. Once the user selects "q", the program terminates with a parting message.
+            </p>
+            <h4><code>switch</code>ing it up</h4>
+            <p>
+                Previously, we used an <code>if</code> statement to decide which selection does what. However, when we have multiple options to choose from, we can use a <code>switch</code> statement instead. It works much like an <code>if</code> statement, but instead of looping throughy every single argument using <code>elseif</code> and <code>else</code> statements, it can simply select which action to take from a pre-defined index, which is what we are doing here.
+            </p>
+        </div>
+        <p>
+            Now when you run your script, you'll see the same interface as before, but all of its functions should work. The full code with more in-depth commenting can be found below the <a href="#conclusion">Conclusion</a> section below, including the <code>ps1</code> and <code>bat</code> launcher file.
+        </p>
+        <h2 id="conclusion">Conclusion</h2>
+        <p>There was a lot to touch on today and this tutorial is likely going to be needed to refer back to from time-to-time, but we have finally written a tiny utility in PowerShell! Now we should have a decent grasp on the following:</p>
+        <ol>
+            <li>How (and why) to launch a PowerShell script from a Batch file.</li>
+            <li>How to write and use functions to collect and store information for later use.</li>
+            <li>Adding and using parameters in functions.</li>
+            <li>Creating basic text-based user interfaces and using <code>Read-Host</code> to get user input.</li>
+            <li>Implementing <code>do</code> loops to create functional programs.</li>
+            <li>Using <code>switch</code> statements when appropriate, rather than <code>if</code> statements.</li>
+        </ol>
+
+        <!-- Full files below here. -->
+        <h2 id="finalScripts">Final Scripts</h2>
+        <p>
+            <a href="#systemInfops1">systemInfo.ps1</a>
+            <a href="#launcherBat">launcher.bat</a>
+
+        </p>
+            <h3 class="winScript" id="systemInfops1"><span class="scriptFile">systemInfo.ps1</span></h3>
+        <div class="vscode-snippet" >
+            <pre class="language-powershell"  data-prismjs-copy="Copy"><code id="ho3ps101"></code></pre>
+        </div>
+        <h3 class="winScript" id="launcherBat"><span class="scriptFile">launcher.bat</span></h3>
+        <div class="vscode-snippet">
+            <pre class="language-batch"  data-prismjs-copy="Copy"><code id="ho3bat1"></code></pre>
+        </div>
+    </div>
+    <!-- Stop any editing here -->
+    <a href="#top" class="back-to-top" id="backToTop">↑</a>
+    <script src="js/tutorial.js"></script>
+    <script src="js/ho3.js"></script>
+    <script src="js/prism.js"></script>
+
+</body>
+</html>

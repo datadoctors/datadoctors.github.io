@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-on 4: Basic GUIs</title>
+    <link rel="stylesheet" href="tutorial.css">
+    <link rel="stylesheet" href="prism.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+</head>
+    
+<body>
+    <div class="page-container">
+        <header class="site-header">
+            <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            <a href="./index.html" class="home-link">
+                <svg version="1.0" width="5.5em" height="5.5em" class="logoHome" viewBox="0 0 192.000000 192.000000" preserveAspectRatio="xMidYMid meet" id="svg-logo" sodipodi:docname="favicon.svg" inkscape:version="1.4 (e7c3feb100, 2024-10-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                    <g transform="translate(0.000000,192.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none" id="g3">
+                        <path id="path1" d="M373 1679 c-66 -19 -76 -45 -167 -445 -47 -203 -112 -488 -145 -633 -34 -145 -61 -275 -61 -288 0 -37 16 -60 51 -72 35 -12 1429 -16 1488 -5 46 9 78 45 95 105 13 48 173 744 257 1119 21 94 30 156 25 173 -14 58 -6 57 -793 56 -409 0 -732 -5 -750 -10z m1452 -101 c-3 -13 -68 -297 -145 -632 -81 -356 -144 -612 -152 -617 -7 -5 -334 -9 -726 -9 l-712 0 5 23 c29 123 275 1203 275 1209 0 4 9 17 20 28 20 20 33 20 730 20 l710 0 -5 -22z" />
+                        <path id="path2" d="M613 1530 c-40 -24 -53 -48 -53 -99 0 -39 8 -49 148 -198 175 -186 226 -243 221 -247 -2 -1 -131 -94 -286 -205 -156 -111 -290 -212 -298 -224 -8 -12 -15 -39 -15 -60 0 -31 7 -46 34 -73 44 -44 85 -45 147 -5 123 79 675 485 686 504 16 28 16 72 1 100 -13 25 -422 461 -469 501 -36 31 -73 33 -116 6z" />
+                        <path id="path3" d="M879 591 c-40 -40 -41 -102 -2 -143 l27 -28 216 0 c237 0 246 2 270 60 10 24 10 39 1 70 -19 65 -38 70 -276 70 l-207 0 -29 -29z" />
+                    </g>
+                    <path id="logoColor" d="m 12.279038,212.53969 c 0.192869,-0.82105 1.550775,-6.73627 5.532002,-24.09815 8.653348,-37.73671 27.309431,-119.82393 30.011968,-132.053398 0.864524,-3.912121 1.730489,-7.483304 1.924369,-7.935963 0.193879,-0.452658 1.048339,-1.535801 1.8988,-2.406984 1.785981,-1.829496 2.379972,-2.077567 5.837142,-2.437793 6.001286,-0.625314 12.105373,-0.672566 98.557081,-0.762935 l 87.79735,-0.09177 -0.14517,0.684097 c -0.30534,1.438742 -23.31599,101.735816 -25.27385,110.161626 -6.45871,27.79576 -12.08407,50.48105 -14.00509,56.47809 -0.57173,1.78482 -0.65925,1.92963 -1.23597,2.04498 -1.05728,0.21145 -13.06457,0.54221 -27.82807,0.76655 -7.76755,0.11804 -47.67837,0.2681 -88.690729,0.33347 l -74.567916,0.11886 z m 49.88193,-9.25065 c 3.248412,-1.19812 5.648069,-2.64578 14.122807,-8.52002 21.192016,-14.68918 71.701445,-51.86025 81.044665,-59.64267 2.27219,-1.89261 2.66385,-2.40998 3.30814,-4.36979 0.49076,-1.49284 0.55742,-2.02123 0.56466,-4.47599 0.009,-2.99557 -0.28887,-4.57158 -1.20455,-6.37662 C 158.95013,117.8409 147.3083,104.99269 125.14663,81.442564 108.65682,63.919649 97.682866,52.782173 95.515547,51.369936 92.839362,49.62612 89.763064,49.021369 86.857244,49.667852 c -2.779475,0.618375 -6.52004,2.761617 -8.837349,5.06356 -2.48541,2.46893 -3.343409,5.022953 -3.361655,10.00671 -0.01341,3.660756 0.204521,4.399148 2.150699,7.287173 2.037142,3.023011 4.658009,5.949555 19.782814,22.090124 18.824587,20.088831 25.731607,27.715021 26.856497,29.652831 l 0.36335,0.62592 -20.77442,14.90013 c -11.425923,8.19507 -22.769124,16.33734 -25.207112,18.09393 -16.670376,12.01116 -30.666851,22.65618 -31.817905,24.19913 -1.204575,1.61469 -2.027495,5.03298 -2.02233,8.40047 0.006,3.92528 0.726784,5.59832 3.78627,8.78873 1.970066,2.05437 3.502995,3.28519 5.107108,4.10058 1.863238,0.94712 2.767172,1.12418 5.360482,1.05002 1.971177,-0.0564 2.631724,-0.16397 3.917275,-0.63812 z m 111.023822,-3.59958 c 5.38808,-0.52862 8.13806,-1.43548 9.79109,-3.22881 1.58579,-1.72038 3.50702,-6.57336 3.50702,-8.85864 0,-1.9647 -1.16567,-6.35101 -2.27076,-8.54466 -1.09662,-2.17685 -3.17243,-3.65248 -6.1823,-4.39481 -4.52752,-1.11662 -6.98073,-1.21437 -32.98758,-1.31435 l -24.01908,-0.0923 -2.80179,2.85089 c -2.44799,2.49089 -2.90984,3.07217 -3.65751,4.60335 -1.12379,2.30145 -1.47834,3.78482 -1.47834,6.18517 0,2.37895 0.35513,3.88611 1.43617,6.09513 0.64663,1.32134 1.33214,2.22389 3.34123,4.39909 l 2.52769,2.73667 25.16004,-0.097 c 17.05834,-0.0657 25.95671,-0.17514 27.63412,-0.3397 z" transform="scale(0.75)" />
+                </svg>
+            </a>
+            <div class="header-text">
+              <h1 class="header-title"></h1>
+              <p class="header-subtitle">4: Basic GUIs</p>
+            </div>
+          </header>
+        <div>
+            <div class="linkBox">
+                <a href="#addingElements">Adding Elements</a>
+                <a href="#settingLayout">Setting Layout</a>
+                <a href="#buttonLogic">Button Logic</a>
+                <a href="#dynamicUpdates">Dynamic Updates</a>
+                <a href="#conclusion">Conclusion</a>
+                <a href="#finalScripts">Final Scripts</a>
+            </div>
+        </div> 
+        <!-- Content starts here -->
+        <p>
+            This script will be very straightforward, but building GUI elements out can take some patience. Manual tweaking will need to happen and we'll have to come up with clever(ish) equations to have perfect placement. In this tutorial, we'll build a GUI for a basic click-coutner application, learn how to assign logic to buttons, and touch on dynamically updating GUI elements that are already loaded. Let's get to it!
+        </p>
+        <h2 id="addingElements">Adding Elements</h2>
+        <p>
+            I hope you like doing math! Just kidding (sorta) - PowerShell will thankfully do the actual math part, we just need to figure out placement. Fortunately for you, I've learned some tricks on lining up elements that I'll be sharing today that will hopefully give you a shortcut to successfully building feature-rich applications from PowerShell scripts.
+        </p>
+        <p>
+            To begin, let's open up a clean file in your preferred editor (I'll be using Visual Studio Code and will be supplying some hints for managing large blocks of code using it), and enter the following at the very top:
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho401"></code></pre>
+        </div>
+        <p>
+            I know, it doesn't really seem like we're jumping in the deep end but it's important to understand what is happening here. The <code>Add-Type</code> command in a PowerShell script is much more powerful than we'll address today, but for now what you really need to understand is that PowerShell can interact with <strong>.NET Framework</strong> (y'know, that thing we have to reinstall on client PCs all the time) in order to build applications. A lot of what we do here translates surprisingly well to C# programming because of this. We are simply letting PowerShell know that we are going to be building what's called a <em>Windows Form</em>, the most basic available GUI for Windows.
+        </p>
+        <p>
+            Moving on, let's add this below that:
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho402"></code></pre>
+        </div>
+        <p>
+            These are simply some elements that we'll be changing later on - you'll see us refer to them a few times in the upcoming code. As of now, we still do not have a functional script, so let's keep going and add on a bit more. The <code>$counter</code> variable will be changed the most - we are going to add and subtract from it.
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho403"></code></pre>
+        </div>
+        <div class="tutorial-hint">
+            <h4>Using regions</h4>
+            <p>
+                In Visual Studio Code, we can use regions to define a collapsible area so that when we have giant code blocks, we can simply squish away what we're not using at the moment. 
+            </p>
+            <p>
+                Start a region by adding <code>#region RegionName</code> and end it with <code>#endregion RegionName</code> - once these are added, you'll see little arrows to the left of your <code>#region</code> tag that will collapse that code block entirely. When you are dealing with large code blocks, you <em>will</em> want to use this.
+            </p>
+        </div>
+        <p>
+            I've included comments in the code up above to give some basic explanations, but there are 2 things in particular I want to make note of.
+            <ol>
+                <li>A <code>form</code> is the window that every other element will be pinned to. You can have multiple forms in one script (like the splash screens you see in the Evaluation and Copy scripts we use currently), but in this example we will be sticking to one main form.</li>
+                <li>We are setting a <code>ClientSize</code> rather than what you will mostly find in code examples online, <code>Size</code>. The reason why is that <code>ClientSize</code> controls the actual usable portion of the window, without the window decorations and borders. Aside from simply being more accurate, it will also come in handy later on (not in this tutorial) when we set DPI scaling, as window contents are sometimes scaled much differently than title bars.</li>
+            </ol>
+            With that out of the way, we can move on to adding the rest of the elements. Add the following code after what you already have.
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho404"></code></pre>
+        </div>
+        <div class="tutorial-hint">
+            <h4>I am a man of action.. keys</h4>
+            <p>
+                When you are creating a selectable element in a Windows form, you can assign keyboard shortcuts by putting an ampersand (<code>&</code>) character before a letter anywhere in the objects <code>Text</code> element. You can activate these hotkeys by pressing <kbd>Alt</kbd> + <kbd>ActionKey</kbd>. 
+            </p>
+            <p>
+                In our example here, pressing <kbd>Alt</kbd> + <kbd>A</kbd> will activate the <strong>Add</strong> button, and <kbd>Alt</kbd> + <kbd>U</kbd> will activate the <strong>Sub</strong> button. This doesn't do anything now, but we'll be adding logic later to make these buttons functional.
+            </p>
+        </div>
+        <p>
+            We have two new element types we're adding here. A <code>label</code> element just contains text. Most of the variables we set at the top of our code are being used right here. Our buttons are straightforward for now - they don't have any logic attached to them, so they're just lifeless little guys. Now we get to move on to the most <em>fun</em> part of PowerShell GUI - using math to place elements on the form.
+        </p>
+
+        <h2 id="settingLayout">Setting Layout</h2>
+        <p>
+            If you've been paying attention, you might have noticed that we have set the <em>size</em> on a lot of these elements, but we haven't set any <em>locations</em>. It is my experience that setting layout works best when we have sizes set already - that way we can calculate placement of elements based on the size of the form and the elements inside of it. It's not as complicated as it sounds, though, and since PowerShell is pretty fast, it's pretty easy to adjust things via trial and error.
+        </p>
+        <p>
+            So, let's get down to it and start placing our elements on the form. Add the following code to the end of what you currently have:
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho405"></code></pre>
+        </div>
+        <div class="tutorial-hint">
+            <h4>What's the deal with all the parentheses?</h4>
+            <p>
+                It's a good habit to keep math inside of parantheses inside of PowerShell scripts. Many elements of PowerShell do not support math, but placing them inside of parantheses will trigger the shell itself to do the math.
+            </p>
+        </div>
+        <p>
+            I really do promise it's not as bad as it looks! <code>$labelCountX</code> will be used to place the label element we created earlier on the <em>x-axis</em>, that is, the horizontal plane (left-to-right). <code>$labelCountY</code> is for the <em>y-axis</em>. We also do the same for the buttons. Let's break it down:
+            <ul>
+                <li><code class="language-powershell">$labelCountX = (($formClicker.ClientSize.Width - $labelCount.Width)/2)</code> - We are taking the <code>Width</code> of the form, subtracting the <code>Width</code> of the label, and then halving it. This should perfectly center the element on the x-axis.</li>
+                <li><code class="language-powershell">$labelCountY = (($formClicker.ClientSize.Height - $labelCount.Height)/2  - $buttonAdd.Height)</code> - we are doing much the same here, but we are also taking into account the <code>Height</code> of the butotn elements. Since the buttons are the same size, we don't need to do any extra calcuations for the other button to center things.</li>
+                <li><code class="language-powershell">$buttonAddX =(($formClicker.ClientSize.Width - $buttonAdd.Width - $buttonSub.Width)/2 - 5)</code>, <code class="language-powershell">$buttonSubX = ($buttonAddX + $buttonAdd.Width + 5)</code> - these two are doing the same as the label, just taking each other's <code>Width</code> into account.</li>
+                <li><code class="language-powershell">$buttonY = ($formClicker.ClientSize.Height - $buttonAdd.Height - 10)</code> - since the buttons will be side-by-side, they'll share a y-axis location.</li>
+            </ul>
+            From there, you'll see that we simply use <code>System.Drawing.Point($X,$Y)</code> (this is one of the many .NET Framework elements we are dealing with) to set their placement.
+        </p>
+        <p>
+            At this point, we can actually fire up our script and see what we've got! Add the following line temporarily to see the GUI. The buttons do not work, so we'll want to remove this element before we start adding more logic.
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho406"></code></pre>
+        </div>
+        <p>
+            Once you run that, you should see our interface.
+        </p>
+        <img src="img/ho401.png">
+        <p>
+            Fancy, huh? Now go ahead and close that window and remove the line you just added. Next, we are going to add some logic to those buttons!
+        </p>
+
+        <h2 id="buttonLogic">Button Logic</h2>
+        <p>
+            Let's add the following code to the bottom of our file. The <code>$formClicker.ShowDialog()</code> line is temporary, we only want to open the dialog for testing currently.
+        </p>
+        <div class="tutorial-hint">
+            <h4>What does <code>$script:</code> mean? Isn't the variable just <code>$counter?</code></h4>
+            <p>
+                The <code>Add_Click()</code> class is an <em>event handler</em>, which are handled in a separate process from the main script. If we were to simply use <code>$counter++</code> instead of <code>$script:counter++</code>, the handler would generate an entirely new <code>$counter</code> variable, usable only inside of the event handler.
+            </p>
+            <p>
+                To address that, we use what's called a <strong>scope</strong>. For our purposes, we will mainly only use the <code>$script:</code> scope as we move on, but you can look into <code>$global:</code>, <code>$local:</code>, and <code>$private:</code> scopes, as well.
+            </p>
+        </div>     
+
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho407"></code></pre>
+        </div>
+        <p>
+            Now if you click on our buttons, you'll see some output in your console. We are successfully updating the <code>$counter</code> variable! You should see some output like this: 
+        </p>
+        <pre class="console-output" id="ho408"></pre>
+        <p>
+            Our debugging output is showing that we are defintiely updating our variable without any issues and our hard-tops for the minimum and maximum values are working. However, you'll notice that the GUI isn't updating. We need to change the <code>Text</code> property on our label. Just temporarily, let's modify our button logic by adding some very basic updates. Replace what you have currently with this.
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho409"></code></pre>
+        </div>
+        <p>
+            Now when you open your script, you'll find that the buttons DO in fact change the value on the screen! You'll also see that once you get into double- and triple-digit numbers, the text is no longer centered. I'd also like to have a way to tell at a glance how large the numbers are, so we are going to add some additional logic to update the placement of the label as well as the size and color of the text on the label. To do that, we're going to need a new function, which we'll call <code>Update-Counter</code>. Let's finalize our button logic by replacing what we currently have with the following, and then we'll move on to creating the actual function.
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho410"></code></pre>
+        </div>
+
+        <h2 id="dynamicUpdates">Dynamically Updating Content</h2>
+        <p>
+            Here's where the program will really come alive. We're going to add dynamic updates that will increase or decrease the font size and change font color, all while keeping everything exactly where we expect it to be. Let's add this directly after your button logic section, then we'll go over what's happening here:
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho411"></code></pre>
+        </div>
+        <p>
+            Now we can go section by section and go over what we've created.
+        </p>
+        <ul>
+            <li>We've now moved the <code>$labelCount.Text</code> update into our function.</li>
+            <li>We have a new <code>if</code> statement that checks the value of the <code>$script:counter</code> variable using a <code>-ge</code>(greater than) check. At certain set values, it will change the color and also the font size, which will necessitate re-doing the math for label placement, since it will not be on the form based on the old calcuations whenever the font size changes <strong>or</strong> the number of characters changes.</li>
+            <li>And finally, we simply re-do the location placement math that we used at the beginning of the script. It's an actual copy+paste job, but now the values are based on the <em>current</em> font sizes and label size, rather than what was calculated at the beginning of the script.</li>
+        </ul>
+        <p>
+            And let's take a look upon our works:
+        </p>
+        <video controls style="max-width: 100%;">
+            <source src="img/ho4-video.webm" type="video/webm" />
+        
+        <h2 id="conclusion">Conclusion</h2>
+        <p>
+            And that about does it. Just a basic funtion and a little math can go a long way in making a super simple little application. Our main takeaways today should be:
+        </p>
+        <ol>
+            <li></li>
+        </ol>
+
+
+        
+        <!-- Full files below here. -->
+        <h2 id="finalScripts">Final Scripts</h2>
+        <p>
+            <a href="#buttonClickerps1">buttonClicker.ps1</a>
+            <a href="#launcherBat">launcher.bat</a>
+        </p>
+        <h3 class="winScript" id="buttonClickerps1"><span class="scriptFile">buttonClicker.ps1</span></h3>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho4ps101"></code></pre>
+        </div>
+        <h3 class="winScript" id="launcherBat"><span class="scriptFile">launcher.bat</span></h3>
+        <div class="vscode-snippet">
+            <pre class="language-batch" data-prismjs-copy="Copy"><code id="ho4bat1"></code></pre>
+        </div>
+    </div>
+    <a href="#top" class="back-to-top" id="backToTop">↑</a>
+    <script src="js/tutorial.js"></script>
+    <script src="js/ho4.js"></script>
+    <script src="js/prism.js"></script>
+
+</body>
+</html>

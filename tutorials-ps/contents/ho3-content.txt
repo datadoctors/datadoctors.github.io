@@ -1,0 +1,324 @@
+```ho301```
+@echo off
+cd %~dp0                     
+set "scriptPath=systemInfo.ps1"       
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Normal -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""'"
+```ho302```
+function Get-UpdatedSysInfo {
+    # Collect system information - this is lifted directly from Hands-on 2: Collections
+    $myComputer = Get-ComputerInfo
+    $customComputerInfo = $myComputer | Select-Object @{Name="WindowsVersion";Expression={$_.OsName}},
+                                @{Name="CurrentUser";Expression={$_.CsUserName}},
+                                @{Name="ComputerName";Expression={$_.CsName}},      
+                                @{Name="CPU";Expression={$_.CsProcessors.Name}},
+                                TimeZone
+
+    $collection = [PSCustomObject]@{
+        WindowsVersion = $customComputerInfo.WindowsVersion
+        CurrentUser    = $customComputerInfo.CurrentUser
+        ComputerName   = $customComputerInfo.ComputerName
+        CPU            = $customComputerInfo.CPU
+        TimeZone       = $customComputerInfo.TimeZone
+        Time           = (Get-Date)
+    }
+    return $collection
+}
+
+$computerCollection = Get-UpdatedSysInfo
+
+$computerCollection # Display the new collection. Only needed for debugging to verify it got data.
+```ho303```
+WindowsVersion : Microsoft Windows 11 Pro
+CurrentUser    : DESKTOP-C1DHTMN\steeb
+ComputerName   : DESKTOP-C1DHTMN
+CPU            : Intel Xeon Processor (SierraForest)
+TimeZone       : (UTC-07:00) Arizona
+Time           : 5/5/2025 07:04:27 AM
+
+Press Enter to continue...:
+```ho304```
+function Show-Information {
+    param (
+        $infoType,
+        $dataSource
+    )
+    
+    Clear-Host                          # Clear-Host simply blanks the terminal window
+    Write-Host "===$infoType===" -ForegroundColor Yellow
+    Write-Host "Data updated at" $computerCollection.Time
+
+    Write-Host 
+    
+    switch ($infoType) {                # Depending on what $infoType parameter was sent, show the data
+        "WindowsVersion" {
+            Write-Host "Windows Version: $($computerCollection.WindowsVersion)"
+        }
+        "CurrentUser" {
+            Write-Host "Current User: $($computerCollection.CurrentUser)"
+        }
+        "ComputerName" {
+            Write-Host "Computer Name: $($computerCollection.ComputerName)"
+        }
+        "CPU" {
+            Write-Host "Processor:" $computerCollection.CPU
+        }
+        "TimeZone" {
+            Write-Host "Time Zone: $($computerCollection.TimeZone)"
+        }
+    }
+    
+    Write-Host 
+    Write-Host "Press any key to return to main screen" -ForegroundColor Gray
+    $Host.UI.RawUI.ReadKey()            # This is simply telling the script to wait until any key is pressed before moving on
+}
+
+
+Show-Information -infoType "WindowsVersion" -dataSource $computerCollection
+```ho305```
+function Show-MainMenu {
+    Clear-Host
+    Write-Host "================System Information Viewer================" -ForegroundColor Green
+    Write-Host "Data collected on" $computerCollection.Time -BackgroundColor White -ForegroundColor Black
+    Write-Host
+    Write-Host "Please select an option:" -ForegroundColor Yellow
+    Write-Host
+    Write-Host "0. Update system information"
+    Write-Host "1. Windows Version"
+    Write-Host "2. Current User"
+    Write-Host "3. Computer Name"
+    Write-Host "4. CPU Information"
+    Write-Host "5. Time Zone"
+    Write-Host "q. Exit" -ForeGroundColor Red
+    Write-Host
+    
+    $selection = Read-Host "Enter your choice (0-5 or q)"   # The Read-Host command asks for input from the user
+    return $selection
+}
+
+$choice = Show-MainMenu
+
+if ($choice -eq "q") {
+    Write-Host "Quitting application" -ForegroundColor Red
+    break # End the script
+} else {
+    Write-Host "We haven't implemented this yet, sorry!" -ForegroundColor Yellow
+    break
+}
+```ho306```
+do {                                        
+    $choice = Show-MainMenu # Return the user's selection to the script
+    
+    switch ($choice) {
+        "0" { # If "0" is selected, we update system information (and the date)
+            $computerCollection = Get-UpdatedSysInfo
+            Write-Host "Information updated!" -ForegroundColor Green
+            Start-Sleep -Seconds 2
+        }
+        "1" { Show-Information -infoType "WindowsVersion" -dataSource $computerCollection }
+        "2" { Show-Information -infoType "CurrentUser" -dataSource $computerCollection }
+        "3" { Show-Information -infoType "ComputerName" -dataSource $computerCollection }
+        "4" { Show-Information -infoType "CPU" -dataSource $computerCollection }
+        "5" { Show-Information -infoType "TimeZone" -dataSource $computerCollection }
+
+        "q" { break }       # We "break" the loop here to exit out of it.
+        default {           # This is simply a fallback error message if no available options ae chosen.
+            Write-Host "Invalid selection. Please try again." -ForegroundColor Red
+            Start-Sleep -Seconds 1
+        }
+    }
+} while ($choice -ne "q")   # As long as we don't choose "q" to break out of the loop, we stay in it!
+
+Write-Host "Thank you for using the System Information Viewer!" -ForegroundColor Green
+```ho3ps101```
+<#
+    What's a function?
+    Functions are code blocks that can be predefined to e run later. This is
+    particularly useful when you know a command is going to be run repeatedly.
+
+    Functions will always be written in the following format:
+
+    function Function-Name {
+        # Put your code in here
+    }
+
+    This script will have 3 functions
+        1. Get-UpdatedSysInfo - this one will look familiar - we wrote most of
+           it in Hands-on 1.
+        2. Show-MainMenu - this is what actually shows the options on the screen
+           for the user to choose from.
+        3. Show-Information - this displays the requested information on the 
+           screen. This one will be introducing something new beyond just basic
+           function-ality: parameters.
+#>
+
+function Get-UpdatedSysInfo {
+    # Collect system information - this is lifted directly from Hands-on 2: Collections
+    $myComputer = Get-ComputerInfo
+    $customComputerInfo = $myComputer | Select-Object @{Name="WindowsVersion";Expression={$_.OsName}},
+                                @{Name="CurrentUser";Expression={$_.CsUserName}},
+                                @{Name="ComputerName";Expression={$_.CsName}},      
+                                @{Name="CPU";Expression={$_.CsProcessors.Name}},
+                                TimeZone
+
+    $collection = [PSCustomObject]@{
+        WindowsVersion = $customComputerInfo.WindowsVersion
+        CurrentUser    = $customComputerInfo.CurrentUser
+        ComputerName   = $customComputerInfo.ComputerName
+        CPU            = $customComputerInfo.CPU
+        TimeZone       = $customComputerInfo.TimeZone
+        Time           = (Get-Date)
+    }
+    
+    return $collection
+
+    <#
+        `return`-ing Data
+        When a function is called as a variable assignment (in this script,
+        we'll be running $computerCollection = Get-UpdatedSysInfo at the
+        beginning), you need to `return` data to it - in this case, we are
+        returning the new collection we generated by running this function.
+    #>
+}
+function Show-MainMenu {
+    Clear-Host
+    Write-Host "================ System Information Viewer ================" -ForegroundColor Green
+    Write-Host "Data collected on" $computerCollection.Time -BackgroundColor White -ForegroundColor Black
+    Write-Host
+    Write-Host "Please select an option:" -ForegroundColor Yellow
+    Write-Host
+    Write-Host "0. Update system information"
+    Write-Host "1. Windows Version"
+    Write-Host "2. Current User"
+    Write-Host "3. Computer Name"
+    Write-Host "4. CPU Information"
+    Write-Host "5. Time Zone"
+    Write-Host "q. Exit" -ForeGroundColor Red
+    Write-Host
+    <#
+        Formatting terminal text
+        We could have simply had a single "Write-Host" command to type out
+        all of that information, but you need to be careful with formatting.
+        Since text in a "Write-Host" command is considered pre-formatted,
+        going to a new line in one command will require everything to be
+        laid out differently.
+
+        Code that looks like this:
+        >    Write-Host "Testing
+        >    Testing Testing 1-2"
+
+        Will generate:
+        Testing
+            Testing Testing 1-2
+
+        Because of the tab gap on the second line. I usually find it's best
+        to simply state new lines when you know there will be one.
+         
+    #>
+    $selection = Read-Host "Enter your choice (0-5 or q)"   # The Read-Host command asks for input from the user
+    return $selection
+}
+
+function Show-Information {
+    param (
+        $infoType,
+        $dataSource
+    )
+
+    <#
+        What are parameters?
+        Parameters allow you to give additional input to a function when
+        they are being run. 
+
+        In this case, $infoType will be what we request at the main menu and
+        $dataSource is asking for which collection we want to pull from.
+    #>
+    
+    Clear-Host                          # Clear-Host simply blanks the terminal window
+    Write-Host "=== $infoType ===" -ForegroundColor Yellow
+    Write-Host 
+    
+    switch ($infoType) {                # Depending on what $infoType parameter was sent, show the data
+        "WindowsVersion" {
+            Write-Host "Windows Version: $($computerCollection.WindowsVersion)"
+        }
+        "CurrentUser" {
+            Write-Host "Current User: $($computerCollection.CurrentUser)"
+        }
+        "ComputerName" {
+            Write-Host "Computer Name: $($computerCollection.ComputerName)"
+        }
+        "CPU" {
+            Write-Host "Processor:" $computerCollection.CPU
+        }
+        "TimeZone" {
+            Write-Host "Time Zone: $($computerCollection.TimeZone)"
+        }
+    }
+    
+    Write-Host 
+    Write-Host "Press any key to return to main screen" -ForegroundColor Gray
+    $Host.UI.RawUI.ReadKey()            # This is simply telling the script to wait until any key is pressed
+}
+
+# Main program
+$computerCollection = Get-UpdatedSysInfo    # Update information on first program run - this need sto be outside of the main loop
+
+do {                                        
+    <#
+        We saw a ForEach-Object loop in earlier lessons - here's
+        another kind! Instead of going through every property of
+        a supplied collection, a "do" loop simply repeats until it
+        is broken.
+
+        So here we begin our "do" loop - it will continue to run 
+        as long as "q" is not selected to exit the program.
+    #>
+
+    $choice = Show-MainMenu # Return the user's selection to the script
+    
+    switch ($choice) {
+        "0" { # If "0" is selected, we update system information (and the date)
+            $computerCollection = Get-UpdatedSysInfo
+            Write-Host "Information updated!" -ForegroundColor Green
+            Start-Sleep -Seconds 2
+        }
+        "1" { Show-Information -infoType "WindowsVersion" -dataSource $computerCollection }
+        "2" { Show-Information -infoType "CurrentUser" -dataSource $computerCollection }
+        "3" { Show-Information -infoType "ComputerName" -dataSource $computerCollection }
+        "4" { Show-Information -infoType "CPU" -dataSource $computerCollection }
+        "5" { Show-Information -infoType "TimeZone" -dataSource $computerCollection }
+        <#
+            And options 1-5 use the Show-Information function to choose which
+            piece of data to display. We defined what -infoType and -dataSource
+            look for back in that function!
+        #>
+        "q" { break }       # We "break" the loop here to exit out of it.
+        default {           # This is simply a fallback error message if no available options ae chosen.
+            Write-Host "Invalid selection. Please try again." -ForegroundColor Red
+            Start-Sleep -Seconds 1
+        }
+    }
+} while ($choice -ne "q")   # As long as we don't choose "q" to break out of the loop, we stay in it!
+
+Write-Host "Thank you for using the System Information Viewer!" -ForegroundColor Green
+```ho3bat1```
+@echo off
+cd %~dp0 &                              :: Set delayed expansion so that scripts can run from the network
+set "scriptPath=systemInfo.ps1" &       :: Set path
+
+:: Below are 4 different ways to run the script. To change from one to another, just remove the "::"
+:: comment codes from the beginning of the line - remember to comment out other launchers by simply
+:: adding "::" to the beginning of them, otherwise you will load your script multiple times.
+
+:: Run as normal user with no visible window - for normal use
+::powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""'"
+
+:: Run as normal user with a visible window - for debugging
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Normal -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""'"
+
+:: Run as admin user with no visible window - for normal use
+::powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""' -Verb RunAs"
+
+:: Run as admin user with a visible window - for debugging
+::powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Normal -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""' -Verb RunAs"

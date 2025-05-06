@@ -1,0 +1,440 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+    font-family: 'Cantarell', sans-serif;
+    color: white;
+    line-height: 1.5em;
+}
+
+a {
+    font-weight: 500;
+    color: limegreen;
+    text-decoration: underline dotted;
+    transition: all 0.3s ease;
+    background-color: rgb(31, 31, 31);
+    padding: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 8px;
+}
+
+.wip {
+    cursor:not-allowed !important;
+    color: gray;
+}
+
+.wip::before {
+    content: "(WIP) ";
+    color: yellow;
+}
+
+a:visited {
+    font-weight: 300;
+    color: limegreen;
+}
+
+a:hover {
+    color: yellow;
+    text-decoration: underline dotted;
+    transition: all 0.3s ease;
+    background-color: rgb(58, 58, 58);
+
+}
+
+a:active,
+a:focus {
+    color: yellow;
+    outline: 2px dotted limegreen;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: .5em; /* Space between SVG and text */
+}
+  
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 0;
+    flex-wrap: nowrap; /* Prevents unwanted wrapping */
+  }
+  
+  .svg-logo {
+    width: 4em;
+    height: 4em;
+    flex-shrink: 0;
+    transition: all 0.3s ease; /* Smooth scaling */
+  }
+
+  .home-link {
+    background-color: rgb(58, 58, 58, 0.0) !important;
+    border: none !important;
+    outline: none !important;
+  }
+  
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Allows text to shrink */
+  }
+  
+  .header-title {
+    font-size: clamp(1.5em, 2.25em, 4vw); /* Responsive scaling */
+    margin: 0;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+.header-title::after {
+    content: "Hands-on with PowerShell"
+}
+
+.header-subtitle {
+    font-size: clamp(0.9em, 1.25em, 3vw);
+    margin: 0;
+    color: black;
+    background-color: limegreen;
+    padding: 3px;
+    border-radius: 8px;
+    font-weight: 700;
+    white-space: nowrap;
+    position: relative; 
+}
+
+.header-subtitle.typing-in-progress .cursor {
+    animation: blink 1s step-end infinite;
+    margin-left: 1px;
+    color: black;
+}
+
+.header-subtitle.typing-complete::after {
+    content: "█";
+    animation: blink 1s step-end infinite;
+    margin-left: 4px;
+    color: black;
+    vertical-align: top;
+}
+
+h2 {
+    color: limegreen;
+    font-size: 2em;
+    font-weight: 900;
+}
+
+h3 {
+    font-family: 'JetBrains Mono', Courier, monospace;
+    background-color: #1f1f1f;
+    color: white;
+    padding: 10px;
+    margin-bottom: -3px;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    display: inline-block;
+    border-top: 3px solid limegreen;
+    border-left: 3px solid limegreen;
+    border-right: 3px solid limegreen;
+    z-index: 1;
+}
+
+code {
+    font-family: 'JetBrains Mono', Courier, monospace;
+    font-size: 1em;
+    color: yellow;
+}
+
+.page-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    padding-bottom: 100px;
+}
+
+.mainPageLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.linkBox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  .linkBox::before {
+    content: "On this page:";
+    margin-right: 8px;
+    font-weight: 900;
+    flex-shrink: 0; /* Prevents the label from shrinking */
+  }
+  
+  .linkBox a {
+    white-space: nowrap; 
+  }
+
+.winScript::Before {
+    content: "PS C:\\scripts>";
+    margin-right: 8px;
+    color: limegreen;
+    vertical-align: top;
+}
+
+.scriptFile::before {
+    content: ".\\";
+    color: yellow;
+    vertical-align: top;
+}
+
+.scriptFile::after {
+    content: "█";
+    animation: blink 1s step-end infinite;
+    margin-left: 4px;
+    color: limegreen;
+    vertical-align: top;
+}
+
+.vscode-snippet {
+    font-size: 1em !important;
+    line-height: 1.5em !important;
+    font-family: 'JetBrains Mono', Courier, monospace !important;
+    position: relative;
+    padding: 10px;
+    background-color: #1f1f1f;
+    width: calc(100% - 26px);
+    z-index: 0;
+    border: 3px solid limegreen;
+    border-radius: 0 8px 0 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.vscode-snippet > * {
+    font-size: inherit !important;
+    line-height: inherit !important;
+    font-family: inherit !important;
+
+}
+
+.homeLink:hover a {
+    color: yellow;
+    transition: all 0.3s ease;
+    text-decoration: underline dotted;
+}
+
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 50%;
+    left: 50%;
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.5em;    /* Manaully adjusted to center the arrow */
+    text-decoration: none;
+    animation: bounce 2s infinite;
+    box-shadow: 0 0 0 5px rgb(205, 50, 197);
+    opacity: 50%;
+    cursor: pointer;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+    box-shadow: 0 0 0 5px yellow;
+
+}
+
+a.back-to-top {
+    color: white;
+    text-decoration: none;
+}
+
+.back-to-top.visible {
+    display: block;
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: .95em;
+    color: rgb(255, 255, 255);
+    background-color: rgb(31, 31, 31);
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+    white-space: nowrap;
+    font-family: 'JetBrains Mono', Courier, monospace;
+}
+
+pre {
+    font-family: 'JetBrains Mono', Courier, monospace;
+}
+
+.console-output {
+    white-space: pre;
+    overflow-x: auto;
+    overflow-y: auto;
+    word-wrap: normal;
+    word-break: keep-all;
+    width: calc(100% - 26px);
+    max-height: 450px;
+    background-color: #252525;
+    color: #f0f0f0;
+    font-family: 'JetBrains Mono', Courier, monospace;
+    padding: 10px;
+    border: 3px dotted yellow;
+    border-radius: 8px 0 8px 0px;
+    margin: 0;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+}
+
+.tutorial-hint {
+    position: relative;
+    background: 
+        radial-gradient(
+            ellipse at left center,
+            rgba(26, 26, 26, 1) 0%,
+            rgba(26, 26, 26, 0.8) 30%,
+            rgba(26, 26, 26, 0) 70%
+        );
+    border-radius: 24px;
+    padding: 10px;
+    color: #e0e0e0;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.tutorial-hint::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 12px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(205, 50, 197, 1) 50%,
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
+.tutorial-hint h4 {
+    color: limegreen;
+    margin-top: 0.5rem;
+    margin-left: .5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.tutorial-hint p {
+    margin-top: 0.5rem;
+    margin-left: .5rem;
+    line-height: 1.5;
+}
+
+.tutorial-hint a {
+    text-decoration: underline dotted;
+}
+
+#svg-logo {
+    text-align: middle;
+    position: relative;
+}
+#logoColor {
+    fill:#32cd32;
+    stroke:#32cd32;
+    stroke-width:0.206172;
+    fill-opacity:1;
+}
+
+#logoColor:hover {
+    fill: #FFFF00 !important;
+}
+  @media (max-width: 920px) {
+    .page-container {
+        width: 95vw;
+    }
+    .svg-logo {
+        width: 3em;
+        height: 3em;
+    }
+    
+    .header-title {
+      white-space: normal; /* Allows text to wrap if needed */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header {
+      gap: 8px;
+    }
+    
+    .svg-logo {
+      width: 2.5em;
+      height: 2.5em;
+    }
+  }
+
+@font-face {
+    font-family: 'Cantarell';
+    src: url('./Cantarell-VF.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('./JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@keyframes blink {    /* Cursor blinking animation */
+    0%,50% {
+        opacity: 1;
+    }
+    50.1%,100% {
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+    /* To-the-top bouncer */
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(10px);
+    }
+
+    60% {
+        transform: translateY(5px);
+    }
+}

@@ -1,0 +1,266 @@
+```ho201```
+Get-ComputerInfo
+```ho202```
+WindowsBuildLabEx                                       : 26100.1.amd64fre.ge_release.240331-1435
+WindowsCurrentVersion                                   : 6.3
+WindowsEditionId                                        : Professional
+WindowsInstallationType                                 : Client
+WindowsInstallDateFromRegistry                          : 3/16/2025 4:13:24 PM
+WindowsProductId                                        : 00330-80000-00000-AA179
+WindowsProductName                                      : Windows 10 Pro
+WindowsRegisteredOrganization                           :
+WindowsRegisteredOwner                                  : vm scriptDev
+WindowsSystemRoot                                       : C:\Windows
+WindowsVersion                                          : 2009
+OSDisplayVersion                                        : 24H2
+BiosCharacteristics                                     : {3, 42, 43, 44}
+BiosBIOSVersion                                         : {BOCHS  - 1, unknown, EDK II - 10000}
+BiosBuildNumber                                         :
+BiosCaption                                             : unknown
+BiosCodeSet                                             :
+BiosCurrentLanguage                                     :
+BiosDescription                                         : unknown
+BiosEmbeddedControllerMajorVersion                      : 255
+BiosEmbeddedControllerMinorVersion                      : 255
+BiosFirmwareType                                        : Uefi
+BiosIdentificationCode                                  :
+BiosInstallableLanguages                                :
+BiosInstallDate                                         :
+BiosLanguageEdition                                     :
+BiosListOfLanguages                                     :
+BiosManufacturer                                        : EDK II
+BiosName                                                : unknown
+BiosOtherTargetOS                                       :
+BiosPrimaryBIOS                                         : True
+BiosReleaseDate                                         : 2/1/2022 5:00:00 PM
+BiosSeralNumber                                         :
+BiosSMBIOSBIOSVersion                                   : unknown
+BiosSMBIOSMajorVersion                                  : 2
+BiosSMBIOSMinorVersion                                  : 8
+BiosSMBIOSPresent                                       : True
+BiosSoftwareElementState                                : Running
+BiosStatus                                              : OK
+BiosSystemBiosMajorVersion                              : 0
+BiosSystemBiosMinorVersion                              : 0
+BiosTargetOperatingSystem                               : 0
+BiosVersion                                             : BOCHS  - 1
+CsAdminPasswordStatus                                   : Unknown
+CsAutomaticManagedPagefile                              : True
+CsAutomaticResetBootOption                              : True
+CsAutomaticResetCapability                              : True
+CsBootOptionOnLimit                                     :
+CsBootOptionOnWatchDog                                  :
+CsBootROMSupported                                      : True
+CsBootStatus                                            : {0, 0, 0, 0...}
+CsBootupState                                           : Normal boot
+CsCaption                                               : DESKTOP-C1DHTMN
+CsChassisBootupState                                    : Safe
+CsChassisSKUNumber                                      :
+CsCurrentTimeZone                                       : -420
+CsDaylightInEffect                                      :
+CsDescription                                           : AT/AT COMPATIBLE
+CsDNSHostName                                           : DESKTOP-C1DHTMN
+CsDomain                                                : WORKGROUP
+CsDomainRole                                            : StandaloneWorkstation
+CsEnableDaylightSavingsTime                             : True
+CsFrontPanelResetStatus                                 : Unknown
+CsHypervisorPresent                                     : True
+CsInfraredSupported                                     : False
+CsInitialLoadInfo                                       :
+CsInstallDate                                           :
+CsKeyboardPasswordStatus                                : Unknown
+CsLastLoadInfo                                          :
+CsManufacturer                                          : QEMU
+CsModel                                                 : Standard PC (Q35 + ICH9, 2009)
+CsName                                                  : DESKTOP-C1DHTMN
+CsNetworkAdapters                                       : {Ethernet Instance 0}
+CsNetworkServerModeEnabled                              : True
+CsNumberOfLogicalProcessors                             : 8
+CsNumberOfProcessors                                    : 1
+CsProcessors                                            : {Intel Xeon Processor (SierraForest)}
+CsOEMStringArray                                        :
+CsPartOfDomain                                          : False
+CsPauseAfterReset                                       : -1
+CsPCSystemType                                          : Desktop
+CsPCSystemTypeEx                                        : Desktop
+CsPowerManagementCapabilities                           :
+CsPowerManagementSupported                              :
+CsPowerOnPasswordStatus                                 : Unknown
+CsPowerState                                            : Unknown
+CsPowerSupplyState                                      : Safe
+CsPrimaryOwnerContact                                   :
+CsPrimaryOwnerName                                      : vm scriptDev
+CsResetCapability                                       : Other
+CsResetCount                                            : -1
+CsResetLimit                                            : -1
+CsRoles                                                 : {LM_Workstation, LM_Server, NT}
+CsStatus                                                : OK
+CsSupportContactDescription                             :
+CsSystemFamily                                          :
+CsSystemSKUNumber                                       :
+CsSystemType                                            : x64-based PC
+CsThermalState                                          : Safe
+CsTotalPhysicalMemory                                   : 17159315456
+CsPhyicallyInstalledMemory                              : 16777216
+CsUserName                                              : DESKTOP-C1DHTMN\steeb
+CsWakeUpType                                            : PowerSwitch
+CsWorkgroup                                             : WORKGROUP
+OsName                                                  : Microsoft Windows 11 Pro
+OsType                                                  : WINNT
+OsOperatingSystemSKU                                    : 48
+OsVersion                                               : 10.0.26100
+OsCSDVersion                                            :
+OsBuildNumber                                           : 26100
+OsHotFixes                                              : {KB5054979, KB5055523, KB5058538}
+OsBootDevice                                            : \Device\HarddiskVolume1
+OsSystemDevice                                          : \Device\HarddiskVolume3
+OsSystemDirectory                                       : C:\Windows\system32
+OsSystemDrive                                           : C:
+OsWindowsDirectory                                      : C:\Windows
+OsCountryCode                                           : 1
+OsCurrentTimeZone                                       : -420
+OsLocaleID                                              : 0409
+OsLocale                                                : en-US
+OsLocalDateTime                                         : 4/22/2025 10:55:24 AM
+OsLastBootUpTime                                        : 4/22/2025 10:28:54 AM
+OsUptime                                                : 00:26:29.9939267
+OsBuildType                                             : Multiprocessor Free
+OsCodeSet                                               : 1252
+OsDataExecutionPreventionAvailable                      : True
+OsDataExecutionPrevention32BitApplications              : True
+OsDataExecutionPreventionDrivers                        : True
+OsDataExecutionPreventionSupportPolicy                  : OptIn
+OsDebug                                                 : False
+OsDistributed                                           : False
+OsEncryptionLevel                                       : 256
+OsForegroundApplicationBoost                            : Maximum
+OsTotalVisibleMemorySize                                : 16757144
+OsFreePhysicalMemory                                    : 12924080
+OsTotalVirtualMemorySize                                : 17805720
+OsFreeVirtualMemory                                     : 13266720
+OsInUseVirtualMemory                                    : 4539000
+OsTotalSwapSpaceSize                                    :                                                                                                                            OsSizeStoredInPagingFiles                               : 1048576                                                                                                                    OsFreeSpaceInPagingFiles                                : 1048576                                                                                                                    OsPagingFiles                                           : {C:\pagefile.sys}                                                                                                          OsHardwareAbstractionLayer                              : 10.0.26100.1
+OsInstallDate                                           : 3/16/2025 9:13:24 AM
+OsManufacturer                                          : Microsoft Corporation
+OsMaxNumberOfProcesses                                  : 4294967295
+OsMaxProcessMemorySize                                  : 137438953344
+OsMuiLanguages                                          : {en-US}
+OsNumberOfLicensedUsers                                 : 0
+OsNumberOfProcesses                                     : 157
+OsNumberOfUsers                                         : 2
+OsOrganization                                          :
+OsArchitecture                                          : 64-bit
+OsLanguage                                              : en-US
+OsProductSuites                                         : {TerminalServicesSingleSession}
+OsOtherTypeDescription                                  :
+OsPAEEnabled                                            :
+OsPortableOperatingSystem                               : False
+OsPrimary                                               : True
+OsProductType                                           : WorkStation
+OsRegisteredUser                                        : vm scriptDev
+OsSerialNumber                                          : 00330-80000-00000-AA179
+OsServicePackMajorVersion                               : 0
+OsServicePackMinorVersion                               : 0
+OsStatus                                                : OK
+OsSuites                                                : {TerminalServices, TerminalServicesSingleSession}
+OsServerLevel                                           :
+KeyboardLayout                                          : en-US
+TimeZone                                                : (UTC-07:00) Arizona
+LogonServer                                             : \\DESKTOP-C1DHTMN
+PowerPlatformRole                                       : Desktop
+HyperVisorPresent                                       : True
+HyperVRequirementDataExecutionPreventionAvailable       :
+HyperVRequirementSecondLevelAddressTranslation          :
+HyperVRequirementVirtualizationFirmwareEnabled          :
+HyperVRequirementVMMonitorModeExtensions                :
+DeviceGuardSmartStatus                                  : Off
+DeviceGuardRequiredSecurityProperties                   :
+DeviceGuardAvailableSecurityProperties                  :
+DeviceGuardSecurityServicesConfigured                   :
+DeviceGuardSecurityServicesRunning                      :
+DeviceGuardCodeIntegrityPolicyEnforcementStatus         : EnforcementMode
+DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus : Off
+```ho203```
+$myComputer = Get-ComputerInfo
+```ho204```
+$myComputer
+```ho205```
+$myComputer.OsName
+$myComputer.CsUserName
+$myComputer.CsName
+$myComputer.CsProcessors
+$myComputer.TimeZone
+```ho206```
+$myComputer | Select-Object OsName,CsUserName,CsName,CsProcessors,TimeZone
+```ho207```
+  OsName       : Microsoft Windows 11 Pro
+  CsUserName   : DESKTOP-C1DHTMN\steeb
+  CsName       : DESKTOP-C1DHTMN
+  CsProcessors : {Intel Xeon Processor (SierraForest)}
+  TimeZone     : (UTC-07:00) Arizona
+```ho208```
+$myComputer | Select-Object @{Name="WindowsVersion";Expression={$_.OsName}}
+```ho209```
+$myComputer | Select-Object @{Name="WindowsVersion";Expression={$_.OsName}},
+                            @{Name="CurrentUser";Expression={$_.CsUserName}},
+                            @{Name="ComputerName";Expression={$_.CsName}},
+                            @{Name="CPU";Expression={$_.CsProcessors}},
+                            TimeZone
+```ho210```
+  WindowsVersion : Microsoft Windows 11 Pro
+  CurrentUser    : DESKTOP-C1DHTMN\steeb
+  ComputerName   : DESKTOP-C1DHTMN
+  CPU            : Microsoft.PowerShell.Commands.Processor
+  TimeZone       : (UTC-07:00) Arizona
+```ho211```
+$myComputer.CsProcessors
+```ho212```
+  Name                      : Intel Xeon Processor (SierraForest)
+  Manufacturer              : GenuineIntel
+  Description               : Intel64 Family 6 Model 175 Stepping 0
+  Architecture              : x64
+  AddressWidth              : 64
+  DataWidth                 : 64
+  MaxClockSpeed             : 2995
+  CurrentClockSpeed         : 2995
+  NumberOfCores             : 4
+  NumberOfLogicalProcessors : 8
+  ProcessorID               : 0F8BFBFF000A06F0
+  SocketDesignation         : CPU 0
+  ProcessorType             : CentralProcessor
+  Role                      : CPU
+  Status                    : OK
+  CpuStatus                 : Enabled
+  Availability              : RunningOrFullPower
+```ho213```
+$myComputer | Select-Object @{Name="WindowsVersion";Expression={$_.OsName}},  # Instead of OsName
+                            @{Name="CurrentUser";Expression={$_.CsUserName}}, # Instead of CsUsername
+                            @{Name="ComputerName";Expression={$_.CsName}},    # Instead of CsName
+                            @{Name="CPU";Expression={$_.CsProcessors.Name}},  # Instead of CsProcessors.Name
+                            TimeZone
+```ho214```
+  WindowsVersion : Microsoft Windows 11 Pro
+  CurrentUser    : DESKTOP-C1DHTMN\steeb
+  ComputerName   : DESKTOP-C1DHTMN
+  CPU            : Intel Xeon Processor (SierraForest)
+  TimeZone       : (UTC-07:00) Arizona
+```ho215```
+$customComputerInfo = $myComputer | Select-Object @{Name="WindowsVersion";Expression={$_.OsName}},
+                            @{Name="CurrentUser";Expression={$_.CsUserName}},
+                            @{Name="ComputerName";Expression={$_.CsName}},      
+                            @{Name="CPU";Expression={$_.CsProcessors.Name}},
+                            TimeZone
+```ho216```
+$customComputerInfo.WindowsVersion
+$customComputerInfo.CurrentUser
+$customComputerInfo.ComputerName
+$customComputerInfo.CPU
+$customComputerInfo.TimeZone
+```ho217```
+$computerCollection = [System.Collections.Generic.List[PSObject]]::new()
+```ho218```
+$customComputerInfo | ForEach-Object {  # Loop through every object in the $customComputerInfo collection...
+    $computerCollection.Add($_)         # And add each one to our shiny new $computerCollection collection!
+}
+```ho219```
+$computerCollection.Add(@{Time = Get-Date})

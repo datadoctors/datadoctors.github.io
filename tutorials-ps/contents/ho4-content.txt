@@ -1,0 +1,343 @@
+```ho401```
+Add-Type -AssemblyName System.Windows.Forms
+```ho402```
+$counter = 0
+
+$labelCountFontSize = 22
+$labelCountFont = New-Object System.Drawing.Font("Segoe UI", $labelCountFontSize, [System.Drawing.FontStyle]::Bold)
+$labelCountColor = [System.Drawing.Color]::Green
+$buttonFont = New-Object System.Drawing.Font("Segoe UI", 12)
+```ho403```
+#region Building GUI
+$formClicker = New-Object System.Windows.Forms.Form     # Define the form - this is the window where all other componenets will be added with Controls.Add()
+$formClicker.Text = "Hands-on 4: GUI Boog-U-I"          # Title the window
+$formClicker.ClientSize = New-Object System.Drawing.Size(300,250)    # Size the form
+$formClicker.StartPosition = "CenterScreen"             # Center our form when it loads
+$formClicker.FormBorderStyle = "FixedSingle"            # Remove the resize handle
+$formClicker.MinimizeBox = $false                       # Hides the minimize button
+$formClicker.MaximizeBox = $false                       # Hides the maximize button
+$formClicker.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon("$env:WINDIR\System32\msra.exe")   # Pick an icon
+```ho404```
+$labelCount = New-Object System.Windows.Forms.Label     # Define the label
+$labelCount.Text = $counter                             # Set the text to the $counter variable
+$labelCount.Font = $labelCountFont                      # Using our earlier variable for font style
+$labelCount.ForeColor = $labelCountColor                ## and for color.
+$labelCount.AutoSize = $true
+$formClicker.Controls.Add($labelCount)                  # Add the label to the form
+
+$buttonAdd = New-Object System.Windows.Forms.Button
+$buttonAdd.Text = "&Add 1"                              # What's that ampersand (&) doing? Assigning a letter as an access key.
+$buttonAdd.Font = $buttonFont                           ##  Pressing the 'Alt' kill will underline the access key letter.
+$buttonAdd.AutoSize = $true                             ##  Here, pressing Alt+A will activate the $buttonAdd button.
+$formClicker.Controls.Add($buttonAdd)
+
+$buttonSub = New-Object System.Windows.Forms.Button
+$buttonSub.Text = "S&ub 1"
+$buttonSub.Font = $buttonFont
+$buttonSub.AutoSize = $true
+$formClicker.Controls.Add($buttonSub)
+```ho405```
+$labelCountX = (($formClicker.ClientSize.Width - $labelCount.Width)/2)
+$labelCountY = (($formClicker.ClientSize.Height - $labelCount.Height)/2  - $buttonAdd.Height)
+
+$buttonAddX =(($formClicker.ClientSize.Width - $buttonAdd.Width - $buttonSub.Width)/2 - 5)
+$buttonSubX = ($buttonAddX + $buttonAdd.Width + 5)
+$buttonY = ($formClicker.ClientSize.Height - $buttonAdd.Height - 10)
+
+# Place the elements on the form
+$labelCount.Location = New-Object System.Drawing.Point($labelCountX, $labelCountY)
+$buttonAdd.Location = New-Object System.Drawing.Point($buttonAddX, $buttonY)
+$buttonSub.Location = New-Object System.Drawing.Point($buttonSubX, $buttonY)
+
+#endregion Building GUI
+```ho406```
+$formClicker.ShowDialog()
+```ho407```
+#region Logic
+$buttonAdd.Add_Click({
+    if ($script:counter -lt 999) {                              # Avoid going into 4-digit numbers by stopping addition once we're at 999
+        $script:counter++                                       # Increment counter by 1
+        Write-Host "Added 1 - value is now " $script:counter    # Update the console with the result (for debugging)
+    } else {
+        # Report maximum value to console
+        Write-Host "Maximum value reached. Value is still" $script:counter
+    }
+})
+
+$buttonSub.Add_Click({
+    if ($script:counter -gt 0) {    # Avoid going into negatives by stopping the subtraction once we're at zero
+        $script:counter--           # Decrement counter by 1
+        Write-Host "Subtracted 1 - value is now " $script:counter
+    } else {
+        Write-Host "Minimum value reached. Value is still" $script:counter
+    }
+})
+
+$formClicker.ShowDialog()
+```ho408```
+Added 1 - value is now  1
+Added 1 - value is now  2
+Added 1 - value is now  3
+Added 1 - value is now  4
+Added 1 - value is now  5
+Subtracted 1 - value is now  4
+Subtracted 1 - value is now  3
+Subtracted 1 - value is now  2
+Subtracted 1 - value is now  1
+Subtracted 1 - value is now  0
+Minimum value reached. Value is still 0
+```ho409```
+$buttonAdd.Add_Click({
+    if ($script:counter -lt 999) {                              # Avoid going into 4-digit numbers by stopping addition once we're at 999
+        $script:counter++                                       # Increment counter by 1
+        Write-Host "Added 1 - value is now " $script:counter    # Update the console with the result (for debugging)
+    } else {
+        # Report maximum value to console
+        Write-Host "Maximum value reached. Value is still" $script:counter
+    }
+    $labelCount.Text = $script:counter  # Update the text of $labelCounter based on the  value of $counter
+})
+
+$buttonSub.Add_Click({
+    if ($script:counter -gt 0) {    # Avoid going into negatives by stopping the subtraction once we're at zero
+        $script:counter--           # Decrement counter by 1
+        Write-Host "Subtracted 1 - value is now " $script:counter
+    } else {
+        Write-Host "Minimum value reached. Value is still" $script:counter
+    }
+    $labelCount.Text = $script:counter  # Update the text of $labelCounter based on the  value of $counter
+})
+```ho410```
+#region Logic
+$buttonAdd.Add_Click({
+    if ($script:counter -lt 999) {                              # Avoid going into 4-digit numbers by stopping addition once we're at 999
+        $script:counter++                                       # Increment counter by 1
+        Write-Host "Added 1 - value is now " $script:counter    # Update the console with the result (for debugging)
+        Update-Counter                                          # Call the function to update values and colors - we'll define the function in the next section
+    } else {
+        # Report maximum value to console
+        Write-Host "Maximum value reached. Value is still" $script:counter
+    }
+})
+
+$buttonSub.Add_Click({
+    if ($script:counter -gt 0) {    # Avoid going into negatives by stopping the subtraction once we're at zero
+        $script:counter--           # Decrement counter by 1
+        Write-Host "Subtracted 1 - value is now " $script:counter
+        Update-Counter
+    } else {
+        Write-Host "Minimum value reached. Value is still" $script:counter
+    }
+})
+```ho411```
+function Update-Counter {
+    $labelCount.Text = $script:counter  # Update the text of $labelCounter based on the  value of $counter
+
+    # Color logic based on counter value
+    if ($script:counter -ge 40) {
+        $labelCountColor = [System.Drawing.Color]::Black
+        $labelCountFontSize = 92
+    } elseif ($script:counter -ge 30) {
+        $labelCountColor = [System.Drawing.Color]::Purple
+        $labelCountFontSize = 70
+    } elseif ($script:counter -ge 20) {
+        $labelCountColor = [System.Drawing.Color]::Red
+        $labelCountFontSize = 58
+    } elseif ($script:counter -ge 10) {
+        $labelCountColor = [System.Drawing.Color]::Orange
+        $labelCountFontSize = 46
+    } else {
+        $labelCountColor = [System.Drawing.Color]::Green
+        $labelCountFontSize = 22
+    }
+
+    $labelCount.Font = New-Object System.Drawing.Font("Segoe UI", $labelCountFontSize, [System.Drawing.FontStyle]::Bold)
+    $labelCount.ForeColor = $labelCountColor
+    $labelCountX = (($formClicker.ClientSize.Width - $labelCount.Width)/2)
+    $labelCountY = (($formClicker.ClientSize.Height - $labelCount.Height)/2  - $buttonAdd.Height)
+    $labelCount.Location = New-Object System.Drawing.Point($labelCountX, $labelCountY)
+}
+#endregion Logic
+
+$formClicker.ShowDialog()
+```intentionallyBlank```
+
+
+
+
+
+
+
+
+```ho4ps101```
+Add-Type -AssemblyName System.Windows.Forms         # Let PowerShell know we're putting together a WinForm GUI
+
+$counter = 0                                        # Starting the counter at 0
+
+# Define the text styles we'll be using
+$labelCountFontSize = 22
+$labelCountFont = New-Object System.Drawing.Font("Segoe UI", $labelCountFontSize, [System.Drawing.FontStyle]::Bold)
+$labelCountColor = [System.Drawing.Color]::Green
+$buttonFont = New-Object System.Drawing.Font("Segoe UI", 12)
+
+<# Why are we creating these variables instead of assigning them where they 
+   belong?
+
+    Since we will be changing these variables (except for the button font,
+    which we're storing just because we're already setting up fonts) later on
+    in the script, it makes sense to have these things defined before we 
+    start laying out elements. 
+
+    If we don't store these as a variable, the code becomes MUCH more dense
+    and difficult to parse.
+#>
+
+#region Building GUI
+$formClicker = New-Object System.Windows.Forms.Form     # Define the form - this is the window where all other componenets will be added with Controls.Add()
+$formClicker.Text = "Hands-on 4: GUI Boog-U-I"          # Title the window
+$formClicker.ClientSize = New-Object System.Drawing.Size(300,250)    # Size the form
+$formClicker.StartPosition = "CenterScreen"             # Center our form when it loads
+$formClicker.FormBorderStyle = "FixedSingle"            # Remove the resize handle
+$formClicker.MinimizeBox = $false                       # Hides the minimize button
+$formClicker.MaximizeBox = $false                       # Hides the maximize button
+$formClicker.Icon = [System.Drawing.Icon]::ExtractAssociatedIcon("$env:WINDIR\System32\msra.exe")   # Pick an icon
+
+$labelCount = New-Object System.Windows.Forms.Label     # Define the label
+$labelCount.Text = $counter                             # Set the text to the $counter variable
+$labelCount.Font = $labelCountFont                      # Using our earlier variable for font style
+$labelCount.ForeColor = $labelCountColor                ## and for color.
+$labelCount.AutoSize = $true
+$formClicker.Controls.Add($labelCount)                  # Add the label to the form
+
+$buttonAdd = New-Object System.Windows.Forms.Button
+$buttonAdd.Text = "&Add 1"                              # What's that ampersand (&) doing? Assigning a letter as an access key.
+$buttonAdd.Font = $buttonFont                           ##  Pressing the 'Alt' kill will underline the access key letter.
+$buttonAdd.AutoSize = $true                             ##  Here, pressing Alt+A will activate the $buttonAdd button.
+$formClicker.Controls.Add($buttonAdd)
+
+$buttonSub = New-Object System.Windows.Forms.Button
+$buttonSub.Text = "S&ub 1"
+$buttonSub.Font = $buttonFont
+$buttonSub.AutoSize = $true
+$formClicker.Controls.Add($buttonSub)
+
+$labelCountX = (($formClicker.ClientSize.Width - $labelCount.Width)/2)
+$labelCountY = (($formClicker.ClientSize.Height - $labelCount.Height)/2  - $buttonAdd.Height)
+
+$buttonAddX =(($formClicker.ClientSize.Width - $buttonAdd.Width - $buttonSub.Width)/2)
+$buttonSubX = ($buttonAddX + $buttonAdd.Width + 5)
+$buttonY = ($formClicker.ClientSize.Height - $buttonAdd.Height - 10)
+
+<# What's up with all the parantheses?
+    
+    It's a good habit to keep math inside of parantheses inside of PowerShell
+    scripts. Many elements of PowerShell do not support math, but placing
+    them inside of parantheses will trigger the shell itself to do the math.
+#>
+
+# Place the elements on the form
+$labelCount.Location = New-Object System.Drawing.Point($labelCountX, $labelCountY)
+$buttonAdd.Location = New-Object System.Drawing.Point($buttonAddX, $buttonY)
+$buttonSub.Location = New-Object System.Drawing.Point($buttonSubX, $buttonY)
+
+<# Why are we placing these elements at the end?
+
+    While not always necessary, if you are doing math based on the sizes of
+    elements, it can be convenient to keep all of the layout in one spot for
+    easy adjustment.
+
+    Remember, if you're setting sizes and positions of elements based on the
+    dimensions or location of another element, the other element must be added
+    to the form before doing so! Script files are loaded from top to bottom.
+#>
+
+#endregion Building GUI
+
+#region Logic
+$buttonAdd.Add_Click({
+    if ($script:counter -lt 999) {                              # Avoid going into 4-digit numbers by stopping addition once we're at 999
+        $script:counter++                                       # Increment counter by 1
+        Write-Host "Added 1 - value is now " $script:counter    # Update the console with the result (for debugging)
+        Update-Counter                                          # Call the function to update values and colors - we'll define the function in the next section
+    } else {
+        # Report maximum value to console
+        Write-Host "Maximum value reached. Value is still" $script:counter
+    }
+})
+
+$buttonSub.Add_Click({
+    if ($script:counter -gt 0) {    # Avoid going into negatives by stopping the subtraction once we're at zero
+        $script:counter--           # Decrement counter by 1
+        Write-Host "Subtracted 1 - value is now " $script:counter
+        Update-Counter
+    } else {
+        Write-Host "Minimum value reached. Value is still" $script:counter
+    }
+})
+
+<# What does $script: mean? Isn't the variable just $counter? We defined it at the top!
+
+    The Add_Click() class is an "event handler", which are handled in a separate process from the
+    main script. If we were to simply use $counter++ instead of $script:counter++, the handler would
+    generate an entirely new $counter variable, usable only inside of the event handler.
+
+    To address that, we use a scope. For our purposes, we will mainly only use the $script: scope as
+    we move on, but you can look into $global:, $local:, and $private: scopes, as well. 
+#>
+
+function Update-Counter {
+    $labelCount.Text = $script:counter  # Update the text of $labelCounter based on the  value of $counter
+
+    # Color logic based on counter value
+    if ($script:counter -ge 40) {
+        $labelCountColor = [System.Drawing.Color]::Black
+        $labelCountFontSize = 92
+    } elseif ($script:counter -ge 30) {
+        $labelCountColor = [System.Drawing.Color]::Purple
+        $labelCountFontSize = 70
+    } elseif ($script:counter -ge 20) {
+        $labelCountColor = [System.Drawing.Color]::Red
+        $labelCountFontSize = 58
+    } elseif ($script:counter -ge 10) {
+        $labelCountColor = [System.Drawing.Color]::Orange
+        $labelCountFontSize = 46
+    } else {
+        $labelCountColor = [System.Drawing.Color]::Green
+        $labelCountFontSize = 22
+    }
+
+    <#
+        Since we are updating the size of the text in the label, and possibly even the length
+        of the text once we hit double and then triple digits, we need to  move the label
+        after each update to make sure it remains centered.
+    #>
+
+    $labelCount.Font = New-Object System.Drawing.Font("Segoe UI", $labelCountFontSize, [System.Drawing.FontStyle]::Bold)
+    $labelCount.ForeColor = $labelCountColor
+    $labelCountX = (($formClicker.ClientSize.Width - $labelCount.Width)/2)
+    $labelCountY = (($formClicker.ClientSize.Height - $labelCount.Height)/2  - $buttonAdd.Height)
+    $labelCount.Location = New-Object System.Drawing.Point($labelCountX, $labelCountY)
+}
+#endregion Logic
+
+$formClicker.ShowDialog() # Show the form
+```ho4bat1```
+@echo off
+cd %~dp0 &                              :: Set delayed expansion so that scripts can run from the network
+set "scriptPath=buttonClicker.ps1" &    :: Set path
+
+:: Below are 4 different ways to run the script. To change from one to another, just remove the "::"
+:: comment codes from the beginning of the line - remember to comment out other launchers by simply
+:: adding "::" to the beginning of them, otherwise you will load your script multiple times.
+
+:: Run as normal user with no visible window - for normal use
+::powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""'"
+
+:: Run as normal user with a visible window - for debugging
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Normal -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""' -Verb RunAs"
+
+:: Run as admin user with no visible window - for normal use
+::powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""' -Verb RunAs"
+
+:: Run as admin user with a visible window - for debugging
+::powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Normal -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""' -Verb RunAs"

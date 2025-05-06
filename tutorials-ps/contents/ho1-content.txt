@@ -1,0 +1,49 @@
+```ho101```
+$computerCollection = @{
+        $myComputer | Select-Object 
+            @{
+                Name="WindowsVersion";Expression={$_.OsName}
+            },                                                                                  
+            @{Name=
+                "CurrentUser";
+            Expression=
+                {$_.CsUserName}},                                                               
+            @{Name          =       "ComputerName"; Expression      ={$_.CsName}},              
+            @{Name          =       "CPU";          Expression      ={$_.CsProcessors.Name}},   
+            TimeZone                                                                           
+        }
+```ho102```
+$computerCollection = @{$myComputer | Select-Object @{Name="WindowsVersion";Expression={$_.OsName}},@{Name="CurrentUser";Expression={$_.CsUserName}},@{Name="ComputerName";Expression={$_.CsName}},@{Name="CPU";Expression={$_.CsProcessors.Name}}, TimeZone}
+```ho103```
+$variableOne        = "Example text"
+$var2               = "Texto de ejemplo"
+$varThree           = "نص مثال"
+$variableFour       = "Օրինակ տեքստ"
+```ho104```
+$myObject | 
+                ForEach-Object { 
+                    
+            if ($_.Value -eq "daExpectedValue") {
+    $myList.Add($_) 
+            } 
+}
+```ho105```
+$myObject | ForEach-Object {                 
+    if ($_.Value -eq "daExpectedValue") {
+        $myList.Add($_) 
+    } 
+}
+```ho106```
+Write-Host "Hello World!" # This is a single-line comment. You can write as much as you want after this, but once you start a new line, the code continues running
+ 
+#Unless you just start a new line with another comment. 
+ 
+#Write-Host "Hello World!" # The entire line is commented out here - the Write-Host command will not run at all.
+ 
+Write-Host <# None of this will be processed, but.. #> "This will!"
+ 
+<#
+Additionally, none of this text will be processed.
+    In between the opening and closing of the block
+    comment, we can write as much as we like. 
+#>
