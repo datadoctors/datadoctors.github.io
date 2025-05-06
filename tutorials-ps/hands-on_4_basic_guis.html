@@ -55,7 +55,10 @@
             <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho401"></code></pre>
         </div>
         <p>
-            I know, it doesn't really seem like we're jumping in the deep end but it's important to understand what is happening here. The <code>Add-Type</code> command in a PowerShell script is much more powerful than we'll address today, but for now what you really need to understand is that PowerShell can interact with <strong>.NET Framework</strong> (y'know, that thing we have to reinstall on client PCs all the time) in order to build applications. A lot of what we do here translates surprisingly well to C# programming because of this. We are simply letting PowerShell know that we are going to be building what's called a <em>Windows Form</em>, the most basic available GUI for Windows.
+            I know, it doesn't really seem like we're jumping in the deep end but it's important to understand what is happening here. The <code>Add-Type</code> command in a PowerShell script is much more powerful than we'll address today, but for now what you really need to understand is that PowerShell can interact with <strong>.NET Framework</strong> (y'know, that thing we have to reinstall on client PCs all the time) in order to build applications. A lot of what we do here translates surprisingly well to C# programming because of this. We are simply letting PowerShell know that we are going to be building what's called a <em>Windows Form</em>, the most basic available GUI for Windows. 
+        </p>
+        <p>
+            Without this assembly being loaded, the form will fail to load at all and the script will simply give a cryptic error message.
         </p>
         <p>
             Moving on, let's add this below that:
@@ -145,7 +148,8 @@
         <h2 id="buttonLogic">Button Logic</h2>
         <p>
             Let's add the following code to the bottom of our file. The <code>$formClicker.ShowDialog()</code> line is temporary, we only want to open the dialog for testing currently.
-        </p>
+        </p>   
+
         <div class="vscode-snippet">
             <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho407"></code></pre>
         </div>
@@ -157,7 +161,7 @@
             <p>
                 To address that, we use what's called a <strong>scope</strong>. For our purposes, we will mainly only use the <code>$script:</code> scope as we move on, but you can look into <code>$global:</code>, <code>$local:</code>, and <code>$private:</code> scopes, as well.
             </p>
-        </div>     
+        </div>  
         <p>
             Now if you click on our buttons, you'll see some output in your console. We are successfully updating the <code>$counter</code> variable! You should see some output like this: 
         </p>
@@ -195,13 +199,19 @@
         </p>
         <video controls style="max-width: 100%;">
             <source src="img/ho4-video.webm" type="video/webm" />
+        </video>
         
         <h2 id="conclusion">Conclusion</h2>
         <p>
-            And that about does it. Just a basic funtion and a little math can go a long way in making a super simple little application. Our main takeaways today should be:
+            And that about does it. Just a basic funtion and a little math can go a long way in making a super simple little application. Please see the <a href="#finalScripts">full text</a> of the scripts down below. Our main takeaways today should be:
         </p>
         <ol>
-            <li></li>
+            <li>The importance of using <code>Add-Type</code> to load necessary assemblies for your application.</li>
+            <li>How to create a form, set its properties, and add new elements to it.</li>
+            <li>Using basic mathematical formulas ot place elements precisely.</li>
+            <li>Adding logic to buttons using the <code>Add_Click()</code> method.</li>
+            <li>How and why to use the <code>$script:</code> scope.</li>
+            <li>Using a function to dynamically update content on a form, including color, size, and location.</li>
         </ol>
 
 
