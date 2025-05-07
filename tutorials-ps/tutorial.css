@@ -127,6 +127,7 @@ h2 {
     position: relative;
     display: inline-block;
     width: 100%; 
+    margin-bottom: 1px;
 }
 
 h2::after {
@@ -149,13 +150,14 @@ h3 {
     background-color: #1f1f1f;
     color: white;
     padding: 10px;
-    margin-bottom: -3px;
+    margin-bottom: -2.5px;
     border-radius: 8px 8px 0 0;
     position: relative;
     display: inline-block;
     border-top: 3px solid limegreen;
     border-left: 3px solid limegreen;
     border-right: 3px solid limegreen;
+    z-index: 1;
 }
 
 code {
@@ -370,6 +372,81 @@ pre {
 
 .tutorial-hint a {
     text-decoration: underline dotted;
+}
+
+.command-table {
+    background-color: rgb(36, 36, 36);
+    width: auto; /* Changed from 100% */
+    max-width: 90vw;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 3px solid limegreen;
+    table-layout: auto;
+    font-size: min(1em, 1.5vw); /* Adjust the 1.5vw value as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Optional: Set a minimum font size to prevent text from becoming unreadable */
+@media (max-width: 768px) {
+    .command-table {
+        font-size: min(0.9em, 1.8vw); /* Different scaling for mobile */
+    }
+}
+@media (max-width: 768px) {
+    .command-table {
+        font-size: min(1.25em, 1.65vw); /* Different scaling for mobile */
+    }
+}
+
+
+
+.command-table th:not(:last-child),
+.command-table td:not(:last-child) {
+    width: 1%; 
+    white-space: nowrap; 
+}
+
+.command-table th:last-child,
+.command-table td:last-child {
+    width: auto;
+}
+
+.command-table tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+}
+.command-table tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+}
+.command-table tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+.command-table tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+.command-table th {
+    background-color: limegreen;
+    color: black;
+    font-size: 1.25em;
+    font-weight: 400;
+    padding: 12px 15px;
+    text-align: left;
+}
+.command-table td {
+    padding: 10px 15px;
+    border-bottom: 1px solid rgb(205, 50, 197);
+    vertical-align: top;
+}
+.command-table tr:nth-child(even) {
+    background-color: rgb(46, 46, 46);
+}
+.command-table tr:hover {
+    background-color: black;
+    color: limegreen;
+    transition: all 0.75s ease;
+
 }
 
 #svg-logo {
