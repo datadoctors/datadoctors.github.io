@@ -425,7 +425,7 @@ pre {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 12px;
+    width: 8px;
     background: var(--hint-bar-gradient);
     pointer-events: none;
 }
