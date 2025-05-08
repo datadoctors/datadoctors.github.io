@@ -1,53 +1,136 @@
+:root { /* These are defaults that are overridden by the theme-selector JS
+           - there are other classes near the bottom of the file called
+           ".dark-mode" and ".light-mode" that normally set the theme. */
+    --primary-color: rgb(50 205 50);        
+    --secondary-color: rgb(205, 50, 197);   
+    --bg-main: rgb(0, 0, 0);
+    --bg-alt: rgb(70, 70, 70);
+    --bg-alt-alt: rgb(90, 90, 90);
+    --text-light: rgb(255, 255, 255);
+    --alt-color: rgb(255,255,0);
+    --gray: rgb(110, 110, 110);
+    --hint-gradient-bg: ellipse at left center,
+        rgba(26, 26, 26, 1) 0%,
+        rgba(26, 26, 26, 0.8) 30%,
+        rgba(26, 26, 26, 0) 70%;
+
+    --kbd-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+    --code-runner: repeating-linear-gradient(
+        to right,
+        transparent,
+        rgb(205, 50, 197) 10%,
+        transparent
+    );
+    --hint-bar-gradient: linear-gradient(transparent 0%,
+        rgb(205, 50, 197) 50%,
+        transparent 100%);
+    --bg-code: rgb(30,30,30);
+    --text-code-header: rgb(255,255,255);
+}
+
+.dark-mode {
+    --primary-color: rgb(50 205 50);
+    --secondary-color: rgb(205, 50, 197);
+    --bg-main: rgb(0, 0, 0);
+    --bg-alt: rgb(70, 70, 70);
+    --bg-alt-alt: rgb(90, 90, 90);
+    --text-light: rgb(255, 255, 255);
+    --alt-color: rgb(255,255,0);
+    --gray: rgb(110, 110, 110);
+    --hint-gradient-bg: ellipse at left center,
+        rgba(26, 26, 26, 1) 0%,
+        rgba(26, 26, 26, 0.8) 30%,
+        rgba(26, 26, 26, 0) 70%;
+    --code-runner: repeating-linear-gradient(
+        to right,
+        transparent,
+        rgb(205, 50, 197) 10%,
+        transparent
+    );
+    --hint-bar-gradient: linear-gradient(transparent 0%,
+        rgb(205, 50, 197) 50%,
+        transparent 100%);
+    --bg-code: rgb(30,30,30);
+  }
+  
+  /* Light mode class - matches your default scheme */
+  .light-mode {
+    --primary-color: rgb(30,144,255);
+    --secondary-color: rgb(205, 50, 197);
+    --bg-main: rgb(255,255,255);
+    --bg-alt: rgb(230, 230, 230);
+    --bg-alt-alt: rgb(200, 200, 200);
+    --text-light: rgb(0, 0, 0);
+    --alt-color: rgb(205, 50, 197);
+    --gray: rgb(110, 110, 110);
+    --hint-gradient-bg: ellipse at left center,
+        rgba(226, 226, 226, 1) 0%,
+        rgba(226, 226, 226, 0.8) 30%,
+        rgba(226, 226, 226, 0) 70%;
+    --code-runner: repeating-linear-gradient(
+        to right,
+        transparent,
+        rgb(255, 141, 30, 1) 10%,
+        transparent
+    );
+    --hint-bar-gradient: linear-gradient(transparent 0%,
+    rgb(255, 141, 30, 1) 50%,
+      transparent 100%);
+  }
+
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: black;
+    background-color: var(--bg-main);
     font-family: 'Cantarell', sans-serif;
-    color: white;
-    line-height: 1.5em;
+    color: var(--text-light);
+    line-height: 1.6em;
+    transition: all 0.3s ease;
+
 }
 
-a {
+a,
+a:active,
+a:link,
+a:visited {
     font-weight: 500;
-    color: limegreen;
+    color: var(--primary-color);
     text-decoration: underline dotted;
-    transition: all 0.3s ease;
-    background-color: rgb(31, 31, 31);
+    background-color: var(--bg-alt);
     padding: 5px;
     margin-top: 3px;
     margin-bottom: 3px;
     border-radius: 8px;
 }
 
+
+a:hover {
+    color: var(--alt-color) !important;
+    text-decoration: underline dotted;
+    background-color: var(--bg-alt-alt);
+}
+
 .wip {
     cursor:not-allowed !important;
-    color: gray;
+    color: var(--gray);
 }
 
 .wip::before {
     content: "(WIP) ";
-    color: yellow;
-}
-
-a:visited {
-    font-weight: 300;
-    color: limegreen;
+    color: var(--alt-color);
 }
 
 a:hover {
-    color: yellow;
-    text-decoration: underline dotted;
-    transition: all 0.3s ease;
-    background-color: rgb(58, 58, 58);
+
 
 }
 
 a:active,
 a:focus {
-    color: yellow;
-    outline: 2px dotted limegreen;
+
 }
 
 .site-header {
@@ -72,7 +155,7 @@ a:focus {
   }
 
   .home-link {
-    background-color: rgb(58, 58, 58, 0.0) !important;
+    background: none !important;
     border: none !important;
     outline: none !important;
   }
@@ -80,11 +163,11 @@ a:focus {
   .header-text {
     display: flex;
     flex-direction: column;
-    min-width: 0; /* Allows text to shrink */
+    min-width: 0;
   }
   
   .header-title {
-    font-size: clamp(1.5em, 2.25em, 4vw); /* Responsive scaling */
+    font-size: clamp(1.5em, 2.25em, 4vw);
     margin: 0;
     line-height: 1.2;
     white-space: nowrap;
@@ -97,8 +180,8 @@ a:focus {
 .header-subtitle {
     font-size: clamp(0.9em, 1.25em, 3vw);
     margin: 0;
-    color: black;
-    background-color: limegreen;
+    color: var(--bg-main);
+    background-color: var(--primary-color);
     padding: 3px;
     border-radius: 8px;
     font-weight: 700;
@@ -109,19 +192,19 @@ a:focus {
 .header-subtitle.typing-in-progress .cursor {
     animation: blink 1s step-end infinite;
     margin-left: 1px;
-    color: black;
+    color: var(--bg-main);
 }
 
 .header-subtitle.typing-complete::after {
     content: "█";
     animation: blink 1s step-end infinite;
     margin-left: 4px;
-    color: black;
+    color: var(--bg-main);
     vertical-align: top;
 }
 
 h2 {
-    color: limegreen;
+    color: var(--primary-color);
     font-size: 2em;
     font-weight: 900;
     position: relative;
@@ -137,34 +220,35 @@ h2::after {
     bottom: -0.3em;
     width: 100%;
     height: 0.1em;
-    background: repeating-linear-gradient(
-        to right,
-        transparent,
-        rgb(205, 50, 197) 10%,
-        transparent
-    );
+    background: var(--code-runner) !important;
 }
 
 h3 {
     font-family: 'JetBrains Mono', Courier, monospace;
-    background-color: #1f1f1f;
-    color: white;
+    background-color: var(--bg-code);
+    color: var(--text-code-header);
     padding: 10px;
     margin-bottom: -2.5px;
     border-radius: 8px 8px 0 0;
     position: relative;
     display: inline-block;
-    border-top: 3px solid limegreen;
-    border-left: 3px solid limegreen;
-    border-right: 3px solid limegreen;
+    border-top: 3px solid var(--primary-color);
+    border-left: 3px solid var(--primary-color);
+    border-right: 3px solid var(--primary-color);
     z-index: 1;
 }
 
 code {
     font-family: 'JetBrains Mono', Courier, monospace;
     font-size: 1em;
-    color: yellow;
+    color: var(--alt-color);
+    border-radius: 4px;
 }
+
+code:not([class*="language-"]) {
+    background-color: var(--bg-alt-alt);
+    padding: 2px;    
+  }
 
 .page-container {
     position: relative;
@@ -203,13 +287,13 @@ code {
 .winScript::Before {
     content: "PS C:\\scripts>";
     margin-right: 8px;
-    color: limegreen;
+    color: var(--primary-color);
     vertical-align: top;
 }
 
 .scriptFile::before {
     content: ".\\";
-    color: yellow;
+    color: var(--alt-color) !important;
     vertical-align: top;
 }
 
@@ -217,7 +301,7 @@ code {
     content: "█";
     animation: blink 1s step-end infinite;
     margin-left: 4px;
-    color: limegreen;
+    color: var(--primary-color);
     vertical-align: top;
 }
 
@@ -227,10 +311,10 @@ code {
     font-family: 'JetBrains Mono', Courier, monospace !important;
     position: relative;
     padding: 10px;
-    background-color: #1f1f1f;
+    background-color: var(--bg-code);
     width: calc(100% - 26px);
     z-index: 0;
-    border: 3px solid limegreen;
+    border: 3px solid var(--primary-color);
     border-radius: 0 8px 0 8px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -244,7 +328,7 @@ code {
 }
 
 .homeLink:hover a {
-    color: yellow;
+    color: var(--alt-color);
     transition: all 0.3s ease;
     text-decoration: underline dotted;
 }
@@ -258,27 +342,27 @@ code {
     z-index: 99;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    background-color: black;
+    border-radius: 50% !important;
+    background-color: var(--bg-main);
     font-size: 32px;
     font-weight: 900;
     text-align: center;
     line-height: 1.5em;    /* Manaully adjusted to center the arrow */
     text-decoration: none;
     animation: bounce 2s infinite;
-    box-shadow: 0 0 0 5px rgb(205, 50, 197);
+    box-shadow: 0 0 0 5px var(--secondary-color);
     opacity: 50%;
     cursor: pointer;
 }
 
 .back-to-top:hover {
     opacity: 1;
-    box-shadow: 0 0 0 5px yellow;
+    box-shadow: 0 0 0 5px var(--alt-color);
 
 }
 
 a.back-to-top {
-    color: white;
+    color: var(--text-light);
     text-decoration: none;
 }
 
@@ -289,11 +373,11 @@ a.back-to-top {
 kbd {
     padding: 2px 4px;
     font-size: .95em;
-    color: rgb(255, 255, 255);
-    background-color: rgb(31, 31, 31);
-    border: 1px solid #a6a6a6;
+    color: var(--text-light);
+    background-color: var(--bg-alt); /* revisit this when doing light mode */
+    border: 1px solid var(--text-light);
     border-radius: 3px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+    box-shadow: var(---kbd-box-shadow);
     white-space: nowrap;
     font-family: 'JetBrains Mono', Courier, monospace;
 }
@@ -310,11 +394,11 @@ pre {
     word-break: keep-all;
     width: calc(100% - 26px);
     max-height: 450px;
-    background-color: #252525;
-    color: #f0f0f0;
+    background-color: var(--bg-alt);
+    color: var(--text-light);
     font-family: 'JetBrains Mono', Courier, monospace;
     padding: 10px;
-    border: 3px dotted yellow;
+    border: 3px dotted var(--alt-color);
     border-radius: 8px 0 8px 0px;
     margin: 0;
     tab-size: 4;
@@ -325,15 +409,10 @@ pre {
 .tutorial-hint {
     position: relative;
     background: 
-        radial-gradient(
-            ellipse at left center,
-            rgba(26, 26, 26, 1) 0%,
-            rgba(26, 26, 26, 0.8) 30%,
-            rgba(26, 26, 26, 0) 70%
-        );
+        radial-gradient(var(--hint-gradient-bg));
     border-radius: 24px;
     padding: 10px;
-    color: #e0e0e0;
+    color: var(--text-light);
     width: 100%;
     margin: auto;
     margin-top: 20px;
@@ -347,17 +426,12 @@ pre {
     left: 0;
     bottom: 0;
     width: 12px;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(205, 50, 197, 1) 50%,
-        transparent 100%
-    );
+    background: var(--hint-bar-gradient);
     pointer-events: none;
 }
 
 .tutorial-hint h4 {
-    color: limegreen;
+    color: var(--primary-color);
     margin-top: 0.5rem;
     margin-left: .5rem;
     margin-bottom: 0.75rem;
@@ -375,16 +449,16 @@ pre {
 }
 
 .command-table {
-    background-color: rgb(36, 36, 36);
-    width: auto; /* Changed from 100% */
+    background-color: var(--bg);
+    width: auto; 
     max-width: 90vw;
     border-radius: 12px;
     margin-bottom: 30px;
     border-collapse: separate;
     border-spacing: 0;
-    border: 3px solid limegreen;
+    border: 3px solid var(--primary-color);
     table-layout: auto;
-    font-size: min(1em, 1.5vw); /* Adjust the 1.5vw value as needed */
+    font-size: min(1em, 1.5vw); 
     margin-left: auto;
     margin-right: auto;
 }
@@ -427,8 +501,8 @@ pre {
     border-bottom-right-radius: 8px;
 }
 .command-table th {
-    background-color: limegreen;
-    color: black;
+    background-color: var(--primary-color);
+    color: var(--bg-main);
     font-size: 1.25em;
     font-weight: 400;
     padding: 12px 15px;
@@ -436,15 +510,18 @@ pre {
 }
 .command-table td {
     padding: 10px 15px;
-    border-bottom: 1px solid rgb(205, 50, 197);
+    border-bottom: 1px solid var(--secondary-color);
     vertical-align: top;
 }
+.command-table tr:nth-child(odd) {
+    background-color: var(--bg-alt);
+}
 .command-table tr:nth-child(even) {
-    background-color: rgb(46, 46, 46);
+    background-color: var(--bg-alt-alt);
 }
 .command-table tr:hover {
-    background-color: black;
-    color: limegreen;
+    background-color: var(--bg-main);
+    color: var(--primary-color);
     transition: all 0.75s ease;
 
 }
@@ -454,14 +531,14 @@ pre {
     position: relative;
 }
 #logoColor {
-    fill:#32cd32;
-    stroke:#32cd32;
+    fill: var(--primary-color);
+    stroke:var(--primary-color);
     stroke-width:0.206172;
     fill-opacity:1;
 }
 
 #logoColor:hover {
-    fill: #FFFF00 !important;
+    fill: var(--alt-color) !important;
 }
   @media (max-width: 920px) {
     .page-container {
@@ -532,3 +609,125 @@ pre {
         transform: translateY(5px);
     }
 }
+
+  /* Dark mode class - matches your @media dark scheme */
+
+
+
+
+
+/* Updated toggle visibility */
+.theme-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .theme-toggle-label.animate .lightbulb-icon {
+    animation: pullCord 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+  
+  .theme-toggle-label {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+  
+  /* SVG icon styles */
+  .lightbulb-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Light mode icon colors */
+  .lightbulb-icon .bulb-glass {
+    fill: white;
+    stroke: #333;
+    stroke-width: 0.5;
+  }
+  
+  .lightbulb-icon .bulb-filament {
+    fill: white;
+    opacity: 0.8;
+  }
+  
+  .lightbulb-icon .bulb-base {
+    fill: white;
+  }
+  
+  /* Dark mode icon colors */
+  .dark-mode .lightbulb-icon .bulb-glass {
+    fill: black;
+    stroke: #f5f5f5;
+  }
+  
+  .dark-mode .lightbulb-icon .bulb-filament {
+    fill: black;
+    filter: drop-shadow(0 0 4px rgba(255, 235, 59, 0.7));
+  }
+  
+  .dark-mode .lightbulb-icon .bulb-base {
+    fill: black;
+  }
+  /* Lightbulb Pull Cord Animation */
+.lightbulb-icon {
+    width: 24px;
+    height: 24px;
+    transform-origin: center 20%; /* Pivot point at top of bulb */
+    transition: 
+      transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+      filter 0.3s ease;
+  }
+  
+  /* Click animation when toggling */
+  .theme-toggle:active + .theme-toggle-label .lightbulb-icon,
+  .theme-toggle:checked:active + .theme-toggle-label .lightbulb-icon {
+    animation: pullCord 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+  
+  /* Pull cord animation */
+  @keyframes pullCord {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+    30% {
+      transform: translateY(8px) rotate(-5deg);
+    }
+    60% {
+      transform: translateY(-4px) rotate(3deg);
+    }
+    80% {
+      transform: translateY(2px) rotate(-2deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+  }
+  
+  /* Add glowing filament effect when dark mode is active */
+  .theme-toggle:checked + .theme-toggle-label .lightbulb-icon .bulb-filament {
+    animation: filamentGlow 1.5s infinite alternate;
+  }
+  
+  @keyframes filamentGlow {
+    from {
+      opacity: 0.8;
+      filter: drop-shadow(0 0 2px rgba(255, 235, 59, 0.5));
+    }
+    to {
+      opacity: 1;
+      filter: drop-shadow(0 0 6px rgba(255, 235, 59, 0.9));
+    }
+  }

@@ -60,3 +60,44 @@ document.addEventListener('DOMContentLoaded', function() {
   
   typeWriter();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const themeToggle = document.getElementById('theme-toggle');
+  const toggleLabel = document.querySelector('.theme-toggle-label');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // Init
+  const savedTheme = localStorage.getItem('theme');
+  const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+  document.body.classList.add(initialTheme + '-mode');
+  themeToggle.checked = initialTheme === 'dark';
+
+  toggleLabel.addEventListener('click', function (e) {
+    e.preventDefault(); // stop unwanted behaviors
+
+    // Manually toggle the checkbox
+    themeToggle.checked = !themeToggle.checked;
+
+    // Theme logic
+    const newTheme = themeToggle.checked ? 'dark' : 'light';
+    document.body.classList.remove('dark-mode', 'light-mode');
+    document.body.classList.add(newTheme + '-mode');
+    localStorage.setItem('theme', newTheme);
+
+    // Animate
+    toggleLabel.classList.add('animate');
+    toggleLabel.addEventListener('animationend', () => {
+      toggleLabel.classList.remove('animate');
+    }, { once: true });
+  });
+
+  // Watch system changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      const systemTheme = e.matches ? 'dark' : 'light';
+      document.body.classList.remove('dark-mode', 'light-mode');
+      document.body.classList.add(systemTheme + '-mode');
+      themeToggle.checked = systemTheme === 'dark';
+    }
+  });
+});
