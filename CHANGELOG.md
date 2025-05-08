@@ -4,6 +4,8 @@
 ## 05/08/2025
 <img src="/images/gifs/ken-shoryu.gif" style="width: 250px;">
 * EEK and Stinger are dead to us, now. We have replaced them with the portable technician version of Malwarebytes Anti-Malware! There are a few other utilities included with the technician's toolset and we'll likely be integrating them into some other processes, but for now we have just added a new world-class anti-malware scanner into our toolkits. That also means that remote services and in-store services will run the same scans, so we'll no longer be skipping any important steps just because it's on a remote! 
+
+
 * The PC Evaluation script will now give notice if a system firmware is more than 6 months out of date. This does NOT mean that there is an updated system BIOS - only that we should be checking for one.
 
 ## 03/24/2025
