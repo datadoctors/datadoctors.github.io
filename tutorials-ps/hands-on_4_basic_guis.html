@@ -39,8 +39,9 @@
               <p class="header-subtitle">4: Basic GUIs</p>
             </div>
           </header>
-        <div>
+          <div class="linkBox-container">
             <div class="linkBox">
+                <a href="#buildingForm">Building a Form</a>
                 <a href="#addingElements">Adding Elements</a>
                 <a href="#settingLayout">Setting Layout</a>
                 <a href="#buttonLogic">Button Logic</a>
@@ -48,12 +49,22 @@
                 <a href="#conclusion">Conclusion</a>
                 <a href="#finalScripts">Final Scripts</a>
             </div>
-        </div> 
+            <button class="linkBox-nav linkBox-prev hidden" aria-label="Scroll left">
+              <svg viewBox="0 0 24 24">
+                <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+              </svg>
+            </button>
+            <button class="linkBox-nav linkBox-next hidden" aria-label="Scroll right">
+              <svg viewBox="0 0 24 24">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+              </svg>
+            </button>
+          </div>
         <!-- Content starts here -->
         <p>
             This script will be very straightforward, but building GUI elements out can take some patience. Manual tweaking will need to happen and we'll have to come up with clever(ish) equations to have perfect placement. In this tutorial, we'll build a GUI for a basic click-coutner application, learn how to assign logic to buttons, and touch on dynamically updating GUI elements that are already loaded. Let's get to it!
         </p>
-        <h2 id="addingElements">Adding Elements</h2>
+        <h2 id="buildingForm">Building a Form</h2>
         <p>
             I hope you like doing math! Just kidding (sorta) - PowerShell will thankfully do the actual math part, we just need to figure out placement. Fortunately for you, I've learned some tricks on lining up elements that I'll be sharing today that will hopefully give you a shortcut to successfully building feature-rich applications from PowerShell scripts.
         </p>
@@ -96,6 +107,9 @@
                 <li>A <code>form</code> is the window that every other element will be pinned to. You can have multiple forms in one script (like the splash screens you see in the Evaluation and Copy scripts we use currently), but in this example we will be sticking to one main form.</li>
                 <li>We are setting a <code>ClientSize</code> rather than what you will mostly find in code examples online, <code>Size</code>. The reason why is that <code>ClientSize</code> controls the actual usable portion of the window, without the window decorations and borders. Aside from simply being more accurate, it will also come in handy later on (not in this tutorial) when we set DPI scaling, as window contents are sometimes scaled much differently than title bars.</li>
             </ol>
+            </p>
+        <h2 id="addingElements">Adding Elements</h2>
+        <p>
             With that out of the way, we can move on to adding the rest of the elements. Add the following code after what you already have.
         </p>
         <div class="vscode-snippet">
@@ -163,7 +177,7 @@
             <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho407"></code></pre>
         </div>
         <div class="tutorial-hint">
-            <h4>What does <code>$script:</code> mean? Isn't the variable just <code>$counter?</code></h4>
+            <h4>What does <code>$script:</code> mean? Isn't the variable just <code>$counter</code>?</h4>
             <p>
                 The <code>Add_Click()</code> class is an <em>event handler</em>, which are handled in a separate process from the main script. If we were to simply use <code>$counter++</code> instead of <code>$script:counter++</code>, the handler would generate an entirely new <code>$counter</code> variable, usable only inside of the event handler.
             </p>

@@ -101,3 +101,85 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const linkBoxes = document.querySelectorAll('.linkBox-container');
+  
+  linkBoxes.forEach(container => {
+    const linkBox = container.querySelector('.linkBox');
+    const prevBtn = container.querySelector('.linkBox-prev');
+    const nextBtn = container.querySelector('.linkBox-next');
+    
+    function checkScroll() {
+      const hasScroll = linkBox.scrollWidth > linkBox.clientWidth;
+      const atStart = linkBox.scrollLeft === 0;
+      const atEnd = linkBox.scrollLeft >= linkBox.scrollWidth - linkBox.clientWidth - 1;
+      
+      // Toggle buttons
+      prevBtn.classList.toggle('hidden', !hasScroll || atStart);
+      nextBtn.classList.toggle('hidden', !hasScroll || atEnd);
+      
+      // Toggle fade-out indicators
+      container.classList.toggle('scrollable-start', !atStart);
+      container.classList.toggle('scrollable-end', !atEnd);
+    }
+    
+    prevBtn.addEventListener('click', () => {
+      linkBox.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      linkBox.scrollBy({ left: 200, behavior: 'smooth' });
+    });
+    
+    // Add keyboard navigation
+    prevBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        linkBox.scrollBy({ left: -200, behavior: 'smooth' });
+      }
+    });
+    
+    nextBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        linkBox.scrollBy({ left: 200, behavior: 'smooth' });
+      }
+    });
+    
+    linkBox.addEventListener('scroll', checkScroll);
+    window.addEventListener('resize', checkScroll);
+    
+    // Initial check
+    checkScroll();
+    
+    // Add touch support for mobile
+    let isDragging = false;
+    let startX, scrollLeft;
+    
+    linkBox.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.pageX - linkBox.offsetLeft;
+      scrollLeft = linkBox.scrollLeft;
+      linkBox.style.cursor = 'grabbing';
+      linkBox.style.userSelect = 'none';
+    });
+    
+    linkBox.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - linkBox.offsetLeft;
+      const walk = (x - startX) * 2;
+      linkBox.scrollLeft = scrollLeft - walk;
+    });
+    
+    linkBox.addEventListener('mouseup', () => {
+      isDragging = false;
+      linkBox.style.cursor = 'grab';
+      linkBox.style.userSelect = '';
+    });
+    
+    linkBox.addEventListener('mouseleave', () => {
+      isDragging = false;
+      linkBox.style.cursor = 'grab';
+      linkBox.style.userSelect = '';
+    });
+  });
+});

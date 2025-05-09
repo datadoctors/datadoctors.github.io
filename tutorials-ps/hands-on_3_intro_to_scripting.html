@@ -38,16 +38,28 @@
               <h1 class="header-title"></h1>
               <p class="header-subtitle">3: Intro to Scripting</p>
             </div>
-          </header>            
-        <div class="linkBox">
-            <a href="#launchingScripts">Launching Scripts</a>
-            <a href="#functions">Functions</a>
-            <a href="#parameters">Parameters</a>
-            <a href="#userInterface">User Interface</a>
-            <a href="#doLoop">The <code>do</code> loop</a>
-            <a href="#conclusion">Conclusion</a>
-            <a href="#finalScripts">Final Scripts</a>
-        </div>
+          </header>       
+        <div class="linkBox-container">
+            <div class="linkBox">
+                <a href="#launchingScripts">Launching Scripts</a>
+                <a href="#functions">Functions</a>
+                <a href="#parameters">Parameters</a>
+                <a href="#userInterface">User Interface</a>
+                <a href="#doLoop">The <code>do</code> loop</a>
+                <a href="#conclusion">Conclusion</a>
+                <a href="#finalScripts">Final Scripts</a>
+            </div>
+            <button class="linkBox-nav linkBox-prev hidden" aria-label="Scroll left">
+              <svg viewBox="0 0 24 24">
+                <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+              </svg>
+            </button>
+            <button class="linkBox-nav linkBox-next hidden" aria-label="Scroll right">
+              <svg viewBox="0 0 24 24">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+              </svg>
+            </button>
+          </div>
         <p>
             In this tutorial, we'll be creating a fully-functional terminal application that can let us check some useful system information 
             in one place. We'll be pulling from previous lessons and adding some new functionality as we go.
