@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PowerShell Commands and Concepts</title>
+    <link rel="stylesheet" href="tutorial.css">
+    <link rel="stylesheet" href="prism.css">
+    <head-content></head-content>
+</head>
+
+<body>
+    <mode-select></mode-select>
+    <div class="page-container">
+        <site-header headerTitle="Getting Started with PowerShell" subtitle="1: Commands and Concepts" />
+        </site-header>
+        <div class="linkBox-container">
+            <div class="linkBox">
+                <a href="#commandEquivalents">Command Equivalents</a>
+                <a href="#">Testing Bloop</a>
+                <a href="#">Testing Bloop</a>
+                <a href="#">Testing Bloop</a>
+                <a href="#">Testing Bloop</a>
+                <site-nav></site-nav>
+            </div>
+        </div>
+        <h2 id="variables">Variables</h2>
+        <p>
+            Variables are one of the primary building blocks of any coding language. Variables allow you to store long,
+            complicated or unique information for referring back to later. For example, there is an environment variable that
+            has your computer name, which you can enter into a terminal as <code class="language-powershell">$env:COMPUTERNAME</code>.
+            For this example, my computer's name is "DESKTOP-C1DHTMN".
+        </p>
+        <p>
+            Before we go much further, I'll point out that PowerShell is generally not case sensitive, although you can force
+            it to be when needed. You could just as easily enter <code>$env:ComputerName</code> to get the same information.
+        </p>
+        <p>
+            Now, if you are writing a script for your own use on a single machine, perhaps it's easiest to simply hardcode your
+            system name into your script. You could save that in your script as a variable called <code>$myPcName</code> by writing 
+            <code class="language-powershell">$myPcName = "DESKTOP-C1DHTMN"</code>. 
+        </p>
+        <p>
+            If you intend to create a more portable application, though, it was be wiser to write that command as 
+            <code class="language-powershell">$myPcName = $env:COMPUTERNAME</code>. Now, whenever you run this script on any 
+            machine, it will store the name of the PC you are running it on.
+        </p>
+        <p>
+            Another useful way to use variables is to store the output of commands. For example, to test if a machine is online, you 
+            can use <code class="language-powershell">$isOnline = Test-Connection -Quiet google.com</code> -- this will return a <em>
+            boolean</em> value (a <code class="language-powershell">$true</code> or <code class="language-powershell">$false</code> 
+            statement). You can then later use an <code>if</code> statement to run an action based on that, like so:
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="">$isOnline = Test-Connection -Quiet google.com
+if ($isOnline) {
+    # Code to run if $isOnline is $true 
+    Write-Host "We're online!"
+    } else {
+    # Code to run if isOnline is $false
+    Write-Host "Dang, no innernet."
+}</code></pre>
+        </div>
+
+        <h2 id="commandEquivalents">Command Equivalents</h2>
+        <p>
+            If you are brand new to PowerShell but have some other command-line experience, you can likely feel at home
+            right away. Plenty of the old standby commands from your previous experience, like <code
+                class="language-bash">ls</code>, <code class="language-batch">cd</code>, <code
+                class="language-bash">curl</code>, and <code class="language-batch">dir</code> will still work -- sort
+            of! All of these commands will produce fairly similar results as you're used to, right up until you try to
+            use any switches or options; that's because they are simply <em>aliases</em> for other, native PowerShell
+            commands.
+        </p>
+        <p>
+            You can find a table of a few of those below.
+        </p>
+        <table class="command-table">
+            <thead>
+                <tr>
+                    <th>PowerShell (aliases)</th>
+                    <th>Command-Line</th>
+                    <th>Bash</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code class="language-powershell">Get-ChildItem</code> (<code>ls</code>, <code>dir</code>)</td>
+                    <td><code class="language-batch">dir</code></td>
+                    <td><code class="language-bash">ls</code></td>
+                    <td>List files</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Set-Location</code> (<code>cd</code>, <code>chdir</code>)</td>
+                    <td><code class="language-batch">cd</code> or <code class="language-batch">chdir</code></td>
+                    <td><code class="language-bash">cd</code></td>
+                    <td>Change directory</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Get-Location</code> (<code>pwd</code>)</td>
+                    <td><code class="language-batch">cd</code> (no arguments)</td>
+                    <td><code class="language-bash">pwd</code></td>
+                    <td>Print working directory</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Clear-Host</code> (<code>cls</code>, <code>clear</code>)</td>
+                    <td><code class="language-batch">cls</code></td>
+                    <td><code class="language-bash">clear</code></td>
+                    <td>Clear screen</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Get-Content</code> (<code>cat</code>, <code>type</code>)</td>
+                    <td><code class="language-batch">type</code></td>
+                    <td><code class="language-bash">cat</code> or <code class="language-bash">less</code></td>
+                    <td>Display file contents</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Copy-Item</code> (<code>cp</code>, <code>copy</code>)</td>
+                    <td><code class="language-batch">copy</code> or <code class="language-batch">xcopy</code></td>
+                    <td><code class="language-bash">cp</code></td>
+                    <td>Copy file</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Move-Item</code> (<code>mv</code>, <code>move</code>,
+                        <code>ren</code>)</td>
+                    <td><code class="language-batch">move</code> or <code class="language-batch">ren</code></td>
+                    <td><code class="language-bash">mv</code></td>
+                    <td>Move/rename file</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Remove-Item</code> (<code>rm</code>, <code>del</code>,
+                        <code>erase</code>)</td>
+                    <td><code class="language-batch">del</code> or <code class="language-batch">erase</code></td>
+                    <td><code class="language-bash">rm</code></td>
+                    <td>Delete file</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">New-Item -ItemType Directory</code> (<code>mkdir</code>,
+                        <code>md</code>)</td>
+                    <td><code class="language-batch">mkdir</code> or <code class="language-batch">md</code></td>
+                    <td><code class="language-bash">mkdir</code></td>
+                    <td>Create directory</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Remove-Item</code> (<code>rmdir</code>, <code>rd</code>)</td>
+                    <td><code class="language-batch">rmdir</code> or <code class="language-batch">rd</code></td>
+                    <td><code class="language-bash">rmdir</code> or <code class="language-bash">rm -r</code></td>
+                    <td>Remove directory</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Get-ChildItem -Filter</code> (<code>dir -filter</code>)</td>
+                    <td><code class="language-batch">dir /s</code></td>
+                    <td><code class="language-bash">find</code> or <code class="language-bash">locate</code></td>
+                    <td>Find files</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Select-String</code> (<code>sls</code>)</td>
+                    <td><code class="language-batch">findstr</code></td>
+                    <td><code class="language-bash">grep</code></td>
+                    <td>Search in files</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Get-History</code> (<code>history</code>, <code>h</code>)</td>
+                    <td><code class="language-batch">doskey /history</code></td>
+                    <td><code class="language-bash">history</code></td>
+                    <td>Display command history</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Get-Help</code> (<code>help</code>, <code>man</code>)</td>
+                    <td><code class="language-batch">command /?</code></td>
+                    <td><code class="language-bash">man</code> or <code class="language-bash">--help</code></td>
+                    <td>Get help</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Get-NetIPConfiguration</code> (<code>ipconfig</code>)</td>
+                    <td><code class="language-batch">ipconfig</code></td>
+                    <td><code class="language-bash">ifconfig</code> or <code class="language-bash">ip a</code></td>
+                    <td>Network information</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Test-Connection</code> (<code>ping</code>)</td>
+                    <td><code class="language-batch">ping</code></td>
+                    <td><code class="language-bash">ping</code></td>
+                    <td>Ping</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Get-Process</code> (<code>ps</code>)</td>
+                    <td><code class="language-batch">tasklist</code></td>
+                    <td><code class="language-bash">ps</code></td>
+                    <td>Process list</td>
+                </tr>
+                <tr>
+                    <td><code class="language-powershell">Stop-Process</code> (<code>kill</code>)</td>
+                    <td><code class="language-batch">taskkill</code></td>
+                    <td><code class="language-bash">kill</code></td>
+                    <td>Kill process</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            As you can see, a few of these are a bit.. verbose. In these tutorials, I will try my best to use
+            PowerShell-native commands, but in all honesty, it can be difficult to try to use <code
+                class="language-powershell">New-Item -ItemType Directory "newFolder"</code> when you're used to
+            <code>mkdir "newFolder"</code>. So, needless to say, using aliases when actually getting around in the
+            terminal is fine and won't cause you any pain. As a Linux user myself, being able to use <code>ls</code> in
+            PowerShell actually made it feel incredibly inviting versus my experience with the command prompt, the only
+            place I've ever had to use <code class="language-batch">dir</code>.
+        </p>
+    </div>
+    <!-- Stop any editing here -->
+    <a href="#top" class="back-to-top" id="backToTop">↑</a>
+    <script src="js/tutorial.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/injectTest.js"></script>
+</body>
+
+</html>
