@@ -5,6 +5,7 @@
     <title>PowerShell Commands and Concepts</title>
     <link rel="stylesheet" href="tutorial.css">
     <link rel="stylesheet" href="prism.css">
+    <meta charset="UTF-8">
     <head-content></head-content>
 </head>
 
@@ -15,8 +16,8 @@
         </site-header>
         <div class="linkBox-container">
             <div class="linkBox">
+                <a href="#variables">Variables</a>
                 <a href="#commandEquivalents">Command Equivalents</a>
-                <a href="#">Testing Bloop</a>
                 <a href="#">Testing Bloop</a>
                 <a href="#">Testing Bloop</a>
                 <a href="#">Testing Bloop</a>
@@ -26,28 +27,53 @@
         <h2 id="variables">Variables</h2>
         <p>
             Variables are one of the primary building blocks of any coding language. Variables allow you to store long,
-            complicated or unique information for referring back to later. For example, there is an environment variable that
-            has your computer name, which you can enter into a terminal as <code class="language-powershell">$env:COMPUTERNAME</code>.
+            complicated or unique information for referring back to later. For example, there is an environment variable
+            that
+            has your computer name, which you can enter into a terminal as <code
+                class="language-powershell">$env:COMPUTERNAME</code>.
             For this example, my computer's name is "DESKTOP-C1DHTMN".
         </p>
         <p>
-            Before we go much further, I'll point out that PowerShell is generally not case sensitive, although you can force
-            it to be when needed. You could just as easily enter <code>$env:ComputerName</code> to get the same information.
+            Before we go much further, I'll point out that PowerShell is generally not case sensitive, although you can
+            force
+            it to be when needed. You could just as easily enter <code
+                class="language-powershell">$env:ComputerName</code> to get the same information.
+        </p>
+        <div class="tutorial-hint">
+            <h4>What's going on with <code>$env:</code>?</h4>
+            <p>
+                Most variables you use will be defined by you, inside of the script or application you are writing.
+                However, there are
+                also some built-in variables in the PowerShell/Windows environment, called <em>environmental</em>
+                variables. In
+                PowerShell, you can use these by prepending <code class="language-powershell">$env:</code> to them.
+            </p>
+            <p>
+                To see a full list of your standard environmental variables, enter <code
+                    class="language-powershell">Get-ChildItem env:*</code>
+                into your Windows terminal.
+            </p>
+        </div>
+        <p>
+            Now, if you are writing a script for your own use on a single machine, perhaps it's easiest to simply
+            hardcode your
+            system name into your script. You could save that in your script as a variable called <code>$myPcName</code>
+            by writing
+            <code class="language-powershell">$myPcName = "DESKTOP-C1DHTMN"</code>.
         </p>
         <p>
-            Now, if you are writing a script for your own use on a single machine, perhaps it's easiest to simply hardcode your
-            system name into your script. You could save that in your script as a variable called <code>$myPcName</code> by writing 
-            <code class="language-powershell">$myPcName = "DESKTOP-C1DHTMN"</code>. 
-        </p>
-        <p>
-            If you intend to create a more portable application, though, it was be wiser to write that command as 
-            <code class="language-powershell">$myPcName = $env:COMPUTERNAME</code>. Now, whenever you run this script on any 
+            If you intend to create a more portable application, though, it was be wiser to write that command as
+            <code class="language-powershell">$myPcName = $env:COMPUTERNAME</code>. Now, whenever you run this script on
+            any
             machine, it will store the name of the PC you are running it on.
         </p>
         <p>
-            Another useful way to use variables is to store the output of commands. For example, to test if a machine is online, you 
-            can use <code class="language-powershell">$isOnline = Test-Connection -Quiet google.com</code> -- this will return a <em>
-            boolean</em> value (a <code class="language-powershell">$true</code> or <code class="language-powershell">$false</code> 
+            Another useful way to use variables is to store the output of commands. For example, to test if a machine is
+            online, you
+            can use <code class="language-powershell">$isOnline = Test-Connection -Quiet google.com</code> -- this will
+            return a <em>
+                boolean</em> value (a <code class="language-powershell">$true</code> or <code
+                class="language-powershell">$false</code>
             statement). You can then later use an <code>if</code> statement to run an action based on that, like so:
         </p>
         <div class="vscode-snippet">
@@ -122,21 +148,24 @@ if ($isOnline) {
                 </tr>
                 <tr>
                     <td><code class="language-powershell">Move-Item</code> (<code>mv</code>, <code>move</code>,
-                        <code>ren</code>)</td>
+                        <code>ren</code>)
+                    </td>
                     <td><code class="language-batch">move</code> or <code class="language-batch">ren</code></td>
                     <td><code class="language-bash">mv</code></td>
                     <td>Move/rename file</td>
                 </tr>
                 <tr>
                     <td><code class="language-powershell">Remove-Item</code> (<code>rm</code>, <code>del</code>,
-                        <code>erase</code>)</td>
+                        <code>erase</code>)
+                    </td>
                     <td><code class="language-batch">del</code> or <code class="language-batch">erase</code></td>
                     <td><code class="language-bash">rm</code></td>
                     <td>Delete file</td>
                 </tr>
                 <tr>
                     <td><code class="language-powershell">New-Item -ItemType Directory</code> (<code>mkdir</code>,
-                        <code>md</code>)</td>
+                        <code>md</code>)
+                    </td>
                     <td><code class="language-batch">mkdir</code> or <code class="language-batch">md</code></td>
                     <td><code class="language-bash">mkdir</code></td>
                     <td>Create directory</td>
@@ -197,11 +226,27 @@ if ($isOnline) {
                 </tr>
             </tbody>
         </table>
+        <div class="tutorial-hint">
+            <h4>What's an alias?</h4>
+            <p>
+                An alias is, well, an alias for another command; normally either shorthand or a more common 
+                version. Unix-like shells use <code class="language-bash">cp</code> for copy, but the Windows 
+                command-line uses <code class="language-bash">copy</code> and PowerShell uses <code 
+                class="language-powershell">Copy-Item</code> -- but all three work in PowerShell because it 
+                has multiple aliased commands.
+            </p>
+            <p>
+                You can actually create your own aliases if you'd like. For example, if you have a script that 
+                opens multiple text files during it's run, you could <em>alias</em> <code>notepad.exe</code> by 
+                using <code class="language-powershell">Set-Alias -Name np -Value notepad.exe</code> -- then you 
+                can simply use <code>np</code> rather than <code>notepad.exe</code> in your script.
+            </p>
+        </div>
         <p>
             As you can see, a few of these are a bit.. verbose. In these tutorials, I will try my best to use
             PowerShell-native commands, but in all honesty, it can be difficult to try to use <code
-                class="language-powershell">New-Item -ItemType Directory "newFolder"</code> when you're used to
-            <code>mkdir "newFolder"</code>. So, needless to say, using aliases when actually getting around in the
+            class="language-powershell">New-Item -ItemType Directory "newFolder"</code> when you're used to
+            <code class="language-bash">mkdir "newFolder"</code>. So, needless to say, using aliases when actually getting around in the
             terminal is fine and won't cause you any pain. As a Linux user myself, being able to use <code>ls</code> in
             PowerShell actually made it feel incredibly inviting versus my experience with the command prompt, the only
             place I've ever had to use <code class="language-batch">dir</code>.

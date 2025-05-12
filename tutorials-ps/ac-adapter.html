@@ -1,0 +1,78 @@
+<h1>Determing the Correct AC Adapter</h1>
+<p>
+    Determining the correct AC adapter for some devices is very easy -- low power devices can function fine with higher wattage AC adapters, and an HP blue-tip will work on anything that takes an HP blue-tip adapter, unless the wattage is too low to power on the device. Some devices will work fine with a too-low-wattage adapter, at least until the battery dies. This article will outline how to tell which AC adapter you can use for when it's a ltitle less obvious and a basic introduction to DC power.
+</p>
+<p>
+    Adide from physical dimensions, there are two very important technical factors in choosing a correct AC adapter: the <em>polarity</em> (which side is negative or positive) and <em>voltage</em>. Voltage can be off by roughly 5% in either direction. The third technical factor is <em>amperage</em>, which can be a lot more flexible -- we'll cover all of that below.  
+</p>
+
+<h2>Barrel Plugs</h2>
+<p>
+    Most laptops and all-in-one PCs take what is called a "barrel plug" connector. Any circular power connector is technically a barrel plug. If you inspect inside of a DC jack on a device, you may see a smaller, secondary inner barrel, which is typically where a sensor pin will be (we'll touch on that a bit further down).
+</p>
+<p>
+    The first thing to check when you're looking for a device is whether or not the plug will actually fit. With the potential AC adapter unplugged from the wall, it's safe to just try to plug it in -- if there is resistance, try another cord. If you know you have a correct adapter and it still won't fit, inspect the DC jack closely - it's likely damaged. 
+</p>
+<p>
+    Once you have a plug that you know fits, we can move on to the first technical aspect - the polarity.
+</p>
+
+<h2>Polarity</h2>
+<p>
+    <strong>Nearly</strong> all AC adapter barrel plugs are going to have what's called "center positive" polarity. That means the outer-edge of the barrel is <em>negative</em> and the inner plug (or pin) is going to be <em>positive</em>. Most AC adapters will have a diagram showing its polarity, like the two below.
+</p>
+<h4>Center Positive</h4>
+<p>
+    Center positive is the far more commonly used polarity for laptop AC adapters. When dealing with smaller electronics, however, it's <strong>VERY</strong> important to be sure of the polarity.
+</p>
+<p>
+    <img src="https://datadoctors.github.io/images/Polarity_marking_center_positive.png" style="max-width: 100%">
+</p>
+<h4>Center Negative</h4>
+<p>
+    This is extremely uncommon in computer electronics, but it's good to know the differences between the markings.
+
+</p>
+<p>
+    <img src="https://datadoctors.github.io/images/Polarity_marking_center_negative.png" style="max-width: 100%">
+</p>
+<h3>Other polarity markings</h3>
+<p>
+    You may see markings like the following on HP or Dell AC adapters. It's not limited exclusively to them, but they are the most common. These are still center positive polarity, but have an additional marking for the center pin, "SENS". This pin is for sending information to the computer, such as current, output, and whether or not it's a genuine OEM part. This is how Dell and HP laptops can tell you when the power cords are failing - they snitch on themselves.
+</p>
+<p>
+    <img src="https://datadoctors.github.io/images/hp_polarity_blue_tip.png" style="max-width: 100%; max-height: 25em;">
+</p>
+<h3>Importance</h3>
+<p>
+    Polarity (along with voltage) is incredibly important to match, but unlike voltage, there is no give with polarity. If you attach the incorrect polarity power adapter to a device, you will break something. Whereas nearly all laptop adapters are going to be center positive, it doesn't hurt to double check, especially if someone hands you a wall-wart or extremely cheap-seeming AC adapter to try out. While computers may nearly always use the same polarity, plenty of other electronics do not. 
+</p>
+<p>
+    Speaking of voltage, let's talk about the next important technical factor.
+</p>
+
+<h2>Voltage</h2>
+<p>
+    As with polarity, using the wrong voltage power adapter can damage devices, but also like with polarity, nearly every computer that uses an AC adapter will use <em>roughly</em> the same voltage. Nearly every major manufacturer uses 19.5 volts - with only one real exception of Lenovo, who uses 20 volts. However, these are within acceptable margin of error (roughly ~5%) and shouldn't cause issues.
+</p>
+<p>
+    Using a too-high voltage adapter on a device will break something on the device. Using a too-low voltage adapter on a device will break something in the adapter. Either way, something breaks. 
+</p>
+<p>
+    However, many of the cheap whitebox no-name brand laptops coming from Amazon, Temu, etc., are now using 12 volt adapters, so it's still very important to check!
+</p>
+<h3>AC vs DC</h3>
+<p>
+    The other very important part of voltage is checking for which <em>type</em> of voltage is being used. "AC" (or <em>alternating current</em>) is what is typically used in your home - in the US, all home plugs are 110 volts, with the only major exception being for electric dryers or ovens, which use 220 volts and have a much different plug. However, there are some electronic devices (such as landscaping equipment or doorbells) that will use AC electricity - they normally have wall-warts that are physically identical to DC power adapters, so you have to check the label to be sure. 
+</p>
+<p>
+    "DC" (or <em>direct current</em>) is what every computer will use. Even on a desktop PC, that big plug goes into your power supply, which then converts it into 12, 5, and 3.3 volts for use on your motherboard and peripherals. 
+</p>
+    Where "Output" is labeled on the AC adapter, you should be sure that it's using DC voltage. See the picture below for what I mean.
+</p>
+<p>
+    <img src="https://datadoctors.github.io/images/acdc-symbols.png" style="max-width: 100%; max-height: 20em;">
+</p>
+<p>
+    There are <strong>NO</strong> computer devices that will take AC output. Using an AC power adapter on any DC device <strong>WILL</strong> break something.
+</p>

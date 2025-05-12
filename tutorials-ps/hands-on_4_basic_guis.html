@@ -4,6 +4,7 @@
     <title>Hands-on 4: Basic GUIs</title>
     <link rel="stylesheet" href="tutorial.css">
     <link rel="stylesheet" href="prism.css">
+    <meta charset="UTF-8">
     <head-content></head-content>
 </head>
     
@@ -26,7 +27,7 @@
           </div>
         <!-- Content starts here -->
         <p>
-            This script will be very straightforward, but building GUI elements out can take some patience. Manual tweaking will need to happen and we'll have to come up with clever(ish) equations to have perfect placement. In this tutorial, we'll build a GUI for a basic click-coutner application, learn how to assign logic to buttons, and touch on dynamically updating GUI elements that are already loaded. Let's get to it!
+            This script will be very straightforward, but building GUI elements out can take some patience. Manual tweaking will need to happen and we'll have to come up with clever(ish) equations to have perfect placement. In this tutorial, we'll build a GUI for a basic click-counter application, learn how to assign logic to buttons, and touch on dynamically updating GUI elements that are already loaded. Let's get to it!
         </p>
         <h2 id="buildingForm">Building a Form</h2>
         <p>
@@ -105,14 +106,14 @@
         <div class="tutorial-hint">
             <h4>What's the deal with all the parentheses?</h4>
             <p>
-                It's a good habit to keep math inside of parantheses inside of PowerShell scripts. Many elements of PowerShell do not support math, but placing them inside of parantheses will trigger the shell itself to do the math.
+                It's a good habit to keep math inside of parentheses inside of PowerShell scripts. Many elements of PowerShell do not support math, but placing them inside of parentheses will trigger the shell itself to do the math.
             </p>
         </div>
         <p>
             I really do promise it's not as bad as it looks! <code>$labelCountX</code> will be used to place the label element we created earlier on the <em>x-axis</em>, that is, the horizontal plane (left-to-right). <code>$labelCountY</code> is for the <em>y-axis</em>. We also do the same for the buttons. Let's break it down:
             <ul>
                 <li><code class="language-powershell">$labelCountX = (($formClicker.ClientSize.Width - $labelCount.Width)/2)</code> - We are taking the <code>Width</code> of the form, subtracting the <code>Width</code> of the label, and then halving it. This should perfectly center the element on the x-axis.</li>
-                <li><code class="language-powershell">$labelCountY = (($formClicker.ClientSize.Height - $labelCount.Height)/2  - $buttonAdd.Height)</code> - we are doing much the same here, but we are also taking into account the <code>Height</code> of the butotn elements. Since the buttons are the same size, we don't need to do any extra calcuations for the other button to center things.</li>
+                <li><code class="language-powershell">$labelCountY = (($formClicker.ClientSize.Height - $labelCount.Height)/2  - $buttonAdd.Height)</code> - we are doing much the same here, but we are also taking into account the <code>Height</code> of the button elements. Since the buttons are the same size, we don't need to do any extra calcuations for the other button to center things.</li>
                 <li><code class="language-powershell">$buttonAddX =(($formClicker.ClientSize.Width - $buttonAdd.Width - $buttonSub.Width)/2 - 5)</code>, <code class="language-powershell">$buttonSubX = ($buttonAddX + $buttonAdd.Width + 5)</code> - these two are doing the same as the label, just taking each other's <code>Width</code> into account.</li>
                 <li><code class="language-powershell">$buttonY = ($formClicker.ClientSize.Height - $buttonAdd.Height - 10)</code> - since the buttons will be side-by-side, they'll share a y-axis location.</li>
             </ul>
@@ -154,7 +155,7 @@
         </p>
         <pre class="console-output" id="ho408"></pre>
         <p>
-            Our debugging output is showing that we are defintiely updating our variable without any issues and our hard-tops for the minimum and maximum values are working. However, you'll notice that the GUI isn't updating. We need to change the <code>Text</code> property on our label. Just temporarily, let's modify our button logic by adding some very basic updates. Replace what you have currently with this.
+            Our debugging output is showing that we are definitely updating our variable without any issues and our hard-tops for the minimum and maximum values are working. However, you'll notice that the GUI isn't updating. We need to change the <code>Text</code> property on our label. Just temporarily, let's modify our button logic by adding some very basic updates. Replace what you have currently with this.
         </p>
         <div class="vscode-snippet">
             <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho409"></code></pre>
@@ -178,7 +179,7 @@
         </p>
         <ul>
             <li>We've now moved the <code>$labelCount.Text</code> update into our function.</li>
-            <li>We have a new <code>if</code> statement that checks the value of the <code>$script:counter</code> variable using a <code>-ge</code>(greater than) check. At certain set values, it will change the color and also the font size, which will necessitate re-doing the math for label placement, since it will not be on the form based on the old calcuations whenever the font size changes <strong>or</strong> the number of characters changes.</li>
+            <li>We have a new <code>if</code> statement that checks the value of the <code>$script:counter</code> variable using a <code>-ge</code>(greater than) check. At certain set values, it will change the color and also the font size, which will necessitate re-doing the math for label placement, since it will not be on the form based on the old calculations whenever the font size changes <strong>or</strong> the number of characters changes.</li>
             <li>And finally, we simply re-do the location placement math that we used at the beginning of the script. It's an actual copy+paste job, but now the values are based on the <em>current</em> font sizes and label size, rather than what was calculated at the beginning of the script.</li>
         </ul>
         <p>

@@ -27,7 +27,7 @@ $formClicker.Controls.Add($labelCount)                  # Add the label to the f
 
 $buttonAdd = New-Object System.Windows.Forms.Button
 $buttonAdd.Text = "&Add 1"                              # What's that ampersand (&) doing? Assigning a letter as an access key.
-$buttonAdd.Font = $buttonFont                           ##  Pressing the 'Alt' kill will underline the access key letter.
+$buttonAdd.Font = $buttonFont                           ##  Pressing the 'Alt' key will underline the access key letter.
 $buttonAdd.AutoSize = $true                             ##  Here, pressing Alt+A will activate the $buttonAdd button.
 $formClicker.Controls.Add($buttonAdd)
 
@@ -193,7 +193,7 @@ $buttonFont = New-Object System.Drawing.Font("Segoe UI", 12)
 #>
 
 #region Building GUI
-$formClicker = New-Object System.Windows.Forms.Form     # Define the form - this is the window where all other componenets will be added with Controls.Add()
+$formClicker = New-Object System.Windows.Forms.Form     # Define the form - this is the window where all other components will be added with Controls.Add()
 $formClicker.Text = "Hands-on 4: GUI Boog-U-I"          # Title the window
 $formClicker.ClientSize = New-Object System.Drawing.Size(300,250)    # Size the form
 $formClicker.StartPosition = "CenterScreen"             # Center our form when it loads
@@ -228,11 +228,11 @@ $buttonAddX =(($formClicker.ClientSize.Width - $buttonAdd.Width - $buttonSub.Wid
 $buttonSubX = ($buttonAddX + $buttonAdd.Width + 5)
 $buttonY = ($formClicker.ClientSize.Height - $buttonAdd.Height - 10)
 
-<# What's up with all the parantheses?
+<# What's up with all the parentheses?
     
-    It's a good habit to keep math inside of parantheses inside of PowerShell
+    It's a good habit to keep math inside of parentheses inside of PowerShell
     scripts. Many elements of PowerShell do not support math, but placing
-    them inside of parantheses will trigger the shell itself to do the math.
+    them inside of parentheses will trigger the shell itself to do the math.
 #>
 
 # Place the elements on the form

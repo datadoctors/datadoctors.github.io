@@ -7,9 +7,9 @@
 */
 
 :root {
-          /* These are defaults that are overridden by the theme-selector JS
-           - there are other classes near the bottom of the file called
-           ".dark-mode" and ".light-mode" that normally set the theme. */
+/* These are defaults that are overridden by the theme-selector JS
+  - there are other classes near the bottom of the file called
+  ".dark-mode" and ".light-mode" that normally set the theme. */
   --primary-color: rgb(50 205 50);
   --secondary-color: rgb(205, 50, 197);
   --bg-main: rgb(0, 0, 0);
@@ -97,7 +97,6 @@ body {
   color: var(--text-light);
   line-height: 1.6em;
   transition: all 0.3s ease;
-
 }
 
 a,
@@ -158,12 +157,12 @@ a:hover {
 }
 
 .header-text {
+  font-weight: 900;
   display: flex;
   flex-direction: column;
   min-width: 0;
   width: auto;
   width: 100%;
-
 }
 
 
@@ -181,7 +180,6 @@ a:hover {
   background-color: var(--primary-color);
   padding: 3px;
   border-radius: 8px;
-  font-weight: 700;
   white-space: nowrap;
   position: relative;
   width: calc(100% - 0.26em);
@@ -229,6 +227,8 @@ h2::after {
 
 h3 {
   font-family: 'JetBrains Mono', Courier, monospace;
+  font-weight: 900;
+
   background-color: var(--bg-code);
   color: var(--text-code-header);
   padding-right: 10px;
@@ -255,6 +255,7 @@ code {
 
 code:not([class*="language-"]) {
   background-color: var(--bg-alt-alt);
+  background: linear-gradient(to bottom right, var(--bg-alt-alt) , transparent);
   padding: 2px;
 }
 
@@ -701,8 +702,6 @@ pre {
 @font-face {
   font-family: 'Cantarell';
   src: url('./Cantarell-VF.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
   font-display: swap;
 }
 
