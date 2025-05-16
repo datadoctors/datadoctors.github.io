@@ -714,4 +714,7 @@ background: #c62828; /* Red for error */
 		text-decoration-color: white !important;
 		border-bottom: 1px solid white !important;
 	}
+	.featuredate {
+		color: white;
+	}
 }
