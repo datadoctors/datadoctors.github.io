@@ -710,4 +710,5 @@ background: #c62828; /* Red for error */
 	summary::marker {
 		color: lightgray;
 	}
+	text-decoration-color: white;
 }
