@@ -1,0 +1,7 @@
+```ho501```
+try {
+    # A command to run
+}   
+catch {
+    # If an error is thrown at any point in the try block, the command jumps down to here
+}
