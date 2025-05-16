@@ -149,6 +149,79 @@ if ($errorCount -ge 1) {
     Read-Host "Errors encountered during the process. Press enter to view the logfile"
     Start-Process $logFile # Using Start-Process will cause Windows to open the file in its default application
 }
+```ho5ps101```
+# Define a log file path - this will be created in the same directory as the script
+$logFile = "$PSScriptRoot\ErrorLog.txt"
+
+# Set the error count to 0
+$errorCount = 0
+
+# Function to write data to the defined $logFile
+function Write-Log {
+    param ( # Define the parameters for the Write-Log command
+        [string]$Message,
+        [ValidateSet("Info", "Warning", "Error")]
+        [string]$Level = "Info" # Set "Info" as the default log level if none is supplied
+    )
+    
+    # Create a formatted timestamp
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    
+    # Format the log entry
+    $logEntry = "[$timestamp] [$Level] $Message"    # These are the 3 parameters we are sending through
+    
+    # Write to console (with color coding for visibility)
+    switch ($Level) {   # Using a switch block to choose formatting
+        "Error"   { Write-Host $logEntry -ForegroundColor Red }
+        "Warning" { Write-Host $logEntry -ForegroundColor Yellow }
+        default   { Write-Host $logEntry -ForegroundColor White }
+    }
+    
+    # Append to log file
+    try {
+        Add-Content -Path $logFile -Value $logEntry -ErrorAction Stop
+    }
+    catch {
+        # If we can't write to the log file, show an error
+        Write-Host "[$timestamp] [Error] Failed to write to log file: $_" -ForegroundColor Red
+    }
+}
+
+# Log script startup
+Write-Log -Message "Script started" -Level "Info"
+
+# Example 1: Basic try/catch block
+try {
+    Write-Log -Message "Starting Example 1: Basic error handling"
+    
+    # This command will fail because we're trying to divide by zero
+    $result = 10 / 0
+    
+    Write-Log -Message "This message won't appear because the error jumps to the catch block"
+}
+catch {
+    # Increment the errorCount
+    $errorCount += 1
+    # $_ or $PSItem contains the error details
+    Write-Log -Message "Example 1 Error: $_" -Level "Warning"
+    
+    # $_.Exception gives you the full exception details
+    Write-Log -Message "$_" -Level "Error"
+}
+
+# Log script completion
+Write-Log -Message "Script completed" -Level "Info"
+
+# Display log file location
+""
+Write-Host "Error log has been saved to: $logFile" -ForegroundColor Cyan
+""
+
+if ($errorCount -ge 1) {
+    # If $errorCount is greater than or equal to 1, then prompt to open the log file.
+    Read-Host "Errors encountered during the process. Press enter to view the logfile"
+    Start-Process $logFile # Using Start-Process will cause Windows to open the file in its default application
+}
 ```ho5bat1```
 @echo off
 cd %~dp0 &                              :: Set delayed expansion so that scripts can run from the network
