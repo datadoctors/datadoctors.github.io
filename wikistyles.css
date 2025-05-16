@@ -711,7 +711,7 @@ background: #c62828; /* Red for error */
 		color: lightgray;
 	}
 	h1,h2,h3,h4 {
-		text-decoration-color: white;
-		border-bottom: 1px solid white;
+		text-decoration-color: white !important;
+		border-bottom: 1px solid white !important;
 	}
 }
