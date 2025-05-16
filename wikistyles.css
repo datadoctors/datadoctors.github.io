@@ -195,6 +195,9 @@ padding: 0 0 1px 0;
 	min-height:15px;
 	user-select: none;
   }
+
+
+
   
 /* =========== End Collapsible Element Styles ========== */
  
@@ -368,7 +371,6 @@ to { background-position: 0 -12px, 0 0, 100% 0, -12px 100%; }
 
 /* =========== Start Codebox specific Styles ========== */
 .code {
-    background-color: lightgray;
     color: black;
     font-weight: 700;
 }
@@ -701,4 +703,18 @@ background: #c62828; /* Red for error */
     box-shadow: 0 1px 1px rgba(0,0,0,0.2), 0 2px 0 0 rgba(255,255,255,0.7) inset;
     white-space: nowrap;
     font-family: monospace;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+	summary::marker {
+		color: gray;
+	}
+	h1 {
+		text-decoration-color: white !important;
+		border-bottom: 1px solid white !important;
+	}
+	.featuredate {
+		color: white;
+	}
 }
