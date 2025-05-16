@@ -149,3 +149,23 @@ if ($errorCount -ge 1) {
     Read-Host "Errors encountered during the process. Press enter to view the logfile"
     Start-Process $logFile # Using Start-Process will cause Windows to open the file in its default application
 }
+```ho5bat1```
+@echo off
+cd %~dp0 &                              :: Set delayed expansion so that scripts can run from the network
+set "scriptPath=errorMaker.ps1" &       :: Set path
+
+:: Below are 4 different ways to run the script. To change from one to another, just remove the "::"
+:: comment codes from the beginning of the line - remember to comment out other launchers by simply
+:: adding "::" to the beginning of them, otherwise you will load your script multiple times.
+
+:: Run as normal user with no visible window - for normal use
+::powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""'"
+
+:: Run as normal user with a visible window - for debugging
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Normal -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""' -Verb RunAs"
+
+:: Run as admin user with no visible window - for normal use
+::powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""' -Verb RunAs"
+
+:: Run as admin user with a visible window - for debugging
+::powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-WindowStyle Normal -NoProfile -ExecutionPolicy Bypass -File ""%cd%\%scriptPath%""' -Verb RunAs"
