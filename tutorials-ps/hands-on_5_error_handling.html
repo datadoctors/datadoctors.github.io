@@ -16,6 +16,11 @@
                 <div class="linkBox">
                 <a href="#tryCatchStatements">Try/Catch Statements</a>
                 <a href="#basicErrorHandling">Basic Error Handling</a>
+                <a href="#handlingMultipleErrors">Handling Multiple Error Types</a>
+                <a href="#finallyBlock">Using the finally block</a>
+                <a href="#writingErrorLog">Bonus: Writing an Error Log</a>
+                <a href="#conclusions">Conclusions</a>
+                <a href="#finalScripts">Final Scripts</a>
                 <site-nav></site-nav>
             </div>
         </div>
@@ -53,15 +58,67 @@
                 <li>We then start our first <code class="language-powershell">try</code> block - simply attempting to divide 10 by 1, and save the value as <code class="language-powershell">$result</code></li>
                 <li>Our first <code class="language-powershell">catch</code> block comes next -- but since the <code class="language-powershell">$result</code> is valid, we had no failures and we simply skip it</li>
                 <li>We then use <code class="language-powershell">Read-Host</code> to progress the script when the user is ready.</li>
-                <li>Next, we have a very similar <code class="language-powershell">try</code> statement -- however, this time we try the impossible: divide by zero. We also fail.</li>
-                <li>You'll see that as soon as we hit a snag and the <code class="language-powershell">$result</code> becomes invalid, we jump down to the <code class="language-powershell">catch</code> block - we never see the <code>"Result is valid!" message</code></li>
+                <li>Next, we have a very similar <code class="language-powershell">try</code> statement -- however, this time we try the impossible: <strong>divide by zero</strong>. We also fail.</li>
+                <li>You'll see that as soon as we hit a snag and the <code class="language-powershell">$result</code> becomes invalid, we jump down to the <code class="language-powershell">catch</code> block - we never see the <code>"Result is valid!"</code> message</li>
                 <li>Inside the <code class="language-powershell">catch</code> block, we log a basic failure message, but then also use <code class="language-powershell">Write-Error</code> to display <code class="language-powershell">$_</code> -- which inside a <code class="language-powershell">catch</code> block will always  contain the error message that produced it.</li>
             </ol>
         </p>
         <p>
             As you can see, this is a very useful statement - it simply allows code to jump to another place as soon as an error occurs. It will stop processing code and move onto the error handler. From there, we can determine how to handle the failure - we don't always need to exit the script entirely, but we may want to set some sort of variable that tells us to try something else or simply write an error message to a log.
         </p>
+
+        <h2 id="handlingMultipleErrors">Handling Multiple Error types</h2>
+        <p>
+            There are also occasions where it might be important to know <em>why</em> an error was generated, such as knowing whether a file doesn't exist, a drive letter doesn't exist, or we lack permissions to see the file. We can use multiple <code class="language-powershell">catch</code> statements to sort through errors. In the code below, try commenting out different lines in the <code class="language-powershell">try</code> block to the different errors you can generate.
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho503"></code></pre>
+        </div>
+        <p>
+            If you try out all the different error messages, you'll get some output like this:
+        </p>
+        <img src="img/502.png">
+
+        <h2 id="finallyBlock">Using the <code class="language-powershell">finally</code> block</h2>
+        <p>
+            You may not always want to finish execution just because the <code class="language-powershell">catch</code> block has been called. In that case, we can use the final type of block for error handling, the <code class="language-powershell">finally</code> block. Save and run the example below to see it in action. Try commenting out the <code class="language-powershell">throw</code> line to see how it handles successful runs as well as failures.
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho504"></code></pre>
+        </div>
+        <div class="tutorial-hint">
+            <h4><code class="language-powershell">throw</code>-ing it all away</h4>
+            <p>
+                You can use the <code class="language-powershell">throw</code> command to force an error. You may want to do this in the event that some piece of data isn't the way you want it to be, even if it <em>technically</em> didn't throw any errors. It can also be useful for simulations, such as this one!
+            </p>
+        </div>
+        <p>
+            If you try out both success and failure, you'll have output like this:
+        </p>
+        <img src="img/ho504.png">
+
+        <h2 id="writingErrorLog">Bonus: Writing an Error Log</h2>
+        <p>
+            Seeing all of this in the console is nice - but you might want to refer to this later, especially if this is an automated task. If you'd like to generate a log file to view later, we can create a simple function to take care of that while <em>also</em> display some console output for us. Try out the following code to see it in action:
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho505"></code></pre>
+        </div>
+        <p>
+            By tying in an <code class="language-powershell">if</code> statement, we can even handle automated alerts when failures occur, or, as in our example, prompt the user to view the error log. All tied together, you can create an intuitive, useful logging system to see how your applications are working. As your programs get more and more complicated, good error logging will save tremendous amounts of frustration.
+        </p>
         
+        <h2 id="conclusions">Conclusions</h2>
+        <p>
+            This lesson may have been a little less exciting than others, but it's an extremely useful bit of information to keep in your toolset while you develop your scripts and applications. Here are our main takeaways:
+        </p>
+        <ol>
+            <li>Using <code class="language-powershell">try</code> statements to execute code and <code class="language-powershell">catch</code> blocks to handle failures.</li>
+            <li>Failures inside of the <code class="language-powershell">try</code> block will cause an immediate jump down to the <code class="language-powershell">catch</code> block - no additional code will be executed.</li>
+            <li>How to use multiple <code class="language-powershell">catch</code> blocks to sort through different types of error messages.</li>
+            <li>Using the <code class="language-powershell">finally</code> block to execute code regardless of the outcome of the <code class="language-powershell">try</code> block.</li>
+            <li>Combining these types of error catching along with basic functions to generate error logs as well as informative console output.</li>
+        </ol>
     </div>
     <!-- Stop any editing here -->
     <a href="#top" class="back-to-top" id="backToTop">↑</a>

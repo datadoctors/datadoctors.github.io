@@ -31,3 +31,121 @@ catch {
     Write-Error $_ 
 }
 ```ho503```
+Write-Host "Starting Example 2: Specific error handling" -ForegroundColor Green
+""
+
+$someNonFile = "C:\78910iDoNotExist.txt"            #Set a variable for a non-existent file
+$someSecretFile = "C:\System Volume Information"    #Set a variable for a folder you can't read
+$someDisconnectedDrive = "T:\"                      #Set a variable for a drive letter that doesn't exist
+
+Write-Host "Using multiple catches for different errors." -ForegroundColor Cyan
+try {
+    #Comment out all but one line - try all three to see different errors.
+    Get-Content -Path $someNonFile -ErrorAction Stop
+    #Get-Content -Path $someSecretFile -ErrorAction Stop
+    #Get-Content -Path $someDisconnectedDrive -ErrorAction Stop
+}
+catch [System.Management.Automation.ItemNotFoundException] {
+    # This catches only file not found errors
+    Write-Host "$someNonFile does not exist!" -ForegroundColor Yellow
+}
+catch [System.UnauthorizedAccessException] {
+    # This catches access denied errors
+    Write-Host "Access denied error accessing $someSecretFile" -ForegroundColor Yellow
+}
+catch {
+    # This catches all other errors
+    Write-Host "Unknown error accessing $someDisconnectedDrive. See below for details." -ForegroundColor Yellow
+    Write-Error $_
+}
+```ho504```
+Write-Host "Starting Example 3: Using the finally block" -ForegroundColor Green
+""
+try {
+    # Simulate opening a resource (like a file or database connection)
+    Write-Host "Simulating opening a resource..." -ForegroundColor Yellow
+    
+    # Force an error - comment this out to see how the code executes without a failure
+    throw "Simulated error for example 3"
+    Write-Host "Success!"
+}
+catch {
+    Write-Error "Failure! Error: $_"
+}
+finally {
+    # This block runs whether there was an error or not
+    Write-Host "This finally block always executes, regardless of failures." -ForegroundColor Green
+}
+```ho505```
+# Define a log file path - this will be created in the same directory as the script
+$logFile = "$PSScriptRoot\ErrorLog.txt"
+
+# Set the error count to 0
+$errorCount = 0
+
+# Function to write data to the defined $logFile
+function Write-Log {
+    param ( # Define the parameters for the Write-Log command
+        [string]$Message,
+        [ValidateSet("Info", "Warning", "Error")]
+        [string]$Level = "Info" # Set "Info" as the default log level if none is supplied
+    )
+    
+    # Create a formatted timestamp
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    
+    # Format the log entry
+    $logEntry = "[$timestamp] [$Level] $Message"    # These are the 3 parameters we are sending through
+    
+    # Write to console (with color coding for visibility)
+    switch ($Level) {   # Using a switch block to choose formatting
+        "Error"   { Write-Host $logEntry -ForegroundColor Red }
+        "Warning" { Write-Host $logEntry -ForegroundColor Yellow }
+        default   { Write-Host $logEntry -ForegroundColor White }
+    }
+    
+    # Append to log file
+    try {
+        Add-Content -Path $logFile -Value $logEntry -ErrorAction Stop
+    }
+    catch {
+        # If we can't write to the log file, show an error
+        Write-Host "[$timestamp] [Error] Failed to write to log file: $_" -ForegroundColor Red
+    }
+}
+
+# Log script startup
+Write-Log -Message "Script started" -Level "Info"
+
+# Example 1: Basic try/catch block
+try {
+    Write-Log -Message "Starting Example 1: Basic error handling"
+    
+    # This command will fail because we're trying to divide by zero
+    $result = 10 / 0
+    
+    Write-Log -Message "This message won't appear because the error jumps to the catch block"
+}
+catch {
+    # Increment the errorCount
+    $errorCount += 1
+    # $_ or $PSItem contains the error details
+    Write-Log -Message "Example 1 Error: $_" -Level "Warning"
+    
+    # $_.Exception gives you the full exception details
+    Write-Log -Message "$_" -Level "Error"
+}
+
+# Log script completion
+Write-Log -Message "Script completed" -Level "Info"
+
+# Display log file location
+""
+Write-Host "Error log has been saved to: $logFile" -ForegroundColor Cyan
+""
+
+if ($errorCount -ge 1) {
+    # If $errorCount is greater than or equal to 1, then prompt to open the log file.
+    Read-Host "Errors encountered during the process. Press enter to view the logfile"
+    Start-Process $logFile # Using Start-Process will cause Windows to open the file in its default application
+}
