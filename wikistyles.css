@@ -712,5 +712,6 @@ background: #c62828; /* Red for error */
 	}
 	h1,h2,h3,h4 {
 		text-decoration-color: white;
+		border-bottom: 1px solid white;
 	}
 }
