@@ -195,6 +195,9 @@ padding: 0 0 1px 0;
 	min-height:15px;
 	user-select: none;
   }
+  summary::marker {
+	color: gray;
+  }
   
 /* =========== End Collapsible Element Styles ========== */
  
