@@ -18,13 +18,16 @@ catch {
     Write-Host "Result is not valid! See error below:" -ForegroundColor Yellow
     Write-Error $_ # In a try/catch handler, $_ inside the catch block will contain the actual error message.
 }
+Read-Host "Press Enter to continue to next example"
 ""
 Write-Host "Example 2: Bad math (dividing 10 by 0):" -ForegroundColor Cyan
 try {
     $result = 10 / 0 
-    Write-Host "Result is valid! Value: $result" -ForegroundColor Green
+    Write-Host "Result is valid!" -ForegroundColor Yellow
+    Write-Host "Value: $result" -ForegroundColor Green
 }   
 catch {
     Write-Host "Result is not valid! See error below:" -ForegroundColor Yellow
     Write-Error $_ 
 }
+```ho503```

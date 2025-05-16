@@ -15,6 +15,7 @@
             <div class="linkBox-container">
                 <div class="linkBox">
                 <a href="#tryCatchStatements">Try/Catch Statements</a>
+                <a href="#basicErrorHandling">Basic Error Handling</a>
                 <site-nav></site-nav>
             </div>
         </div>
@@ -25,6 +26,38 @@
         <div class="vscode-snippet">
             <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho501"></code></pre>
         </div>
+        <p>
+            Follow along and we'll go through a few different ways to use this as a comprehensive error-handling tool.
+        </p>
+        <h2 id="basicErrorHandling">Basic Error Handling</h2>
+        <p>
+            We'll start with something basic. Go ahead and paste this code into a new <code>PS1</code> file and and run it: 
+        </p>
+        <div class="vscode-snippet">
+            <pre class="language-powershell" data-prismjs-copy="Copy"><code id="ho502"></code></pre>
+        </div>
+        <div class="tutorial-hint">
+            <h4>What is <code class="language-powershell">""</code> doing?</h4>
+            <p>
+                When you are producing console output for the user to read, you may want to simply insert a blank line. The most common-sense way to do this is to just put in a blank <code class="language-powershell">Write-Host</code> line, but a quicker way is to simply put an empty pair of double quotes (<code class="language-powershell">""</code>) on a line. It's just a formatting shortcut.
+            </p>
+        </div>
+        <p>
+            Let's break down what we see here.
+            <ol>
+                <li>We're using the <code class="language-powershell">Write-Host "Some text" -ForegroundColor SomeColor</code> to display output to the screen.</li>
+                <li>We then start our first <code class="language-powershell">try</code> block - simply attempting to divide 10 by 1, and save the value as <code class="language-powershell">$result</code></li>
+                <li>Our first <code class="language-powershell">catch</code> block comes next -- but since the <code class="language-powershell">$result</code> is valid, we had no failures and we simply skip it</li>
+                <li>We then use <code class="language-powershell">Read-Host</code> to progress the script when the user is ready.</li>
+                <li>Next, we have a very similar <code class="language-powershell">try</code> statement -- however, this time we try the impossible: divide by zero. We also fail.</li>
+                <li>You'll see that as soon as we hit a snag and the <code class="language-powershell">$result</code> becomes invalid, we jump down to the <code class="language-powershell">catch</code> block - we never see the <code>"Result is valid!" message</code></li>
+                <li>Inside the <code class="language-powershell">catch</code> block, we log a basic failure message, but then also use <code class="language-powershell">Write-Error</code> to display <code class="language-powershell">$_</code> -- which inside a <code class="language-powershell">catch</code> block will always  contain the error message that produced it.</li>
+            </ol>
+        </p>
+        <p>
+            As you can see, this is a very useful statement - it simply allows code to jump to another place as soon as an error occurs. It will stop processing code and move onto the error handler. From there, we can determine how to handle the failure - we don't always need to exit the script entirely, but we may want to set some sort of variable that tells us to try something else or simply write an error message to a log.
+        </p>
+        
     </div>
     <!-- Stop any editing here -->
     <a href="#top" class="back-to-top" id="backToTop">↑</a>
