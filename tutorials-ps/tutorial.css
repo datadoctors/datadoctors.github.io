@@ -99,6 +99,10 @@ body {
   transition: all 0.3s ease;
 }
 
+img {
+  max-width: 100%;
+}
+
 a,
 a:active,
 a:link,
