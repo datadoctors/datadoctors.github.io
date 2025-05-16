@@ -710,7 +710,7 @@ background: #c62828; /* Red for error */
 	summary::marker {
 		color: lightgray;
 	}
-	h1,h2,h3,h4 {
+	h1 {
 		text-decoration-color: white !important;
 		border-bottom: 1px solid white !important;
 	}
