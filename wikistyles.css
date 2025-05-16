@@ -368,7 +368,6 @@ to { background-position: 0 -12px, 0 0, 100% 0, -12px 100%; }
 
 /* =========== Start Codebox specific Styles ========== */
 .code {
-    background-color: lightgray;
     color: black;
     font-weight: 700;
 }
