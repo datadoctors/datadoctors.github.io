@@ -720,4 +720,7 @@ background: #c62828; /* Red for error */
 	.featuredate {
 		color: white;
 	}
+	mark {
+		background-color: DarkRed;
+	}
 }
