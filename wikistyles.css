@@ -710,6 +710,7 @@ background: #c62828; /* Red for error */
 
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
+	/*
 	summary::marker {
 		color: gray;
 	}
@@ -720,7 +721,8 @@ background: #c62828; /* Red for error */
 	.featuredate {
 		color: white;
 	}
+	/*
 	mark {
-		background-color: DarkRed !important;
+		background-color: YellowGreen !important;
 	}
 }
