@@ -721,6 +721,6 @@ background: #c62828; /* Red for error */
 		color: white;
 	}
 	mark {
-		background-color: DarkRed;
+		background-color: DarkRed !important;
 	}
 }
