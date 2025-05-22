@@ -723,6 +723,7 @@ background: #c62828; /* Red for error */
 	}
 	/*
 	mark {
+		filter: invert(0) !important;
 		background-color: YellowGreen !important;
 	}
 }
