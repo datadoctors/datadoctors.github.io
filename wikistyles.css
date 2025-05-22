@@ -3,6 +3,9 @@ body {
     max-width: 1200px;
 	font-family: 'Roboto', sans-serif;
 }
+img {
+	max-width: 100%;
+}
 
 #content {
 line-height: 140%;
