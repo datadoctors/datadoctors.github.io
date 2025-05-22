@@ -726,4 +726,7 @@ background: #c62828; /* Red for error */
 		filter: invert(0) !important;
 		background-color: YellowGreen !important;
 	}
+	video {
+		filter: invert(0) !important;
+	}
 }
