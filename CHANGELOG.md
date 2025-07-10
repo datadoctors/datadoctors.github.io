@@ -1,6 +1,11 @@
 # Persistent Changelog
 ## ??/??/2025
 
+## 07/10/2025
+<img src="/images/gifs/angrySun.gif">
+
+Due to ongoing issues with Malwarebytes, we have replaced it for now with the Microsoft Safety Scanner. We strongly recommend that for most services, you stick with the Quick scan -- if it finds enough malware, it will recommend a Full scan afterwards, which takes a very long time.
+
 ## 05/11/2025
 <img src="/images/gifs/ken-shoryu.gif" style="width: 250px;">
 
