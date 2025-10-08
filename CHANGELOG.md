@@ -1,6 +1,14 @@
 # Persistent Changelog
 ## ??/??/2025
 
+## 10/08/2025
+<img src="/images/gifs/cheeky-skele.gif">
+
+DDRx ISO has been updated!
+
+* Macrium is back
+* Now boots on machines with as little as 3.5GB of RAM
+
 ## 07/10/2025
 <img src="/images/gifs/angrySun.gif">
 
