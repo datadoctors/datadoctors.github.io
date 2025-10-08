@@ -2,7 +2,7 @@
 ## ??/??/2025
 
 ## 10/08/2025
-<img src="/images/gifs/cheeky-skele.gif">
+<img src="/images/gifs/cheeky-skele.gif" style="width: 250px;">
 
 DDRx ISO has been updated!
 
