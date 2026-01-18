@@ -1,6 +1,22 @@
 # Persistent Changelog
 ## ??/??/2025
 
+## 01/17/2026
+<img src="/images/gifs/vaperoad.gif" style="width: 250px;">
+DDRx has had a bit of an overhaul.
+
+- Pretty new Ventoy boot screen
+- Updated Ventoy to newest version
+- The DDRx folder has been renamed to ISO to better reflect its purpose
+- Backupper inside DDRx is now on version 8.0.0
+- Macrium MAY be more reliable when left overnight - but please remember that it is a fallback option - please use Backupper when possible
+- The following apps in the _extras folder have been updated:
+  * AOMEI Backupper
+  * AOEMI Partition Assistant
+  * DDU
+  * FurMark Pro
+  * Libre Hardware Monitor
+
 ## 10/08/2025
 <img src="/images/gifs/cheeky-skele.gif" style="width: 250px;">
 
