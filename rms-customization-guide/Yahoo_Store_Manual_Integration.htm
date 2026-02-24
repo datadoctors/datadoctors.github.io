@@ -1,0 +1,140 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Yahoo! Manual Integration</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style>
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+img.hcp2 { border:none; float:none; border-style:none; }
+hr.hcp3 { float:alignleft; color:#85dfe9; }
+span.hcp4 { font-weight:bold; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" class="hcp2" height="67" src="assets/images/SDK%20Header.JPG" style="width:427px; height:67px;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp3" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1><span lang="EN-GB">Yahoo! Manual Integration</span></h1>
+<p><span lang="EN-GB">Yahoo! integration allows orders placed on Yahoo! to 
+ be processed as a sales transaction in Store Operations POS. A simple 
+ manual Yahoo! integration process consists of the following steps.</span></p>
+<ol>
+<li class="kadov-p-CnumList"><p class="numList"><span lang="EN-GB">A customer 
+ places an Internet order on the Yahoo Web store.</span></p></li>
+<li class="kadov-p-CnumList"><p class="numList"><span lang="EN-GB">The store 
+ owner logs on to Yahoo! and downloads Internet orders to a local folder 
+ as an XML document.</span></p></li>
+<li class="kadov-p-CnumList"><p class="numList"><span lang="EN-GB">A user-created 
+ add-in parses the local XML document and adds the data to the Exchange 
+ table in the Store Operations database. For more information about writing 
+ this add-in, see the </span><a href="#Manual">Manual Integration Add-In 
+ Details</a> section below.<span lang="EN-GB"> </span></p></li>
+<li class="kadov-p-CnumList"><p class="numList"><span lang="EN-GB">A cashier 
+ logs on to the POS and then presses <b>CTRL+SHIFT+F10</b></span><span lang="EN-GB" style="font-weight: normal;"> to display the list of Internet orders 
+ stored in the Exchange table.</span><span lang="EN-GB"> The cashier 
+ selects an Internet order to process and uses the wizard to load the data 
+ from the Internet order into the current sales transaction. The wizard 
+ also checks the XML data for errors and adds new customers and shipping 
+ addresses if found. The cashier then handles the sales transaction as 
+ usual.</span></p></li>
+</ol>
+<p><span lang="EN-GB">The following diagram illustrates this process.</span></p>
+<p class="Normal" style="font-weight: bold;"><img border="0" class="hcp2" height="412" src="assets/images/YahooStoreManualIntegration.jpg" style="width:550px; height:412px;" width="550" x-maintain-ratio="TRUE"/></p>
+<p class="Normal" style="font-weight: bold;"> </p>
+<h4><a name="Manual"></a>Manual Integration Add-in Details </h4>
+<p>You must create a custom add-in to parse the XML data downloaded from 
+ Yahoo! into the Exchange table before it can be processed. Your add-in 
+ should perform the following steps.</p>
+<ol>
+<li class="kadov-p-CnumList"><p class="numList"><span lang="EN-GB">Monitor 
+ a dedicated folder on the local computer for any Internet orders that 
+ have not been processed.</span></p></li>
+<li class="kadov-p-CnumList"><p class="numList"><span lang="EN-GB">P</span>arse 
+ received XML orders to retrieve each individual order. XML documents downloaded 
+ from Yahoo! contain an <span class="InlineCode">&lt;OrderList&gt;</span> 
+ node, under which exist one or more <span class="InlineCode">&lt;Order&gt;</span> 
+ nodes that contain information for individual orders. For more details, 
+ <span lang="EN-GB">see <a href="XML_Format_Retail_Management_System_Mapping.htm">XML 
+ Format - Mapping to Retail Management System</a> and <a href="XML_Sample_of_Downloaded_Order.htm">XML 
+ Sample of Downloaded Order</a>. </span></p></li>
+<li class="kadov-p-CnumList"><p class="numList"><span lang="EN-GB">Insert 
+ a new row into the Exchange table with the following information.</span></p></li>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp4" lang="EN-GB">ProcessorCode</span><span lang="EN-GB"> column: 
+ The string 'YahooStore'.</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp4" lang="EN-GB">Data</span><span lang="EN-GB"> column: XML 
+ data for a single order (retrieved in step 2), enclosed in single quotes 
+ (').</span></p></li>
+</ul>
+</ol>
+<p class="SeeAlsoList"> </p>
+<p class="SeeAlsoList">
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2090" >
+<param name="_ExtentY" value="582" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="XML Format - Retail Management System Mapping;XML_Format_Retail_Management_System_Mapping.htm$$**$$XML Sample of Downloaded Order;XML_Sample_of_Downloaded_Order.htm$$**$$Yahoo Store Integration;Yahoo_Store_Integration.htm$$**$$Yahoo Store Post to IP Integration;Yahoo_Store_Post_to_IP_Integration.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\CustomizationGuide06\Yahoo_Store_Manual_Integration.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="XML Format - Retail Management System Mapping;XML_Format_Retail_Management_System_Mapping.htm"/>
+<param name="Item2" value="XML Sample of Downloaded Order;XML_Sample_of_Downloaded_Order.htm"/>
+<param name="Item3" value="Yahoo Store Integration;Yahoo_Store_Integration.htm"/>
+<param name="Item4" value="Yahoo Store Post to IP Integration;Yahoo_Store_Post_to_IP_Integration.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp3" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

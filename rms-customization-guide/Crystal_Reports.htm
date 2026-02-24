@@ -1,0 +1,289 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Crystal Reports</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+tr.hcp4 { x-cell-content-align:center; }
+span.hcp5 { font-size:10.0pt; font-family:Verdana; }
+td.hcp6 { x-cell-content-align:top; padding:0in 5.4pt 0in 5.4pt; padding-left:0px; padding-top:0px; padding-right:0px; padding-bottom:0px; border-right-style:solid; border-bottom-style:solid; border-bottom-color:#c0c0c0; border-bottom-width:1pt; border-right-color:#c0c0c0; border-right-width:1pt; border-left-color:#c0c0c0; border-left-width:1pt; border-left-style:Solid; }
+td.hcp7 { x-cell-content-align:top; padding:0in 5.4pt 0in 5.4pt; padding-left:0px; padding-top:0px; padding-right:0px; padding-bottom:0px; border-right-style:solid; border-bottom-style:solid; border-bottom-color:#c0c0c0; border-bottom-width:1pt; border-right-color:#c0c0c0; border-right-width:1pt; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body>
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>Crystal Reports</h1>
+<p>New Crystal Reports can be created for Microsoft<sup>®</sup> Retail 
+ Management System. Although Retail Management System ships with a runtime 
+ license for Crystal Reports, the Crystal Reports program needs to be purchased 
+ to create or edit new Crystal Reports. </p>
+<p>The Crystal Reports files included in Retail Management System are located 
+ in the Crystal Reports folder where the product is installed (C:\program 
+ files\microsoft\retail management system\store operations\CrystalReports).</p>
+<h4>Crystal Reports Rules</h4>
+<p>Follow the rules below to produce Crystal Reports for Retail Management 
+ System.</p>
+<ol>
+<li class="kadov-p-CnumList"><p class="numList">The DEF filename must match 
+ the RPT filename. For example, Customer.def must be used to generate Customer.rpt.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">The DEF file and RPT file 
+ must be stored in the folder dedicated for Crystal Reports. This folder 
+ is defined in Retail Management System Administrator and is stored in 
+ the <span style="margin-bottom: 12pt; font-weight: bold;">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Retail 
+ Management System\Store Operations\Manager\Paths\Crystal Reports</span><span style="margin-bottom: 12pt;"> subkey.</span></p></li>
+</ol>
+<ol start="3">
+<li class="kadov-p-CnumList"><p class="numList">Retail Management System 
+ v1.2 distributes Crystal Reports v8.5. Ensure that the new Crystal Reports 
+ are compatible with these versions.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">An OLE database SQL connection 
+ to the Retail Management System database must be used.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">A formula field for ReportDate 
+ must be included in the report.</p></li>
+</ol>
+<p class="NoteInList"><span class="hcp3">Note</span>: This 
+ can be blank at design time since the application passes data to this 
+ field at runtime.</p>
+<ol start="6" style="list-style: decimal;" type="1">
+<li class="kadov-p-CnumList"><p class="numList">In the Crystal Report definition 
+ files, use the variables listed in the following table.</p></li>
+</ol>
+<table cellspacing="0" style="margin-left: 50px;
+				x-cell-content-align: Center;
+				width: 78.36%;
+				border-left-style: Solid;
+				border-left-width: 2px;
+				border-right-style: Solid;
+				border-right-width: 2px;
+				border-top-style: Solid;
+				border-top-width: 2px;
+				border-bottom-style: Solid;
+				border-bottom-width: 2px;
+				border-left-color: #c0c0c0;
+				border-right-color: #c0c0c0;
+				border-top-color: #c0c0c0;
+				border-bottom-color: #c0c0c0;
+				border-spacing: 0px;
+				border-spacing: 0px;" width="78.36%" x-use-null-cells="">
+<col style="width: 37.644%;"/>
+<col style="width: 62.356%;"/>
+<tr class="hcp4" valign="middle">
+<td bgcolor="#C0C0C0" style="width: 37.644%;
+			x-cell-content-align: top;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #c0c0c0;
+			border-top-style: solid;
+			border-right-style: solid;
+			border-bottom-style: solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-width: 1pt;
+			border-right-color: #c0c0c0;
+			border-right-width: 1pt;
+			border-left-color: #c0c0c0;
+			border-left-width: 1pt;
+			border-left-style: Solid;
+			border-top-color: #c0c0c0;
+			border-top-width: 1pt;" valign="top" width="37.644%">
+<h1 class="TableH1" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;"><b><span class="hcp3">Variable</span></b></h1></td>
+<td bgcolor="#C0C0C0" style="width: 62.356%;
+			x-cell-content-align: top;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #c0c0c0;
+			border-top-style: solid;
+			border-right-style: solid;
+			border-bottom-style: solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-width: 1pt;
+			border-top-color: #c0c0c0;
+			border-top-width: 1pt;
+			border-right-color: #c0c0c0;
+			border-right-width: 1pt;" valign="top" width="62.356%">
+<h1 class="TableH1"><b style="font-weight: bold;"><span class="hcp5">Description</span></b></h1></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">Filename</p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">The 
+ report filename.</span></p></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">Description</p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">The 
+ description that appears on the report window.</span></p></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">GroupCount</p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">The 
+ number of group sections in the report, not including the detail section.</span></p></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">StartGroup</p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">Indicates 
+ the first group section for sorting purposes.</span></p></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">TableCount</p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">Number 
+ of tables used in the report.</span></p></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">VisibleSectionName </p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">Include 
+ one for each section displayed on the report. GH1 indicates the header 
+ section for group 1, GF1 indicates the footer section for group 1, and 
+ DETAIL indicates the detail section.</span></p></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">Field</p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">Defines 
+ the fields that can be sorted or used in the selection criteria. They 
+ are defined as follows: Field = {description}, {field name}, {type}, {level}, 
+ {criteria}, {G.T. #}.</span></p></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">Description</p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">The 
+ information used to identify the field in the user interface and the field 
+ in the database.</span></p></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">Type</p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">Indicates 
+ the type of data in the field: 0 = string; 1 = numeric; 2 = date, 3 = 
+ Boolean.</span></p></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">Level</p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">The 
+ sort level in which the field appears. For example, 1 means this field 
+ can be sorted at sort level 1. Use 0 if this field is not to be sorted.</span></p></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">Criteria</p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">Indicates 
+ if this field is used in the selection criteria. Use 1 for yes, 0 for 
+ no.</span></p></td></tr>
+<tr class="hcp4" valign="middle">
+<td class="hcp6" style="width:37.644%;" valign="top" width="37.644%">
+<p class="TableNormal" style="font-size: 10.0pt;
+			font-family: Verdana;
+			font-weight: bold;">G.T.</p></td>
+<td class="hcp7" style="width:62.356%;" valign="top" width="62.356%">
+<p class="TableNormal"><span class="hcp5">For 
+ future use.</span></p></td></tr>
+</table>
+<p> </p>
+<p class="SeeAlsoList" style="color: #0000ff;">
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="About Reports;About_Reports.htm$$**$$Active Reports;Active_Reports.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\Crystal_Reports.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>--><object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="About Reports;About_Reports.htm"/>
+<param name="Item2" value="Active Reports;Active_Reports.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

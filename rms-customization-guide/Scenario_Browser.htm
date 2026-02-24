@@ -1,0 +1,151 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Scenario Browser</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style>
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; x-text-underline:normal; text-decoration:underline; }
+img.hcp4 { border-left-style:Solid; border-left-width:4px; border-right-style:Solid; border-right-width:4px; border-top-style:Solid; border-top-width:4px; border-bottom-style:Solid; border-bottom-width:4px; margin-left:0px; margin-right:0px; margin-top:0px; margin-bottom:0px; float:none; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1 style="margin-left: 0in; text-indent: 0in;">Loyalty Add-in Browser</h1>
+<p class="RedBullet">The loyalty program HTML browser is displayed on top 
+ of the transaction pane. The loyalty program browser is displayed if a 
+ customer is loaded when the loyalty program custom button is clicked. 
+ The loyalty pane displayed depends on the status of the loaded customer 
+ as follows:</p>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp3">Customer 
+ not enrolled:</span> Displays the enrollment pane. For more information, 
+ see <a href="#Enrollment Pane">Enrollment Pane</a> in this topic.</p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp3">Customer 
+ enrolled:</span> Displays the loyalty status pane. For more information, 
+ see <a href="#Loyalty Status Pane">Loyalty Status Pane</a> in this topic.</p></li>
+</ul>
+<p> </p>
+<h2><a name="Enrollment Pane"></a>Enrollment Pane</h2>
+<p>The enrollment pane is displayed when the loyalty program custom button 
+ is clicked and the loaded customer is not enrolled in the loyalty program. 
+ The enrollment pane contains the following elements:</p>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp3">Enroll 
+ Now button:</span> Click this button to enroll the current customer in 
+ the loyalty program.</p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp3">Receive 
+ Store Mailings checkbox:</span> Select this checkbox before clicking <span style="font-weight: bold;">Enroll Now</span> if the customer wants to 
+ receive store mailings as part of their loyalty enrollment.</p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp3">Loyalty 
+ level table:</span> Displays the defined loyalty levels.</p></li>
+</ul>
+<p>These elements appear as shown in the following diagram.</p>
+<p style="margin-left: 0px;"><img border="4" class="hcp4" height="162" src="assets/images/enroll1.gif" style="width:600px; height:162px;" width="600" x-maintain-ratio="TRUE"/></p>
+<p> </p>
+<h2><a name="Loyalty Status Pane"></a>Loyalty Status Pane</h2>
+<p>The loyalty status pane is displayed when the loyalty program custom 
+ button is clicked and the loaded customer is enrolled in the loyalty program. 
+ The loyalty status pane contains the following elements:</p>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp3">Loyalty 
+ information</span>: Displays the following loyalty program information 
+ for the customer:</p></li>
+<li class="kadov-p-CBulletListIn"><p class="BulletListIn">Date on which 
+ the customer joined the loyalty program</p></li>
+<li class="kadov-p-CBulletListIn"><p class="BulletListIn">Customer's current 
+ loyalty level </p></li>
+<li class="kadov-p-CBulletListIn"><p class="BulletListIn">Customer's current 
+ loyalty discount </p></li>
+<li class="kadov-p-CBulletListIn"><p class="BulletListIn">Whether the customer 
+ is receiving store mailings</p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp3">Cancel 
+ link:</span> Click this link to remove the customer from the loyalty program. 
+ All loyalty information for the customer, including current level and 
+ purchase amount, is permanently deleted from the database.</p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp3">Yes/No 
+ links:</span> The Receive Mailings option that is not selected is displayed 
+ as a link. Click the link to change the Receive Mailings option for the 
+ customer.</p></li>
+</ul>
+<p><span>These elements appear as shown in the following diagram.</span></p>
+<p><img border="4" class="hcp4" height="166" src="assets/images/status.gif" style="width:600px; height:166px;" width="600" x-maintain-ratio="TRUE"/></p>
+<p> </p>
+<p>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="HTML Browser;HTML_Add-ins.htm#HTML_Browser$$**$$Loyalty Level Computation Sample;Scenario_Loyalty_Level_Computation.htm$$**$$Scenario Sample Code;Scenario_Examples.htm$$**$$Tailspin Toys Scenario;Tailspin_Toys_Scenario.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\Scenario_Browser.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="HTML Browser;HTML_Add-ins.htm#HTML_Browser"/>
+<param name="Item2" value="Loyalty Level Computation Sample;Scenario_Loyalty_Level_Computation.htm"/>
+<param name="Item3" value="Scenario Sample Code;Scenario_Examples.htm"/>
+<param name="Item4" value="Tailspin Toys Scenario;Tailspin_Toys_Scenario.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

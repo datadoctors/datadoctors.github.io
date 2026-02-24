@@ -1,0 +1,236 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Receipt Compiler and Renderer</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style>
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+td.hcp3 { x-cell-content-align:top; padding:0in 5.4pt 0in 5.4pt; padding-left:0px; padding-top:0px; padding-right:0px; padding-bottom:0px; border-left-style:Solid; border-left-color:#c0c0c0; border-top-style:Solid; border-top-color:#c0c0c0; border-right-style:Solid; border-right-color:#c0c0c0; border-bottom-style:Solid; border-bottom-color:#c0c0c0; border-right-width:1px; border-left-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#c0c0c0; }
+td.hcp4 { x-cell-content-align:top; padding:0in 5.4pt 0in 5.4pt; padding-left:0px; padding-top:0px; padding-right:0px; padding-bottom:0px; border-top-style:Solid; border-top-color:#c0c0c0; border-right-style:Solid; border-right-color:#c0c0c0; border-bottom-style:Solid; border-bottom-color:#c0c0c0; border-top-width:1px; border-bottom-width:1px; border-right-width:1px; background-color:#c0c0c0; }
+td.hcp5 { x-cell-content-align:top; padding:0in 5.4pt 0in 5.4pt; padding-left:0px; padding-top:0px; padding-right:0px; padding-bottom:0px; border-left-color:#c0c0c0; border-left-width:1px; border-left-style:Solid; border-right-color:#c0c0c0; border-right-width:1px; border-right-style:Solid; border-bottom-color:#c0c0c0; border-bottom-width:1px; border-bottom-style:Solid; }
+td.hcp6 { x-cell-content-align:top; padding:0in 5.4pt 0in 5.4pt; padding-left:0px; padding-top:0px; padding-right:0px; padding-bottom:0px; border-right-color:#c0c0c0; border-right-width:1px; border-right-style:Solid; border-bottom-color:#c0c0c0; border-bottom-width:1px; border-bottom-style:Solid; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>Receipt Compiler and Renderer</h1>
+<p>Store Operations takes a receipt template string and iterates through 
+ loops, evaluation conditional clauses, and replaces variables with values. 
+ The result is a receipt string, in XML, that can be rendered.</p>
+<p>For more information, see <a href="About_Receipts.htm">About Receipts</a>.</p>
+<h4>Receipt Compiler</h4>
+<p>The following node types are processed by the receipt compiler. All 
+ of the other nodes are formatting nodes and are passed through to the 
+ renderer.</p>
+<table cellspacing="0" class="TableGrid" style="border-collapse: collapse;
+				width: 91.863%;
+				border-spacing: 0px;
+				border-left-style: Solid;
+				border-left-width: 2px;
+				border-right-style: Solid;
+				border-right-width: 2px;
+				border-top-style: Solid;
+				border-top-width: 2px;
+				border-bottom-style: Solid;
+				border-bottom-width: 2px;
+				border-left-color: #c0c0c0;
+				border-right-color: #c0c0c0;
+				border-top-color: #c0c0c0;
+				border-bottom-color: #c0c0c0;
+				border-spacing: 0px;" width="91.863%" x-use-null-cells="">
+<col style="width: 33.738%;"/>
+<col style="width: 66.262%;"/>
+<tr>
+<td bgcolor="#C0C0C0" class="hcp3" colspan="1" rowspan="1" style="width:33.738%;" valign="top" width="33.738%">
+<p class="TableNormal" style="font-weight: bold;">Node</p></td>
+<td bgcolor="#C0C0C0" class="hcp4" colspan="1" rowspan="1" style="width:66.262%;" valign="top" width="66.262%">
+<p class="TableNormal" style="font-weight: bold;">Description</p></td></tr>
+<tr>
+<td class="hcp5" style="width:33.738%;" valign="top" width="33.738%">
+<p class="TableNormal"><a href="Receipt_Template_Conditional_Tags.htm" id="a1">IF / THEN / ELSE</a></p></td>
+<td class="hcp6" style="width:66.262%;" valign="top" width="66.262%">
+<p class="TableNormal">Conditional nodes</p></td></tr>
+<tr>
+<td class="hcp5" style="width:33.738%;" valign="top" width="33.738%">
+<p class="TableNormal"><a href="_PROPERTIES__Header_Tag.htm">PROPERTIES</a></p></td>
+<td class="hcp6" style="width:66.262%;" valign="top" width="66.262%">
+<p class="TableNormal">Comments; not processed</p></td></tr>
+<tr>
+<td class="hcp5" style="width:33.738%;" valign="top" width="33.738%">
+<p class="TableNormal"><a href="_SET__Header_Tag.htm">SET</a></p></td>
+<td class="hcp6" style="width:66.262%;" valign="top" width="66.262%">
+<p class="TableNormal">Internal variables and public attributes</p></td></tr>
+<tr>
+<td class="hcp5" style="width:33.738%;" valign="top" width="33.738%">
+<p class="TableNormal"><a href="_FOR__Procedural_Tag.htm">FOR / EACH / LOOP</a></p></td>
+<td class="hcp6" style="width:66.262%;" valign="top" width="66.262%">
+<p class="TableNormal">Looping constructs</p></td></tr>
+<tr>
+<td class="hcp5" style="width:33.738%;" valign="top" width="33.738%">
+<p class="TableNormal"><a href="About_Receipt_Template_Variables.htm">Variable 
+ replacements</a></p></td>
+<td class="hcp6" style="width:66.262%;" valign="top" width="66.262%">
+<p class="TableNormal">Variable and constant evaluation</p></td></tr>
+</table>
+<h4>Receipt Renderer</h4>
+<p>The rendering process takes the result of the compile process and displays 
+ it in a window, prints it to an OPOS receipt printer, or renders it to 
+ a Windows printer. The following nodes are processed by the receipt renderer.</p>
+<table cellspacing="0" class="TableGrid" style="width: 94.72%;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-left-style: Solid;
+				border-left-width: 2px;
+				border-right-style: Solid;
+				border-right-width: 2px;
+				border-top-style: Solid;
+				border-top-width: 2px;
+				border-bottom-style: Solid;
+				border-bottom-width: 2px;
+				border-left-color: #c0c0c0;
+				border-right-color: #c0c0c0;
+				border-top-color: #c0c0c0;
+				border-bottom-color: #c0c0c0;" width="94.72%" x-use-null-cells="">
+<tr>
+<td bgcolor="#C0C0C0" class="hcp3" colspan="1" rowspan="1" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal" style="font-weight: bold;">Node</p></td>
+<td bgcolor="#C0C0C0" class="hcp4" colspan="1" rowspan="1" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal" style="font-weight: bold;">Description</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_OPOS__Header_Tag.htm">OPOS</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">OPOS specific functionality</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_MARGIN__Header_Tag.htm">MARGIN</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">Windows printer margin specifications</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_FONT__Header_Tag.htm">FONT</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">Font declarations</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_SUB__Header_Tag.htm">SUB</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">Subroutine definition</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_DOCUMENT__Header_Tag.htm">DOCUMENT</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">Document definition</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_CALL__Procedural_Tag.htm">CALL</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">Subroutine invocation</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_PICTURE__Graphical_Tag.htm">PICTURE</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">Graphics and images</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_BARCODE__Graphical_Tag.htm">BARCODE</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">Barcode display</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_TABLE__Graphical_Tag.htm">TABLE</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">Table definitions</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_PARAGRAPH__Graphical_Tag.htm">PARAGRAPH</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">Text-based paragraphs</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_TEXT__Graphical_Tag.htm">TEXT</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">Generic text outputs</p></td></tr>
+<tr>
+<td class="hcp5" style="width:29.18%;" valign="top" width="29.18%">
+<p class="TableNormal"><a href="_CURRENCY__Graphical_Tag.htm">CURRENCY</a></p></td>
+<td class="hcp6" style="width:70.82%;" valign="top" width="70.82%">
+<p class="TableNormal">Currency conversions</p></td></tr>
+</table>
+<p> </p>
+<p class="SeeAlsoList" style="color: #0000ff;">
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="About Receipts;About_Receipts.htm$$**$$Receipt Template Language;Receipt_Template_Language.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\Receipt_Compiler_and_Renderer.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="About Receipts;About_Receipts.htm"/>
+<param name="Item2" value="Receipt Template Language;Receipt_Template_Language.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+  </p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

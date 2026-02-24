@@ -1,0 +1,172 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Creating an HTML Add-in</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style>
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+a.hcp4 { font-weight:bold; }
+span.hcp5 { font-style:italic; }
+span.hcp6 { font-weight:normal; }
+b.hcp7 { font-weight:normal; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1 style="margin-left: 0in; text-indent: 0in;">Creating an HTML Add-in</h1>
+<p>HTML add-ins are implemented as HTML, ASP, or ASPX pages that can include 
+ VBScript or JScript code.</p>
+<p class="ProcHeading">To create an HTML add-in:</p>
+<ol>
+<li class="kadov-p-CnumList"><p class="numList">Install Microsoft Retail 
+ Management System Store Operations.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Create an HTML file that 
+ uses VBScript or JScript code to access the Store Operations business 
+ logic through the <span class="hcp3">QSBridge </span>ActiveX 
+ control. For more information about <span class="hcp3">QSBridge</span>, 
+ see <a href="#The_QSBridge_ActiveX_Control">The QSBridge ActiveX Control</a> 
+ in this topic.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Save your HTML script to 
+ the HTML folder specified under the Paths tab of the Administrator Configuration. 
+ The default location is C:\Program Files\Microsoft Retail Management System\Store 
+ Operations\HTML. </p></li>
+<li class="kadov-p-CnumList"><p class="numList">Test and debug your script.</p></li>
+</ol>
+<p class="numList"> </p>
+<h2><a name="The_QSBridge_ActiveX_Control"></a>The QSBridge ActiveX Control</h2>
+<p>The <span class="hcp3">QSBridge</span> ActiveX control 
+ connects HTML script add-ins to the Store Operations. This control provides 
+ access to the business rules contained in <a class="hcp4" href="About_QSRules.htm">QSRules</a> 
+ and invokes macro-level events in the POS application to trigger specific 
+ functions. When the POS application detects a change in the HTML content, 
+ for example, redirection, it searches the HTML content for an instance 
+ of the <span class="hcp3">QSBridge</span> ActiveX control. If 
+ an instance is found, it creates a bridge receipt and sets a reference 
+ (with events) to that instance. The bridge receptor allows the POS 
+ application to receive and respond to any events that are fired by the 
+ <span class="hcp3">QSBridge</span> control running in any 
+ of the HTML browsers.</p>
+<p>The POS bridge receptor responds to the following functions called through 
+ <span class="hcp3">QSBridge</span>.</p>
+<ul style="list-style: disc;" type="disc">
+<li class="kadov-p"><p style="font-weight: bold;">QSBridge.FireEvent(<span class="hcp5">String</span>, <span class="hcp5">ParamArray</span>)<span class="hcp6">: Invokes the event specified by the </span>String<span class="hcp6"> parameter, with the optional parameters 
+ specified in the </span>ParamArray<span class="hcp6"> 
+ parameter. This function resides in the user interface workflow layer. 
+ For more information, see <a href="FireEvents_Function.htm">Using the 
+ FireEvent Function</a>.</span></p></li>
+<li class="kadov-p"><p><span class="hcp3">QSBridge.RequestQSRules()</span>: 
+ Returns a reference to the current <span class="hcp3"><a href="SessionClass/SessionClass_Class.htm">SessionClass</a></span> object 
+ within <span class="hcp3">QSRules</span>. For more information, 
+ see <a href="RequestQSRules_Function.htm">Using the RequestQSRules Function</a>.</p></li>
+</ul>
+<p>Remember the following points when working with the <span class="hcp3">QSBridge</span><span> 
+ control</span>:</p>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp3">QSBridge</span> 
+ can only be used by HTML script add-ins.</p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp3">QSBridge</span> 
+ events trigger logic that occurs in the user interface workflow. We suggest 
+ using the <span class="hcp3"><a href="About_QSBridge_Fire_Events.htm">FireEvent</a></span> 
+ function when possible because events operate at a higher level than the 
+ <span class="hcp3">QSRules</span> classes.</p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp3">QSRules</span> 
+ events often activate the same user interface workflow that the POS uses. 
+ For example, the workflow logic triggered by the <a class="hcp4" href="PerformAddItem_(FireEvent).htm">PerformAddItem</a> 
+ event is the same code that is called when an item is scanned in the POS.</p></li>
+</ul>
+<p class="Note"><b class="hcp7">To see how the loyalty add-in 
+ uses the <span class="hcp3">QSBridge</span> ActiveX control, 
+ see <a href="Scenario_Loyalty_Information_Display.htm">Loyalty Information 
+ Display Sample</a>.</b></p>
+<p><b class="hcp7">T</b>he following declaration is used 
+ to define the interface between your HTML script and the <span class="hcp3">QSBridge</span> 
+ ActiveX control.</p>
+<p class="function"><span class="InlineCode">&lt;OBJECT classid="clsid:44C4C3AC-D0F1-11D2-919D-006008C88FC3" 
+ height=0 id=qsBridge style="LEFT: 0px; TOP: 0px" width=0&gt;</span></p>
+<p class="function-indent"><span class="InlineCode">&lt;PARAM NAME="_ExtentX" 
+ VALUE="26"&gt;</span></p>
+<p class="function-indent"><span class="InlineCode">&lt;PARAM NAME="_ExtentY" 
+ VALUE="26"&gt;</span></p>
+<p class="function" style="font-family: 'Courier New';"><span class="InlineCode">&lt;/OBJECT&gt;</span></p>
+<p class="function" style="font-family: 'Courier New';"> </p>
+<p class="SeeAlsoList" style="color: #0000ff;">
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="About Add-ins;About_Add-Ins.htm$$**$$HTML Add-ins;HTML_Add-ins.htm$$**$$Invoking an HTML Add-in;Invoking_an_HTML_Add-in.htm$$**$$Loyalty Information Display Sample;Scenario_Loyalty_Information_Display.htm$$**$$QSBridge.FireEvent Function;FireEvents_Function.htm$$**$$QSBridge.RequestQSRules Function;RequestQSRules_Function.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\Creating_an_HTML_Add-in.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="About Add-ins;About_Add-Ins.htm"/>
+<param name="Item2" value="HTML Add-ins;HTML_Add-ins.htm"/>
+<param name="Item3" value="Invoking an HTML Add-in;Invoking_an_HTML_Add-in.htm"/>
+<param name="Item4" value="Loyalty Information Display Sample;Scenario_Loyalty_Information_Display.htm"/>
+<param name="Item5" value="QSBridge.FireEvent Function;FireEvents_Function.htm"/>
+<param name="Item6" value="QSBridge.RequestQSRules Function;RequestQSRules_Function.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

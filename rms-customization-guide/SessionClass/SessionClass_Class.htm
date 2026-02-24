@@ -1,0 +1,402 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>SessionClass Class</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="../assets/css/SDK.css" rel="StyleSheet"/><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+p.hcp4 { font-weight:normal; }
+ul.hcp5 { list-style:disc; }
+p.hcp6 { margin-left:0px; font-weight:normal; }
+tr.hcp7 { x-cell-content-align:top; }
+p.hcp8 { font-weight:bold; }
+td.hcp9 { padding-right:10px; padding-left:10px; border-left-color:#c0c0c0; border-right-color:#c0c0c0; border-right-style:Solid; border-bottom-color:#c0c0c0; border-bottom-style:Solid; border-bottom-width:1px; border-right-width:1px; border-left-width:1px; border-left-style:solid; }
+td.hcp10 { padding-right:10px; padding-left:10px; border-right-color:#c0c0c0; border-right-style:Solid; border-bottom-color:#c0c0c0; border-bottom-style:Solid; border-bottom-width:1px; border-right-width:1px; }
+p.hcp11 { margin-left:40px; }
+-->
+</style>
+<link href="../assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="../index.html">🏠 Home</a>
+<a class="nav-contents" href="../index.html#contents">📚 Contents</a>
+<a class="nav-search" href="../index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="../assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>SessionClass Class</h1>
+<p>The <span class="hcp3">SessionClass</span> class is the 
+ primary entry point for DLL and HTML add-ins. This object is instantiated 
+ once by the user interface workflow logic when Microsoft Retail Management 
+ System Store Operations POS starts, and is then passed to add-ins invoked 
+ by hooks, custom POS buttons, and <span class="hcp3">QSBridge</span> 
+ fire events. For more information, see <a href="../About_Add-Ins.htm">About 
+ Add-Ins</a>.</p>
+<p> </p>
+<h2>When To Use</h2>
+<p class="hcp4">The <span class="hcp3">SessionClass</span> 
+ class is used to perform the following tasks.</p>
+<ul class="hcp5" type="disc">
+<li class="kadov-p"><p class="hcp4">Access other objects 
+ through the properties of the <span class="hcp3">SessionClass</span><span> 
+ object created in the UI tier when the POS application is started. </span></p></li>
+<li class="kadov-p"><p class="hcp4">Run a SQL command 
+ against the Microsoft Store Operations database using the <a href="../SessionClass/SessionClass_OpenRecordset_Function.htm" style="font-weight: bold;">OpenRecordset</a> function.</p></li>
+<li class="kadov-p"><p class="hcp4">Pass information 
+ between add-ins using the <span class="hcp3"><a href="../SessionClass/SessionClass_VariableGet_Property.htm">Variable</a></span> 
+ property.</p></li>
+<li class="kadov-p"><p class="hcp4">Access static transaction 
+ objects, such as <span class="hcp3">SalesTaxDescriptors</span>, 
+ <span class="hcp3">CurrencyDescriptors</span>, and <span class="hcp3"><a href="../Configuration/Configuration_Class.htm">Configuration</a></span>. 
+ These objects are stored in the <span class="hcp3">SessionClass</span> 
+ object to eliminate the need to reinitialize them for every transaction.</p></li>
+</ul>
+<p class="hcp4"> </p>
+<h2><span class="hcp3">Remarks</span></h2>
+<p class="hcp6">The most important classes 
+ accessed through the <span class="hcp3">SessionClass</span> 
+ object include the following: </p>
+<ul class="hcp5" type="disc">
+<li class="kadov-p"><p class="hcp6"><span class="hcp3"><a href="../Transaction/Transaction_Class.htm">Transaction</a></span>: 
+ The head object in an object hierarchy that represents the current POS 
+ transaction.</p></li>
+<li class="kadov-p"><p class="hcp6"><span class="hcp3"><a href="../Register/Register_Class.htm">Register</a></span>: 
+ The head object in a hierarchy that represents the POS hardware.</p></li>
+<li class="kadov-p"><p class="hcp6"><span class="hcp3"><a href="../Cashier/Cashier_Class.htm">Cashier</a></span>:The 
+ object that represents the cashier currently logged into the system.</p></li>
+</ul>
+<p class="hcp4"> </p>
+<h2>Procedures</h2>
+<p class="hcp4">The <span class="hcp3">SessionClass</span> 
+ class defines the following procedures.</p>
+<table cellspacing="0" style="x-cell-content-align: top;
+				width: 100%;
+				border-left-style: Solid;
+				border-left-width: 2px;
+				border-right-style: Solid;
+				border-right-width: 2px;
+				border-top-style: Solid;
+				border-top-width: 2px;
+				border-bottom-style: Solid;
+				border-bottom-width: 2px;
+				border-left-color: #c0c0c0;
+				border-right-color: #c0c0c0;
+				border-top-color: #c0c0c0;
+				border-bottom-color: #c0c0c0;
+				border-spacing: 0px;
+				border-spacing: 0px;" width="100%" x-use-null-cells="">
+<col style="width: 27.424%;"/>
+<col style="width: 72.576%;"/>
+<tr class="hcp7" valign="top">
+<td bgcolor="#C0C0C0" style="width: 27.424%;
+			padding-right: 10px;
+			padding-left: 10px;
+			background-color: #c0c0c0;
+			border-left-color: #c0c0c0;
+			border-top-color: #c0c0c0;
+			border-top-style: Solid;
+			border-right-color: #c0c0c0;
+			border-right-style: Solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-style: Solid;
+			border-bottom-width: 1px;
+			border-right-width: 1px;
+			border-left-width: 1px;
+			border-left-style: solid;
+			border-top-width: 1px;" width="27.424%">
+<p class="hcp8">Procedure</p></td>
+<td bgcolor="#C0C0C0" style="width: 72.576%;
+			padding-right: 10px;
+			padding-left: 10px;
+			background-color: #c0c0c0;
+			border-top-color: #c0c0c0;
+			border-top-style: Solid;
+			border-right-color: #c0c0c0;
+			border-right-style: Solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-style: Solid;
+			border-bottom-width: 1px;
+			border-top-width: 1px;
+			border-right-width: 1px;" width="72.576%">
+<p class="hcp8">Description</p></td></tr>
+<tr class="hcp7" valign="top">
+<td class="hcp9" style="width:27.424%;" width="27.424%">
+<p class="hcp8"><a href="../SessionClass/SessionClass_HoldCurrentTransaction_Function.htm">HoldCurrentTransaction</a></p></td>
+<td class="hcp10" style="width:72.576%;" width="72.576%">
+<p>Places the current transaction on hold and initializes a new transaction.</p></td></tr>
+<tr class="hcp7" valign="top">
+<td class="hcp9" style="width:27.424%;" width="27.424%">
+<p class="hcp8"><a href="../SessionClass/SessionClass_InitializeTransaction_Function.htm">InitializeTransaction</a></p></td>
+<td class="hcp10" style="width:72.576%;" width="72.576%">
+<p>Initializes a new transaction.</p></td></tr>
+<tr class="hcp7" valign="top">
+<td class="hcp9" style="width:27.424%;" width="27.424%">
+<p class="hcp8"><a href="../SessionClass/SessionClass_OpenRecordset_Function.htm">OpenRecordSet</a></p></td>
+<td class="hcp10" style="width:72.576%;" width="72.576%">
+<p>Returns the Microsoft ActiveX Data Objects (ADO) record set retrieved 
+ by the specified SQL command.</p></td></tr>
+<tr class="hcp7" valign="top">
+<td class="hcp9" colspan="1" rowspan="1" style="width:27.424%;" width="27.424%">
+<p class="hcp8"><a href="../SessionClass/SessionClass_PurgeMessages_Function.htm">PurgeMessages</a></p></td>
+<td class="hcp10" colspan="1" rowspan="1" style="width:72.576%;" width="72.576%">
+<p>Deletes all messages sent before the specified date.</p></td></tr>
+<tr class="hcp7" valign="top">
+<td class="hcp9" colspan="1" rowspan="1" style="width:27.424%;" width="27.424%">
+<p class="hcp8"><a href="../SessionClass/SessionClass_RecallTransaction_Function.htm">RecallTransaction</a></p></td>
+<td class="hcp10" colspan="1" rowspan="1" style="width:72.576%;" width="72.576%">
+<p>Recalls the specified transaction.</p></td></tr>
+<tr class="hcp7" valign="top">
+<td class="hcp9" colspan="1" rowspan="1" style="width:27.424%;" width="27.424%">
+<p class="hcp8"><a href="../SessionClass/SessionClass_SendMessage_Function.htm">SendMessage</a></p></td>
+<td class="hcp10" colspan="1" rowspan="1" style="width:72.576%;" width="72.576%">
+<p>Sends the specified message to the specified cashier.</p></td></tr>
+<tr class="hcp7" valign="top">
+<td class="hcp9" colspan="1" rowspan="1" style="width:27.424%;" width="27.424%">
+<p class="hcp8"><a href="../SessionClass/SessionClass_TimeClockCorrect_Function.htm">TimeClockCorrect</a></p></td>
+<td class="hcp10" colspan="1" rowspan="1" style="width:72.576%;" width="72.576%">
+<p>Modifies the specified time clock entry.</p></td></tr>
+<tr class="hcp7" valign="top">
+<td class="hcp9" colspan="1" rowspan="1" style="width:27.424%;" width="27.424%">
+<p class="hcp8"><a href="../SessionClass/SessionClass_TimeClockPunch_Function.htm">TimeClockPunch</a></p></td>
+<td class="hcp10" colspan="1" rowspan="1" style="width:72.576%;" width="72.576%">
+<p>Punches the time clock for the specified cashier.</p></td></tr>
+</table>
+<p class="hcp4"> </p>
+<h2>Properties</h2>
+<p class="hcp4">The <span class="hcp3">SessionClass</span> 
+ class has the following properties.</p>
+<p class="hcp4"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_AccountingPost_Property.htm">AccountingPost</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.Post</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets information about the posting of accounting 
+ data.</p>
+<p class="Close-Spaced" style="margin-left: 40px;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_CalendarEventReminders_Property.htm">CalendarEventReminders</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.CalendarEvents</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a collection of all expired calendar 
+ events for the cashier currently logged on to the POS.</p>
+<p class="Close-Spaced" style="margin-left: 0px;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_CalendarEvents_Property.htm">CalendarEvents</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.CalendarEvents</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a collection of all calendar events 
+ for the cashier currently logged on to the POS.</p>
+<p class="Close-Spaced" style="margin-left: 0px;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_Carriers_Property.htm">Carriers</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.Carriers</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a collection of all user-defined shipping 
+ carriers.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_Cashier_Property.htm">Cashier</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.Cashier</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets the cashier that is currently logged 
+ on to the POS.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_Configuration_Property.htm">Configuration</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.Configuration</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets the RMS configuration.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_CurrencyDescriptorDefault_Property.htm">CurrencyDescriptorDefault</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.CurrencyDescriptor</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets the default currency for the local computer.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_CurrencyDescriptors_Property.htm">CurrencyDescriptors</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.CurrencyDescriptors</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a collection of all user-defined currencies.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_CurrentDate_Property.htm">CurrentDate</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Date</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets the current date.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_CurrentDateTime_Property.htm">CurrentDateTime</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Date</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets the current date and time.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_CustomCaptions_Property.htm">CustomCaptions</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">CustomCaptions</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a collection of all user-defined captions.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_Database_Property.htm">Database</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Gateway</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a <span class="hcp3">Gateway</span> 
+ object that contains the ADO connection to the database.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_GasPumps_Property.htm">GasPumps</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.GasPumps</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a collection of predefined gas pumps.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_IsPOS_Property.htm">IsPOS</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a Boolean value that indicates whether 
+ the current application is the POS application.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_IsSSLConnectionOpen_Property.htm">IsSSLConnectionOpen</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px; font-weight: normal;">Access type: Read-only</p>
+<p class="hcp11"><span style="font-weight: normal;">Gets a 
+ Boolean value that indicates whether the SSL connection is open or not.</span></p>
+<p class="Close-Spaced"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_ItemTaxCalculator_Property.htm">ItemTaxCalculator</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">ItemTaxCalculator</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets an object used to compute sales tax. 
+ We recommend that custom add-ins not use this property.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_License_Property.htm">License</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">LicenseClass</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets the RMS license information.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_OnHoldTransactionCount_Property.htm">OnHoldTransactionCount</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets the number of transactions currently 
+ on hold.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_Processes_Property.htm">Processes</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.Processes</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a collection of currently-running customizations.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_QuantityCheckRequest_Property.htm">QuantityCheckRequest</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QuantityCheckClient</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a reference to an object used to send 
+ requests for a quantity check to the RMS Headquarters program.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_ReasonCodes_Property.htm">ReasonCodes</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">ReasonCodes</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a collection of all user-defined reason 
+ codes.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_Register_Property.htm">Register</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.Register</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets information about the hardware used 
+ at the POS.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_Report_Property.htm">Report</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.Report</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets information about the current report.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_SalesTaxDescriptors_Property.htm">SalesTaxDescriptors</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.SalesTaxDescriptors</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a collection of all user-defined sales 
+ taxes.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_Schedules_Property.htm">Schedules</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Schedules</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets a collection of all user-defined schedules.</p>
+<p class="Close-Spaced" style="margin-left: 40px;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_ShippingEdit_Property.htm">ShippingEdit</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.ShippingEdit</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets information about the current shipping 
+ options at the POS.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../SessionClass/SessionClass_Status_Property.htm">Status</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Status</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp11">Gets the last status detected by <span class="hcp3">QSRules</span><span>.</span></p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><span><a href="../SessionClass/SessionClass_Transaction_Property.htm">Transaction</a></span></p>
+<p class="Close-Spaced" style="margin-left: 40px;"><span>Data type: <span class="hcp3">QSRules.Transaction</span></span></p>
+<p class="Close-Spaced" style="margin-left: 40px;"><span>Access type: Read-only</span></p>
+<p class="hcp11"><span>Gets the current transaction for the 
+ session.</span></p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><span><a href="../SessionClass/SessionClass_VariableGet_Property.htm">Variable</a></span></p>
+<p class="Close-Spaced" style="margin-left: 40px;"><span>Data type: <span class="hcp3">Object</span></span></p>
+<p class="Close-Spaced" style="margin-left: 40px;"><span>Access type: <a href="../SessionClass/SessionClass_VariableGet_Property.htm">Read</a>/<a href="../SessionClass/SessionClass_VariableSet_Property.htm">Write</a></span></p>
+<p class="hcp11"><span>Gets or sets the specified object in 
+ an array that can be used to pass information between add-ins.</span></p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><span><a href="../SessionClass/SessionClass_XMLString_Property.htm">XMLString</a></span></p>
+<p class="Close-Spaced" style="margin-left: 40px;"><span>Data type: <span class="hcp3">String</span></span></p>
+<p class="Close-Spaced" style="margin-left: 40px;"><span>Access type: Read-only</span></p>
+<p class="hcp11"><span>Gets a running XML digital receipt.</span></p>
+<p class="hcp6"> </p>
+<p><span>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="Cashier Class;../Cashier/Cashier_Class.htm$$**$$Process Function;../Creating_a_COM_Component_Add-in.htm#Process Function$$**$$Register Class;../Register/Register_Class.htm$$**$$RequestQSRules Function;../RequestQSRules_Function.htm$$**$$Transaction Class;../Transaction/Transaction_Class.htm$$**$$">
+<param name="Image" value>
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\CustomizationGuide07\SessionClass\SessionClass_Class.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object> --><object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="Cashier Class;../Cashier/Cashier_Class.htm"/>
+<param name="Item2" value="Process Function;../Creating_a_COM_Component_Add-in.htm#Process Function"/>
+<param name="Item3" value="Register Class;../Register/Register_Class.htm"/>
+<param name="Item4" value="RequestQSRules Function;../RequestQSRules_Function.htm"/>
+<param name="Item5" value="Transaction Class;../Transaction/Transaction_Class.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</span></p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="../Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

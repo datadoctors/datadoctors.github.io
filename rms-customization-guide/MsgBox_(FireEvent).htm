@@ -1,0 +1,135 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>MsgBox (FireEvent)</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style>
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+span.hcp4 { font-style:italic; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1><b style="font-weight: bold;">MsgBox </b>Event</h1>
+<p>The handler for the <span class="hcp3">MsgBox </span>event 
+ displays a message dialog box on the POS screen.</p>
+<h5><span class="hcp3">Handler Syntax</span></h5>
+<p class="Syntax">Public Function MsgBox( _</p>
+<p class="Syntax">  Prompt 
+ As Variant, _</p>
+<p class="Syntax">  Buttons 
+ As VbMsgBoxStyle, _</p>
+<p class="Syntax">  Title 
+ As Variant _</p>
+<p class="Syntax">) As VbMsgBoxResult</p>
+<h5>Parameters</h5>
+<p class="ParameterName">Prompt</p>
+<p class="ParameterIndent">Variant that contains the expression to display 
+ in the dialog box.</p>
+<p class="ParameterName">Buttons</p>
+<p class="ParameterIndent"><span>A </span><span class="hcp3">VbMsgBoxStyle</span> 
+ value that specifies the buttons to display on the message box. In JScript 
+ you must supply the integer value because this enumeration is not recognized 
+ by JScript; for example, pass zero into this parameter to display an <span class="hcp3">OK</span> button on the message box.</p>
+<p class="ParameterName">Title</p>
+<p class="ParameterIndent">Variant that contains a string to display in the 
+ title bar of the dialog box.</p>
+<h5>Return Values</h5>
+<p class="Indent"><span>A </span><span class="hcp3">VbMsgBoxResult</span><span> 
+ value that contains t</span>he return value of the dialog box.</p>
+<h5>UI Equivalent Key</h5>
+<p class="Indent">None</p>
+<h5>Remarks</h5>
+<p class="Indent">The structure of the <span class="hcp3"><a href="FireEvents_Function.htm">FireEvent</a></span> function does not 
+ allow optional parameters. As a result, parameters that are optional in 
+ the Visual Basic <span class="hcp3">MsgBox</span><span> 
+ function must be explicitly passed to the </span><span class="hcp3">FireEvent</span><span> 
+ function. For example, the </span><span class="hcp4">Buttons</span><span> 
+ parameter is optional when using the Visual Basic </span><span class="hcp3">MsgBox</span><span> 
+ function; if it is not supplied, the default value VbOkOnly (0) is used. 
+ However, the handler for this event requires you to pass in a value to 
+ the </span><span class="hcp4">Buttons</span><span> parameter.</span></p>
+<h5>Example</h5>
+<p class="Indent">The following example shows how to use the <span class="hcp3">FireEvent</span><span> 
+ function to </span>display a simple message box with an <span class="hcp3">OK</span> 
+ button.</p>
+<p style="font-weight: bold; x-text-underline: normal; /*begin!kadov{{*/ text-decoration: underline; /*}}end!kadov*/ ">JScript</p>
+<p class="CodeBlock">qsBridge.FireEvent("MsgBox", myVal, 0, "");</p>
+<p> </p>
+<p>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="QSBridge.FireEvent Function;FireEvents_Function.htm$$**$$The QSBridge ActiveX Control;Creating_an_HTML_Add-in.htm#The_QSBridge_ActiveX_Control$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\rms1.2x\rms\docs\product documentation\QSC\Customization Kit\Customization Guide\SDK_files\MsgBox_(FireEvent).htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="QSBridge.FireEvent Function;FireEvents_Function.htm"/>
+<param name="Item2" value="The QSBridge ActiveX Control;Creating_an_HTML_Add-in.htm#The_QSBridge_ActiveX_Control"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

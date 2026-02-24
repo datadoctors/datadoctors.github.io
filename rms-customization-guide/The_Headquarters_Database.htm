@@ -1,0 +1,114 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>The Headquarters Database</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>The Headquarters Database</h1>
+<p>The Headquarters database contains most of the Store Operations tables 
+ as well as tables dedicated to Headquarters. The Headquarters database 
+ contains the following types of tables.</p>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList" style="font-weight: bold;">Master tables:<span style="font-weight: normal;"> These tables are specific to Headquarters 
+ and contain information used to manage the business. Tables used to generate 
+ worksheets and tables that handle messaging are examples of Headquarters 
+ tables. Data in these tables is generally pushed down from Headquarters 
+ to the individual stores. Although this data may be modified at the stores, 
+ the changes can be overwritten the next time data is pushed down from 
+ Headquarters. Records in these tables are uniquely identified by the AutoID 
+ field. These tables also have an HQID field used to reference records.</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList" style="font-weight: normal;"><span style="font-weight: bold;">Tables that contain transaction records:</span> 
+ These tables are supersets of the Store Operations tables and contain 
+ store information for all stores. Data in these tables is pushed up from 
+ the individual stores to Headquarters. Records in these tables are uniquely 
+ identified by a combination of the StoreID and ID fields. For example, 
+ a record in the TransactionEntry table maps to a record in the Transaction 
+ table only if both the TransactionNumber and StoreID fields match. Although 
+ the StoreID field exists in the Store Operations database, the StoreID 
+ field in the Headquarters database is populated from the ID of the store 
+ communicating with Headquarters during upload of the data.</p></li>
+</ul>
+<p>Global customers fit exactly into neither of these categories, since 
+ they may be created either at Headquarters or at the individual stores.</p>
+<p>The direction in which a table is pushed can be determined by the identifying 
+ fields; tables that contain an HQID field are pushed down from Headquarters 
+ to the individual stores, while tables that contain a StoreID field are 
+ pushed up from the stores to Headquarters.</p>
+<p> </p>
+<p>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="About the RMS Databases;About_the_RMS_Database.htm$$**$$Extending the Databases;Extending_the_Databases.htm$$**$$The Store Operations Database;The_Store_Operations_Database.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\rms1.2x\rms\docs\product documentation\QSC\Customization Kit\Customization Guide\SDK_files\The_Headquarters_Database.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="About the RMS Databases;About_the_RMS_Database.htm"/>
+<param name="Item2" value="Extending the Databases;Extending_the_Databases.htm"/>
+<param name="Item3" value="The Store Operations Database;The_Store_Operations_Database.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Creating and Modifying a Receipt Template</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+p.hcp4 { color:#0000ff; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>Creating and Modifying a Receipt Template</h1>
+<p>Receipt templates can be created and modified in raw XML or by using 
+ the functionality included in Manager.</p>
+<p>Receipt templates are accessed through the <span class="hcp3">Receipt 
+ Formats</span> dialog box. You can display the <span class="hcp3">Receipt 
+ Formats</span> dialog box as follows:</p>
+<ol>
+<li class="kadov-p-CnumList"><p class="numList">Open Manager. </p></li>
+<li class="kadov-p-CnumList"><p class="numList">On the <span class="hcp3">Database</span> 
+ menu, point to <span class="hcp3">Registers</span> and then 
+ click <span class="hcp3">Receipt Formats</span>.</p></li>
+</ol>
+<p class="numList"> </p>
+<h2>Creating a Receipt Template using Manager</h2>
+<p>The easiest way to create a new receipt template is to use the UI included 
+ in Manager. Use Manager to create a new receipt template as follows:</p>
+<ol>
+<li class="kadov-p-CnumList"><p class="numList">On the <span class="hcp3">Receipt 
+ Formats</span> dialog box, click the <span class="hcp3">New</span> 
+ button. </p></li>
+<li class="kadov-p-CnumList"><p class="numList">On the <span class="hcp3">Receipt 
+ Format Properties</span> dialog box, enter a name and description for 
+ your template.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Click on the browse button 
+ for the type of receipt you are creating and select the XML file to use 
+ as the basis for your receipt format.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Select your receipt and 
+ click the <span class="hcp3">Properties</span> button to 
+ display the <span class="hcp3">Receipt Properties</span> 
+ dialog box.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Click the <span class="hcp3">Save 
+ As</span> button and save the receipt format with a new name.</p></li>
+</ol>
+<p> </p>
+<h2>Creating a Receipt Template Manually</h2>
+<p>If you do not want to use the <span class="hcp3">Receipt 
+ Properties</span> dialog box, or if you need more flexibility than is 
+ included in the Manager UI, you can create a template manually. There 
+ are two ways to manually create a receipt template.</p>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList">Create a new XML 
+ file and save it to the ReceiptTemplates folder. The default location 
+ of the ReceiptTemplates folder is C:\Program Files\Microsoft Retail Management 
+ System\Store Operations\ReceiptTemplates.</p></li>
+</ul>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList">Make a copy of one 
+ of the XML files in the ReceiptTemplates folder and rename it.</p></li>
+</ul>
+<p> </p>
+<p>After you have completed one of the steps above, do the following to 
+ add your receipt template to RMS. </p>
+<ol>
+<li class="kadov-p-CnumList"><p class="numList">On the <span class="hcp3">Receipt 
+ Formats</span> dialog box, click the <span class="hcp3">New</span> 
+ button. </p></li>
+<li class="kadov-p-CnumList"><p class="numList">On the <span class="hcp3">Receipt 
+ Format Properties</span> dialog box, enter a name and description for 
+ your new receipt template.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Click on the browse button 
+ for the type of receipt you are creating and select your new XML file.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Click the <span class="hcp3">OK</span><span> 
+ button.</span></p></li>
+</ol>
+<p class="numList"> </p>
+<h2>Modifying a Receipt Template</h2>
+<p>There are two ways to modify a receipt template.</p>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList">Use Manager as follows:</p></li>
+<ol>
+<li class="kadov-p-CnumList"><p class="numList">Select the receipt 
+ template to modify and click the <span class="hcp3">Properties</span> 
+ button to display the <span class="hcp3">Receipt Properties</span> 
+ dialog box.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Modify the attributes 
+ of the receipt template.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Click the <span class="hcp3">Save 
+ As</span><span> button to save your changes.</span></p></li>
+</ol>
+<li class="kadov-p-CBulletList"><p class="BulletList">Open the XML file 
+ for the receipt format and modify the XML directly. For more information, 
+ see <a href="Receipt_Template_Language.htm">Receipt Template Language</a>. 
+ You must reselect the XML file in the <span class="hcp3">Receipt 
+ Format Properties</span> dialog box for the changes to be recognized by 
+ RMS. </p></li>
+</ul>
+<p class="hcp4"> </p>
+<p class="hcp4">
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2090" >
+<param name="_ExtentY" value="582" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="About Receipts;About_Receipts.htm$$**$$Receipt Template Language;Receipt_Template_Language.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\Creating_and_Editing_a_Receipt.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="About Receipts;About_Receipts.htm"/>
+<param name="Item2" value="Receipt Template Language;Receipt_Template_Language.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

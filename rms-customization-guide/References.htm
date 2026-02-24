@@ -1,0 +1,153 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>References</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+a.hcp4 { font-weight:bold; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body>
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>Reference</h1>
+<p>This section contains technical details about the programming elements 
+ used to customize <span lang="EN-GB">Microsoft<sup>®</sup> 
+ Retail Management System.</span></p>
+<ul>
+<li class="kadov-p-CRedBullet"><p class="RedBullet"><a href="About_QSRules.htm">QSRules 
+ Classes</a>: Describes the design of the business logic tier of Store 
+ Operations POS. This section includes the documentation of critical classes, 
+ functions, and properties available for use by COM and HTML add-ins.</p></li>
+<li class="kadov-p-CRedBullet"><p class="RedBullet"><a href="About_QSBridge_Fire_Events.htm">QSBridge 
+ Events</a>: Describes the UI workflow tier of Store Operations POS. This 
+ tier contains events that can be raised by HTML add-ins to programmatically 
+ invoke the functionality available to the cashier through the POS UI.</p></li>
+</ul>
+<h2>QSBridge Events vs. QSRules Classes</h2>
+<p>QSBridge events and <span class="hcp3">QSRules</span><span> 
+ classes meet different customization needs. The following information 
+ will help you decide when to use each programming element.</span></p>
+<ul>
+<li class="kadov-p-CRedBullet"><p class="RedBullet"><span>Use <span class="hcp3">QSBridge</span> 
+ events in the following situations.</span></p></li>
+</ul>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList">Your add-in needs 
+ to use the UI provided by RMS. <span class="hcp3">QSRules</span> 
+ does not interact with the dialog boxes used by the UI tier. For example, 
+ the handler for the <a class="hcp4" href="RecallHold_(FireEvent).htm">RecallHold</a> event 
+ displays a dialog box from which the user can select the transaction to 
+ recall, while the <a class="hcp4" href="SessionClass/SessionClass_RecallTransaction_Function.htm">SessionClass.RecallTransaction</a> 
+ function does not.</p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span><span>The functionality 
+ required by your add-in can be accomplished using <span class="hcp3">QSBridge</span> 
+ events. When an operation can be performed both by <span class="hcp3">QSBridge</span> 
+ events and <span class="hcp3">QSRules</span><span> classes, 
+ <span class="hcp3">QSBridge</span> events should usually 
+ be your first choice because they reside at a higher logical level. <span class="hcp3">QSRules</span><span> operates at a low level 
+ in the system and bypasses much of the workflow logic performed in the 
+ UI tier. For example, if you want to programmatically add an item to the 
+ current transaction, a <span class="hcp3">QSBridge</span> 
+ event is usually the better choice because the handler for the <span class="hcp3"><a href="PerformAddItem_(FireEvent).htm">PerformAddItem</a></span> event 
+ invokes the same logic called when the cashier adds a new item to the 
+ transaction. The handler automatically invokes the logic to prompt the 
+ cashier to enter a serial number or matrix item type. By contrast, if 
+ your add-in uses the <span class="hcp3"><a href="Transaction/Transaction_Entries_Property.htm">Transaction.Entries</a></span> 
+ collection to manually add a new entry to the transaction, the logic to 
+ prompt for a serial number or matrix item type is bypassed.</span></span></span></span></p></li>
+</ul>
+<ul>
+<li class="kadov-p-CRedBullet"><p class="RedBullet"><span><span><span><span>Use 
+ <span class="hcp3">QSRules</span><span> in the following 
+ situations.</span></span></span></span></span></p></li>
+</ul>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span><span><span><span><span>Your 
+ add-in is a COM component. <span class="hcp3">QSBridge</span> 
+ events cannot be accessed through a COM component.</span></span></span></span></span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span><span><span><span><span>Your 
+ add-in requires information about the current transaction. Handlers for 
+ <span class="hcp3">QSBridge</span> events invoke UI workflow 
+ procedures, but do not have access to transaction information.</span></span></span></span></span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span><span><span><span><span>The 
+ functionality required by your add-in does not have an associated <span class="hcp3">QSBridge</span> event, or your add-in requires 
+ a finer level of control than is available in <span class="hcp3">QSBridge</span> 
+ events.</span></span></span></span></span></p></li>
+</ul>
+<p class="SeeAlsoList"> </p>
+<p class="SeeAlsoList" style="color: #0000ff;"><span><span><span><span><span>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="About QSRules;About_QSRules.htm$$**$$About Retail Management System Customization Guide;Welcome.htm$$**$$QSBridge Events;About_QSBridge_Fire_Events.htm$$**$$QSBridge.FireEvent Function;FireEvents_Function.htm$$**$$QSBridge.RequestQSRules Function;RequestQSRules_Function.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\References.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="About QSRules;About_QSRules.htm"/>
+<param name="Item2" value="About Retail Management System Customization Guide;Welcome.htm"/>
+<param name="Item3" value="QSBridge Events;About_QSBridge_Fire_Events.htm"/>
+<param name="Item4" value="QSBridge.FireEvent Function;FireEvents_Function.htm"/>
+<param name="Item5" value="QSBridge.RequestQSRules Function;RequestQSRules_Function.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</span></span></span></span></span></p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

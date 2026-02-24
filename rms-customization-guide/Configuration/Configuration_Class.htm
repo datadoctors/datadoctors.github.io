@@ -1,0 +1,490 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Configuration Class</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="../assets/css/SDK.css" rel="StyleSheet"/><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+p.hcp4 { font-weight:normal; }
+p.hcp5 { margin-left:40px; }
+-->
+</style>
+<link href="../assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="../index.html">🏠 Home</a>
+<a class="nav-contents" href="../index.html#contents">📚 Contents</a>
+<a class="nav-search" href="../index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="../assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>Configuration Class</h1>
+<p>The <span class="hcp3">Configuration </span><span>class 
+ provides access to the configuration set in RMS Manager.</span></p>
+<p> </p>
+<h2>When To Use</h2>
+<p class="hcp4">The <span class="hcp3">Configuration 
+ </span>class is used to perform the following tasks.</p>
+<ul style="list-style: disc;" type="disc">
+<li class="kadov-p"><p class="hcp4">Access the Manager 
+ configuration information.</p></li>
+</ul>
+<p class="hcp4"> </p>
+<h2>Procedures</h2>
+<p class="hcp4">The <span class="hcp3">Configuration 
+ </span>class does not have any public procedures recommended for external 
+ use.</p>
+<p class="hcp4"> </p>
+<h2>Properties</h2>
+<p class="hcp4">The <span class="hcp3">Configuration 
+ </span>class has the following properties.</p>
+<p class="hcp4"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_AccountDefaultIDGet_Property.htm">AccountDefaultID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the ID of the default account type for 
+ new customers.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_AccountingCompanyGet_Property.htm">AccountingCompany</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the company used for QuickBooks integration.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_AccountingFileNameGet_Property.htm">AccountingFileName</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the filename of the accounting file 
+ used for QuickBooks integration.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_AccountingInterfaceGet_Property.htm">AccountingInterface</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">accountinginterfaceEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the accounting software integrated with 
+ RMS.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_AccountMonthlyClosingDayGet_Property.htm">AccountMonthlyClosingDay</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the day of the month on which the billing 
+ cycle is closed for all accounts.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_BackOrderExpirationDaysGet_Property.htm">BackOrderExpirationDays</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the number of days a back order exists 
+ in RMS before it expires.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_BillPostingAccountGet_Property.htm">BillPostingAccount</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the bill posting account used for QuickBooks 
+ integration.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_CaptionCustomerCustomDateGet_Property.htm">CaptionCustomerCustomDate</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the specified custom date caption.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_CaptionCustomerCustomNumberGet_Property.htm">CaptionCustomerCustomNumber</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the specified custom number caption.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_CaptionCustomerCustomTextGet_Property.htm">CaptionCustomerCustomText</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the specified custom text caption.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_CostUpdateMethodGet_Property.htm">CostUpdateMethod</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">costupdatemethodEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the method used to update costs when 
+ inventory is received.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_DefaultTenderIDGet_Property.htm">DefaultTenderID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the ID of the default tender used to 
+ return change.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_DefaultTenderIDGet_Property.htm">DisplayOutOfStock</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ a warning message will be displayed when the cashier attempts to sell 
+ more than the quantity of an item in stock.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_DisplayUnknownItemScreen_Property.htm">DisplayUnknownItemScreen</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ a warning message will be displayed when the cashier adds an unrecognized 
+ item to the transaction.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_EDCTimeoutGet_Property.htm">EDCTimeout</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the number of seconds before an Electronic 
+ Draft Capture (EDC) attempt times out.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_EnableBackOrder_Property.htm">EnableBackOrder</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ a back order will be created when the cashier attempts to sell more than 
+ the quantity of an item in stock.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_EnforceOutOfStock_Property.htm">EnforceOutOfStock</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier is allowed to sell more than the quantity of an item in stock.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_EnforceUniqueSerialNumbers_Property.htm">EnforceUniqueSerialNumbers</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ duplicate serial numbers are allowed.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_ForceLogonEachSale_Property.htm">ForceLogonEachSale</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier must log on before every sales transaction.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_ForceOpenCloseAmounts_Property.htm">ForceOpenCloseAmounts</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier is forced to enter opening and closing amounts before performing 
+ a Z report.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_ItemTaxIDGet_Property.htm">ItemTaxID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the ID of the default item tax.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_LayawayDepositGet_Property.htm">LayawayDeposit</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Single</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the percentage of the item price required 
+ as a deposit for a layaway transaction.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_LayawayExpirationDaysGet_Property.htm">LayawayExpirationDays</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the number of days a layaway exists 
+ in RMS before it expires.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_LookupUnknownItems_Property.htm">LookupUnknownItems</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the Items dialog box will be displayed if the lookup code of an item added 
+ to the transaction is not found in the database.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_OptionIsSet_Property.htm">OptionIsSet</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the specified configuration option is enabled.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_POSSerialNumberCreation_Property.htm">POSSerialNumberCreation</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier can create a serial number at the POS.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_POUpdateSupplierCost_Property.htm">POUpdateSupplierCost</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ supplier costs and tax rates will be automatically updated when an item 
+ from the supplier is received.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_PriceCalculationRuleGet_Property.htm">PriceCalculationRule</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">PriceCalculationRuleEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the rule used to calculate the price 
+ of an item when it is added to a transaction.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_PromptForCustomer_Property.htm">PromptForCustomer</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier is prompted to select a customer for every transaction.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_PromptForDetails_Property.htm">PromptForDetails</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the Transaction Information dialog box will be displayed for every transaction.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_PromptForSalesRep_Property.htm">PromptForSalesRep</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the Sales Rep dialog box will be displayed if a sales representative is 
+ not selected when a transaction is tendered.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_PurchaseLimitMaximumPurchasesGet_Property.htm">PurchaseLimitMaximumPurchases</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the maximum purchase amount allowed 
+ for a customer.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_PurchaseLimitMaximumUnitsGet_Property.htm">PurchaseLimitMaximumUnits</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the maximum number of units a customer 
+ is allowed to purchase. </p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_PurchaseLimitTimeFrameGet_Property.htm">PurchaseLimitTimeFrame</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">LimitTimeFrameEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the time frame that applies for the 
+ purchase limit.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_PurchaseLimitTypeGet_Property.htm">PurchaseLimitType</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">LimitTypeEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the type of the purchase limit.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_QuoteExpirationDaysGet_Property.htm">QuoteExpirationDays</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the number of days a quote exists in 
+ RMS before it expires.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_RandomWeightUPC_Property.htm">RandomWeightUPC</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ price-embedded barcodes are enabled.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_ReceiptCountGet_Property.htm">ReceiptCount</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the number of receipts to be printed 
+ on the first receipt printer for each transaction.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_ReceiptCount2Get_Property.htm">ReceiptCount2</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the number of receipts to be printed 
+ on the second receipt printer for each transaction.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_ReceiptPathGet_Property.htm">ReceiptPath</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the file path to where receipts are 
+ stored on the register.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_RecordComments_Property.htm">RecordComments</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ comments entered for an item at the POS are saved in the transaction history.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_RequireCustomer_Property.htm">RequireCustomer</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier must select a customer before a sales transaction is tendered.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_RequireCustomerForOrders_Property.htm">RequireCustomerForOrders</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier must select a customer before an order is generated.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_RequireCustomerForQuotes_Property.htm">RequireCustomerForQuotes</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier must select a customer before a quote is generated.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_RequireDecimalEntry_Property.htm">RequireDecimalEntry</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier must enter a decimal point in all numbers to indicate a fraction 
+ of the currency.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_RequireSerialNumberAtPOS_Property.htm">RequireSerialNumberAtPOS</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier must enter a serial number for all serialized items.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_ReturnLocalCurrency_Property.htm">ReturnLocalCurrency</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ change is displayed in local currency.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_StoreAddress1Get_Property.htm">StoreAddress1</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the first line of the address of the 
+ store.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_StoreAddress2Get_Property.htm">StoreAddress2</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the second line of the address of the 
+ store.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_StoreCityGet_Property.htm">StoreCity</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the city of the address of the store.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_StoreCountryGet_Property.htm">StoreCountry</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the country of the address of the store.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_StoreEmailGet_Property.htm">StoreEmail</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the e-mail address of the store.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_StoreFaxGet_Property.htm">StoreFax</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the facsimile number of the store.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_StoreNameGet_Property.htm">StoreName</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the name of the store.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_StorePhoneGet_Property.htm">StorePhone</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the telephone number of the store.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_StoreStateGet_Property.htm">StoreState</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the state code of the address of the 
+ store.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_StoreZipGet_Property.htm">StoreZip</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the ZIP code of the address of the store.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_TaxBasisGet_Property.htm">TaxBasis</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">TaxBasisEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the method used to calculate tax for 
+ a transaction.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_TaxFieldGet_Property.htm">TaxField</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">taxfieldEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the field used to calculate tax on a 
+ per customer basis.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_TaxSystemGet_Property.htm">TaxSystem</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">TaxSystemEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the system used to calculate taxes.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_VatDetailIDGet_Property.htm">VatDetailID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the VAT detail ID used for accounting 
+ posting.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_VatRegistrationNumberGet_Property.htm">VatRegistrationNumber</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the VAT registration number.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_VoucherExpirationDaysGet_Property.htm">VoucherExpirationDays</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the number of days before an issued 
+ voucher expires.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_WorkOrderDepositGet_Property.htm">WorkOrderDeposit</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Single</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the percentage of the item price required 
+ as a deposit for a work order transaction.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Configuration/Configuration_WorkOrderDueDaysGet_Property.htm">WorkOrderDueDays</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read/Write</p>
+<p class="hcp5">Gets the number of days after a work order 
+ is created before work should be complete.</p>
+<p class="hcp5"> </p>
+<p>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2090" >
+<param name="_ExtentY" value="582" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="Process Function;../Creating_a_COM_Component_Add-in.htm#Process Function$$**$$RequestQSRules Function;../RequestQSRules_Function.htm$$**$$SessionClass Class;../SessionClass/SessionClass_Class.htm$$**$$SessionClass.Configuration Property;../SessionClass/SessionClass_Configuration_Property.htm$$**$$">
+<param name="Image" value>
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\Configuration\Configuration_Class.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object> --><object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="Process Function;../Creating_a_COM_Component_Add-in.htm#Process Function"/>
+<param name="Item2" value="RequestQSRules Function;../RequestQSRules_Function.htm"/>
+<param name="Item3" value="SessionClass Class;../SessionClass/SessionClass_Class.htm"/>
+<param name="Item4" value="SessionClass.Configuration Property;../SessionClass/SessionClass_Configuration_Property.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="../Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

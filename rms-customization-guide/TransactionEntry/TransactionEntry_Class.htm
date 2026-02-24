@@ -1,0 +1,495 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>TransactionEntry Class</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="../assets/css/SDK.css" rel="StyleSheet"/><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+p.hcp4 { font-weight:normal; }
+tr.hcp5 { x-cell-content-align:top; }
+p.hcp6 { font-weight:bold; }
+td.hcp7 { padding-right:10px; padding-left:10px; border-left-color:#c0c0c0; border-bottom-style:Solid; border-bottom-color:#c0c0c0; border-bottom-width:1px; border-right-color:#c0c0c0; border-right-width:1px; border-right-style:Solid; border-left-width:1px; border-left-style:Solid; }
+td.hcp8 { padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#c0c0c0; border-bottom-style:Solid; border-bottom-color:#c0c0c0; border-bottom-width:1px; border-right-width:1px; }
+p.hcp9 { margin-left:40px; }
+p.hcp10 { margin-left:0px; }
+-->
+</style>
+<link href="../assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="../index.html">🏠 Home</a>
+<a class="nav-contents" href="../index.html#contents">📚 Contents</a>
+<a class="nav-search" href="../index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="../assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>TransactionEntry Class</h1>
+<p>The <span class="hcp3">TransactionEntry </span><span>class 
+ represents a single line entry in the transaction.</span></p>
+<p> </p>
+<h2>When To Use</h2>
+<p class="hcp4">The <span class="hcp3">TransactionEntry 
+ </span>class is used to perform the following tasks.</p>
+<ul style="list-style: disc;" type="disc">
+<li class="kadov-p"><p class="hcp4">View and set the 
+ prices, discounts, quantities, and sales tax for the entry.</p></li>
+<li class="kadov-p"><p class="hcp4">Load or clear the 
+ sales representative for the entry.</p></li>
+<li class="kadov-p"><p class="hcp4">Set or view the serial 
+ numbers for the item in the entry.</p></li>
+<li class="kadov-p"><p class="hcp4">Set or view the expiration 
+ date for a voucher. </p></li>
+</ul>
+<p class="hcp4"> </p>
+<h2>Procedures</h2>
+<p class="hcp4">The <span class="hcp3">TransactionEntry 
+ </span>class defines the following procedures.</p>
+<table cellspacing="0" style="x-cell-content-align: top;
+				width: 100%;
+				border-spacing: 0px;
+				border-left-style: Solid;
+				border-left-width: 2px;
+				border-right-style: Solid;
+				border-right-width: 2px;
+				border-top-style: Solid;
+				border-top-width: 2px;
+				border-bottom-style: Solid;
+				border-bottom-width: 2px;
+				border-spacing: 0px;" width="100%" x-use-null-cells="">
+<col style="width: 26.039%;"/>
+<col style="width: 73.961%;"/>
+<tr class="hcp5" valign="top">
+<td bgcolor="#C0C0C0" style="width: 26.039%;
+			padding-right: 10px;
+			padding-left: 10px;
+			background-color: #c0c0c0;
+			border-left-color: #c0c0c0;
+			border-top-color: #c0c0c0;
+			border-top-style: Solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-style: Solid;
+			border-bottom-width: 1px;
+			border-right-color: #c0c0c0;
+			border-right-width: 1px;
+			border-right-style: Solid;
+			border-left-width: 1px;
+			border-left-style: Solid;
+			border-top-width: 1px;" width="26.039%">
+<p class="hcp6">Method</p></td>
+<td bgcolor="#C0C0C0" style="width: 73.961%;
+			padding-right: 10px;
+			padding-left: 10px;
+			background-color: #c0c0c0;
+			border-top-color: #c0c0c0;
+			border-top-style: Solid;
+			border-right-color: #c0c0c0;
+			border-right-style: Solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-style: Solid;
+			border-bottom-width: 1px;
+			border-top-width: 1px;
+			border-right-width: 1px;" width="73.961%">
+<p class="hcp6">Description</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_ClearSalesRep_Sub.htm">ClearSalesRep</a></p></td>
+<td class="hcp8" style="width:73.961%;" width="73.961%">
+<p>Clears the sales representative for the transaction entry.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_LoadSalesRep_Function.htm">LoadSalesRep</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:73.961%;" width="73.961%">
+<p>Sets the sales representative for the transaction entry.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_LoadSerial_Function.htm">LoadSerial</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:73.961%;" width="73.961%">
+<p>Sets the serial numbers for the serialized item in the transaction entry.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_RevertToSavedPrice_Sub.htm">RevertToSavedPrice</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:73.961%;" width="73.961%">
+<p>Restores the price that was saved with the SavePrice subprocedure.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_SavePrice_Sub.htm">SavePrice</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:73.961%;" width="73.961%">
+<p>Temporarily saves the price for the transaction entry.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_SetDiscount_Function.htm">SetDiscount</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:73.961%;" width="73.961%">
+<p>Calculates the price for the transaction entry based on the specified 
+ discount method and percent.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_SetExtendedPrice_Function.htm">SetExtendedPrice</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:73.961%;" width="73.961%">
+<p>Sets the price for all quantities of the item in the transaction entry. 
+ </p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_SetItemTax_Sub.htm">SetItemTax</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:73.961%;" width="73.961%">
+<p>Sets the item tax for the transaction entry. </p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_SetPrice_Function.htm">SetPrice</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:73.961%;" width="73.961%">
+<p>Sets the price for a single item in the transaction entry. </p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_SetQuantityOnOrder_Function.htm">SetQuantityOnOrder</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:73.961%;" width="73.961%">
+<p>Sets the quantity of ordered items in the transaction entry.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_SetQuantityPurchased_Function.htm">SetQuantityPurchased</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:73.961%;" width="73.961%">
+<p>Sets the quantity of purchased items for the transaction entry.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:26.039%;" width="26.039%">
+<p class="hcp6"><a href="../TransactionEntry/TransactionEntry_SetTaxable_Function.htm">SetTaxable</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:73.961%;" width="73.961%">
+<p>Sets the taxable status of the transaction entry.</p></td></tr>
+</table>
+<p class="hcp4"> </p>
+<h2>Properties</h2>
+<p class="hcp4">The <span class="hcp3">TransactionEntry 
+ </span>class has the following properties.</p>
+<p class="hcp4"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_CommentGet_Property.htm">Comment</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../TransactionEntry/TransactionEntry_CommentGet_Property.htm">Read</a>/<a href="../TransactionEntry/TransactionEntry_CommentLet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the comment for the transaction 
+ entry.</p>
+<p class="hcp9"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_CostOfGoods_Property.htm">CostOfGoods</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total cost of all goods for the 
+ transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_CostOfGoodsPurchased_Property.htm">CostOfGoodsPurchased</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total cost of all goods purchased 
+ in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_DescriptionGet_Property.htm">Description</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../TransactionEntry/TransactionEntry_DescriptionGet_Property.htm">Read</a>/<a href="../TransactionEntry/TransactionEntry_DescriptionLet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the description for the transaction 
+ entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_Discount_Property.htm">Discount</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the discount applied to a single item 
+ in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_DiscountOccurred_Property.htm">DiscountOccurred</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ a discount has been applied to the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_DiscountPercentage_Property.htm">DiscountPercentage</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the percentage of the discount applied 
+ to the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_DiscountReasonCodeGet_Property.htm">DiscountReasonCode</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">ReasonCode</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../TransactionEntry/TransactionEntry_DiscountReasonCodeGet_Property.htm">Read</a>/<a href="../TransactionEntry/TransactionEntry_DiscountReasonCodeSet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the reason code that indicates 
+ the reason a discount was applied to the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_ExtendedDiscount_Property.htm">ExtendedDiscount</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total discount applied for all quantities 
+ of the item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_ExtendedDiscountOnOrder_Property.htm">ExtendedDiscountOnOrder</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total discount applied for all ordered 
+ quantities of the item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_ExtendedDiscountPurchased_Property.htm">ExtendedDiscountPurchased</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total discount applied for all purchased 
+ quantities of the item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_ExtendedFullPrice_Property.htm">ExtendedFullPrice</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the non-discounted price for all quantities 
+ of the item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_ExtendedFullPriceOnOrder_Property.htm">ExtendedFullPriceOnOrder</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the non-discounted price for all ordered 
+ quantities of the item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_ExtendedFullPricePurchased_Property.htm">ExtendedFullPricePurchased</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the non-discounted price for all purchased 
+ quantities of the item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_ExtendedPrice_Property.htm">ExtendedPrice</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the discounted price of all quantities 
+ of the item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_ExtendedPriceOnOrder_Property.htm">ExtendedPriceOnOrder</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the discounted price of all ordered 
+ quantities of the item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_ExtendedFullPricePurchased_Property.htm">ExtendedPricePurchased</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the discounted price of all purchased 
+ quantities of the item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_FullPrice_Property.htm">FullPrice</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the non-discounted price of a single 
+ item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_IsPriceOverride_Property.htm">IsPriceOverride</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ the price for the transaction entry has been overridden.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_Item_Property.htm">Item</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">TransactionItem</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the item for the transaction entry. 
+ </p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_Key_Property.htm">Key</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the key for the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_KitItems_Property.htm">KitItems</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">KitItems</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the kit items for the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_PostID_Property.htm">PostID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the ID in the database of the posted 
+ transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_Price_Property.htm">Price</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the discounted price for a single item 
+ in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_PriceSetByCashier_Property.htm">PriceSetByCashier</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ the price for the transaction entry has been overridden by the cashier.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_PriceSourceGet_Property.htm">PriceSource</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">pricesourceEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../TransactionEntry/TransactionEntry_PriceSourceGet_Property.htm">Read</a>/<a href="../TransactionEntry/TransactionEntry_PriceSourceLet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the source for the price for 
+ the transaction entry. </p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_Quantity_Property.htm">Quantity</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total quantity of the item in the 
+ transaction entry. </p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_QuantityOnOrder_Property.htm">QuantityOnOrder</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the quantity of ordered items in the 
+ transaction entry. </p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_QuantityPurchased_Property.htm">QuantityPurchased</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the quantity of purchased items in the 
+ transaction entry. </p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_QuantityReserved_Property.htm">QuantityReserved</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the quantity of reserved items in the 
+ transaction entry.  </p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_QuantityRTD_Property.htm">QuantityRTD</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the quantity of items previously picked 
+ up in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_RequiresRandomWeightPriceEntry_Property.htm">RequiresRandomWeightPriceEntry</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ the transaction entry contains a random weight item with a nonzero price.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_RequiresSerialNumber_Property.htm">RequiresSerialNumber</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ the transaction entry requires a serial number. </p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_ReturnReasonCodeGet_Property.htm">ReturnReasonCode</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">ReasonCode</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../TransactionEntry/TransactionEntry_ReturnReasonCodeGet_Property.htm">Read</a>/<a href="../TransactionEntry/TransactionEntry_ReturnReasonCodeSet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the reason code that indicates 
+ the reason the item in the transaction entry was returned.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_SalesRep_Property.htm">SalesRep</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.SalesRep</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the sales representative for the transaction 
+ entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_Serialized_Property.htm">Serialized</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">SerializedItem</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the serialized item for the transaction 
+ entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_TagAlongKey_Property.htm">TagAlongKey</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the key of the tag-along item for the 
+ item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_TagBehindEntry_Property.htm">TagBehindEntry</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">TransactionEntry</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the parent entry for which the item 
+ in the transaction entry is a tag-along item.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_Tax_Property.htm">Tax</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the sales tax calculated for the transaction 
+ entry. </p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_Taxable_Property.htm">Taxable</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ the transaction entry can be taxed.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_TaxChangeOccurred_Property.htm">TaxChangeOccurred</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ the sales tax for the transaction entry has been modified.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_TaxChangeReasonCodeGet_Property.htm">TaxChangeReasonCode</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">ReasonCode</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../TransactionEntry/TransactionEntry_TaxChangeReasonCodeGet_Property.htm">Read</a>/<a href="../TransactionEntry/TransactionEntry_TaxChangeReasonCodeSet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the reason code that indicates 
+ the reason the sales tax for the item in the transaction entry was modified.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_TaxFixedAmount_Property.htm">TaxFixedAmount</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the sum of all fixed-amount taxes applied 
+ to the item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_TaxRate_Property.htm">TaxRate</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Single</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total rate of all taxes applied 
+ to the item in the transaction entry.</p>
+<p class="hcp10"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../TransactionEntry/TransactionEntry_VoucherExpirationDateGet_Property.htm">VoucherExpirationDate</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Date</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../TransactionEntry/TransactionEntry_VoucherExpirationDateGet_Property.htm">Read</a>/<a href="../TransactionEntry/TransactionEntry_VoucherExpirationDateLet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the expiration date for the 
+ voucher item in the transaction entry.</p>
+<p class="hcp9"> </p>
+<p>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="Process Function;../Creating_a_COM_Component_Add-in.htm#Process Function$$**$$RequestQSRules Function;../RequestQSRules_Function.htm$$**$$SessionClass Class;../SessionClass/SessionClass_Class.htm$$**$$Transaction Class;../Transaction/Transaction_Class.htm$$**$$Transaction.Entries Property;../Transaction/Transaction_Entries_Property.htm$$**$$">
+<param name="Image" value>
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\TransactionEntry\TransactionEntry_Class.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object> --><object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="Process Function;../Creating_a_COM_Component_Add-in.htm#Process Function"/>
+<param name="Item2" value="RequestQSRules Function;../RequestQSRules_Function.htm"/>
+<param name="Item3" value="SessionClass Class;../SessionClass/SessionClass_Class.htm"/>
+<param name="Item4" value="Transaction Class;../Transaction/Transaction_Class.htm"/>
+<param name="Item5" value="Transaction.Entries Property;../Transaction/Transaction_Entries_Property.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="../Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>QSBridge.FireEvent Function</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style>
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>QSBridge.FireEvent Function</h1>
+<p>The <span class="hcp3">FireEvent</span><span> function 
+ i</span>nvokes the specified <span class="hcp3">QSBridge</span><span> 
+ event, with optional parameters if specified</span>.</p>
+<p class="Syntax" style="margin-left: 0px;">Public Function FireEvent( _</p>
+<p class="Syntax" style="margin-left: 0px;">  EventName 
+ As String, _</p>
+<p class="Syntax" style="margin-left: 0px;">  ParamArray 
+ Parameters() _</p>
+<p class="Syntax" style="margin-left: 0px;">) As Variant</p>
+<h5>Parameters</h5>
+<p class="ParameterName">EventName</p>
+<p class="ParameterIndent">Name of the event to fire. For more information 
+ about the available events, see <a href="About_QSBridge_Fire_Events.htm">QSBridge 
+ Events</a>.</p>
+<p class="ParameterName">Parameters()</p>
+<p class="ParameterIndent"><span class="hcp3">ParamArray</span> 
+ argument that contains parameters passed to the event. This parameter 
+ is excluded if the event does not take any parameters; however, if the 
+ event takes parameters, all parameters must be specified. For an example 
+ of an event for which all parameters must be specified, see the <span class="hcp3"><a href="MsgBox_(FireEvent).htm">MsgBox</a></span> 
+ event.</p>
+<h5>Return Values</h5>
+<p class="Indent"><span class="hcp3">Variant</span> object 
+ that contains any information returned from the fired event.</p>
+<h5>Remarks</h5>
+<p class="Indent">This function resides in the user interface workflow layer.</p>
+<h5>Example</h5>
+<p class="Indent">The following example uses the <span class="hcp3">FireEvent</span> 
+ function to cancel the current transaction.</p>
+<p style="font-weight: bold; x-text-underline: normal; /*begin!kadov{{*/ text-decoration: underline; /*}}end!kadov*/ ">JScript</p>
+<p class="CodeBlock">&lt;HTML&gt;</p>
+<p class="CodeBlock"> </p>
+<p class="CodeBlock">&lt;HEAD&gt;</p>
+<p class="CodeBlock">&lt;OBJECT classid="clsid:44C4C3AC-D0F1-11D2-919D-006008C88FC3" 
+ height=0 id=qsBridge style="LEFT: 0px TOP: 0px" width=0&gt;</p>
+<p class="CodeBlock">&lt;PARAM NAME="_ExtentX" VALUE="26"&gt;</p>
+<p class="CodeBlock">&lt;PARAM NAME="_ExtentY" VALUE="26"&gt;</p>
+<p class="CodeBlock">&lt;/OBJECT&gt;</p>
+<p class="CodeBlock">&lt;/HEAD&gt;</p>
+<p class="CodeBlock"> </p>
+<p class="CodeBlock">&lt;SCRIPT language="jscript"&gt;</p>
+<p class="CodeBlock">&lt;!--</p>
+<p class="CodeBlock">function canceltrans()</p>
+<p class="CodeBlock">{</p>
+<p class="CodeBlock">    qsBridge.FireEvent("CancelTransaction");</p>
+<p class="CodeBlock">}</p>
+<p class="CodeBlock">//--&gt;</p>
+<p class="CodeBlock">&lt;/SCRIPT&gt;</p>
+<p class="CodeBlock"> </p>
+<p class="CodeBlock">&lt;BODY onload="canceltrans()"&gt;</p>
+<p class="CodeBlock">&lt;/BODY&gt;</p>
+<p class="CodeBlock"> </p>
+<p class="CodeBlock">&lt;/HTML&gt;</p>
+<p> </p>
+<p class="SeeAlsoList" style="color: #0000ff;">
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="About Add-ins;About_Add-Ins.htm$$**$$Creating an HTML Add-in;Creating_an_HTML_Add-in.htm$$**$$Invoking an HTML Add-in;Invoking_an_HTML_Add-in.htm$$**$$QSBridge Events;About_QSBridge_Fire_Events.htm$$**$$QSBridge.RequestQSRules Function;RequestQSRules_Function.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\FireEvents_Function.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="About Add-ins;About_Add-Ins.htm"/>
+<param name="Item2" value="Creating an HTML Add-in;Creating_an_HTML_Add-in.htm"/>
+<param name="Item3" value="Invoking an HTML Add-in;Invoking_an_HTML_Add-in.htm"/>
+<param name="Item4" value="QSBridge Events;About_QSBridge_Fire_Events.htm"/>
+<param name="Item5" value="QSBridge.RequestQSRules Function;RequestQSRules_Function.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Scenario Loyalty Report Sample</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style>
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1 style="margin-left: 0in; text-indent: 0in;">Loyalty Report Sample</h1>
+<p>The following sample report summary shows how the loyalty effectiveness 
+ report queries both the RMS database and the loyalty database to retrieve 
+ information.</p>
+<p class="CodeBlock">Begin ReportSummary</p>
+<p class="CodeBlock">    ReportType 
+ = reporttypeCustomer</p>
+<p class="CodeBlock">    ReportTitle 
+ = "Loyalty Effectiveness Report"</p>
+<p class="CodeBlock">    PageOrientation 
+ = pageorientationLandscape</p>
+<p class="CodeBlock">    OutLineMode 
+ = True</p>
+<p class="CodeBlock">    WordWrap 
+ = True</p>
+<p class="CodeBlock">    Groups 
+ = 0</p>
+<p class="CodeBlock">    GroupDescription 
+ = "Total"</p>
+<p class="CodeBlock">    DisplayLogo 
+ = True</p>
+<p class="CodeBlock">    LogoFileName 
+ = "MyLogo.bmp"</p>
+<p class="CodeBlock">    ProcedureCall 
+ = ""</p>
+<p class="CodeBlock"> </p>
+<p class="CodeBlock">    PreQuery1 
+ = "IF EXISTS (</p>
+<p class="CodeBlock">        SELECT 
+ * from loyalty.dbo.sysobjects </p>
+<p class="CodeBlock">        WHERE 
+ id = object_id(N'Loyalty.[dbo].[TempLoyalty]')) </p>
+<p class="CodeBlock">        DROP 
+ table Loyalty.dbo.TempLoyalty"</p>
+<p class="CodeBlock"> </p>
+<p class="CodeBlock">    PreQuery2 
+ = </p>
+<p class="CodeBlock">        &lt;BEGIN&gt;</p>
+<p class="CodeBlock">        SELECT 
+ </p>
+<p class="CodeBlock">        C.LastName 
+ + ', ' + C.FirstName CustomerName,</p>
+<p class="CodeBlock">        C.AccountOpened, 
+ </p>
+<p class="CodeBlock">        LS.LoyaltyJoinedDate, 
+ </p>
+<p class="CodeBlock">        LL.LoyaltyLevelName,</p>
+<p class="CodeBlock">        CASE 
+ DateDiff(Dd,C.AccountOpened, getDate()) </p>
+<p class="CodeBlock">            WHEN 
+ 0 THEN 1 </p>
+<p class="CodeBlock">            ELSE 
+ CAST(DateDiff(Dd,C.AccountOpened, getDate()) as real) </p>
+<p class="CodeBlock">            * 
+ 12/365 end MonthsPrior, </p>
+<p class="CodeBlock">        CASE 
+ DateDiff(Dd, LS.LoyaltyJoinedDate, getDate()) </p>
+<p class="CodeBlock">            WHEN 
+ 0 THEN 1 </p>
+<p class="CodeBlock">            ELSE 
+ Cast(DateDiff(Dd, LS.LoyaltyJoinedDate, getDate()) </p>
+<p class="CodeBlock">            as 
+ real) * 12/365 end MonthsAfter, </p>
+<p class="CodeBlock">        Sum(T.Total 
+ - T.SalesTax) - LS.LoyaltySales PurchBeforeJoin, </p>
+<p class="CodeBlock">        (LS.LoyaltySales) 
+ PurchAfterJoin</p>
+<p class="CodeBlock">   </p>
+<p class="CodeBlock">        INTO 
+ Loyalty.dbo.TempLoyalty</p>
+<p class="CodeBlock">    </p>
+<p class="CodeBlock">        FROM 
+ Loyalty.dbo.LoyaltySignUp LS</p>
+<p class="CodeBlock">        LEFT 
+ OUTER JOIN Loyalty.dbo.LoyaltyLevel LL </p>
+<p class="CodeBlock">        ON 
+ LS.LoyaltyLevelID = LL.LoyaltyLevelID</p>
+<p class="CodeBlock">        INNER 
+ JOIN Customer C </p>
+<p class="CodeBlock">        ON 
+ C.id = LS.CustomerID</p>
+<p class="CodeBlock">        INNER 
+ JOIN [Transaction] T </p>
+<p class="CodeBlock">        ON 
+ T.CustomerID = LS.CustomerID </p>
+<p class="CodeBlock">    </p>
+<p class="CodeBlock">        GROUP 
+ BY </p>
+<p class="CodeBlock">        C.LastName 
+ + ', ' + C.FirstName, </p>
+<p class="CodeBlock">        C.AccountOpened, 
+ </p>
+<p class="CodeBlock">        LS.LoyaltyJoinedDate,</p>
+<p class="CodeBlock">        LL.LoyaltyLevelName, 
+ </p>
+<p class="CodeBlock">        LS.LoyaltySales</p>
+<p class="CodeBlock">        &lt;END&gt;</p>
+<p class="CodeBlock"> </p>
+<p class="CodeBlock">    TablesQueried 
+ = "FROM Loyalty.dbo.TempLoyalty"</p>
+<p class="CodeBlock">    SelCriteria 
+ = ""</p>
+<p class="CodeBlock">    GroupBy 
+ = ""</p>
+<p class="CodeBlock">    SortOrder 
+ = ""</p>
+<p class="CodeBlock">End ReportSummary</p>
+<p> </p>
+<p>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="About Reports;About_Reports.htm$$**$$Scenario Sample Code;Scenario_Examples.htm$$**$$Tailspin Toys Scenario;Tailspin_Toys_Scenario.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\Scenario_Loyalty_Report_Sample.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="About Reports;About_Reports.htm"/>
+<param name="Item2" value="Scenario Sample Code;Scenario_Examples.htm"/>
+<param name="Item3" value="Tailspin Toys Scenario;Tailspin_Toys_Scenario.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Retail Management System Architecture</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style>
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+img.hcp2 { border:none; float:none; border-style:none; }
+hr.hcp3 { float:alignleft; color:#85dfe9; }
+span.hcp4 { font-weight:bold; }
+b.hcp5 { font-weight:normal; }
+p.hcp6 { font-weight:normal; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" class="hcp2" height="67" src="assets/images/SDK%20Header.JPG" style="width:427px; height:67px;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp3" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>Retail Management System Architecture</h1>
+<p>This section provides an architectural overview of Store Operations 
+ and Headquarters, with details about the architectural components used 
+ by these applications.</p>
+<h5>Store Operations </h5>
+<p>Critical architectural components deployed at the store in support of 
+ the EXE programs include the following:</p>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp4">QSRules</span> 
+ — Encapsulates 
+ business logic and database communication for the POS and Manager executable 
+ programs. <a href="About_QSRules.htm">QSRules</a> is the heart of Store 
+ Operations. When you develop add-ins for Store Operations, you are building 
+ on top of <span class="hcp4">QSRules</span><span>. The public properties in <span class="hcp4">QSRules</span><span> and the methods used 
+ by add-in programs provide the ability to create powerful custom solutions.</span></span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp4">Store 
+ Operations Database</span> — 
+ Contains the data that drives Store Operations, using Microsoft SQL Server 
+ or MSDE.</p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp4">Headquarters 
+ Client</span> — 
+ Deployed at each store to communicate with Headquarters Server and update 
+ the Store Operations database.</p></li>
+</ul>
+<p class="space"> </p>
+<h5>Headquarters</h5>
+<p>Critical architectural components deployed at the head office in support 
+ of the EXE programs include the following:</p>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp4">Headquarters 
+ Server Rules</span> — 
+ An in-process ActiveX DLL that encapsulates business logic and database 
+ connection for Headquarters Server.</p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp4">Headquarters 
+ Rules</span> — 
+ An in-process ActiveX DLL that encapsulates business logic and database 
+ connection for Headquarters Manager.</p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span class="hcp4">Headquarters 
+ Database</span> — 
+ Contains the data for Headquarters, using Microsoft SQL Server or MSDE.<b class="hcp5"> </b></p></li>
+</ul>
+<p class="hcp6"><b class="hcp5">The following 
+ diagram illustrates the interaction between Store Operations and Headquarters 
+ components.</b></p>
+<p class="space"> </p>
+<p class="hcp6"><img border="0" class="hcp2" height="730" src="assets/images/Components.jpg" style="width:550px; height:730px;" width="550" x-maintain-ratio="TRUE"/></p>
+<p class="space"> </p>
+<p class="SeeAlsoList" style="color: #0000ff;"> </p>
+<p class="SeeAlsoList" style="color: #0000ff;">
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="About the Retail Management System Customization Guide;Welcome.htm$$**$$Customization Guide Overview;Customization_Guide_Overview.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\rms1.2x\rms\docs\product documentation\QSC\Customization Kit\Customization Guide\SDK_files\Retail_Management_System_Architecture.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="About the Retail Management System Customization Guide;Welcome.htm"/>
+<param name="Item2" value="Customization Guide Overview;Customization_Guide_Overview.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+  </p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp3" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

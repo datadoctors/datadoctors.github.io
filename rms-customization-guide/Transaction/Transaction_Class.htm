@@ -1,0 +1,748 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Transaction Class</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="../assets/css/SDK.css" rel="StyleSheet"/><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+p.hcp4 { font-weight:normal; }
+tr.hcp5 { x-cell-content-align:top; }
+p.hcp6 { font-weight:bold; }
+td.hcp7 { padding-right:10px; padding-left:10px; border-left-color:#c0c0c0; border-bottom-style:Solid; border-bottom-color:#c0c0c0; border-bottom-width:1px; border-right-color:#c0c0c0; border-right-width:1px; border-right-style:Solid; border-left-width:1px; border-left-style:Solid; }
+td.hcp8 { padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#c0c0c0; border-bottom-style:Solid; border-bottom-color:#c0c0c0; border-bottom-width:1px; border-right-width:1px; }
+p.hcp9 { margin-left:40px; }
+-->
+</style>
+<link href="../assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="../index.html">🏠 Home</a>
+<a class="nav-contents" href="../index.html#contents">📚 Contents</a>
+<a class="nav-search" href="../index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="../assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>Transaction Class</h1>
+<p>The <span class="hcp3">Transaction </span>class represents 
+ all types of POS transactions, including sales, work orders, back orders, 
+ quotes, and layaways. Only one <span class="hcp3">Transaction</span> 
+ object at a time exists under the main <span class="hcp3"><a href="../SessionClass/SessionClass_Class.htm">SessionClass</a></span> 
+ object. The <span class="hcp3">Transaction</span> object 
+ contains the state of the entire transaction; this state is persisted 
+ to the database when the transaction is posted. Once posted, the <span class="hcp3">Transaction</span> object is cleared and reinitialized.</p>
+<p> </p>
+<h2>When To Use</h2>
+<p class="hcp4">The <span class="hcp3">Transaction 
+ </span>class is used to perform the following tasks.</p>
+<ul style="list-style: disc;" type="disc">
+<li class="kadov-p"><p class="hcp4">Perform all sale 
+ operations at the POS.</p></li>
+<li class="kadov-p"><p class="hcp4">Create back orders, 
+ work orders, and layaways.</p></li>
+<li class="kadov-p"><p class="hcp4">Calculate totals, 
+ sales taxes, and discounts.</p></li>
+<li class="kadov-p"><p class="hcp4">Persist transaction 
+ history to the database.</p></li>
+</ul>
+<p class="hcp4"> </p>
+<h2>Procedures</h2>
+<p class="hcp4">The <span class="hcp3">Transaction 
+ </span>class defines the following procedures.</p>
+<table cellspacing="0" style="x-cell-content-align: top;
+				width: 100%;
+				border-left-style: Solid;
+				border-left-width: 2px;
+				border-right-style: Solid;
+				border-right-width: 2px;
+				border-top-style: Solid;
+				border-top-width: 2px;
+				border-bottom-style: Solid;
+				border-bottom-width: 2px;
+				border-left-color: #c0c0c0;
+				border-right-color: #c0c0c0;
+				border-top-color: #c0c0c0;
+				border-bottom-color: #c0c0c0;
+				border-spacing: 0px;
+				border-spacing: 0px;" width="100%" x-use-null-cells="">
+<col style="width: 38.089%;"/>
+<col style="width: 61.911%;"/>
+<tr class="hcp5" valign="top">
+<td bgcolor="#C0C0C0" style="width: 38.089%;
+			padding-right: 10px;
+			padding-left: 10px;
+			background-color: #c0c0c0;
+			border-left-color: #c0c0c0;
+			border-top-color: #c0c0c0;
+			border-top-style: Solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-style: Solid;
+			border-bottom-width: 1px;
+			border-right-color: #c0c0c0;
+			border-right-width: 1px;
+			border-right-style: Solid;
+			border-left-width: 1px;
+			border-left-style: Solid;
+			border-top-width: 1px;" width="38.089%">
+<p class="hcp6">Method</p></td>
+<td bgcolor="#C0C0C0" style="width: 61.911%;
+			padding-right: 10px;
+			padding-left: 10px;
+			background-color: #c0c0c0;
+			border-top-color: #c0c0c0;
+			border-top-style: Solid;
+			border-right-color: #c0c0c0;
+			border-right-style: Solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-style: Solid;
+			border-bottom-width: 1px;
+			border-top-width: 1px;
+			border-right-width: 1px;" width="61.911%">
+<p class="hcp6">Description</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_CalculateTotals_Sub.htm">CalculateTotals</a></p></td>
+<td class="hcp8" style="width:61.911%;" width="61.911%">
+<p>Calculates the subtotal, sales tax, and total for the transaction.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_ClearCustomer_Sub.htm">ClearCustomer</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Clears the customer for the transaction.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_ClearSalesRep_Sub.htm">ClearSalesRep</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Clears the default sales representative for the transaction and for 
+ each entry in the transaction.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_LoadSalesRep_Function.htm">LoadSalesRep</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets the default sales representative for the transaction to the representative 
+ with the specified ID.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_MaximumFoodStampsAllowed_Function.htm">MaximumFoodStampsAllowed</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Determines the maximum amount of food stamps allowed for the transaction</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_Post_Function.htm">Post</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Posts the transaction to the database.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_PostTenderValidate_Function.htm">PostTenderValidate</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Validates the transaction after the transaction is posted.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_PreTenderValidate_Function.htm">PreTenderValidate</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Validates the transaction before the transaction is posted.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_RevertToSavedPrices_Sub.htm">RevertToSavedPrices</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Reverts the prices for each transaction entry to their saved values.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SavePrices_Sub.htm">SavePrices</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Saves the prices for each transaction entry.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetCustomer_Function.htm">SetCustomer</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets the customer for the transaction.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetDepositTotal_Function.htm">SetDepositTotal</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets the total deposit for the order.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetDiscountPercentage_Function.htm">SetDiscountPercentage</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets the discount percentage for the transaction by the specified method.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetDrop_Function.htm">SetDrop</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets the cash drop amount and a comment for the transaction.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetEntryDiscountReasonCodes_Sub.htm">SetEntryDiscountReasonCodes</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets the reason code used for discounts.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetEntryReturnReasonCodes_Sub.htm">SetEntryReturnReasonCodes</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets the reason code used for returns.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetEntryTaxChangeReasonCodes_Sub.htm">SetEntryTaxChangeReasonCodes</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets the reason code to use for all tax changes.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetPayout_Function.htm">SetPayout</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets the payout amount, payout recipient, and a comment for the transaction.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetPriceLevel_Function.htm">SetPriceLevel</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets the price level for the transaction.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetTaxable_Function.htm">SetTaxable</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets a Boolean value that determines whether the transaction is taxable.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetTransactionAmountOffOnce_Function.htm">SetTransactionAmountOffOnce</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Adjusts the discount on all entries in the transaction so that the total 
+ discount amount matches the specified value.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetTransactionAmountOnce_Function.htm">SetTransactionAmountOnce</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Adjusts the price of all entries in the transaction so that the subtotal 
+ or total matches the specified amount.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetTransactionPercentageOffOnce_Function.htm">SetTransactionPercentageOffOnce</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Adjusts the discount on all entries in the transaction so that the total 
+ discount percentage matches the specified value.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_SetTransactionType_Function.htm">SetTransactionType</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Sets the transaction mode.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_TendersForceValidation_Sub.htm">TendersForceValidation</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Marks all tenders as validated.</p></td></tr>
+<tr class="hcp5" valign="top">
+<td class="hcp7" colspan="1" rowspan="1" style="width:38.089%;" width="38.089%">
+<p class="hcp6"><a href="../Transaction/Transaction_TendersResetValidations_Sub.htm">TendersResetValidations</a></p></td>
+<td class="hcp8" colspan="1" rowspan="1" style="width:61.911%;" width="61.911%">
+<p>Marks all tenders as not validated.</p></td></tr>
+</table>
+<p class="hcp4"> </p>
+<h2>Properties</h2>
+<p class="hcp4">The <span class="hcp3">Transaction 
+ </span>class has the following properties.</p>
+<p class="hcp4"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_AnyItemsOrdered_Property.htm">AnyItemsOrdered</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ any items on the transaction are on order.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Balance_Property.htm">Balance</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ any items on the transaction are on order.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_CashBackSurcharge_Property.htm">CashBackSurcharge</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total cash back surcharge for the 
+ transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_ChangeFoodStamp_Property.htm">ChangeFoodStamp</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total amount of food stamps paid 
+ out as change for the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_CommentGet_Property.htm">Comment</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../Transaction/Transaction_CommentGet_Property.htm">Read</a>/<a href="../Transaction/Transaction_CommentSet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the user-defined comment for 
+ the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_CurrencyDescriptorDisplayGet_Property.htm">CurrencyDescriptorDisplay</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.CurrencyDescriptor</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../Transaction/Transaction_CurrencyDescriptorDisplayGet_Property.htm">Read</a>/<a href="../Transaction/Transaction_CurrencyDescriptorDisplaySet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the currency currently displayed 
+ on the POS.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_CurrentEntryKeyGet_Property.htm">CurrentEntryKey</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../Transaction/Transaction_CurrentEntryKeyGet_Property.htm">Read</a>/<a href="../Transaction/Transaction_CurrentEntryKeySet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the key of the current transaction 
+ entry.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Customer_Property.htm">Customer</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.Customer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the customer for the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_DebitAllSurcharges_Property.htm">DebitAllSurcharges</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total surcharge for the transaction.</p>
+<p style="margin-left: 0px; font-weight: bold;"><a href="../Transaction/Transaction_DebitSurcharge_Property.htm">DebitSurcharge</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total debit surcharge for the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Deposit_Property.htm">Deposit</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the required deposit amount for the 
+ order.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_DepositOverrideGet_Property.htm">DepositOverride</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../Transaction/Transaction_DepositOverrideGet_Property.htm">Read</a>/<a href="../Transaction/Transaction_DepositOverrideSet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets a Boolean value that indicates 
+ whether the automatically-calculated required deposit amount has been 
+ manually overridden.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_DepositPrevious_Property.htm">DepositPrevious</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the amount of the deposit previously 
+ paid for the order.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_DepositTotal_Property.htm">DepositTotal</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total deposit amount paid for the 
+ order.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Discount_Property.htm">Discount</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current total discount applied to 
+ the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_DiscountMethod_Property.htm">DiscountMethod</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Common.discountmethodEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the method used for discounts to the 
+ transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_DiscountPercent_Property.htm">DiscountPercent</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the percentage of the discount currently 
+ applied to the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_DiscountPurchased_Property.htm">DiscountPurchased</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current discount applied to all 
+ items being purchased in the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_DropAmount_Property.htm">DropAmount</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the amount of the cash drop.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_DropPayoutID_Property.htm">DropPayoutID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the ID of the drop or payout transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Entries_Property.htm">Entries</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.TransactionEntries</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the details of each entry in the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_ExchangeIDGet_Property.htm">ExchangeID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../Transaction/Transaction_ExchangeIDGet_Property.htm">Read</a>/<a href="../Transaction/Transaction_ExchangeIDSet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the ID of the Internet order 
+ associated with the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_ExchangeStatusGet_Property.htm">ExchangeStatus</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../Transaction/Transaction_ExchangeStatusGet_Property.htm">Read</a>/<a href="../Transaction/Transaction_ExchangeStatusSet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the status of the Internet order 
+ associated with the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_ExpirationOrDueDateGet_Property.htm">ExpirationOrDueDate</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Date</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../Transaction/Transaction_ExpirationOrDueDateGet_Property.htm">Read</a>/<a href="../Transaction/Transaction_ExpirationOrDueDateSet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the expiration or due date associated 
+ with the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_HoldComment_Property.htm">HoldComment</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a string related to the transaction 
+ on hold.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_InProgress_Property.htm">InProgress</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ the transaction is in progress.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_IsOrder_Property.htm">IsOrder</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ the current transaction is an order.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_ItemTaxes_Property.htm">ItemTaxes</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.ItemTaxes</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a collection of all currently defined 
+ item taxes.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_NonTenderTransactionID_Property.htm">NonTenderTransactionID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the ID of the non-tender transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_OrderBalance_Property.htm">OrderBalance</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current balance remaining to be 
+ paid on the order.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_OrderClosed_Property.htm">OrderClosed</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ the order is closed.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_OrderHistoryID_Property.htm">OrderHistoryID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the ID of the order history entry.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_OrderID_Property.htm">OrderID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the ID of the order transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_PaymentID_Property.htm">PaymentID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the ID of the payment transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_PayoutAmount_Property.htm">PayoutAmount</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the amount of the payout.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_PayoutRecipient_Property.htm">PayoutRecipient</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the recipient of the payout.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Points_Property.htm">Points</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total number of purchase limit points 
+ for the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_PriceLevel_Property.htm">PriceLevel</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Common.pricelevelEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the price level of the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Purchases_Property.htm">Purchases</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current tax-system-specific total 
+ for all items being purchased in the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_ReasonCodeGet_Property.htm">ReasonCode</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">ReasonCode</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../Transaction/Transaction_ReasonCodeGet_Property.htm">Read</a>/<a href="../Transaction/Transaction_ReasonCodeSet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets the reason code for the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Recalled_Property.htm">Recalled</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ the transaction has been recalled.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_RecallID_Property.htm">RecallID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the ID of the recalled transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_RecallType_Property.htm">RecallType</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Transaction.recallEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the type of recall that applies to the 
+ transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_ReferenceNumberGet_Property.htm">ReferenceNumber</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../Transaction/Transaction_ReferenceNumberGet_Property.htm">Read</a>/<a href="../Transaction/Transaction_ReferenceNumberSet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets a general-purpose reference 
+ number for the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_ReturningItems_Property.htm">ReturningItems</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ items are being returned in the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_ReturnModeGet_Property.htm">ReturnMode</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: <a href="../Transaction/Transaction_ReturnModeGet_Property.htm">Read</a>/<a href="../Transaction/Transaction_ReturnModeSet_Property.htm">Write</a></p>
+<p class="hcp9">Gets or sets a Boolean value that indicates 
+ whether the transaction is in return mode.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_SalesRep_Property.htm">SalesRep</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.SalesRep</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the default sales representative for 
+ the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_SalesTax_Property.htm">SalesTax</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current total sales tax for the 
+ transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_SalesTaxes_Property.htm">SalesTaxes</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.SalesTaxes</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a collection of all currently defined 
+ sales taxes.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_SalesTaxOnOrder_Property.htm">SalesTaxOnOrder</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current total sales tax for all 
+ items on order in the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_SalesTaxPurchased_Property.htm">SalesTaxPurchased</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current total sales tax for all 
+ items being purchased in the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Shipping_Property.htm">Shipping</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Shipping</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the shipping information for the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_SubTotal_Property.htm">Subtotal</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current subtotal for the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_SubTotalOnOrder_Property.htm">SubTotalOnOrder</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current subtotal for all items on 
+ order in the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_SubTotalPurchased_Property.htm">SubTotalPurchased</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current subtotal for all items being 
+ purchased in the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Taxable_Property.htm">Taxable</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ tax can be applied to the current transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TenderDefault_Property.htm">TenderDefault</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Tender</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the default Tender object.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TenderedFoodStamps_Property.htm">TenderedFoodStamps</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total amount of food stamps taken 
+ in during the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TenderedInFoodStamps_Property.htm">TenderedInFoodStamps</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total amount of food stamps taken 
+ in during the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TenderPopsCashDrawer_Property.htm">TenderPopsCashDrawer</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a Boolean value that indicates whether 
+ the cash drawer of the register will open when the transaction is tendered.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Tenders_Property.htm">Tenders</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">QSRules.Tenders</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets a collection of all currently defined 
+ tenders.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_Total_Property.htm">Total</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current total for the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalDue_Property.htm">TotalDue</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current total amount due on the 
+ transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalOnOrder_Property.htm">TotalOnOrder</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current total for all items on order 
+ in the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalPurchased_Property.htm">TotalPurchased</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the current total for all items being 
+ purchased in the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalQuantity_Property.htm">TotalQuantity</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total quantity of all items in the 
+ transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalQuantityOnOrder_Property.htm">TotalQuantityOnOrder</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total quantity of all items in the 
+ transaction that are on order.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalQuantityPurchased_Property.htm">TotalQuantityPurchased</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total quantity of all items in the 
+ transaction that are being purchased.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalTendered_Property.htm">TotalTendered</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total amount of the specified tender 
+ that results from the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalTenderIn_Property.htm">TotalTenderIn</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total amount of the specified tender 
+ taken in during the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalTenderOut_Property.htm">TotalTenderOut</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total amount of the specified tender 
+ paid out during the transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalWeight_Property.htm">TotalWeight</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total weight of all items in the 
+ transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalWeightOnOrder_Property.htm">TotalWeightOnOrder</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total weight of all items in the 
+ transaction that are on order.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TotalWeightPurchased_Property.htm">TotalWeightPurchased</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the total weight of all items in the 
+ transaction that are being purchased.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TransactionNumber_Property.htm">TransactionNumber</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the ID of the sales transaction.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TransactionTime_Property.htm">TransactionTime</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Date</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the date and time that the transaction 
+ was posted to the database.</p>
+<p class="Close-Spaced" style="font-weight: bold;"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Transaction/Transaction_TransactionType_Property.htm">TransactionType</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">transactiontypeEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp9">Gets the type of the transaction.</p>
+<p class="hcp9"> </p>
+<p>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="Process Function;../Creating_a_COM_Component_Add-in.htm#Process Function$$**$$RequestQSRules Function;../RequestQSRules_Function.htm$$**$$SessionClass Class;../SessionClass/SessionClass_Class.htm$$**$$SessionClass.Transaction Property;../SessionClass/SessionClass_Transaction_Property.htm$$**$$">
+<param name="Image" value>
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\Transaction\Transaction_Class.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object> --><object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="Process Function;../Creating_a_COM_Component_Add-in.htm#Process Function"/>
+<param name="Item2" value="RequestQSRules Function;../RequestQSRules_Function.htm"/>
+<param name="Item3" value="SessionClass Class;../SessionClass/SessionClass_Class.htm"/>
+<param name="Item4" value="SessionClass.Transaction Property;../SessionClass/SessionClass_Transaction_Property.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="../Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

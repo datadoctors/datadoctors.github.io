@@ -1,0 +1,422 @@
+BODY { 
+      background-color:#ffffff; 
+      font-size:10pt; 
+      font-family:Verdana, sans-serif;  }
+H1 { 
+    letter-spacing:-0.5pt; 
+    margin-top:0pt; 
+    margin-bottom:14pt; 
+    font-weight:bold; 
+    font-style:normal; 
+    font-family:Verdana, sans-serif; 
+    font-size:16pt; 
+    color:#0745b8;  }
+LI.kadov-H1 { 
+             letter-spacing:-0.5pt; 
+             font-weight:bold; 
+             font-style:normal; 
+             font-family:Verdana, sans-serif; 
+             font-size:16pt; 
+             color:#0745b8; 
+             letter-spacing:-0.5pt; 
+             font-size:14pt; 
+             font-weight:bold; 
+             font-style:normal; 
+             font-family:Verdana, sans-serif; 
+             color:#0000bf;  }
+H2 { 
+    letter-spacing:-0.5pt; 
+    margin-top:0pt; 
+    margin-bottom:12pt; 
+    font-family:Verdana, sans-serif; 
+    font-weight:bold; 
+    font-style:normal; 
+    font-size:14pt; 
+    color:#0745b8;  }
+LI.kadov-H2 { 
+             letter-spacing:-0.5pt; 
+             font-family:Verdana, sans-serif; 
+             font-weight:bold; 
+             font-style:normal; 
+             font-size:14pt; 
+             color:#0745b8; 
+             letter-spacing:-0.5pt; 
+             font-size:12pt; 
+             font-family:Verdana, sans-serif; 
+             font-weight:bold; 
+             font-style:normal; 
+             color:#0000bf;  }
+H3 { 
+    letter-spacing:-0.5pt; 
+    margin-top:0pt; 
+    margin-bottom:6pt; 
+    font-family:Verdana, sans-serif; 
+    font-size:13pt; 
+    font-weight:bold; 
+    font-style:italic; 
+    color:#0745b8;  }
+LI.kadov-H3 { 
+             letter-spacing:-0.5pt; 
+             font-family:Verdana, sans-serif; 
+             font-size:13pt; 
+             font-weight:bold; 
+             font-style:italic; 
+             color:#0745b8; 
+             letter-spacing:-0.5pt; 
+             font-size:11pt; 
+             font-weight:bold; 
+             font-style:normal; 
+             font-family:Verdana, sans-serif; 
+             color:#0000bf;  }
+P { 
+   font-size:10pt; 
+   margin-bottom:6pt; 
+   margin-top:6pt; 
+   font-family:Verdana, sans-serif;  }
+LI.kadov-P { 
+            font-size:10pt; 
+            font-family:Verdana, sans-serif; 
+            font-size:10pt; 
+            font-family:Verdana, sans-serif;  }
+A.glossterm { 
+             cursor:hand; 
+             x-text-overline:off; 
+             x-text-line-through:off; 
+             font-weight:normal; 
+             font-style:normal; 
+             color:#0000ff; 
+             x-text-underline:normal; 
+             text-decoration:none none underline none none none none none none underline;  }
+SPAN.glosstext { 
+                font-weight:normal; 
+                font-style:normal; 
+                color:#008000;  }
+OL { 
+    margin-top:0pt; 
+    margin-bottom:6pt; 
+    margin-left:18pt; 
+    margin-right:18pt;  }
+UL { 
+    margin-top:0pt; 
+    margin-bottom:6pt; 
+    margin-left:18pt; 
+    margin-right:18pt;  }
+P.ProcHeading { 
+               x-next-type:P; 
+               margin-top:10.5pt; 
+               font-weight:bold; 
+               font-style:normal;  }
+LI.kadov-P-CProcHeading { 
+                         font-weight:bold; 
+                         font-style:normal; 
+                         font-weight:bold; 
+                         font-style:italic;  }
+P.IndentListNote { 
+                  margin-left:20pt;  }
+LI.kadov-P-CIndentListNote {  }
+P.ListItem { 
+            text-indent:-24pt; 
+            margin-left:42pt; 
+            margin-bottom:15pt;  }
+LI.kadov-P-CListItem { 
+                      text-indent:-24pt; 
+                      text-indent:-24pt;  }
+H3.TableH3 { 
+            margin-left:-6pt; 
+            x-next-class:TableNormal; 
+            x-next-type:P; 
+            margin-bottom:0pt;  }
+LI.kadov-H3-CTableH3 {  }
+P.TableNormal { 
+               margin-left:5pt; 
+               margin-top:3pt; 
+               margin-bottom:3pt;  }
+LI.kadov-P-CTableNormal {  }
+P.KybdInstrux { 
+               font-size:8pt; 
+               margin-left:32pt; 
+               margin-right:32pt; 
+               border-left-style:Solid; 
+               border-right-style:Solid; 
+               border-top-style:Solid; 
+               border-bottom-style:Solid; 
+               padding-left:3px; 
+               margin-top:13.5pt; 
+               border-left-width:1px; 
+               border-right-width:1px; 
+               border-top-width:1px; 
+               border-bottom-width:1px; 
+               background-color:#d2d2d2;  }
+LI.kadov-P-CKybdInstrux { 
+                         font-size:8pt; 
+                         font-size:8pt;  }
+H1.TableH1 { 
+            color:#000000; 
+            font-size:10pt; 
+            margin-top:3pt; 
+            margin-bottom:3pt; 
+            margin-left:5pt; 
+            background-color:#c0c0c0;  }
+LI.kadov-H1-CTableH1 { 
+                      color:#000000; 
+                      font-size:10pt; 
+                      color:#000000; 
+                      font-size:10pt;  }
+H3.MiniTOCHeading3 { 
+                    x-next-type:P; 
+                    color:#0000ff;  }
+LI.kadov-H3-CMiniTOCHeading3 { 
+                              color:#0000ff; 
+                              color:#0000ff;  }
+P.TOC1 { 
+        font-size:12pt; 
+        font-weight:bold; 
+        font-style:normal;  }
+LI.kadov-P-CTOC1 { 
+                  font-size:12pt; 
+                  font-weight:bold; 
+                  font-style:normal; 
+                  font-size:12pt; 
+                  font-weight:bold; 
+                  font-style:normal;  }
+P.TOC2 { 
+        font-size:12pt; 
+        margin-left:18pt;  }
+LI.kadov-P-CTOC2 { 
+                  font-size:12pt; 
+                  font-size:12pt;  }
+P.TOC3 { 
+        font-size:12pt; 
+        margin-left:36pt;  }
+LI.kadov-P-CTOC3 { 
+                  font-size:12pt; 
+                  font-size:12pt;  }
+A.popupspot { 
+             color:#0000ff;  }
+A.dropspot { 
+            color:#0000ff;  }
+A.expandspot { 
+              color:#0000ff;  }
+SPAN.expandtext { 
+                 color:#008000;  }
+DIV.droptext {  }
+P.RelTopicsHeader { 
+                   font-weight:bold; 
+                   font-style:normal; 
+                   margin-bottom:0pt; 
+                   margin-top:10.5pt;  }
+LI.kadov-P-CRelTopicsHeader { 
+                             font-weight:bold; 
+                             font-style:normal; 
+                             font-weight:bold; 
+                             font-style:normal;  }
+P.RelTopic { 
+            margin-bottom:0pt;  }
+LI.kadov-P-CRelTopic {  }
+A:visited { 
+           color:#0000ff;  }
+P.function { 
+            font-family:"Courier New" , monospace; 
+            margin-left:18pt;  }
+LI.kadov-P-Cfunction { 
+                      font-family:"Courier New" , monospace; 
+                      font-family:"Courier New" , monospace;  }
+P.function-indent { 
+                   font-family:"Courier New" , monospace; 
+                   margin-top:3pt; 
+                   margin-bottom:3pt; 
+                   margin-left:34pt;  }
+LI.kadov-P-Cfunction-indent { 
+                             font-family:"Courier New" , monospace; 
+                             font-family:"Courier New" , monospace;  }
+H4 { 
+    margin-bottom:6pt; 
+    font-size:11pt; 
+    color:#0745b8;  }
+LI.kadov-H4 { 
+             font-size:11pt; 
+             color:#0745b8; 
+             font-size:10pt; 
+             color:#0000bf;  }
+P.numList { 
+           list-style:decimal; 
+           margin-left:18pt;  }
+LI.kadov-P-CnumList { 
+                     list-style:decimal; 
+                     list-style:decimal;  }
+P.space { 
+         font-size:6pt; 
+         margin-top:0pt; 
+         margin-bottom:0pt;  }
+LI.kadov-P-Cspace { 
+                   font-size:6pt; 
+                   font-size:6pt;  }
+P.RedBullet { 
+             margin-top:12pt; 
+             margin-bottom:12pt; 
+             list-style:url(smallred.jpg);  }
+LI.kadov-P-CRedBullet { 
+                       list-style:url(smallred.jpg); 
+                       list-style:url(smallred.jpg);  }
+P.Note { 
+        color:#000000; 
+        background-color:#d9eeff; 
+        margin-left:0pt;  }
+LI.kadov-P-CNote { 
+                  color:#000000; 
+                  color:#0000bf;  }
+P.NoteIn { 
+          color:#000000; 
+          background-color:#d9eeff; 
+          margin-left:18pt;  }
+LI.kadov-P-CNoteIn { 
+                    color:#000000; 
+                    color:#0000bf;  }
+P.Indent { 
+          margin-left:18pt;  }
+LI.kadov-P-CIndent {  }
+P.IndentIn { 
+            margin-left:36pt; 
+            margin-top:0pt;  }
+LI.kadov-P-CIndentIn {  }
+P.ScreenShot { 
+              margin-top:12pt; 
+              margin-bottom:12pt;  }
+LI.kadov-P-CScreenShot {  }
+P.Bold { 
+        font-weight:bold; 
+        font-style:normal; 
+        margin-top:12pt;  }
+LI.kadov-P-CBold { 
+                  font-weight:bold; 
+                  font-style:normal;  }
+P.BulletList { 
+              list-style:disc; 
+              margin-left:12pt;  }
+LI.kadov-P-CBulletList { 
+                        list-style:disc;  }
+P.ParameterName { 
+                 font-style:italic; 
+                 font-weight:normal; 
+                 margin-bottom:0pt; 
+                 margin-left:18pt;  }
+LI.kadov-P-CParameterName { 
+                           font-style:italic; 
+                           font-weight:normal;  }
+P.ParameterIndent { 
+                   margin-left:36pt; 
+                   margin-top:0pt;  }
+LI.kadov-P-CParameterIndent {  }
+P.TableBullet { 
+               margin-top:2pt; 
+               margin-bottom:2pt; 
+               list-style:circle;  }
+LI.kadov-P-CTableBullet { 
+                         list-style:circle;  }
+P.TableOut { 
+            margin-top:3pt; 
+            margin-bottom:3pt;  }
+LI.kadov-P-CTableOut {  }
+P.SubHeading { 
+              margin-top:0pt; 
+              margin-bottom:12pt; 
+              font-style:italic; 
+              color:#0000bf; 
+              font-size:10pt;  }
+LI.kadov-P-CSubHeading { 
+                        font-style:italic; 
+                        color:#0000bf; 
+                        font-size:10pt;  }
+H5 { 
+    font-size:10pt; 
+    margin-top:6pt; 
+    margin-bottom:6pt; 
+    color:#0745b8;  }
+LI.kadov-H5 { 
+             font-size:10pt; 
+             color:#0745b8;  }
+P.BoldIn { 
+          font-weight:bold; 
+          font-style:normal; 
+          margin-left:36pt; 
+          margin-top:12pt;  }
+LI.kadov-P-CBoldIn { 
+                    font-weight:bold; 
+                    font-style:normal;  }
+P.BulletListIn { 
+                list-style:circle; 
+                margin-left:28pt;  }
+LI.kadov-P-CBulletListIn { 
+                          list-style:circle;  }
+P.TableBullet2 { 
+                list-style:disc; 
+                margin-top:3pt; 
+                margin-bottom:3pt; 
+                margin-left:-8pt;  }
+LI.kadov-P-CTableBullet2 { 
+                          list-style:disc;  }
+P.numListTable { 
+                margin-top:3pt; 
+                margin-bottom:3pt; 
+                margin-left:10pt; 
+                list-style:decimal;  }
+LI.kadov-P-CnumListTable { 
+                          list-style:decimal;  }
+P.NoteInList { 
+              background-color:#d9eeff; 
+              margin-left:0.52in;  }
+LI.kadov-P-CNoteInList {  }
+P.Tip { 
+       background-color:#d9eeff;  }
+LI.kadov-P-CTip {  }
+P.TipIn { 
+         margin-left:18pt; 
+         background-color:#d9eeff;  }
+LI.kadov-P-CTipIn {  }
+P.IndentBulletList { 
+                    margin-left:30pt; 
+                    margin-top:0pt;  }
+LI.kadov-P-CIndentBulletList {  }
+P.SeeAlsoList { 
+               font-size:9pt; 
+               margin-top:3pt; 
+               margin-bottom:3pt;  }
+LI.kadov-P-CSeeAlsoList { 
+                         font-size:9pt;  }
+P.Syntax { 
+          font-weight:bold; 
+          font-family:"Courier New" , monospace; 
+          background-color:#c0c0c0; 
+          font-style:normal; 
+          border-left-style:none; 
+          border-right-style:none; 
+          border-top-style:none; 
+          border-bottom-style:none; 
+          margin-left:0pt; 
+          margin-top:0pt; 
+          margin-bottom:0pt;  }
+LI.kadov-P-CSyntax { 
+                    font-weight:bold; 
+                    font-family:"Courier New" , monospace; 
+                    font-style:normal;  }
+P.Close-Spaced { 
+                line-height:50%;  }
+LI.kadov-P-CClose-Spaced { 
+                          line-height:50%;  }
+P.CodeBlock { 
+             font-family:"Courier New" , monospace; 
+             background-color:#c0c0c0; 
+             margin-top:0pt; 
+             margin-bottom:0pt;  }
+LI.kadov-P-CCodeBlock { 
+                       font-family:"Courier New" , monospace;  }
+SPAN.InlineCode { 
+                 font-family:"Courier New" , monospace;  }
+P.EnumName { 
+            font-weight:bold; 
+            font-style:normal; 
+            margin-left:18pt; 
+            margin-bottom:0pt;  }
+LI.kadov-P-CEnumName { 
+                      font-weight:bold; 
+                      font-style:normal;  }

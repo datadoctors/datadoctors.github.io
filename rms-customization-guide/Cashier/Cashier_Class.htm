@@ -1,0 +1,216 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Cashier Class</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="../assets/css/SDK.css" rel="StyleSheet"/><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+p.hcp4 { font-weight:normal; }
+p.hcp5 { margin-left:40px; }
+-->
+</style>
+<link href="../assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="../index.html">🏠 Home</a>
+<a class="nav-contents" href="../index.html#contents">📚 Contents</a>
+<a class="nav-search" href="../index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="../assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>Cashier Class</h1>
+<p>The <span class="hcp3">Cashier </span>class represents 
+ a single cashier. Only one <span class="hcp3">Cashier</span> 
+ object at a time exists under the main <span class="hcp3"><a href="../SessionClass/SessionClass_Class.htm">SessionClass</a></span> 
+ object; this <span class="hcp3">Cashier</span> object represents 
+ the cashier currently logged on to the POS.</p>
+<p> </p>
+<h2>When To Use</h2>
+<p class="hcp4">The <span class="hcp3">Cashier 
+ </span>class is used to perform the following tasks.</p>
+<ul style="list-style: disc;" type="disc">
+<li class="kadov-p"><p class="hcp4">View the cashier's 
+ limits and privileges.</p></li>
+<li class="kadov-p"><p class="hcp4">Access the messages 
+ for the cashier.</p></li>
+</ul>
+<p class="hcp4"> </p>
+<h2>Procedures</h2>
+<p>The <span class="hcp3">Cashier</span><span> class does 
+ not have any public procedures.</span></p>
+<p class="hcp4"> </p>
+<h2>Properties</h2>
+<p class="hcp4">The <span class="hcp3">Cashier 
+ </span>class has the following properties.</p>
+<p class="hcp4"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_CashDrawer_Property.htm">CashDrawer</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">CashDrawer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the default cash drawer for the cashier.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_CashDrawerNumber_Property.htm">CashDrawerNumber</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the number of the default cash drawer 
+ for the cashier.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_EmailAddress_Property.htm">EmailAddress</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the e-mail address of the cashier.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_FailedLogOnAttempts_Property.htm">FailedLogOnAttempts</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the number of failed logon attempts 
+ for the cashier before the current successful logon.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_FirstName_Property.htm">FirstName</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the first name of the cashier.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_FloorLimit_Property.htm">FloorLimit</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the largest non-cash sale amount the 
+ cashier is allowed to tender.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_HasPrivilege_Property.htm">HasPrivilege</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier has the specified privilege.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_ID_Property.htm">ID</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the ID of the cashier.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_LastName_Property.htm">LastName</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the last name of the cashier.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_Loaded_Property.htm">Loaded</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Boolean</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets a Boolean value that indicates whether 
+ the cashier is loaded.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_MaxOverShortAmount_Property.htm">MaxOverShortAmount</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the maximum over/short error amount 
+ allowed for the cashier. </p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_MaxOverShortPercent_Property.htm">MaxOverShortPercent</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Double</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the maximum over/short error percentage 
+ allowed for the cashier. </p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_Messages_Property.htm">Messages</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">CashierMessages</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the messages for the cashier.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_Name_Property.htm">Name</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the full name of the cashier.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_Number_Property.htm">Number</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">String</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the user-defined cashier number.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_OverShortLimitType_Property.htm">OverShortLimitType</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">overshortlimitEnum</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the type of the over/short error limit 
+ for the cashier.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_ReturnLimit_Property.htm">ReturnLimit</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Currency</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the largest return transaction amount 
+ that the cashier is allowed to tender.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_SecurityLevel_Property.htm">SecurityLevel</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Integer</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the security level of the cashier.</p>
+<p class="hcp5"> </p>
+<p class="Close-Spaced" style="font-weight: bold;"><a href="../Cashier/Cashier_UnreadMessageCount_Property.htm">UnreadMessageCount</a></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Data type: <span class="hcp3">Long</span></p>
+<p class="Close-Spaced" style="margin-left: 40px;">Access type: Read-only</p>
+<p class="hcp5">Gets the number of messages for the cashier 
+ that have not been read.</p>
+<p class="hcp5"> </p>
+<p>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="Process Function;../Creating_a_COM_Component_Add-in.htm#Process Function$$**$$RequestQSRules Function;../RequestQSRules_Function.htm$$**$$SessionClass Class;../SessionClass/SessionClass_Class.htm$$**$$SessionClass.Cashier Property;../SessionClass/SessionClass_Cashier_Property.htm$$**$$">
+<param name="Image" value>
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\Cashier\Cashier_Class.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object> --><object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="Process Function;../Creating_a_COM_Component_Add-in.htm#Process Function"/>
+<param name="Item2" value="RequestQSRules Function;../RequestQSRules_Function.htm"/>
+<param name="Item3" value="SessionClass Class;../SessionClass/SessionClass_Class.htm"/>
+<param name="Item4" value="SessionClass.Cashier Property;../SessionClass/SessionClass_Cashier_Property.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="../Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>Invoking an HTML Add-in</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style>
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+p.hcp4 { margin-left:24px; }
+p.hcp5 { text-indent:24px; }
+ul.hcp6 { list-style:disc; }
+p.hcp7 { margin-left:0px; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1 style="margin-left: 0in; text-indent: 0in;">Invoking an HTML Add-in</h1>
+<p>Each embedded HTML browser is set up in a different way. The HTML script 
+ that will be run for each embedded HTML browser is specified as follows:</p>
+<ul>
+<li class="kadov-p-CRedBullet"><p class="RedBullet" style="font-weight: bold;">HTML Status 
+ Bar</p></li>
+</ul>
+<ol start="1">
+<li class="kadov-P-CnumList"><p class="numList">Open the Store Operations 
+ Administrator application and connect to the database.</p></li>
+<li class="kadov-P-CnumList"><p class="numList"><span>On the </span><span class="hcp3">File</span><span> menu, click </span><span class="hcp3">Configuration</span><span>, and then click 
+ the </span><span class="hcp3">Register</span><span> tab</span>.</p></li>
+<li class="kadov-P-CnumList"><p class="numList">Type the path of the HTML 
+ script file to use for the status bar in the <span class="hcp3">Web 
+ status</span> text box, or click the browse button to browse to the HTML 
+ script file you want to display.</p></li>
+<li class="kadov-P-CnumList"><p class="numList">Click the <span class="hcp3">OK</span> 
+ button and exit the Administrator application.</p></li>
+</ol>
+<p class="numList"> </p>
+<ul>
+<li class="kadov-p-CRedBullet"><p class="RedBullet" style="font-weight: bold;">HTML Browser</p></li>
+</ul>
+<ol start="1">
+<li class="kadov-p-CnumList"><p class="numList">Open the Store Operations 
+ Manager application. On the <span class="hcp3">Database</span> 
+ menu, point to <span class="hcp3">Registers</span>, and 
+ then click <span class="hcp3">Custom POS Buttons</span>.</p></li>
+<li class="kadov-p"><p class="hcp4">Create a new POS button 
+ with the following attributes.</p></li>
+<ul>
+<li class="kadov-p" style="list-style: disc;" type="disc"><p class="hcp4"><span class="hcp3">Number</span>: 
+ Enter a unique ID number; this number controls the order in which the 
+ buttons are displayed in the POS.</p></li>
+<li class="kadov-p" style="list-style: disc;" type="disc"><p class="hcp5"><span class="hcp3">Style</span>: 
+ Select <span class="hcp3">HTML Window</span>.</p></li>
+<li class="kadov-p" style="list-style: disc;" type="disc"><p class="hcp5"><span class="hcp3">Caption</span><span>: 
+ Enter the text that will appear on the button.</span></p></li>
+<li class="kadov-p" style="list-style: disc;" type="disc"><p class="hcp4"><span class="hcp3">Command</span>: 
+ Enter the filename of the HTML script to display over the transaction 
+ grid when the POS button is clicked. </p></li>
+</ul>
+<li class="kadov-p"><p class="hcp4">Click the <span class="hcp3">OK</span> 
+ button and exit the application. The new POS button will appear the next 
+ time that the POS application is started.</p></li>
+</ol>
+<p class="hcp4"> </p>
+<ul>
+<li class="kadov-p-CRedBullet"><p class="RedBullet"><span class="hcp3">Net 
+ Display receipt pane</span></p></li>
+</ul>
+<ol start="1">
+<li class="kadov-p-CnumList"><p class="numList">Open the Store Operations 
+ POS application.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Press <span class="hcp3">CTRL+F6</span><span> 
+ to display the </span><span class="hcp3">Display Properties</span><span> 
+ dialog, and then </span>click the <span class="hcp3">Net 
+ Display</span> tab.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Select the <span class="hcp3">Show 
+ Net Display</span> and <span class="hcp3">Show receipt on 
+ Net Display</span> check boxes.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Enter the window positions. 
+ </p></li>
+<li class="kadov-p-CnumList"><p class="numList">Click the browse button 
+ to browse to the HTML script file you want to display in the receipt pane.</p></li>
+<li class="kadov-p-CnumList"><p class="numList"><span>Click the </span><span class="hcp3">OK</span><span> button.</span></p></li>
+</ol>
+<p> </p>
+<ul>
+<li class="kadov-p-CRedBullet"><p class="RedBullet" style="font-weight: bold;">Net Display 
+ advertising pane</p></li>
+</ul>
+<ol start="1">
+<li class="kadov-p-CnumList"><p class="numList">Open the Store Operations 
+ Manager application. On the <span class="hcp3">Database</span> 
+ menu, point to <span class="hcp3">Registers</span>, and 
+ then click <span class="hcp3">Net Display Channels</span>.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Open a channel.</p></li>
+<ul class="hcp6" type="disc">
+<ul class="hcp6" type="disc">
+<li class="kadov-p"><p class="hcp7">If you want 
+ to use an existing channel, highlight the channel in the selection window 
+ and then click the <span class="hcp3">Properties</span> 
+ button.</p></li>
+<li class="kadov-p"><p class="hcp7">If you want 
+ to create a new channel or a channel does not exist, click the <span class="hcp3">New</span> 
+ button to create a new channel. Type the name of the new channel in the 
+ <span class="hcp3">Channel name</span> text box.</p></li>
+</ul>
+</ul>
+<ol start="3" style="list-style: disc;" type="disc">
+<li class="kadov-p-CnumList" style="list-style: decimal;" type="1"><p class="numList" style="margin-left: 0px;">Click 
+ the <span class="hcp3">Add</span> button. Type the path 
+ of the HTML script file to use for the advertising pane in the <span class="hcp3">URL</span> 
+ text box, and then enter the amount of time to display the specified file 
+ before displaying the next file.</p></li>
+<li class="kadov-p-CnumList" style="list-style: decimal;" type="1"><p class="numList" style="margin-left: 0px;"><span>Click 
+ the </span><span class="hcp3">OK</span><span> button and 
+ close the manager application.</span></p></li>
+</ol>
+</ol>
+<ol start="4">
+<li class="kadov-p-CnumList"><p class="numList">Open the Store Operations 
+ POS application.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Press <span class="hcp3">CTRL+F6</span> 
+ to display the <span class="hcp3">Display Properties</span> 
+ dialog, and then click the <span class="hcp3">Net Display</span> 
+ tab. From Store Operations POS, press <span class="hcp3">CTRL 
+ + F6</span> and select the <span class="hcp3">Net Display</span> 
+ tab.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Select the <span class="hcp3">Show 
+ Net Display</span> check box.</p></li>
+<li class="kadov-p-CnumList"><p class="numList">Click the <span class="hcp3">OK</span> 
+ button.</p></li>
+</ol>
+<p class="numList"> </p>
+<ul>
+<li class="kadov-p-CRedBullet"><p class="RedBullet" style="font-weight: bold;">Internal 
+ Browser</p></li>
+</ul>
+<ol start="1">
+<li class="kadov-p-CnumList"><p class="numList">Open the Store Operations 
+ Manager application. On the <span class="hcp3">Database</span> 
+ menu, point to <span class="hcp3">Registers</span>, and 
+ then click <span class="hcp3">Custom POS Buttons</span>.</p></li>
+<li class="kadov-p"><p class="hcp4">Create a new POS button 
+ with the following attributes.</p></li>
+<ul>
+<li class="kadov-p" style="list-style: disc;" type="disc"><p class="hcp4"><span class="hcp3">Number</span>: 
+ Enter a unique ID number; this number controls the order in which the 
+ buttons are displayed in the POS.</p></li>
+<li class="kadov-p" style="list-style: disc;" type="disc"><p class="hcp5"><span class="hcp3">Style</span>: 
+ Select <span class="hcp3">Internal HTML Window</span>.</p></li>
+<li class="kadov-p" style="list-style: disc;" type="disc"><p class="hcp5"><span class="hcp3">Caption</span><span>: 
+ Enter the text that will appear on the button.</span></p></li>
+<li class="kadov-p" style="list-style: disc;" type="disc"><p class="hcp4"><span class="hcp3">Command</span>: 
+ Enter the filename of the HTML script to display in the separate browser 
+ window when the POS button is clicked. </p></li>
+</ul>
+<li class="kadov-p"><p class="hcp4">Click the <span class="hcp3">OK</span> 
+ button and exit the application. The new POS button will appear the next 
+ time that the POS application is started.</p></li>
+</ol>
+<p class="numList" style="margin-left: 0px;"> </p>
+<p class="SeeAlsoList" style="color: #0000ff;">
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="About Add-ins;About_Add-Ins.htm$$**$$Creating an HTML Add-in;Creating_an_HTML_Add-in.htm$$**$$HTML Add-ins;HTML_Add-ins.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\rms1.2x\rms\docs\product documentation\QSC\Customization Kit\Customization Guide\SDK_files\Invoking_an_HTML_Add-in.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="About Add-ins;About_Add-Ins.htm"/>
+<param name="Item2" value="Creating an HTML Add-in;Creating_an_HTML_Add-in.htm"/>
+<param name="Item3" value="HTML Add-ins;HTML_Add-ins.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

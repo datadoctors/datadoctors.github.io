@@ -1,0 +1,157 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>About Receipts</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style>
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+img.hcp2 { border:none; float:none; border-style:none; }
+hr.hcp3 { float:alignleft; color:#85dfe9; }
+ul.hcp4 { margin-top:0in; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" class="hcp2" height="67" src="assets/images/SDK%20Header.JPG" style="width:427px; height:67px;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp3" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>About Receipts</h1>
+<p>Microsoft<sup>®</sup> Retail Management System receipts 
+ are highly customizable. Receipts are generated based on the transactions 
+ built up in various <span style="font-weight: bold;">QSRules</span> classes. 
+ The actual content and layout of the receipts are specified in XML receipt 
+ templates. These templates allow you to customize receipts using an XML 
+ design language; for more information, see <a href="Receipt_Template_Language.htm">Receipt 
+ Template Language</a>.</p>
+<p><span>Receipt templates provide:</span></p>
+<ul>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Multiple receipt 
+ formats</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Two receipt 
+ formats for each register to support multiple receipt printers</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Different receipt 
+ templates for each transaction type</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Preview option 
+ for each receipt template</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Easy customization 
+ of receipt template properties</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Import and 
+ export of receipt templates</span></p></li>
+</ul>
+<p><span>The receipt templates are stored in the database as XML strings 
+ and can be imported from XML files and exported to XML files. The template 
+ files themselves can be edited with any XML editor.</span></p>
+<p>The processing of the receipt templates is implemented in two passes: 
+ a compile pass and a rendering pass. The compile pass is always performed 
+ before the rendering pass. For more information, see <a href="Receipt_Compiler_and_Renderer.htm">Receipt 
+ Compiler and Renderer</a>.</p>
+<p><span>In addition to printing sales receipts, the following Store Operations 
+ features also use the following XML receipt templates:</span></p>
+<ul class="hcp4">
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Purchase Order</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Purchase Order 
+ Receive</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Inventory Transfer</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Inventory Transfer 
+ Receive</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Customer Account 
+ Statement</span></p></li>
+</ul>
+<p><span>These are defined separately for each register using the Store 
+ Operations Administrator program.</span></p>
+<p><span>The entities involved in the receipt templates and the relationships 
+ between them is illustrated in the following diagram.</span></p>
+<p class="space"> </p>
+<p><span><img border="0" class="hcp2" height="200" src="assets/images/Receipt.jpg" style="width:600px; height:200px;" width="600" x-maintain-ratio="TRUE"/></span></p>
+<p class="space"> </p>
+<p><span>Receipt templates can be grouped by the transaction type into 
+ a receipt format. Transaction types include:</span></p>
+<ul class="hcp4">
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Sales transaction</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Cancelled transaction</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Layaway transaction</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Payment transaction</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Pay out transaction</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Cash drop transaction</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Sales quote</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>Work order</span></p></li>
+<li class="kadov-p-CBulletList"><p class="BulletList"><span>X/Z/ZZ report</span></p></li>
+</ul>
+<p><span>Each transaction type can use a different receipt template. Alternatively, 
+ one receipt template can accommodate multiple transaction types.</span></p>
+<p><span>Each receipt format has a unique title and description. A register 
+ can reference two receipt formats (one for each printer) when printing 
+ receipts or saving receipts to a journal.</span></p>
+<p class="Note"><span>To see how the loyalty add-in modifies the default 
+ receipt template to print loyalty information, see <a href="Scenario_Loyalty_Receipt_Sample.htm">Loyalty 
+ Receipt Sample</a>.</span></p>
+<p class="SeeAlsoList"> </p>
+<p class="SeeAlsoList" style="color: #0000ff;"><span>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="About Retail Management System Customization Guide;Welcome.htm$$**$$Creating and Modifying a Receipt Template;Creating_and_Editing_a_Receipt.htm$$**$$Loyalty Receipt Sample;Scenario_Loyalty_Receipt_Sample.htm$$**$$Receipt Template Language;Receipt_Template_Language.htm$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\Documents and Settings\SDK_files\About_Receipts.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="About Retail Management System Customization Guide;Welcome.htm"/>
+<param name="Item2" value="Creating and Modifying a Receipt Template;Creating_and_Editing_a_Receipt.htm"/>
+<param name="Item3" value="Loyalty Receipt Sample;Scenario_Loyalty_Receipt_Sample.htm"/>
+<param name="Item4" value="Receipt Template Language;Receipt_Template_Language.htm"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</span></p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp3" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>

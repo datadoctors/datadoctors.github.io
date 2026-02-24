@@ -1,0 +1,278 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+<head>
+<title>PostTransaction Hook</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="RoboHelp by eHelp Corporation www.ehelp.com" name="generator"/>
+<link href="assets/css/SDK.css" rel="StyleSheet"/><style>
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+body { border-left-style:Solid; border-left-width:1px; border-right-style:Solid; border-right-width:1px; border-top-style:Solid; border-top-width:1px; border-bottom-style:Solid; border-bottom-width:1px; border-left-color:#c0c0c0; border-right-color:#c0c0c0; border-top-color:#c0c0c0; border-bottom-color:#c0c0c0; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+hr.hcp2 { float:alignleft; color:#85dfe9; }
+span.hcp3 { font-weight:bold; }
+tr.hcp4 { x-cell-content-align:top; }
+p.hcp5 { x-text-underline:off; text-decoration:none; }
+ol.hcp6 { list-style:decimal; }
+p.hcp7 { margin-left:0px; }
+p.hcp8 { margin-left:0px; font-weight:normal; color:#ff0000; }
+b.hcp9 { font-weight:bold; }
+span.hcp10 { font-weight:normal; }
+p.hcp11 { margin-left:10pt; }
+span.hcp12 { margin-bottom:0pt; margin-left:0px; }
+-->
+</style>
+<link href="assets/css/site.css" rel="stylesheet" type="text/css"/></head>
+<body lang="EN-US">
+<nav class="site-nav">
+<div class="nav-container">
+<a class="nav-home" href="index.html">🏠 Home</a>
+<a class="nav-contents" href="index.html#contents">📚 Contents</a>
+<a class="nav-search" href="index.html#search">🔍 Search</a>
+</div>
+</nav>
+
+<div class="hcp1" id="header" placeholder="" style="width:100%;">
+<p style="margin-top: 0pt; margin-bottom: 0pt;"><img border="0" height="67" src="assets/images/SDK%20Header.JPG" style="border: none;
+															width: 427px;
+															height: 67px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="427" x-maintain-ratio="TRUE"/></p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="margin-top: 0pt;
+			margin-bottom: 0pt;
+			font-size: 6pt;"> </p>
+</div>
+<h1>PostTransaction Hook</h1>
+<p>The <span class="hcp3">PostTransaction</span> hook is 
+ activated immediately before a transaction is posted to the database.</p>
+<table cellspacing="0" style="x-cell-content-align: top;
+				width: 32.628%;
+				border-left-style: Solid;
+				border-left-width: 2px;
+				border-right-style: Solid;
+				border-right-width: 2px;
+				border-top-style: Solid;
+				border-top-width: 2px;
+				border-bottom-style: Solid;
+				border-bottom-width: 2px;
+				border-left-color: #c0c0c0;
+				border-right-color: #c0c0c0;
+				border-top-color: #c0c0c0;
+				border-bottom-color: #c0c0c0;
+				border-spacing: 0px;
+				border-spacing: 0px;" width="32.628%" x-use-null-cells="">
+<col style="width: 81.61%;"/>
+<col style="width: 18.39%;"/>
+<tr class="hcp4" valign="top">
+<td style="width: 81.61%;
+			padding-right: 10px;
+			padding-left: 10px;
+			border-left-style: Solid;
+			border-left-color: #c0c0c0;
+			border-top-style: Solid;
+			border-top-color: #c0c0c0;
+			border-bottom-color: #c0c0c0;
+			border-bottom-width: 1px;
+			border-bottom-style: Solid;
+			border-right-color: #c0c0c0;
+			border-right-width: 1px;
+			border-right-style: Solid;
+			border-left-width: 1px;
+			border-top-width: 1px;" width="81.61%">
+<p><span class="hcp3">HookType</span> value</p></td>
+<td style="width: 18.39%;
+			padding-right: 10px;
+			padding-left: 10px;
+			border-top-style: Solid;
+			border-top-color: #c0c0c0;
+			border-right-color: #c0c0c0;
+			border-right-style: Solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-width: 1px;
+			border-bottom-style: Solid;
+			border-top-width: 1px;
+			border-right-width: 1px;" width="18.39%">
+<p>0</p></td></tr>
+<tr class="hcp4" valign="top">
+<td style="width: 81.61%;
+			padding-right: 10px;
+			padding-left: 10px;
+			border-left-style: Solid;
+			border-left-color: #c0c0c0;
+			border-bottom-color: #c0c0c0;
+			border-bottom-style: Solid;
+			border-right-color: #c0c0c0;
+			border-right-width: 1px;
+			border-right-style: Solid;
+			border-left-width: 1px;
+			border-bottom-width: 1px;" width="81.61%">
+<p><span class="hcp3">Parameter</span> value</p></td>
+<td style="width: 18.39%;
+			padding-right: 10px;
+			padding-left: 10px;
+			border-right-color: #c0c0c0;
+			border-right-style: Solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-style: Solid;
+			border-bottom-width: 1px;
+			border-right-width: 1px;" width="18.39%">
+<p>1</p></td></tr>
+</table>
+<p class="hcp5"> </p>
+<p class="hcp5">The 
+ <span class="hcp3">PostTransaction</span> hook is activated 
+ under the following conditions:</p>
+<ul style="list-style: disc;" type="disc">
+<li class="kadov-P"><p><span class="hcp3">Sales Transactions.</span> 
+ The cashier presses OK on the Tender window.</p></li>
+</ul>
+<ul>
+<ol class="hcp6" type="1">
+<li class="kadov-p"><p class="hcp7">The tender is validated.</p></li>
+<li class="kadov-p"><p class="hcp7">The pole display 
+ is updated to display the tender and change.</p></li>
+<li class="kadov-p"><p class="hcp7">The cash drawer 
+ is opened (if configured).</p></li>
+<li class="kadov-p"><p class="hcp7">The <span class="hcp3">Post 
+ Transaction</span> window is displayed showing the change amount.</p></li>
+<li class="kadov-p" style="/*begin!kadov{{*/ font-weight: normal;
+										font-weight: bold;
+										font-weight: normal;
+										color: #ff0000; /*}}end!kadov*/ "><p class="hcp8"><b class="hcp9"><span class="hcp10">The </span><span class="hcp3">PostTransaction</span><span class="hcp10"> hook is activated.</span></b></p></li>
+<li class="kadov-p"><p class="hcp7">If the <span class="hcp3"><a href="Creating_a_COM_Component_Add-in.htm#Process Function">Process</a></span> 
+ function of the add-in returns TRUE, the transaction is posted to the 
+ database; otherwise, an error occurs.<br/> </p></li>
+</ol>
+<ul>
+<li class="kadov-p-CTableBullet2"><p class="TableBullet2" style="margin-left: -24px;"><span class="hcp3">Reports and Closeouts. </span>The cashier selects 
+ <span class="hcp3">Print X Report</span>,<span class="hcp3"> 
+ Print Z Report</span>,<span class="hcp3"> Print ZZ Report</span>, 
+ or <span class="hcp3">Perform Blind Closeout</span> from 
+ the <span class="hcp3">Open/Close</span> dialog box (<span class="hcp3">F5</span> key).</p></li>
+</ul>
+<ol class="hcp6" type="1">
+<li class="kadov-p"><p style="margin-bottom: 0pt; margin-left: 0px;">The 
+ <span class="hcp3"><a href="Transaction/Transaction_TransactionType_Property.htm" style="font-size: 10pt;">Transaction.TransactionType</a></span> 
+ property is set to the requested type if the terminal is online, the cashier 
+ has the right to perform the operation, and a transaction is not in progress.</p></li>
+<li class="kadov-p"><p class="hcp7">The requested report 
+ is generated. This operation populates the <span class="hcp3">Report</span> 
+ class and its subclasses in <span class="hcp3">QSRules</span><span>.</span></p></li>
+<li class="kadov-p"><p class="hcp7">The <span class="hcp3">Post 
+ Transaction</span> window is displayed.</p></li>
+<li class="kadov-p"><p class="hcp7"><span>The Batch 
+ table is updated.</span></p></li>
+<li class="kadov-p" style="/*begin!kadov{{*/ font-weight: normal;
+										font-weight: bold;
+										font-weight: normal;
+										color: #ff0000; /*}}end!kadov*/ "><p class="hcp8"><span><b class="hcp9"><span class="hcp10">The </span><span class="hcp3">PostTransaction</span><span class="hcp10"> hook is activated.</span></b></span></p></li>
+<li class="kadov-p"><p class="hcp7">If the Process function 
+ of the add-in returns TRUE, the transaction is posted to the database.</p></li>
+</ol>
+</ul>
+<p class="NoteIn" style="font-weight: bold;">Note:<span class="hcp10"> 
+  Because 
+ the Batch table is updated before the add-in is invoked, the Process function 
+ should not return False when running an X or Z report.</span></p>
+<p class="hcp11"> </p>
+<ul>
+<ul style="list-style: decimal;" type="1">
+<li class="kadov-p-CTableBullet2"><p class="TableBullet2" style="margin-left: -24px;"><span class="hcp3">No Sales. </span><span>The cashier performs 
+ a </span><span class="hcp3">No Sale </span><span>(</span><span class="hcp3">F8</span><span> key). </span><span class="hcp12">The 
+ </span><span style="margin-bottom: 0pt;
+						margin-left: 0px;
+						font-weight: bold;">Transaction.TransactionType</span><span class="hcp12"> property is set to transactiontypeNoSale 
+ if the terminal is online, the cashier has the right to perform the operation, 
+ and a transaction is not in progress.</span></p></li>
+</ul>
+<ol class="hcp6" type="1">
+<li class="kadov-p"><p class="hcp7"><span>The user is 
+ prompted for a reason code (if configured).</span></p></li>
+<li class="kadov-p"><p class="hcp7"><span>The cash drawer 
+ is opened (if configured).</span></p></li>
+<li class="kadov-p"><p class="hcp7"><span>The <span class="hcp3">Post Transaction</span> window is displayed.</span></p></li>
+<li class="kadov-p" style="/*begin!kadov{{*/ font-weight: normal;
+										font-weight: bold;
+										font-weight: normal;
+										color: #ff0000; /*}}end!kadov*/ "><p class="hcp8"><span><b class="hcp9"><span class="hcp10">The </span><span class="hcp3">PostTransaction</span><span class="hcp10"> hook is activated.</span></b></span></p></li>
+<li class="kadov-p"><p class="hcp7"><span>If the <span class="hcp3">Process</span> function of the add-in returns 
+ TRUE the transaction is posted to the database; otherwise, an error occurs.</span></p></li>
+</ol>
+</ul>
+<p class="hcp11"> </p>
+<ul>
+<li class="kadov-p-CTableBullet2"><p class="TableBullet2" style="margin-left: 0px;"><span class="hcp3">Canceled Transactions. </span><span>The cashier 
+ cancels a transaction (ESC Key).</span></p></li>
+<ol class="hcp6" type="1">
+<li class="kadov-p" style="list-style: decimal;" type="1"><p style="margin-top: 2pt;
+									margin-bottom: 2pt;
+									margin-left: 0px;"><span>The <span class="hcp3">Transaction.TransactionType</span> property 
+ is set to transactiontypeAbortedTransaction if a transaction is in progress 
+ and the cashier has the right to perform the operation.</span></p></li>
+<li class="kadov-p" style="list-style: decimal;" type="1"><p class="hcp7"><span>The confirmation 
+ dialog box is displayed.</span></p></li>
+<li class="kadov-p" style="list-style: decimal;
+					/*begin!kadov{{*/ font-weight: normal;
+					font-weight: bold;
+					font-weight: normal;
+					color: #ff0000; /*}}end!kadov*/ " type="1"><p class="hcp8"><span><b class="hcp9"><span class="hcp10">The </span><span class="hcp3">PostTransaction</span><span class="hcp10"> hook is activated.</span></b></span></p></li>
+<li class="kadov-p"><p class="hcp7"><span>If the <span class="hcp3">Process</span> function of the add-in returns 
+ TRUE an aborted transaction record is posted to the database; otherwise, 
+ an error occurs.</span></p></li>
+</ol>
+</ul>
+<p class="hcp7"> </p>
+<p><span>
+<!--Metadata type="DesignerControl" startspan
+<object CLASSID="clsid:FF80F713-5DC6-11d0-A7B4-00AADC53E937"
+		ID=RelatedTopics
+		BORDER=0
+		style="margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				margin-right: 0px;
+				vertical-align: baseline;"
+		align=bottom>
+<param name="_Version" value="65536" >
+<param name="_ExtentX" value="2408" >
+<param name="_ExtentY" value="609" >
+<param name="_StockProps" value="13" >
+<param name="ForeColor" value="0" >
+<param name="BackColor" value="14933984" >
+<param name="UseButton" value="-1" >
+<param name="UseText" value="0" >
+<param name="ControlLabel" value="Related Topics" >
+<param name="UseIcon" value="0" >
+<param name="Items" value="Invoking COM Components from Hooks;Invoking_COM_Components_from_Hooks.htm$$**$$The Process Function;Creating_a_COM_Component_Add-in.htm#Process Function$$**$$" >
+<param name="Image" value="" >
+<param name="FontInfo" value="Arial,8,0,," >
+<param name="_CURRENTFILEPATH" value="C:\CustomizationGuide06\PostTransaction_Hook.htm" >
+<param name="_ID" value="RelatedTopics" >
+<param name="UseMenu" value="-1" >
+<param name="Frame" value="" >
+<param name="Window" value="" >
+</object>-->
+<object classid="clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11" id="RelatedTopics" type="application/x-oleobject">
+<param name="Command" value="Related Topics,MENU"/>
+<param name="Button" value="Text:Related Topics"/>
+<param name="Font" value="Arial,8,0,,"/>
+<param name="Item1" value="Invoking COM Components from Hooks;Invoking_COM_Components_from_Hooks.htm"/>
+<param name="Item2" value="The Process Function;Creating_a_COM_Component_Add-in.htm#Process Function"/>
+</object>
+<!--Metadata type="DesignerControl" endspan-->
+</span></p>
+<div class="hcp1" id="footer" placeholder="" style="width:100%;">
+<p style="font-size: 8pt;
+			margin-top: 3pt;
+			margin-bottom: 3pt;"> </p><hr align="left" class="hcp2" color="#85DFE9"/>
+<p style="font-size: 8pt;"><a href="Legal_Notice.htm" style="font-size: 8pt;" target="_blank">© 2004 Microsoft 
+ Corporation. All rights reserved.</a></p>
+</div>
+</body>
+</html>
