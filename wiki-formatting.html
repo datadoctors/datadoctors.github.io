@@ -5,12 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wiki Formatting Reference</title>
 <style>
-  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #222; }
-  h1 { border-bottom: 2px solid #ccc; padding-bottom: .3rem; }
+  :root {
+    --bg: #ffffff; --fg: #222222; --muted: #666666;
+    --code-bg: #f4f4f4; --border: #dddddd; --btn-bg: #e8e8e8; --btn-fg: #222222;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1e; --fg: #e6e6e6; --muted: #9a9a9a;
+      --code-bg: #2a2a2d; --border: #3a3a3d; --btn-bg: #3a3a3d; --btn-fg: #e6e6e6;
+    }
+  }
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: var(--fg); background: var(--bg); }
+  a { color: inherit; }
+  h1 { border-bottom: 2px solid var(--border); padding-bottom: .3rem; }
   h2 { margin-top: 2.5rem; }
-  pre { background: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; padding: 1rem; overflow-x: auto; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
+  .codewrap { position: relative; }
+  pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 4px; padding: 1rem; overflow-x: auto; margin: 0 0 1rem; }
   code { font-family: Consolas, Menlo, monospace; font-size: .9em; }
-  hr { border: 0; border-top: 1px solid #ddd; margin: 2rem 0; }
+  .copy { position: absolute; top: .5rem; right: .5rem; padding: .25rem .6rem; font-size: .8rem; border: 1px solid var(--border); border-radius: 4px; background: var(--btn-bg); color: var(--btn-fg); cursor: pointer; }
+  .copy:hover { filter: brightness(1.1); }
 </style>
 </head>
 <body>
@@ -37,7 +51,7 @@
 <hr />
 <h2 id="page-skeleton">Page Skeleton</h2>
 <p>A minimal starting point for a new page: a page title, one section heading, a paragraph, and a numbered list. Build from here using the components below.</p>
-<pre><code class="language-html">&lt;h1&gt;Page Title&lt;/h1&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;h1&gt;Page Title&lt;/h1&gt;
 
 &lt;h2&gt;Section Heading&lt;/h2&gt;
 
@@ -48,18 +62,18 @@
     &lt;li&gt;Second step&lt;/li&gt;
     &lt;li&gt;Third step&lt;/li&gt;
 &lt;/ol&gt;
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="headings">Headings</h2>
 <p>Standard HTML headings, levels 1–3.</p>
-<pre><code class="language-html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;h1&gt;Heading 1&lt;/h1&gt;
 &lt;h2&gt;Heading 2&lt;/h2&gt;
 &lt;h3&gt;Heading 3&lt;/h3&gt;
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="codebox">Codebox</h2>
 <p>Displays a block of code in a styled box. Put your code between the <code>[code]</code> and <code>[/code]</code> tags.</p>
-<pre><code class="language-html">&lt;div class=&quot;toastCode toastNote toastNote--code toastNote-margin-top&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;div class=&quot;toastCode toastNote toastNote--code toastNote-margin-top&quot;&gt;
     &lt;div class=&quot;toast__content-Code&quot;&gt;
         &lt;p class=&quot;toast__message&quot;&gt;
             &lt;pre&gt;[code]
@@ -68,11 +82,11 @@ Put your content here
         &lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="table-of-contents">Table of Contents</h2>
 <p>A numbered TOC with optional nested sub-items. Each <code>href</code> must match the <code>id</code> of the section it points to.</p>
-<pre><code class="language-html">&lt;div class=&quot;tableofcontents&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;div class=&quot;tableofcontents&quot;&gt;
     &lt;h2&gt;Table of Contents&lt;/h2&gt;
     &lt;ol&gt;
         &lt;li&gt;&lt;a href=&quot;#example1&quot;&gt;Example 1&lt;/a&gt;
@@ -87,27 +101,27 @@ Put your content here
         &lt;/li&gt;
     &lt;/ol&gt;
 &lt;/div&gt;
-</code></pre>
+</code></pre></div>
 <h3 id="linking-from-the-table-of-contents">Linking from the Table of Contents</h3>
 <p>Give the target element an <code>id</code> that matches the TOC link. Clicking "Example 1" above will jump to this element:</p>
-<pre><code class="language-html">&lt;div id=&quot;example1&quot;&gt;&lt;h2&gt;Example 1&lt;/h2&gt;&lt;/div&gt;
-</code></pre>
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;div id=&quot;example1&quot;&gt;&lt;h2&gt;Example 1&lt;/h2&gt;&lt;/div&gt;
+</code></pre></div>
 <p>The <code>id</code> can go directly on the heading as well:</p>
-<pre><code class="language-html">&lt;h1 id=&quot;example1&quot;&gt;Example 1&lt;/h1&gt;
-</code></pre>
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;h1 id=&quot;example1&quot;&gt;Example 1&lt;/h1&gt;
+</code></pre></div>
 <hr />
 <h2 id="numbered-list">Numbered List</h2>
-<pre><code class="language-html">&lt;ol&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;ol&gt;
     &lt;li&gt;Item 1&lt;/li&gt;
     &lt;li&gt;Item 2&lt;/li&gt;
     &lt;li&gt;Item 3&lt;/li&gt;
     &lt;li&gt;Item 4&lt;/li&gt;
 &lt;/ol&gt;
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="numbered-list-with-screenshots">Numbered List with Screenshots</h2>
 <p>Use the <code>OLwithSS</code> class on the list. Each item holds a <code>&lt;p&gt;</code> and an <code>&lt;img&gt;</code>. Add <code>class="NoSS"</code> to any item that has no screenshot.</p>
-<pre><code class="language-html">&lt;ol class=&quot;OLwithSS&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;ol class=&quot;OLwithSS&quot;&gt;
     &lt;li&gt;
         &lt;p&gt;In Outlook, click on &lt;i&gt;File&lt;/i&gt; in the upper left hand corner.&lt;/p&gt;
         &lt;img src=&quot;https://datadoctors.github.io/images/outlookdata1.png&quot; width=&quot;100px&quot; height=&quot;100px&quot;&gt;
@@ -118,11 +132,11 @@ Put your content here
         &lt;img src=&quot;https://datadoctors.github.io/images/outlookdata2.png&quot; width=&quot;100px&quot; height=&quot;100px&quot;&gt;
     &lt;/li&gt;
 &lt;/ol&gt;
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="collapsible-section">Collapsible Section</h2>
 <p>The <code>featuretitle</code> is always visible; the <code>featuretext</code> is revealed on click.</p>
-<pre><code class="language-html">&lt;div class=&quot;toast toast--generic toastNote-margin-top&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;div class=&quot;toast toast--generic toastNote-margin-top&quot;&gt;
     &lt;div class=&quot;toast__content&quot;&gt;
         &lt;details&gt;
             &lt;summary&gt;
@@ -133,12 +147,12 @@ Put your content here
         &lt;div style=&quot;clear: right&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="notification-boxes">Notification Boxes</h2>
 <p>Four variants. Only the modifier class (<code>toastNote--success</code>, <code>--note</code>, <code>--tip</code>, <code>--alert</code>) and the label text change.</p>
 <h3 id="success">Success</h3>
-<pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--success&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--success&quot;&gt;
     &lt;div class=&quot;toast__content&quot;&gt;
         &lt;p class=&quot;toast__type&quot;&gt;Success!&lt;/p&gt;
         &lt;p class=&quot;toast__message&quot;&gt;
@@ -146,9 +160,9 @@ Put your content here
         &lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
+</code></pre></div>
 <h3 id="note">Note</h3>
-<pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--note&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--note&quot;&gt;
     &lt;div class=&quot;toast__content&quot;&gt;
         &lt;p class=&quot;toast__type&quot;&gt;Note!&lt;/p&gt;
         &lt;p class=&quot;toast__message&quot;&gt;
@@ -156,9 +170,9 @@ Put your content here
         &lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
+</code></pre></div>
 <h3 id="tip">Tip</h3>
-<pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--tip&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--tip&quot;&gt;
     &lt;div class=&quot;toast__content&quot;&gt;
         &lt;p class=&quot;toast__type&quot;&gt;Tip!&lt;/p&gt;
         &lt;p class=&quot;toast__message&quot;&gt;
@@ -166,10 +180,10 @@ Put your content here
         &lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
+</code></pre></div>
 <h3 id="alert-pulsing">Alert (pulsing)</h3>
 <p>The extra <code>alertPulse</code> class adds the pulse animation; drop it for a static alert.</p>
-<pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--alert alertPulse&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--alert alertPulse&quot;&gt;
     &lt;div class=&quot;toast__content&quot;&gt;
         &lt;p class=&quot;toast__type&quot;&gt;Alert!&lt;/p&gt;
         &lt;p class=&quot;toast__message&quot;&gt;
@@ -177,12 +191,12 @@ Put your content here
         &lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="data-tables">Data Tables</h2>
 <h3 id="with-highlighted-first-column">With highlighted first column</h3>
 <p>The first cell in each body row is a <code>&lt;th&gt;</code>, which gets the highlight styling.</p>
-<pre><code class="language-html">&lt;table class=&quot;dataTable&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;table class=&quot;dataTable&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;Heading 1&lt;/th&gt;
@@ -218,10 +232,10 @@ Put your content here
         &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;
-</code></pre>
+</code></pre></div>
 <h3 id="without-highlighted-first-column">Without highlighted first column</h3>
 <p>Add <code>class="plain"</code> to the first-column <code>&lt;th&gt;</code> cells.</p>
-<pre><code class="language-html">&lt;table class=&quot;dataTable&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;table class=&quot;dataTable&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;Heading 1&lt;/th&gt;
@@ -257,11 +271,11 @@ Put your content here
         &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="lightbox">Lightbox</h2>
 <p>Click the thumbnail to open a full-size overlay. If a page has more than one lightbox image, increment the <code>image-1</code> id (and both references to it) for each additional image: <code>image-2</code>, <code>image-3</code>, etc.</p>
-<pre><code class="language-html">&lt;span class=&quot;lb-album&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;span class=&quot;lb-album&quot;&gt;
     &lt;a href=&quot;#image-1&quot;&gt;
         &lt;img src=&quot;https://datadoctors.github.io/images/outlookprofile04.png&quot; alt=&quot;image01&quot; width=&quot;500px&quot;&gt;
     &lt;/a&gt;
@@ -269,7 +283,7 @@ Put your content here
         &lt;a href=&quot;#page&quot; class=&quot;lb-close&quot;&gt;&lt;img src=&quot;https://datadoctors.github.io/images/outlookprofile04.png&quot; alt=&quot;image01&quot;&gt;&lt;/a&gt;
     &lt;/div&gt;
 &lt;/span&gt;
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="direct-link-to-a-mydot-document">Direct Link to a MyDot Document</h2>
 <ol>
@@ -278,12 +292,12 @@ Put your content here
 <li>Replace <code>9596</code> in the snippet below with that number.</li>
 </ol>
 <p>Reference screenshot: <code>https://datadoctors.github.io/images/MyDotDocumentDirectLink.png</code></p>
-<pre><code class="language-html">&lt;a href=&quot;https://my.datadoctors.com/file.cfm?f=9596&quot; target=&quot;_blank&quot;&gt;file&lt;/a&gt;
-</code></pre>
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;a href=&quot;https://my.datadoctors.com/file.cfm?f=9596&quot; target=&quot;_blank&quot;&gt;file&lt;/a&gt;
+</code></pre></div>
 <hr />
 <h2 id="work-in-progress-indicator">Work In Progress Indicator</h2>
 <p>An alert box with the "work in progress" graphic, for articles that aren't finished yet.</p>
-<pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--alert&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--alert&quot;&gt;
     &lt;div class=&quot;toast__content&quot;&gt;
         &lt;p class=&quot;toast__type&quot;&gt;This article is a...&lt;/p&gt;
         &lt;p class=&quot;toast__message&quot;&gt;
@@ -291,16 +305,16 @@ Put your content here
         &lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="hidden-keywords-for-search">Hidden Keywords for Search</h2>
 <p>A hidden div for extra search terms. Replace <code>MyKeywords</code> with the keywords you want the page to be findable by.</p>
-<pre><code class="language-html">&lt;div id=&quot;keywords&quot;&gt;MyKeywords&lt;/div&gt;
-</code></pre>
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;div id=&quot;keywords&quot;&gt;MyKeywords&lt;/div&gt;
+</code></pre></div>
 <hr />
 <h2 id="tech-digest-template">Tech Digest Template</h2>
 <p>A collapsible success-styled box with a title, date, several titled sections, and a list of recent wiki article links. Fill in the volume number, date, titles, and links.</p>
-<pre><code class="language-html">&lt;div class=&quot;toast toast--success&quot;&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;div class=&quot;toast toast--success&quot;&gt;
     &lt;div class=&quot;toast__content&quot;&gt;
         &lt;details&gt;
             &lt;summary&gt;
@@ -342,13 +356,29 @@ Put your content here
         &lt;div style=&quot;clear: right&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="embedding-a-webm-video">Embedding a WebM Video</h2>
-<pre><code class="language-html">&lt;video style=&quot;max-width:750px;&quot; controls&gt;
+<div class="codewrap"><button class="copy" type="button">Copy</button><pre><code class="language-html">&lt;video style=&quot;max-width:750px;&quot; controls&gt;
     &lt;source src=&quot;https://datadoctors.github.io/images/gifs/tab-completion.webm&quot; type=&quot;video/webm&quot;&gt;
     Your browser does not support the video tag.
 &lt;/video&gt;
-</code></pre>
+</code></pre></div>
+<script>
+  // Copy buttons
+  document.querySelectorAll('.copy').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const code = btn.parentElement.querySelector('code').innerText;
+      try {
+        await navigator.clipboard.writeText(code);
+        btn.textContent = 'Copied!';
+      } catch (e) {
+        btn.textContent = 'Failed';
+      }
+      setTimeout(() => btn.textContent = 'Copy', 1500);
+    });
+  });
+
+</script>
 </body>
 </html>
