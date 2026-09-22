@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wiki Formatting Reference</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #222; }
+  h1 { border-bottom: 2px solid #ccc; padding-bottom: .3rem; }
+  h2 { margin-top: 2.5rem; }
+  pre { background: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; padding: 1rem; overflow-x: auto; }
+  code { font-family: Consolas, Menlo, monospace; font-size: .9em; }
+  hr { border: 0; border-top: 1px solid #ddd; margin: 2rem 0; }
+</style>
+</head>
+<body>
+<h1 id="wiki-formatting-reference">Wiki Formatting Reference</h1>
+<p>Copy-paste snippets for the standard wiki components. Each block is complete and ready to drop into a page.</p>
+<h2 id="contents">Contents</h2>
+<ol>
+<li><a href="#page-skeleton">Page Skeleton</a></li>
+<li><a href="#headings">Headings</a></li>
+<li><a href="#codebox">Codebox</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#numbered-list">Numbered List</a></li>
+<li><a href="#numbered-list-with-screenshots">Numbered List with Screenshots</a></li>
+<li><a href="#collapsible-section">Collapsible Section</a></li>
+<li><a href="#notification-boxes">Notification Boxes</a></li>
+<li><a href="#data-tables">Data Tables</a></li>
+<li><a href="#lightbox">Lightbox</a></li>
+<li><a href="#direct-link-to-a-mydot-document">Direct Link to a MyDot Document</a></li>
+<li><a href="#work-in-progress-indicator">Work In Progress Indicator</a></li>
+<li><a href="#hidden-keywords-for-search">Hidden Keywords for Search</a></li>
+<li><a href="#tech-digest-template">Tech Digest Template</a></li>
+<li><a href="#embedding-a-webm-video">Embedding a WebM Video</a></li>
+</ol>
+<hr />
+<h2 id="page-skeleton">Page Skeleton</h2>
+<p>A minimal starting point for a new page: a page title, one section heading, a paragraph, and a numbered list. Build from here using the components below.</p>
+<pre><code class="language-html">&lt;h1&gt;Page Title&lt;/h1&gt;
+
+&lt;h2&gt;Section Heading&lt;/h2&gt;
+
+&lt;p&gt;This is a short paragraph introducing the section. Keep it to a sentence or two.&lt;/p&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;First step&lt;/li&gt;
+    &lt;li&gt;Second step&lt;/li&gt;
+    &lt;li&gt;Third step&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<hr />
+<h2 id="headings">Headings</h2>
+<p>Standard HTML headings, levels 1–3.</p>
+<pre><code class="language-html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+</code></pre>
+<hr />
+<h2 id="codebox">Codebox</h2>
+<p>Displays a block of code in a styled box. Put your code between the <code>[code]</code> and <code>[/code]</code> tags.</p>
+<pre><code class="language-html">&lt;div class=&quot;toastCode toastNote toastNote--code toastNote-margin-top&quot;&gt;
+    &lt;div class=&quot;toast__content-Code&quot;&gt;
+        &lt;p class=&quot;toast__message&quot;&gt;
+            &lt;pre&gt;[code]
+Put your content here
+[/code]&lt;/pre&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<p>A numbered TOC with optional nested sub-items. Each <code>href</code> must match the <code>id</code> of the section it points to.</p>
+<pre><code class="language-html">&lt;div class=&quot;tableofcontents&quot;&gt;
+    &lt;h2&gt;Table of Contents&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href=&quot;#example1&quot;&gt;Example 1&lt;/a&gt;
+            &lt;ol&gt;
+                &lt;li&gt;&lt;a href=&quot;#example1_alt&quot;&gt;Example 1 alternative&lt;/a&gt;&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#example2&quot;&gt;The 2nd example&lt;/a&gt;
+            &lt;ol&gt;
+                &lt;li&gt;&lt;a href=&quot;#example2_alt&quot;&gt;A 2nd example of the 2nd example&lt;/a&gt;&lt;/li&gt;
+            &lt;/ol&gt;
+        &lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="linking-from-the-table-of-contents">Linking from the Table of Contents</h3>
+<p>Give the target element an <code>id</code> that matches the TOC link. Clicking "Example 1" above will jump to this element:</p>
+<pre><code class="language-html">&lt;div id=&quot;example1&quot;&gt;&lt;h2&gt;Example 1&lt;/h2&gt;&lt;/div&gt;
+</code></pre>
+<p>The <code>id</code> can go directly on the heading as well:</p>
+<pre><code class="language-html">&lt;h1 id=&quot;example1&quot;&gt;Example 1&lt;/h1&gt;
+</code></pre>
+<hr />
+<h2 id="numbered-list">Numbered List</h2>
+<pre><code class="language-html">&lt;ol&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+    &lt;li&gt;Item 4&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<hr />
+<h2 id="numbered-list-with-screenshots">Numbered List with Screenshots</h2>
+<p>Use the <code>OLwithSS</code> class on the list. Each item holds a <code>&lt;p&gt;</code> and an <code>&lt;img&gt;</code>. Add <code>class="NoSS"</code> to any item that has no screenshot.</p>
+<pre><code class="language-html">&lt;ol class=&quot;OLwithSS&quot;&gt;
+    &lt;li&gt;
+        &lt;p&gt;In Outlook, click on &lt;i&gt;File&lt;/i&gt; in the upper left hand corner.&lt;/p&gt;
+        &lt;img src=&quot;https://datadoctors.github.io/images/outlookdata1.png&quot; width=&quot;100px&quot; height=&quot;100px&quot;&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;NoSS&quot;&gt;This is an item with no screenshot.&lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Under &lt;i&gt;Open and Export&lt;/i&gt;, click on &lt;i&gt;Import/Export&lt;/i&gt;&lt;/p&gt;
+        &lt;img src=&quot;https://datadoctors.github.io/images/outlookdata2.png&quot; width=&quot;100px&quot; height=&quot;100px&quot;&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<hr />
+<h2 id="collapsible-section">Collapsible Section</h2>
+<p>The <code>featuretitle</code> is always visible; the <code>featuretext</code> is revealed on click.</p>
+<pre><code class="language-html">&lt;div class=&quot;toast toast--generic toastNote-margin-top&quot;&gt;
+    &lt;div class=&quot;toast__content&quot;&gt;
+        &lt;details&gt;
+            &lt;summary&gt;
+                &lt;div class=&quot;featuretitle&quot;&gt;This is the part that will be visible to click on.&lt;/div&gt;
+            &lt;/summary&gt;
+            &lt;div class=&quot;featuretext&quot;&gt;Now you see me!&lt;/div&gt;
+        &lt;/details&gt;
+        &lt;div style=&quot;clear: right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<hr />
+<h2 id="notification-boxes">Notification Boxes</h2>
+<p>Four variants. Only the modifier class (<code>toastNote--success</code>, <code>--note</code>, <code>--tip</code>, <code>--alert</code>) and the label text change.</p>
+<h3 id="success">Success</h3>
+<pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--success&quot;&gt;
+    &lt;div class=&quot;toast__content&quot;&gt;
+        &lt;p class=&quot;toast__type&quot;&gt;Success!&lt;/p&gt;
+        &lt;p class=&quot;toast__message&quot;&gt;
+            Lorem ipsum dolor sit amet.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="note">Note</h3>
+<pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--note&quot;&gt;
+    &lt;div class=&quot;toast__content&quot;&gt;
+        &lt;p class=&quot;toast__type&quot;&gt;Note!&lt;/p&gt;
+        &lt;p class=&quot;toast__message&quot;&gt;
+            Lorem ipsum dolor sit amet.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="tip">Tip</h3>
+<pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--tip&quot;&gt;
+    &lt;div class=&quot;toast__content&quot;&gt;
+        &lt;p class=&quot;toast__type&quot;&gt;Tip!&lt;/p&gt;
+        &lt;p class=&quot;toast__message&quot;&gt;
+            Lorem ipsum dolor sit amet.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="alert-pulsing">Alert (pulsing)</h3>
+<p>The extra <code>alertPulse</code> class adds the pulse animation; drop it for a static alert.</p>
+<pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--alert alertPulse&quot;&gt;
+    &lt;div class=&quot;toast__content&quot;&gt;
+        &lt;p class=&quot;toast__type&quot;&gt;Alert!&lt;/p&gt;
+        &lt;p class=&quot;toast__message&quot;&gt;
+            Lorem ipsum dolor sit amet.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<hr />
+<h2 id="data-tables">Data Tables</h2>
+<h3 id="with-highlighted-first-column">With highlighted first column</h3>
+<p>The first cell in each body row is a <code>&lt;th&gt;</code>, which gets the highlight styling.</p>
+<pre><code class="language-html">&lt;table class=&quot;dataTable&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Heading 1&lt;/th&gt;
+            &lt;th&gt;Heading 2&lt;/th&gt;
+            &lt;th&gt;Heading 3&lt;/th&gt;
+            &lt;th&gt;Heading 4&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Row 1-1&lt;/th&gt;
+            &lt;td&gt;Row 1-2&lt;/td&gt;
+            &lt;td&gt;Row 1-3&lt;/td&gt;
+            &lt;td&gt;Row 1-4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Row 2-1&lt;/th&gt;
+            &lt;td&gt;Row 2-2&lt;/td&gt;
+            &lt;td&gt;Row 2-3&lt;/td&gt;
+            &lt;td&gt;Row 2-4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Row 3-1&lt;/th&gt;
+            &lt;td&gt;Row 3-2&lt;/td&gt;
+            &lt;td&gt;Row 3-3&lt;/td&gt;
+            &lt;td&gt;Row 3-4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Row 4-1&lt;/th&gt;
+            &lt;td&gt;Row 4-2&lt;/td&gt;
+            &lt;td&gt;Row 4-3&lt;/td&gt;
+            &lt;td&gt;Row 4-4&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<h3 id="without-highlighted-first-column">Without highlighted first column</h3>
+<p>Add <code>class="plain"</code> to the first-column <code>&lt;th&gt;</code> cells.</p>
+<pre><code class="language-html">&lt;table class=&quot;dataTable&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Heading 1&lt;/th&gt;
+            &lt;th&gt;Heading 2&lt;/th&gt;
+            &lt;th&gt;Heading 3&lt;/th&gt;
+            &lt;th&gt;Heading 4&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th class=&quot;plain&quot;&gt;Row 1-1&lt;/th&gt;
+            &lt;td&gt;Row 1-2&lt;/td&gt;
+            &lt;td&gt;Row 1-3&lt;/td&gt;
+            &lt;td&gt;Row 1-4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th class=&quot;plain&quot;&gt;Row 2-1&lt;/th&gt;
+            &lt;td&gt;Row 2-2&lt;/td&gt;
+            &lt;td&gt;Row 2-3&lt;/td&gt;
+            &lt;td&gt;Row 2-4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th class=&quot;plain&quot;&gt;Row 3-1&lt;/th&gt;
+            &lt;td&gt;Row 3-2&lt;/td&gt;
+            &lt;td&gt;Row 3-3&lt;/td&gt;
+            &lt;td&gt;Row 3-4&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th class=&quot;plain&quot;&gt;Row 4-1&lt;/th&gt;
+            &lt;td&gt;Row 4-2&lt;/td&gt;
+            &lt;td&gt;Row 4-3&lt;/td&gt;
+            &lt;td&gt;Row 4-4&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<hr />
+<h2 id="lightbox">Lightbox</h2>
+<p>Click the thumbnail to open a full-size overlay. If a page has more than one lightbox image, increment the <code>image-1</code> id (and both references to it) for each additional image: <code>image-2</code>, <code>image-3</code>, etc.</p>
+<pre><code class="language-html">&lt;span class=&quot;lb-album&quot;&gt;
+    &lt;a href=&quot;#image-1&quot;&gt;
+        &lt;img src=&quot;https://datadoctors.github.io/images/outlookprofile04.png&quot; alt=&quot;image01&quot; width=&quot;500px&quot;&gt;
+    &lt;/a&gt;
+    &lt;div class=&quot;lb-overlay&quot; id=&quot;image-1&quot;&gt;
+        &lt;a href=&quot;#page&quot; class=&quot;lb-close&quot;&gt;&lt;img src=&quot;https://datadoctors.github.io/images/outlookprofile04.png&quot; alt=&quot;image01&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/span&gt;
+</code></pre>
+<hr />
+<h2 id="direct-link-to-a-mydot-document">Direct Link to a MyDot Document</h2>
+<ol>
+<li>In MyDot, hover over the file name of the document you want to link to.</li>
+<li>A tooltip appears showing the file's URL; note the number after the colon (the file ID).</li>
+<li>Replace <code>9596</code> in the snippet below with that number.</li>
+</ol>
+<p>Reference screenshot: <code>https://datadoctors.github.io/images/MyDotDocumentDirectLink.png</code></p>
+<pre><code class="language-html">&lt;a href=&quot;https://my.datadoctors.com/file.cfm?f=9596&quot; target=&quot;_blank&quot;&gt;file&lt;/a&gt;
+</code></pre>
+<hr />
+<h2 id="work-in-progress-indicator">Work In Progress Indicator</h2>
+<p>An alert box with the "work in progress" graphic, for articles that aren't finished yet.</p>
+<pre><code class="language-html">&lt;div class=&quot;toast toastNote toastNote--alert&quot;&gt;
+    &lt;div class=&quot;toast__content&quot;&gt;
+        &lt;p class=&quot;toast__type&quot;&gt;This article is a...&lt;/p&gt;
+        &lt;p class=&quot;toast__message&quot;&gt;
+            &lt;img src=&quot;https://datadoctors.github.io/images/work.png&quot; alt=&quot;image01&quot; width=&quot;200px&quot;&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<hr />
+<h2 id="hidden-keywords-for-search">Hidden Keywords for Search</h2>
+<p>A hidden div for extra search terms. Replace <code>MyKeywords</code> with the keywords you want the page to be findable by.</p>
+<pre><code class="language-html">&lt;div id=&quot;keywords&quot;&gt;MyKeywords&lt;/div&gt;
+</code></pre>
+<hr />
+<h2 id="tech-digest-template">Tech Digest Template</h2>
+<p>A collapsible success-styled box with a title, date, several titled sections, and a list of recent wiki article links. Fill in the volume number, date, titles, and links.</p>
+<pre><code class="language-html">&lt;div class=&quot;toast toast--success&quot;&gt;
+    &lt;div class=&quot;toast__content&quot;&gt;
+        &lt;details&gt;
+            &lt;summary&gt;
+                &lt;div class=&quot;featuretitle&quot;&gt;Tech Digest Vol X&lt;/div&gt;
+                &lt;div class=&quot;featuredate&quot;&gt;00/00/00&lt;/div&gt;
+            &lt;/summary&gt;
+            &lt;div class=&quot;featuretext&quot;&gt;
+&lt;br&gt;
+&lt;h3&gt;Title&lt;/h3&gt;
+===========================================&lt;br&gt;
+
+
+&lt;h3&gt;Title&lt;/h3&gt;
+===========================================&lt;br&gt;
+
+
+&lt;h3&gt;Title&lt;/h3&gt;
+===========================================&lt;br&gt;
+
+
+&lt;h3&gt;Title&lt;/h3&gt;
+===========================================&lt;br&gt;
+
+
+&lt;h3&gt;Title&lt;/h3&gt;
+===========================================&lt;br&gt;
+
+
+&lt;h3&gt;Recent or Updated Wiki Articles&lt;/h3&gt;
+===========================================&lt;br&gt;
+&lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;Link&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;Link&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;Link&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;Link&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;Link&lt;/a&gt;
+
+            &lt;/div&gt;
+        &lt;/details&gt;
+        &lt;div style=&quot;clear: right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<hr />
+<h2 id="embedding-a-webm-video">Embedding a WebM Video</h2>
+<pre><code class="language-html">&lt;video style=&quot;max-width:750px;&quot; controls&gt;
+    &lt;source src=&quot;https://datadoctors.github.io/images/gifs/tab-completion.webm&quot; type=&quot;video/webm&quot;&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+</code></pre>
+</body>
+</html>
