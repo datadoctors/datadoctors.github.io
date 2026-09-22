@@ -4,21 +4,46 @@ Copy-paste snippets for the standard wiki components. Each block is complete and
 
 ## Contents
 
-0. [Page Skeleton](#page-skeleton)
-1. [Headings](#headings)
-2. [Codebox](#codebox)
-3. [Table of Contents](#table-of-contents)
-4. [Numbered List](#numbered-list)
-5. [Numbered List with Screenshots](#numbered-list-with-screenshots)
-6. [Collapsible Section](#collapsible-section)
-7. [Notification Boxes](#notification-boxes)
-8. [Data Tables](#data-tables)
-9. [Lightbox](#lightbox)
-10. [Direct Link to a MyDot Document](#direct-link-to-a-mydot-document)
-11. [Work In Progress Indicator](#work-in-progress-indicator)
-12. [Hidden Keywords for Search](#hidden-keywords-for-search)
-13. [Tech Digest Template](#tech-digest-template)
-14. [Embedding a WebM Video](#embedding-a-webm-video)
+1. [Creating and Editing Wiki Articles](#creating-and-editing-wiki-articles)
+2. [Page Skeleton](#page-skeleton)
+3. [Headings](#headings)
+4. [Codebox](#codebox)
+5. [Table of Contents](#table-of-contents)
+6. [Numbered List](#numbered-list)
+7. [Numbered List with Screenshots](#numbered-list-with-screenshots)
+8. [Collapsible Section](#collapsible-section)
+9. [Notification Boxes](#notification-boxes)
+10. [Data Tables](#data-tables)
+11. [Lightbox](#lightbox)
+12. [Direct Link to a MyDot Document](#direct-link-to-a-mydot-document)
+13. [Work In Progress Indicator](#work-in-progress-indicator)
+14. [Hidden Keywords for Search](#hidden-keywords-for-search)
+15. [Tech Digest Template](#tech-digest-template)
+16. [Embedding a WebM Video](#embedding-a-webm-video)
+
+---
+
+## Creating and Editing Wiki Articles
+
+### Creating a new article
+
+1. **Navigate to the URL for the desired page location.**
+
+    ![Modifying the URL in the address bar](https://datadoctors.github.io/images/wiki-formatting/01-url.png)
+
+    It's helpful to first navigate to the section you want the page to be at (in this example, Standard Operating Procedures → Customer Service) and then modify the URL in the address bar. Avoid special symbols, and remember: spaces need to be represented by underscores, and you must not use a period in the title except as a delineation of subsection in the wiki.
+
+2. **In the Actions section, press the "Add" button.**
+
+    ![The Add button in the Actions section](https://datadoctors.github.io/images/wiki-formatting/02-add-button.png)
+
+    Feel free to start with the [Page Skeleton](#page-skeleton) to get the basic HTML situated, and then add or modify sections as needed, based on the examples in the rest of this reference page.
+
+### Editing, moving, or deleting an existing page
+
+In the Actions section on an existing page, you'll see the other admin features you can perform, including Edit, Move, Delete, and History.
+
+![Edit, Move, Delete, and History in the Actions section](https://datadoctors.github.io/images/wiki-formatting/03-other-actions.png)
 
 ---
 

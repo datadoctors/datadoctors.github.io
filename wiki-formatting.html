@@ -20,6 +20,8 @@
   h1 { border-bottom: 2px solid var(--border); padding-bottom: .3rem; }
   h2 { margin-top: 2.5rem; }
   hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
+  img { max-width: 100%; height: auto; display: block; margin: .75rem 0; border: 1px solid var(--border); border-radius: 4px; }
+  ol > li { margin-bottom: 1rem; }
   .codewrap { position: relative; }
   pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 4px; padding: 1rem; overflow-x: auto; margin: 0 0 1rem; }
   code { font-family: Consolas, Menlo, monospace; font-size: .9em; }
@@ -32,6 +34,7 @@
 <p>Copy-paste snippets for the standard wiki components. Each block is complete and ready to drop into a page.</p>
 <h2 id="contents">Contents</h2>
 <ol>
+<li><a href="#creating-and-editing-wiki-articles">Creating and Editing Wiki Articles</a></li>
 <li><a href="#page-skeleton">Page Skeleton</a></li>
 <li><a href="#headings">Headings</a></li>
 <li><a href="#codebox">Codebox</a></li>
@@ -48,6 +51,24 @@
 <li><a href="#tech-digest-template">Tech Digest Template</a></li>
 <li><a href="#embedding-a-webm-video">Embedding a WebM Video</a></li>
 </ol>
+<hr />
+<h2 id="creating-and-editing-wiki-articles">Creating and Editing Wiki Articles</h2>
+<h3 id="creating-a-new-article">Creating a new article</h3>
+<ol>
+<li>
+<p><strong>Navigate to the URL for the desired page location.</strong></p>
+<p><img alt="Modifying the URL in the address bar" src="https://datadoctors.github.io/images/wiki-formatting/01-url.png" /></p>
+<p>It's helpful to first navigate to the section you want the page to be at (in this example, Standard Operating Procedures → Customer Service) and then modify the URL in the address bar. Avoid special symbols, and remember: spaces need to be represented by underscores, and you must not use a period in the title except as a delineation of subsection in the wiki.</p>
+</li>
+<li>
+<p><strong>In the Actions section, press the "Add" button.</strong></p>
+<p><img alt="The Add button in the Actions section" src="https://datadoctors.github.io/images/wiki-formatting/02-add-button.png" /></p>
+<p>Feel free to start with the <a href="#page-skeleton">Page Skeleton</a> to get the basic HTML situated, and then add or modify sections as needed, based on the examples in the rest of this reference page.</p>
+</li>
+</ol>
+<h3 id="editing-moving-or-deleting-an-existing-page">Editing, moving, or deleting an existing page</h3>
+<p>In the Actions section on an existing page, you'll see the other admin features you can perform, including Edit, Move, Delete, and History.</p>
+<p><img alt="Edit, Move, Delete, and History in the Actions section" src="https://datadoctors.github.io/images/wiki-formatting/03-other-actions.png" /></p>
 <hr />
 <h2 id="page-skeleton">Page Skeleton</h2>
 <p>A minimal starting point for a new page: a page title, one section heading, a paragraph, and a numbered list. Build from here using the components below.</p>
